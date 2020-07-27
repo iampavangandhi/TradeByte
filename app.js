@@ -47,9 +47,9 @@ app.use(expressLayouts);
 app.use(express.static(path.join(__dirname, "public")));
 
 // Routes
-app.use("/", require("./routes/index"));
+app.use("/", require("./routes/api/index"));
 
-// Port
+// Port: Love You 3000
 const PORT = process.env.PORT || 3000;
 
 // Server Listening
