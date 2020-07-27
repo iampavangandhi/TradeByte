@@ -1,6 +1,8 @@
 # 💸 TradeByte
 
-> ### Stocks Trading Simulation WebApp
+> Stocks Trading Simulation WebApp
+>
+> #### Checkout TheNodeCourse at [https://github.com/iampavangandhi/TheNodeCourse](https://github.com/iampavangandhi/TheNodeCourse)
 
 ## Table of Contents
 
@@ -56,4 +58,3 @@ This project exists thanks to all the people who contribute.
 ## License
 
 [MIT](LICENSE) © Pavan Gandhi
-
