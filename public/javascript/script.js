@@ -1,1 +1,3 @@
-// Scripts here
+// Main Script
+
+console.log("Hello TradeByte!");
