@@ -1,7 +1,7 @@
 # 💸 TradeByte
 
-> Stocks Trading Simulation WebApp
->
+> ### Stocks Trading Simulation WebApp
+
 > #### Checkout TheNodeCourse at [https://github.com/iampavangandhi/TheNodeCourse](https://github.com/iampavangandhi/TheNodeCourse)
 
 ## Table of Contents
