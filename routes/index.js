@@ -5,7 +5,7 @@ const router = express.Router();
 // @route    GET /
 // @access   Public
 router.get("/", (req, res) => {
-  res.send("Login/Landing Page");
+  res.status(200).render("login", { layout: "layouts/login" });
 });
 
 module.exports = router;
