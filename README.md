@@ -1,2 +1,3 @@
 # TradeByte
-> TradeByte Soon...
+
+> Stocks Trading Simulation WebApp
