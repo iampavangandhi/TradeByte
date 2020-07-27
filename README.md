@@ -1,4 +1,4 @@
-# TradeByte
+# 💸 TradeByte
 
 > ### Stocks Trading Simulation WebApp
 
