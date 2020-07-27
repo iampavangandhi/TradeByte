@@ -14,7 +14,6 @@ npm install
 npm start
 
 # run in development
-# serve with hot reload
 npm run dev
 ```
 
