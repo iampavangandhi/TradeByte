@@ -33,7 +33,7 @@ npm run dev
 
     .
     ├── 📁 config                  # Config files
-    ├── 📁 helpers                 # EJS Helper files
+    ├── 📁 helpers                 # EJS helper files
     ├── 📁 middleware              # Expresss middlewares
     ├── 📁 models                  # Mongoose models
     ├── 📁 public                  # Public folder
