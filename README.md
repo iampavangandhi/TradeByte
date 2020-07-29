@@ -58,9 +58,9 @@ This project exists thanks to all the people who contribute.
 
 ## Maintainers
 
-This repo is maintained by [Pavan Gandhi](https://github.con/iampavangandhi). Contact for queries.
+This repo is maintained by [Pavan Gandhi](https://github.con/iampavangandhi).
 
-<img style="border-radius=50%" src="https://avatars3.githubusercontent.com/u/42767012?s=460&v=4" width=75/>
+<img style="border-radius = 50%" src="https://avatars3.githubusercontent.com/u/42767012?s=460&v=4" width=75/>
 
 ## License
 
