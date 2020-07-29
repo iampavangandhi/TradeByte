@@ -12,6 +12,7 @@
   - [Folder Structure](#folder-structure)
   - [Contributing](#contributing)
   - [Contributors](#contributors)
+  - [Maintainers](#maintainers)
   - [License](#license)
 
 ## Build Setup
@@ -54,6 +55,12 @@ Feel free to dive in! [Open an issue](https://github.com/iampavangandhi/TradeByt
 This project exists thanks to all the people who contribute.
 
 [![Contributors](https://readme-contributors.now.sh/iampavangandhi/tradebyte?extension=jpg&width=300&avatarSize=25)](https://github.com/iampavangandhi/TradeByte/graphs/contributors)
+
+## Maintainers
+
+This repo is maintained by [Pavan Gandhi](https://github.con/iampavangandhi). Contact for queries.
+
+<img style="border-radius=50%" src="https://avatars3.githubusercontent.com/u/42767012?s=460&v=4" width=75/>
 
 ## License
 
