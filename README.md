@@ -43,6 +43,7 @@ npm run dev
     ├── 📁 routes                  # Express routes
     │    └── 📁 api
     └── 📁 views                   # EJS views
+         ├── 📁 error
          ├── 📁 layouts
          └── 📁 partials
 
