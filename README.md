@@ -7,7 +7,6 @@
 ## Table of Contents
 
 - [💸 TradeByte](#-tradebyte)
-  - [Table of Contents](#table-of-contents)
   - [Build Setup](#build-setup)
   - [Folder Structure](#folder-structure)
   - [Contributing](#contributing)
