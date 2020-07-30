@@ -1,7 +1,7 @@
 # 💸 TradeByte
 
 > ### Stocks Trading Simulation WebApp
-
+> #### TradeByte Project Excel Sheet: [Here](https://docs.google.com/spreadsheets/d/1_vg-F2dk6jWy9jcYlGuKqAnXUX6NwbbnLg9Bmn_Ulrk/edit?usp=sharing)
 > #### Checkout TheNodeCourse at [https://github.com/iampavangandhi/TheNodeCourse](https://github.com/iampavangandhi/TheNodeCourse)
 
 ## Table of Contents
