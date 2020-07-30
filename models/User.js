@@ -1,4 +1,4 @@
-// Google OAuth User Model
+// User Model (Google OAuth)
 
 const mongoose = require("mongoose");
 

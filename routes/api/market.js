@@ -2,33 +2,39 @@
 
 const express = require("express");
 const router = express.Router();
-const axios = require("axios").default;
 const alpha = require("alphavantage")({ key: process.env.ALPHA_VANTAGE_KEY });
+
+const getOverview = require("../../helpers/getOverview");
 const { ensureAuth, ensureGuest } = require("../../middleware/auth");
+
+// TODO
+// Implement Stocks Search
+// https://www.alphavantage.co/documentation/#symbolsearch
 
 // @desc     Market page
 // @route    GET /Market
 // @access   Private
-router.get("/", ensureAuth, (req, res) => {
-  axios
-    .get(
-      `https://www.alphavantage.co/query?function=OVERVIEW&symbol=IBM&apikey=${process.env.ALPHA_VANTAGE_KEY}`
-    )
-    .then((resp) =>
-      res.status(200).json({
-        Name: resp.data.Name,
-        Sector: resp.data.Sector,
-        MarketCap: new Intl.NumberFormat("en-US", {
-          style: "currency",
-          currency: "USD",
-        }).format(resp.data.MarketCapitalization),
-        PERatio: resp.data.PERatio,
-      })
-    )
-    .catch((err) => {
-      console.log(err);
-      res.status(500).render("error/500");
-    });
+router.get("/", ensureAuth, async (req, res) => {
+  res.status(200).render("market", { layout: "layouts/app" });
+});
+
+// @desc     Stocks Data
+// @route    GET /Market/data/:Stock-Symbol
+// @access   Private
+router.get("/data/:symbol", (req, res) => {
+  let symbol = req.params.symbol;
+  alpha.data.quote(symbol).then((resp) => {
+    res.status(200).send(resp);
+  });
+});
+
+// @desc     Stock Description
+// @route    GET /Market/desc/:Stock-Symbol
+// @access   Private
+router.get("/desc/:symbol", ensureAuth, async (req, res) => {
+  let symbol = req.params.symbol;
+  let data = await getOverview(symbol);
+  res.status(200).send(data);
 });
 
 module.exports = router;
