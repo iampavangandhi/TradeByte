@@ -52,6 +52,8 @@ npm run dev
 
 Feel free to dive in! [Open an issue](https://github.com/iampavangandhi/TradeByte/issues/new) or submit PRs.
 
+See the [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+
 ## Contributors
 
 This project exists thanks to all the people who contribute.
