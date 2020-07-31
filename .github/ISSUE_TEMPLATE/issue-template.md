@@ -7,12 +7,6 @@ assignees: ''
 
 ---
 
----
-name: Feature request / Bug report 
-about: Suggest an idea for this project / Create a report to help us improve
-
----
-
 **Description**
 A clear and concise description of what the problem is.
 
