@@ -7,6 +7,7 @@
 ## Table of Contents
 
 - [💸 TradeByte](#-tradebyte)
+  - [Table of Contents](#table-of-contents)
   - [Build Setup](#build-setup)
   - [Folder Structure](#folder-structure)
   - [Contributing](#contributing)
@@ -32,6 +33,7 @@ npm run dev
 ## Folder Structure
 
     .
+    ├── 📁 .github                 # Github files (don't change)
     ├── 📁 config                  # Config files
     ├── 📁 helpers                 # EJS helper files
     ├── 📁 middleware              # Expresss middlewares
