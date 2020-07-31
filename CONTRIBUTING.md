@@ -1,6 +1,6 @@
 # CONTRIBUTING
 
-This is a group project under The Uplift Project by Girlscript Foundation. But It's open for contribution from everyone who is interested.
+This is a group project under The Uplift Project (Nodejs Stack) by Girlscript Foundation. But It's open for contribution from everyone who is interested.
 
 Kindly write a proper description while making pull requests.
 
