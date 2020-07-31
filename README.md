@@ -52,7 +52,7 @@ npm run dev
 
 Feel free to dive in! [Open an issue](https://github.com/iampavangandhi/TradeByte/issues/new) or submit PRs.
 
-See the [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+See the [CONTRIBUTING.md](CONTRIBUTING.md) for details. Kindly follow the [Code Of Conduct](CODE_OF_CONDUCT.md).
 
 ## Contributors
 
