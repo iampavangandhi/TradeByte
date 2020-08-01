@@ -1,6 +1,7 @@
 // User Model (Google OAuth)
 
 const mongoose = require("mongoose");
+var Float = require("mongoose-float").loadType(mongoose);
 
 const UserSchema = new mongoose.Schema({
   googleId: {
@@ -21,6 +22,10 @@ const UserSchema = new mongoose.Schema({
   },
   image: {
     type: String,
+  },
+  balance: {
+    type: Float,
+    required: true,
   },
   createdAt: {
     type: Date,
