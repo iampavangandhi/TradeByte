@@ -1,0 +1,82 @@
+[
+  {
+    "Company Name": "Apple Inc.",
+    "Symbol": "AAPL"
+  },
+  {
+    "Company Name": "Adobe Systems Incorporated",
+    "Symbol": "ADBE"
+  },
+  {
+    "Company Name": "Advent Software, Inc.",
+    "Symbol": "ADVS"
+  },
+  {
+    "Company Name": "Advanced Micro Devices, Inc.",
+    "Symbol": "AMD"
+  },
+  {
+    "Company Name": "Amazon.com, Inc.",
+    "Symbol": "AMZN"
+  },
+  {
+    "Company Name": "Cisco Systems, Inc.",
+    "Symbol": "CSCO"
+  },
+  {
+    "Company Name": "Facebook, Inc.",
+    "Symbol": "FB"
+  },
+  {
+    "Company Name": "Forward Industries, Inc.",
+    "Symbol": "FORD"
+  },
+  {
+    "Company Name": "Google Inc.",
+    "Symbol": "GOOGL"
+  },
+  {
+    "Company Name": "Intel Corporation",
+    "Symbol": "INTC"
+  },
+  {
+    "Company Name": "Intuit Inc.",
+    "Symbol": "INTU"
+  },
+  {
+    "Company Name": "iRobot Corporation",
+    "Symbol": "IRBT"
+  },
+  {
+    "Company Name": "Microsoft Corporation",
+    "Symbol": "MSFT"
+  },
+  {
+    "Company Name": "Netflix, Inc.",
+    "Symbol": "NFLX"
+  },
+  {
+    "Company Name": "NVIDIA Corporation",
+    "Symbol": "NVDA"
+  },
+  {
+    "Company Name": "QUALCOMM Incorporated",
+    "Symbol": "QCOM"
+  },
+  {
+    "Company Name": "SanDisk Corporation",
+    "Symbol": "SNDK"
+  },
+  {
+    "Company Name": "TripAdvisor, Inc.",
+    "Symbol": "TRIP"
+  },
+  {
+    "Company Name": "Tesla Motors, Inc.",
+    "Symbol": "TSLA"
+  },
+  {
+    "Company Name": "Yahoo! Inc.",
+    "Symbol": "YHOO"
+  }
+]
