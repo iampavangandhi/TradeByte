@@ -1,4 +1,4 @@
-# 💸 TradeByte
+# <img src="public/images/TradeByte -Favicon.png" width=26/> TradeByte
 
 > ### Stocks Trading Simulation WebApp
 > #### TradeByte Project Excel Sheet: [Here](https://docs.google.com/spreadsheets/d/1_vg-F2dk6jWy9jcYlGuKqAnXUX6NwbbnLg9Bmn_Ulrk/edit?usp=sharing)
@@ -6,7 +6,7 @@
 
 ## Table of Contents
 
-- [💸 TradeByte](#-tradebyte)
+- [<img src="public/images/TradeByte -Favicon.png" width=15/> TradeByte](#-tradebyte)
   - [Table of Contents](#table-of-contents)
   - [Build Setup](#build-setup)
   - [Folder Structure](#folder-structure)
@@ -41,6 +41,7 @@ npm run dev
     ├── 📁 models                  # Mongoose models
     ├── 📁 public                  # Public folder
     │    ├── 📁 css
+    │    ├── 📁 images
     │    └── 📁 javascript
     ├── 📁 routes                  # Express routes
     │    └── 📁 api
