@@ -39,6 +39,8 @@ npm run dev
     ├── 📁 helpers                 # Helper files
     ├── 📁 middleware              # Expresss middlewares
     ├── 📁 models                  # Mongoose models
+    ├── 📁 project-plan            # Project planning files
+        └── 📁 ui-designs          
     ├── 📁 public                  # Public folder
     │    ├── 📁 css
     │    ├── 📁 images
