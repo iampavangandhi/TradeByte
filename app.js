@@ -78,7 +78,7 @@ app.use("/", require("./routes/api/index"));
 app.use("/auth", require("./routes/api/auth"));
 app.use("/portfolio", require("./routes/api/portfolio"));
 app.use("/market", require("./routes/api/market"));
-
+app.use("/view", require("./routes/api/view"));
 // Port: Love You 3000
 const PORT = process.env.PORT || 3000;
 
