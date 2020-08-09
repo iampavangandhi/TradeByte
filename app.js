@@ -1,5 +1,5 @@
 // Welcome to TradeByte
-
+//jshint esversion: 8
 // Includes
 const path = require("path");
 const express = require("express");
@@ -16,7 +16,9 @@ const MongoStore = require("connect-mongo")(session);
 const connectDB = require("./config/db");
 
 // Load config
-dotenv.config({ path: "./config/config.env" });
+dotenv.config({
+  path: "./config/config.env"
+});
 
 // Passport config
 require("./config/passport")(passport);
@@ -28,7 +30,9 @@ connectDB();
 const app = express();
 
 // Body parser
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({
+  extended: false
+}));
 app.use(express.json());
 
 // Method override
@@ -62,7 +66,9 @@ app.use(
     secret: "keyboard cat",
     resave: false,
     saveUninitialized: false,
-    store: new MongoStore({ mongooseConnection: mongoose.connection }),
+    store: new MongoStore({
+      mongooseConnection: mongoose.connection
+    }),
   })
 );
 
@@ -78,7 +84,7 @@ app.use("/", require("./routes/api/index"));
 app.use("/auth", require("./routes/api/auth"));
 app.use("/portfolio", require("./routes/api/portfolio"));
 app.use("/market", require("./routes/api/market"));
-
+app.use("/view", require("./routes/api/view"));
 // Port: Love You 3000
 const PORT = process.env.PORT || 3000;
 

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tradebyte</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+</head>
+
+<body>
+    <form action="/" method="POST" class="flex flex-col sm:flex-row justify-center">
+        <label for="cityInput" class="mt-2 px-3 py-2">stockName: </label>
+        <input type="text" name="stockName" id="stockInput" class="mt-2 px-3 py-2 shadow border rounded-lg w-4/6 px-3 py-2 text-gray-700 focus:bg-blue-100
+            placeholder-indigo-300">
+        <button type="submit"
+            class="m-4 bg-indigo-200 border-b-4 border-t-4 border-indigo-800 px-4 py-1 mt-2 px-3 py-2">Search</button>
+    </form>
+    <canvas id="chart"></canvas>
+    <%for(var i=0; i<=5; i++){%>
+    <table class="justify-start sm:justify-center lg:justify-center table-auto border-2 border-gray-600">
+        <thead>
+            <tr>
+                <th class="px-4 py-2">Date</th>
+                <th class="px-4 py-2">opening</th>
+                <th class="px-4 py-2">closing</th>
+                <th class="px-4 py-2">highs</th>
+                <th class="px-4 py-2">lows</th>
+                <th class="px-4 py-2">volumes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="border-b-2 px-4 py-2 "><%- dates[i] %></td>
+                <td class="border-b-2 px-4 py-2"><%- opening[i] %></td>
+                <td class="border-b-2 px-4 py-2"><%- closing[i] %></td>
+                <td class="border-b-2 px-4 py-2"><%- highs[i] %></td>
+                <td class="border-b-2 px-4 py-2"><%- lows[i] %></td>
+                <td class="border-b-2 px-4 py-2"><%- volumes[i] %></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <%}%>
+
+    <script>
+        var datesList = <%- JSON.stringify(dates) %>;
+        var closingList = <%- JSON.stringify(closing) %> ;
+        var ctx = document.getElementById('chart').getContext('2d');
+        var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+                labels: datesList,closingList,
+                datasets: [{
+                label: <%- JSON.stringify(symbol) %>,
+                data: closingList,
+                borderColor: "#3e95cd",
+                backgroundColor: "rgba(118,152,255,0.4)"
+            }]
+        },
+        options: {
+            responsive:true,
+            maintainAspectRatio: true,
+            },
+        });
+    </script>
+
+
+</body>
+
+</html>
