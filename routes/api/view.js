@@ -17,12 +17,26 @@ const {
 router.get("/:symbol", ensureAuth, async (req, res) => {
     const symbol = req.params.symbol;
     let data = await getOverview(symbol);
+    let AssetType = data["AssetType"];
+    let assetName = data["Name"];
+    let assetExchange = data["Exchange"];
+    let Currency = data['Currency'];
+    let Country = data['Country'];
+    let Sector = data['Sector'];
+    let MarketCap = data['MarketCap'];
+    let Ebitda = data['EBITDA'];
+    let PERatio = data['PERatio'];
 
+    // console.log(data);
     alpha.data
         .intraday(symbol)
         .then((data) => {
             const intraDay = data["Time Series (1min)"];
-            const symbol = data["Meta Data"]['2. Symbol'];
+            
+            const assetInformation = data["Meta Data"]['1. Information'];
+            const lastRefreshed = data["Meta Data"]['3. Last Refreshed'];
+            
+            
             let dates = [];
             let opening = [];
             let closing = [];
@@ -47,7 +61,7 @@ router.get("/:symbol", ensureAuth, async (req, res) => {
             res
                 .status(200)
                 .render(
-                    "view", { symbol, data, dates, opening, closing, highs, lows, volumes }
+                    "view", {symbol, data, dates, opening, closing, highs, lows, volumes, AssetType, assetName,assetExchange,Currency,Country,Sector,MarketCap,Ebitda,PERatio}
                 );
         })
         .catch((err) => {

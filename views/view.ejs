@@ -20,6 +20,34 @@
     </form>
 
     <canvas id="chart"></canvas>
+    <table class="justify-start sm:justify-center lg:justify-center table-auto border-2 border-gray-600">
+        <thead>
+            <tr>
+                <th class="px-4 py-2">AssetType</th>
+                <th class="px-4 py-2">assetExchange</th>
+                <th class="px-4 py-2">assetExchange</th>
+                <th class="px-4 py-2">Currency</th>
+                <th class="px-4 py-2">Country</th>
+                <th class="px-4 py-2">Sector</th>
+                <th class="px-4 py-2">MarketCap</th>
+                <th class="px-4 py-2">Earnings</th>
+                <th class="px-4 py-2">PERatio</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="border-b-2 px-4 py-2 "><%- AssetType %></td>
+                <td class="border-b-2 px-4 py-2"><%- assetExchange %></td>
+                <td class="border-b-2 px-4 py-2"><%- assetExchange %></td>
+                <td class="border-b-2 px-4 py-2"><%- Currency %></td>
+                <td class="border-b-2 px-4 py-2"><%- Country %></td>
+                <td class="border-b-2 px-4 py-2"><%- Sector %></td>
+                <td class="border-b-2 px-4 py-2"><%- MarketCap %></td>
+                <td class="border-b-2 px-4 py-2"><%- Ebitda %></td>
+                <td class="border-b-2 px-4 py-2"><%- PERatio %></td>
+            </tr>
+        </tbody>
+    </table>
 
     <%for(var i=0; i<=5; i++){%>
         <table class="justify-start sm:justify-center lg:justify-center table-auto border-2 border-gray-600">
