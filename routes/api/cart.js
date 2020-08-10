@@ -20,13 +20,13 @@ router.get('/', ensureAuth, async (req, res) => {
 // @route   POST /cart/buy
 router.post('/buy', ensureAuth, async (req, res) => {
     let data = req.body
+    let user = req.user
     let companySymbol = req.body.companySymbol
     let stockPrice = req.body.stockPrice
     let noOfStock = req.body.noOfStock
     let totalAmount = stockPrice * noOfStock
 
     try {
-        console.log(`Symbol: ${companySymbol}, Total Amount: ${totalAmount}`)
         console.log(req.user)
         console.log(req.body)
         // req.body.user = req.user.id
@@ -39,6 +39,7 @@ router.post('/buy', ensureAuth, async (req, res) => {
         } else {
             res.render('transaction', {
                 data,
+                user,
                 totalAmount,
                 message: "Order Review",
             })
