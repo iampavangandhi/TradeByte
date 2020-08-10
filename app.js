@@ -1,5 +1,7 @@
 // Welcome to TradeByte
 
+//jshint esversion: 8
+
 // Includes
 const path = require("path");
 const express = require("express");
@@ -84,6 +86,7 @@ app.use("/", require("./routes/api/index"));
 app.use("/auth", require("./routes/api/auth"));
 app.use("/portfolio", require("./routes/api/portfolio"));
 app.use("/market", require("./routes/api/market"));
+app.use("/view", require("./routes/api/view"));
 app.use("/cart", require("./routes/api/cart"));
 app.use("/transaction", require("./routes/api/transaction"));
 
