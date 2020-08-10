@@ -1,0 +1,21 @@
+<h3>Cart</h3>  
+    <table>
+        <thead>
+            <tr>
+                <th>Company Symbol</th>
+                <th>Price</th>
+                <th>No of Stock</th>
+                <th>Buy</th>
+            </tr>
+        </thead>
+        <tbody>
+            <form action="/cart/buy" method="POST">
+                <tr>
+                    <td><input type="text" name="companySymbol" id="companySymbol" value="AAPL"></td>
+                    <td><input type="Number" name="stockPrice" id="stockPrice" value="953"></td>
+                    <td><input type="Number" name="noOfStock" id="noOfStock" value="2"></td>
+                    <td><input type="submit" value="+"></td>
+                </tr>
+            </form>
+        </tbody>
+    </table>

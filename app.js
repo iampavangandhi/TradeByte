@@ -72,6 +72,12 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+// Set Global variable
+app.use( function (req, res, next) {
+  res.locals.user = req.user || null
+  next()
+})
+
 // Static folder
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -81,6 +87,9 @@ app.use("/auth", require("./routes/api/auth"));
 app.use("/portfolio", require("./routes/api/portfolio"));
 app.use("/market", require("./routes/api/market"));
 app.use("/view", require("./routes/api/view"));
+app.use("/cart", require("./routes/api/cart"));
+app.use("/transaction", require("./routes/api/transaction"));
+
 // Port: Love You 3000
 const PORT = process.env.PORT || 3000;
 
