@@ -16,6 +16,7 @@
         align-items: center;
         margin: 50px 0 30px 0;
       }
+
       .chart-container {
         position: relative;
         margin: auto;
@@ -109,24 +110,24 @@
     </div>
 
     <script>
-      var datesList = <%- JSON.stringify(dates) %>;
-      var closingList = <%- JSON.stringify(closing) %> ;
+      var datesList = <% - JSON.stringify(dates) %>;
+      var closingList = <% - JSON.stringify(closing) %> ;
       var ctx = document.getElementById('chart').getContext('2d');
       var myChart = new Chart(ctx, {
-      type: 'line',
-      data: {
-              labels: datesList,closingList,
-              datasets: [{
-              label: <%- JSON.stringify(symbol) %>,
-              data: closingList,
-              borderColor: "#3e95cd",
-              backgroundColor: "rgba(118,152,255,0.4)"
+        type: 'line',
+        data: {
+          labels: datesList, closingList,
+          datasets: [{
+            label: <% - JSON.stringify(symbol) %>,
+            data: closingList,
+            borderColor: "#3e95cd",
+            backgroundColor: "rgba(118,152,255,0.4)"
           }]
-      },
-      options: {
-          responsive:true,
+        },
+        options: {
+          responsive: true,
           maintainAspectRatio: false,
-          },
+        },
       });
     </script>
   </body>
