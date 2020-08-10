@@ -9,3 +9,17 @@ body {
   overflow-x: hidden;
   box-sizing: border-box;
 }
+
+.data-table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0 30px 0;
+}
+
+.chartjs-container {
+  position: relative;
+  margin: auto;
+  height: 75vh;
+  width: 75vw;
+}

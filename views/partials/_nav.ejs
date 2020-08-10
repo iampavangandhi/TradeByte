@@ -1,112 +1,156 @@
 <div class="md:col-span-1 md:flex">
+  <!-- nav bar -->
 
-    <!-- nav bar -->
+  <nav class="text-right fixed mx-3">
+    <div class="flex justify-between items-center">
+      <!-- tarde byte heading -->
 
-    <nav class="text-right fixed mx-3">
-        <div class="flex justify-between items-center">
+      <h1 class="font-bold uppercase p-4 border-b border-gray-100">
+        <a
+          href="/"
+          class="hover:text-gray-900 tracking-widest border-b-2 border-grey-100 text-3xl pb-2 pt-32"
+          >TRADEBYTE</a
+        >
+      </h1>
 
-            <!-- tarde byte heading -->
+      <!-- burger icon for nav bar -->
 
-            <h1 class="font-bold uppercase p-4 border-b border-gray-100">
-                <a href="/"
-                    class="hover:text-gray-900 tracking-widest border-b-2 border-grey-100 text-3xl pb-2 pt-32">Tradebyte</a>
-            </h1>
+      <div class="px-4 cursor-pointer md:hidden" id="burger">
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </div>
+    </div>
 
-            <!-- burger icon for nav bar -->
+    <!-- unordered list of dashboard and market -->
 
-            <div class="px-4 cursor-pointer md:hidden" id="burger">
-                <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    stroke="currentColor" viewBox="0 0 24 24">
-                    <path d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
+    <div class="flex-col gap-20">
+      <div>
+        <ul class="text-sm mt-6 hidden md:block" id="menu">
+          <!-- profile picture of the user -->
+
+          <li>
+            <div class="flex-shrink-0 w-20 h-20 align-bottom">
+              <img
+                class="mx-20 h-full w-full border-8 box-1"
+                style="
+                  border: 10px solid rounded;
+                  border-image-source: linear-gradient(45deg, #266fea, #41d7aa);
+                  border-image-slice: 1;
+                "
+                src="images/profile.jpg"
+                alt=" "
+              />
             </div>
+          </li>
+
+          <!-- trading status -->
+
+          <li class="pb-8 pt-4 py-1">
+            <a
+              href="# "
+              class="block px-4 flex justify-center bg-green-200 rounded-full text-green-900 text-xl font-bold ml-2"
+              ><svg
+                class="w-5 ml-2 mr-1"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path d="M5 13l4 4L19 7"></path>
+              </svg>
+              Active</a
+            >
+          </li>
+
+          <li class="py-1">
+            <a
+              href="/portfolio"
+              class="block px-4 flex justify-start border-l-4 border-tempc-400 text-xl font-bold"
+            >
+              <svg
+                class="w-5 ml-2 mr-1"
+                fill="none "
+                stroke-linecap="round "
+                stroke-linejoin="round "
+                stroke-width="2 "
+                viewBox="0 0 24 24 "
+                stroke="currentColor "
+              >
+                <path
+                  d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4
+                        13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z "
+                ></path>
+              </svg>
+              <span>Dashboard</span>
+            </a>
+          </li>
+
+          <li class="py-1">
+            <a
+              href="/market"
+              class="block px-4 flex justify-start border-l-4 border-white text-xl font-bold"
+            >
+              <svg
+                class="w-5 ml-2 mr-1"
+                fill="none "
+                stroke-linecap="round "
+                stroke-linejoin="round "
+                stroke-width="2 "
+                viewBox="0 0 24 24 "
+                stroke="currentColor "
+              >
+                <path
+                  d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z "
+                ></path>
+              </svg>
+              <span>Market</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- bottom navbar -->
+
+      <!-- time left progress bar box -->
+
+      <div
+        class="bg-transparent border border-gray-200 py-3 rounded relative font-smaller lg:mt-32 mr-4"
+      >
+        <div class="w-full h-1">
+          <div class="fluentProgressBar-normal pr-2" style="width: 80%;"></div>
         </div>
+        <strong class="font-bold text-tempc-400">2 hours, 20 min</strong>
+        <span class="block sm:inline">left for today</span>
+      </div>
 
-        <!-- unordered list of dashboard and market -->
+      <!-- log out button -->
 
-        <div class="flex-col gap-20 ">
-            <div>
-                <ul class="text-sm mt-6 hidden md:block" id="menu">
+      <div
+        class="flex justify-center block px-4 ml-8 mr-12 flex bg-gray-200 rounded-md mt-4 text-tempc-400 text-2xl font-bold ml-2 align-bottom"
+      >
+        <svg class="w-6 ml-2 mr-1" fill="currentColor" viewBox="0 0 20 20">
+          <path
+            fill-rule="evenodd"
+            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+            clip-rule="evenodd"
+          ></path>
+        </svg>
+        <a href="/logout">LogOut</a>
+      </div>
+    </div>
 
-                    <!-- profile picture of the user -->
-
-                    <li>
-                        <div class="flex-shrink-0 w-20 h-20 align-bottom ">
-
-                            <img class="mx-20 h-full w-full border-8 box-1" style="border: 10px solid rounded;
-                            border-image-source: linear-gradient(45deg, #266FEA, #41D7AA);
-                            border-image-slice: 1;" src="images/profile.jpg" alt=" " />
-                        </div>
-                    </li>
-
-                    <!-- trading status -->
-
-                    <li class="pb-8 pt-4 py-1">
-                        <a href="# "
-                            class="block px-4 flex justify-center bg-green-200 rounded-full text-green-900 text-xl font-bold ml-2"><svg
-                                class="w-5 ml-2 mr-1 " fill="none" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                                <path d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            Trading Active</a>
-                    </li>
-
-
-
-                    <li class="py-1 ">
-                        <a href="# "
-                            class="block px-4 flex justify-start border-l-4 border-tempc-400 text-xl font-bold ">
-                            <svg class="w-5 ml-2 mr-1 " fill="none " stroke-linecap="round " stroke-linejoin="round "
-                                stroke-width="2 " viewBox="0 0 24 24 " stroke="currentColor ">
-                                <path
-                                    d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4
-                        13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z ">
-                                </path>
-                            </svg>
-                            <span>Dashboard</span>
-                        </a>
-                    </li>
-
-
-
-                    <li class="py-1 ">
-                        <a href="# " class="block px-4 flex justify-start border-l-4 border-white text-xl font-bold ">
-                            <svg class="w-5 ml-2 mr-1 " fill="none " stroke-linecap="round " stroke-linejoin="round "
-                                stroke-width="2 " viewBox="0 0 24 24 " stroke="currentColor ">
-                                <path d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z "></path>
-                            </svg>
-                            <span>Market</span>
-                        </a>
-                    </li>
-
-                </ul>
-            </div>
-
-            <!-- bottom navbar -->
-
-            <!-- time left progress bar box -->
-
-            <div class="bg-transparent border border-gray-200 py-3 rounded relative font-smaller lg:mt-32 mr-4">
-                <div class="w-full h-1">
-                    <div class="fluentProgressBar-normal pr-2" style="width: 80%"></div>
-                </div>
-                <strong class="font-bold text-tempc-400">2 hours, 20 min</strong>
-                <span class="block sm:inline">left for today</span>
-            </div>
-
-            <!-- log out button -->
-
-            <div
-                class="flex justify-center block px-4 ml-8 mr-12 flex bg-gray-200 rounded-md mt-4 text-tempc-400 text-2xl font-bold ml-2 align-bottom">
-                <svg class="w-6 ml-2 mr-1 " fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd"
-                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                        clip-rule="evenodd"></path>
-                </svg> Log Out
-            </div>
-        </div>
-
-        <%- include('./_footer.ejs') %>
-    </nav>
-    <!-- navbar closed -->
+    <%- include('./_footer.ejs') %>
+  </nav>
+  <!-- navbar closed -->
 </div>
