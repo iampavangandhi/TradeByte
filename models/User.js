@@ -27,28 +27,30 @@ const UserSchema = new mongoose.Schema({
     type: Float,
     required: true,
   },
-  stock: [{
+  stock: [
+    {
       companySymbol: {
         type: String,
-        required: true
+        required: true,
       },
       stockPrice: {
         type: Float,
-        required: true
+        required: true,
       },
       noOfStock: {
         type: Number,
-        required: true
+        required: true,
       },
       totalAmount: {
         type: Float,
-        required: true
+        required: true,
       },
       createdAt: {
         type: Date,
-        default: Date.now
+        default: Date.now,
       },
-  }],
+    },
+  ],
   createdAt: {
     type: Date,
     default: Date.now,
