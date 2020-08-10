@@ -10,14 +10,14 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
     <style>
-      .data {
+      .data-table {
         display: flex;
         justify-content: center;
         align-items: center;
         margin: 50px 0 30px 0;
       }
 
-      .chart-container {
+      .chartjs-container {
         position: relative;
         margin: auto;
         height: 75vh;
@@ -27,27 +27,7 @@
   </head>
 
   <body>
-    <!-- <form
-      action="/"
-      method="POST"
-      class="flex flex-col sm:flex-row justify-center"
-    >
-      <label for="cityInput" class="mt-2 px-3 py-2">stockName: </label>
-      <input
-        type="text"
-        name="stockName"
-        id="stockInput"
-        class="mt-2 px-3 py-2 shadow border rounded-lg w-4/6 px-3 py-2 text-gray-700 focus:bg-blue-100 placeholder-indigo-300"
-      />
-      <button
-        type="submit"
-        class="m-4 bg-indigo-200 border-b-4 border-t-4 border-indigo-800 px-4 py-1 mt-2 px-3 py-2"
-      >
-        Search
-      </button>
-    </form> -->
-
-    <div class="data">
+    <div class="data-table">
       <table class="table-auto border-2 border-gray-600">
         <thead>
           <tr>
@@ -78,11 +58,11 @@
       </table>
     </div>
 
-    <div class="chart-container">
+    <div class="chartjs-container">
       <canvas id="chart"></canvas>
     </div>
 
-    <div style="flex-direction: column;" class="data">
+    <div style="flex-direction: column;" class="data-table">
       <%for(var i=50; i>=45; i--){%>
       <table class="table-auto border-2 border-gray-600">
         <thead>
@@ -110,15 +90,15 @@
     </div>
 
     <script>
-      var datesList = <% - JSON.stringify(dates) %>;
-      var closingList = <% - JSON.stringify(closing) %> ;
+      var datesList = <%- JSON.stringify(dates) %>;
+      var closingList = <%- JSON.stringify(closing) %> ;
       var ctx = document.getElementById('chart').getContext('2d');
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
           labels: datesList, closingList,
           datasets: [{
-            label: <% - JSON.stringify(symbol) %>,
+            label: <%- JSON.stringify(symbol) %>,
             data: closingList,
             borderColor: "#3e95cd",
             backgroundColor: "rgba(118,152,255,0.4)"
