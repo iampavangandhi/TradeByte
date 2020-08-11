@@ -70,6 +70,10 @@ npm run dev
          ├── 📁 layouts
          └── 📁 partials
 
+## Project Plan
+
+![](project-plan/TradeByte.jpg)
+
 ## Contributing
 
 Feel free to dive in! [Open an issue](https://github.com/iampavangandhi/TradeByte/issues/new) or submit PRs.
