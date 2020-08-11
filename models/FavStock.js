@@ -1,1 +1,0 @@
-// Favorite Stock Model
