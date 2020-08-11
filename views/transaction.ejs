@@ -12,19 +12,39 @@
   <input type="hidden" name="_method" value="PUT" />
   <h4>
     Company Symbol:
-    <input type="text" name="companySymbol" value="<%= data.companySymbol%>" />
+    <input
+      readonly
+      type="text"
+      name="companySymbol"
+      value="<%= data.companySymbol%>"
+    />
   </h4>
   <h4>
     Stock Price:
-    <input type="Number" name="stockPrice" value="<%= data.stockPrice%>" />
+    <input
+      readonly
+      type="Number"
+      name="stockPrice"
+      value="<%= data.stockPrice%>"
+    />
   </h4>
   <h4>
     Number of Stock:
-    <input type="Number" name="noOfStock" value="<%= data.noOfStock%>" />
+    <input
+      readonly
+      type="Number"
+      name="noOfStock"
+      value="<%= data.noOfStock%>"
+    />
   </h4>
   <h4>
     Total Amount:
-    <input type="Number" name="totalAmount" value="<%= totalAmount%>" />
+    <input
+      readonly
+      type="Number"
+      name="totalAmount"
+      value="<%= totalAmount%>"
+    />
   </h4>
   <input type="submit" value="BUY" />
 </form>

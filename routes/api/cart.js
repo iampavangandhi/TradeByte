@@ -2,7 +2,9 @@
 const express = require("express");
 const router = express.Router();
 const { ensureAuth } = require("../../middleware/auth");
+
 const User = require("../../models/User");
+const getPrice = require("../../helpers/getPrice");
 
 // TODO
 // Stocks Cart Buy/Sell
@@ -11,10 +13,11 @@ const User = require("../../models/User");
 // Empty Cart Route
 
 // @desc    To buy
-// @route   GET /cart
+// @route   GET /cart/:symbol
 router.get("/:symbol", ensureAuth, async (req, res) => {
   const symbol = req.params.symbol;
-  res.status(200).render("cart", { layout: "layouts/app", symbol });
+  const price = await getPrice(symbol);
+  res.status(200).render("cart", { layout: "layouts/app", symbol, price });
 });
 
 // @desc    To buy

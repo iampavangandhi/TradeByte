@@ -1,4 +1,5 @@
-<h3>Cart</h3>
+<h1>Cart</h1>
+
 <table>
   <thead>
     <tr>
@@ -13,26 +14,26 @@
       <tr>
         <td>
           <input
-            disabled
+            readonly
             type="text"
             name="companySymbol"
             id="companySymbol"
-            value="<%- symbol %>"
+            value="<%= symbol %>"
           />
         </td>
         <td>
           <input
-            disabled
+            readonly
             type="Number"
             name="stockPrice"
             id="stockPrice"
-            value="953"
+            value="<%= price %>"
           />
         </td>
         <td>
-          <input type="Number" name="noOfStock" id="noOfStock" value="2" />
+          <input type="Number" name="noOfStock" id="noOfStock" value="1" />
         </td>
-        <td><input type="submit" value="+" /></td>
+        <td><input type="submit" value="BUY" /></td>
       </tr>
     </form>
   </tbody>

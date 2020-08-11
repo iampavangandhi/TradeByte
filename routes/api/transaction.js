@@ -1,29 +1,28 @@
 // Cart Routes
+
 const express = require("express");
 const router = express.Router();
 const { ensureAuth } = require("../../middleware/auth");
 const User = require("../../models/User");
 
-// @desc    To buy
-// @route   POST transaction/confirm
+// @desc     To Buy Transaction Page
+// @route    POST transaction/confirm
+// @access   Private
 router.put("/confirm", ensureAuth, async (req, res) => {
   try {
-    balance = req.user.balance - req.body.totalAmount;
+    let balance = req.user.balance - req.body.totalAmount;
 
     req.body.user = req.user.id;
-    // Deducting Amount and updating it
-    await User.findOneAndUpdate({ _id: req.user.id }, { balance: balance });
 
-    // Stock is not appended, it overwirtes on previous one
-    await User.findOneAndUpdate(
+    const updatedUser = await User.findOneAndUpdate(
       { _id: req.user.id },
-      { stock: req.body },
+      { balance: balance, $push: { stock: req.body } },
       {
         new: true, // it will create a new one, if it doesn't exist
         runValidators: true, // it check weather the fields are valid or not
       }
     );
-    console.log(req.user.stock);
+    console.log(updatedUser);
     res.redirect("/");
   } catch (err) {
     console.error(err);
