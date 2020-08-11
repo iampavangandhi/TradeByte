@@ -88,6 +88,7 @@ app.use("/portfolio", require("./routes/api/portfolio"));
 app.use("/market", require("./routes/api/market"));
 app.use("/view", require("./routes/api/view"));
 app.use("/cart", require("./routes/api/cart"));
+app.use("/done", require("./routes/api/done"));
 app.use("/addBalance", require("./routes/api/addBalance"));
 app.use("/transaction", require("./routes/api/transaction"));
 
