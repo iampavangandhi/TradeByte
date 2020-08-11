@@ -72,7 +72,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Set Global variable
+// Set Global variables
 app.use(function (req, res, next) {
   res.locals.user = req.user || null;
   next();
