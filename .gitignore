@@ -1,11 +1,9 @@
-<<<<<<< HEAD
 # Mac File
 */.DS_Store
 .DS_Store
-=======
+
 # For Mac User
 **/.DS_Store
->>>>>>> eee0166a4809dfba3eef67e4df71db3463d1a2b3
 
 # Logs
 logs
@@ -49,6 +47,7 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
+.vscode/
 
 # Config file
 config/config.env
