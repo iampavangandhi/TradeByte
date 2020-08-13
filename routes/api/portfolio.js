@@ -9,7 +9,7 @@ const { ensureAuth, ensureGuest } = require("../../middleware/auth");
 // @access   Private
 router.get("/", ensureAuth, (req, res) => {
   let avatar = req.user.image;
-  res.status(200).render("portfolio", { layout: "layouts/app", avatar });
+  res.status(200).render("portfolio", { layout: "layouts/app", avatar, href: '/portfolio' });
 });
 
 module.exports = router;
