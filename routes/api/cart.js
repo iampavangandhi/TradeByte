@@ -17,7 +17,9 @@ const getPrice = require("../../helpers/getPrice");
 router.get("/:symbol", ensureAuth, async (req, res) => {
   const symbol = req.params.symbol;
   const price = await getPrice(symbol);
-  res.status(200).render("cart", { layout: "layouts/app", symbol, price, href: '/market' });
+  res
+    .status(200)
+    .render("cart", { layout: "layouts/app", symbol, price, href: "/market" });
 });
 
 // @desc    To buy
