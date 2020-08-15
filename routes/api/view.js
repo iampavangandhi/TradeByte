@@ -4,6 +4,7 @@
 
 const express = require("express");
 const router = express.Router();
+const getPrice = require("../../helpers/getPrice");
 const alpha = require("alphavantage")({
   key: process.env.ALPHA_VANTAGE_KEY,
 });
@@ -17,6 +18,7 @@ const { ensureAuth } = require("../../middleware/auth");
 router.get("/:symbol", ensureAuth, async (req, res) => {
   const symbol = req.params.symbol;
   let data = await getOverview(symbol);
+  let { latestPrice, low, high } = await getPrice(symbol);
   let AssetType = data["AssetType"];
   let assetName = data["Name"];
   let assetExchange = data["Exchange"];
@@ -26,6 +28,15 @@ router.get("/:symbol", ensureAuth, async (req, res) => {
   let MarketCap = data["MarketCap"];
   let Ebitda = data["EBITDA"];
   let PERatio = data["PERatio"];
+  let PriceToBookRatio = data["PriceToBookRatio"];
+  let EPS = data["EPS"];
+  let DividendYie = data["DividendYie"];
+  let BookValue = data["BookValue"];
+  let ProfitMargin = data["ProfitMargin"];
+  let RevenueTTM = data["RevenueTTM"];
+  let Desc = data["Desc"];
+  let weeksLow = data["weeksLow"];
+  let weeksHigh = data["weeksHigh"];
 
   // console.log(data);
   alpha.data
@@ -60,6 +71,9 @@ router.get("/:symbol", ensureAuth, async (req, res) => {
       //   closing = JSON.stringify(closing);
 
       res.status(200).render("view", {
+        layout: "layouts/app",
+        href: '/market',
+        avatar: req.user.image,
         symbol,
         data,
         dates,
@@ -77,11 +91,23 @@ router.get("/:symbol", ensureAuth, async (req, res) => {
         MarketCap,
         Ebitda,
         PERatio,
+        PriceToBookRatio,
+        EPS,
+        DividendYie,
+        BookValue,
+        ProfitMargin,
+        RevenueTTM,
+        Desc,
+        latestPrice,
+        high,
+        low,
+        weeksLow,
+        weeksHigh,
       });
     })
     .catch((err) => {
-      // Handle the error
-      console.log(err);
+      console.error(err);
+      res.render("error/500");
     });
 });
 

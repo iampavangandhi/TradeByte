@@ -1,114 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tradebyte</title>
-    <link
-      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
-    <style>
-      .data-table {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 50px 0 30px 0;
-      }
-
-      .chartjs-container {
-        position: relative;
-        margin: auto;
-        height: 75vh;
-        width: 75vw;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="data-table">
-      <table class="table-auto border-2 border-gray-600">
-        <thead>
-          <tr>
-            <th class="px-4 py-2">Asset Type</th>
-            <th class="px-4 py-2">Asset Exchange</th>
-            <th class="px-4 py-2">Asset Exchange</th>
-            <th class="px-4 py-2">Currency</th>
-            <th class="px-4 py-2">Country</th>
-            <th class="px-4 py-2">Sector</th>
-            <th class="px-4 py-2">Market Cap</th>
-            <th class="px-4 py-2">EBITDA</th>
-            <th class="px-4 py-2">P/E Ratio</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="border-b-2 px-4 py-2"><%- AssetType %></td>
-            <td class="border-b-2 px-4 py-2"><%- assetExchange %></td>
-            <td class="border-b-2 px-4 py-2"><%- assetExchange %></td>
-            <td class="border-b-2 px-4 py-2"><%- Currency %></td>
-            <td class="border-b-2 px-4 py-2"><%- Country %></td>
-            <td class="border-b-2 px-4 py-2"><%- Sector %></td>
-            <td class="border-b-2 px-4 py-2"><%- MarketCap %></td>
-            <td class="border-b-2 px-4 py-2"><%- Ebitda %></td>
-            <td class="border-b-2 px-4 py-2"><%- PERatio %></td>
-          </tr>
-        </tbody>
-      </table>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+&&<div class="md:ml-64 py-6 px-3 w-full">
+  <div class="mx-auto max-w-4xl">
+    <div class="head flex justify-between items-center mx-auto">
+      <div class="company flex flex-col justify-start items-center">
+        <h1 class="text-3xl font-bold"><%= assetName %></h1>
+        <h3>Sector: <span class=" text-sm bg-blue-400 rounded-lg p-1"><%= Sector %></span></h3>
+      </div>
+      <div class="price">
+        <h1 class="text-3xl font-bold"><%= latestPrice%></h1>
+      </div>
     </div>
+    <section class="price-summary my-8 bg-white shadow-md p-4 rounded">
+      <h2 class="text-xl font-bold mb-4">Price Summary</h2>
+      <div class="table w-full">
+        <div class="w-full grid grid-flow-col grid-cols-2 grid-rows-2 gap-8 md:grid-cols-4 md:grid-rows-1">
+          <div class="flex flex-col justify-start">
+            <p class="text-md uppercase">Today's High</p>
+            <p class="text-xl font-semibold"><%=  high %></p>
+          </div>
+          <div class="flex flex-col justify-start">
+            <p class="text-md uppercase">Today's Low</p>
+            <p class="text-xl font-semibold"><%=  low %></p>
+          </div>
+          <div class="flex flex-col justify-start">
+            <p class="text-md uppercase">52 Week High</p>
+            <p class="text-xl font-semibold"><%= weeksHigh %></p>
+          </div>
+          <div class="flex flex-col justify-start">
+            <p class="text-md uppercase">52 Week Low</p>
+            <p class="text-xl font-semibold"><%= weeksLow %></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
 
-    <div class="chartjs-container">
-      <canvas id="chart"></canvas>
-    </div>
-
-    <div style="flex-direction: column;" class="data-table">
-      <%for(var i=50; i>=45; i--){%>
-      <table class="table-auto border-2 border-gray-600">
-        <thead>
-          <tr>
-            <th class="px-4 py-2">Date</th>
-            <th class="px-4 py-2">opening</th>
-            <th class="px-4 py-2">closing</th>
-            <th class="px-4 py-2">highs</th>
-            <th class="px-4 py-2">lows</th>
-            <th class="px-4 py-2">volumes</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="border-b-2 px-4 py-2"><%- dates[i] %></td>
-            <td class="border-b-2 px-4 py-2"><%- opening[i] %></td>
-            <td class="border-b-2 px-4 py-2"><%- closing[i] %></td>
-            <td class="border-b-2 px-4 py-2"><%- highs[i] %></td>
-            <td class="border-b-2 px-4 py-2"><%- lows[i] %></td>
-            <td class="border-b-2 px-4 py-2"><%- volumes[i] %></td>
-          </tr>
-        </tbody>
-      </table>
-      <%}%>
-    </div>
-
-    <script>
-      var datesList = <%- JSON.stringify(dates) %>;
-      var closingList = <%- JSON.stringify(closing) %> ;
-      var ctx = document.getElementById('chart').getContext('2d');
-      var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: datesList, closingList,
-          datasets: [{
-            label: <%- JSON.stringify(symbol) %>,
-            data: closingList,
-            borderColor: "#3e95cd",
-            backgroundColor: "rgba(118,152,255,0.4)"
-          }]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-        },
-      });
-    </script>
-  </body>
-</html>
+<script>
+  // var datesList = <% - JSON.stringify(dates) %>;
+  // var closingList = <% - JSON.stringify(closing) %> ;
+  // var ctx = document.getElementById('chart').getContext('2d');
+  // var myChart = new Chart(ctx, {
+  //   type: 'line',
+  //   data: {
+  //     labels: datesList, closingList,
+  //     datasets: [{
+  //       label: <% - JSON.stringify(symbol) %>,
+  //       data: closingList,
+  //       borderColor: "#3e95cd",
+  //       backgroundColor: "rgba(118,152,255,0.7)"
+  //     }]
+  //   },
+  //   options: {
+  //     responsive: true,
+  //     maintainAspectRatio: false,
+  //   },
+  // });
+</script>
