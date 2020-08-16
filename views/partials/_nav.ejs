@@ -1,10 +1,10 @@
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 <div @click.away="open = false"
-  class="flex flex-col w-full md:w-64 text-gray-700 bg-white flex-shrink-0 md:h-screen md:z-50 md:fixed md:left-0 md:top-0"
+  class="flex flex-col w-full md:w-56 lg:w-64 text-gray-700 bg-white flex-shrink-0 md:h-screen  md:z-50 md:fixed md:left-0 md:top-0"
   x-data="{ open: false }">
   <div class="flex-shrink-0 px-6 py-4 flex flex-row items-center justify-between">
     <h1 class="font-bold uppercase border-b border-gray-100 w-full text-center">
-      <a href="/" class="hover:text-gray-900 tracking-widest text-2xl md:text-3xl pb-2 pt-32">Tradebyte</a>
+      <a href="/" class="hover:text-gray-900 tracking-widest text-2xl md:text-2xl lg:text-3xl pb-2 pt-32">Tradebyte</a>
     </h1>
     <button class="rounded-lg md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
       <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
@@ -19,10 +19,10 @@
   </div>
   <nav :class="{'block': open, 'hidden': !open}" class="flex-grow md:block px-4 pb-4 md:pb-0">
     <div class="flex justify-center align-center rounded-full">
-      <img class="mx-20 h-20 w-20 border-8 border-blue-600 box-1 rounded-full" src="images/profile.jpg" alt=" " />
+      <img class="h-20 w-20 border-8 border-blue-600 box-1 rounded-full" src="<%= avatar %>" alt="" />
     </div>
-    <a class="block w-2/4 max-w-xs md:w-3/5 p-2 mt-4 mb-8 mx-auto text-xs font-bold text-gray-900 focus:shadow-outline flex justify-center bg-green-200 rounded-full text-green-900 font-bold"
-      href="#"><svg class="w-5 mr-1" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+    <a class="block w-2/5 md:w-4/5 max-w-xs lg:w-3/5 p-2 mt-4 mb-8 mx-auto text-xs font-bold text-gray-900 focus:shadow-outline flex justify-center bg-green-200 rounded-full text-green-900 font-bold"
+      href="#"><svg class="w-5 mr-1 " fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
         viewBox="0 0 24 24" stroke="currentColor">
         <path d="M5 13l4 4L19 7"></path>
       </svg>Trading Active</a>

@@ -15,9 +15,7 @@ const { ensureAuth, ensureGuest } = require("../../middleware/auth");
 // @route    GET /Market
 // @access   Private
 router.get("/", ensureAuth, async (req, res) => {
-  res
-    .status(200)
-    .render("market", { layout: "layouts/app", jsonData, href: "/market" });
+  res.status(200).render("market", { layout: "layouts/app", jsonData, href: '/market', avatar: req.user.image });
 });
 
 module.exports = router;
