@@ -27,7 +27,6 @@ router.get("/:symbol", ensureAuth, async (req, res) => {
 router.post("/buy", ensureAuth, async (req, res) => {
   let data = req.body;
   let user = req.user;
-  let companySymbol = req.body.companySymbol;
   let stockPrice = req.body.stockPrice;
   let noOfStock = req.body.noOfStock;
   let totalAmount = stockPrice * noOfStock;
