@@ -30,7 +30,7 @@ router.get("/:symbol", ensureAuth, async (req, res) => {
   let PERatio = data["PERatio"];
   let PriceToBookRatio = data["PriceToBookRatio"];
   let EPS = data["EPS"];
-  let DividendYie = data["DividendYie"];
+  let DividendYield = data["DividendYield"];
   let BookValue = data["BookValue"];
   let ProfitMargin = data["ProfitMargin"];
   let RevenueTTM = data["RevenueTTM"];
@@ -46,7 +46,7 @@ router.get("/:symbol", ensureAuth, async (req, res) => {
 
       //   const assetInformation = data["Meta Data"]["1. Information"];
       //   const lastRefreshed = data["Meta Data"]["3. Last Refreshed"];
-
+      console.log(intraDay);
       let dates = [];
       let opening = [];
       let closing = [];
@@ -55,7 +55,7 @@ router.get("/:symbol", ensureAuth, async (req, res) => {
       let volumes = [];
       const keys = Object.getOwnPropertyNames(intraDay);
 
-      for (let i = 0; i < 50; i++) {
+      for (let i = 0; i < 40; i++) {
         dates.push(keys[i]);
         opening.push(intraDay[keys[i]]["1. open"]);
         highs.push(intraDay[keys[i]]["2. high"]);
@@ -64,7 +64,7 @@ router.get("/:symbol", ensureAuth, async (req, res) => {
         volumes.push(intraDay[keys[i]]["5. volume"]);
       }
       // reverse so dates appear from left to right
-
+      console.log(dates);
       dates.reverse();
       closing.reverse();
       //   dates = JSON.stringify(dates);
@@ -93,7 +93,7 @@ router.get("/:symbol", ensureAuth, async (req, res) => {
         PERatio,
         PriceToBookRatio,
         EPS,
-        DividendYie,
+        DividendYield,
         BookValue,
         ProfitMargin,
         RevenueTTM,

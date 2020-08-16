@@ -1,34 +1,79 @@
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
-&&<div class="md:ml-64 py-6 px-3 w-full">
+<div class="md:ml-64 py-6 px-3 w-full">
   <div class="mx-auto max-w-4xl">
-    <div class="head flex justify-between items-center mx-auto">
-      <div class="company flex flex-col justify-start items-center">
-        <h1 class="text-3xl font-bold"><%= assetName %></h1>
+    <div class="head flex justify-between items-center mx-auto mb-4">
+      <div class="company flex flex-col justify-start">
+        <h1 class="text-xl md:text-3xl font-bold"><%= assetName %></h1>
         <h3>Sector: <span class=" text-sm bg-blue-400 rounded-lg p-1"><%= Sector %></span></h3>
       </div>
       <div class="price">
         <h1 class="text-3xl font-bold"><%= latestPrice%></h1>
       </div>
     </div>
-    <section class="price-summary my-8 bg-white shadow-md p-4 rounded">
-      <h2 class="text-xl font-bold mb-4">Price Summary</h2>
+    <h2 class="text-xl font-bold mb-1">Price Summary</h2>
+    <section class="price-summary mb-8 bg-white shadow-md p-4 rounded">
       <div class="table w-full">
         <div class="w-full grid grid-flow-col grid-cols-2 grid-rows-2 gap-8 md:grid-cols-4 md:grid-rows-1">
           <div class="flex flex-col justify-start">
-            <p class="text-md uppercase">Today's High</p>
+            <p class="text-md uppercase font-semibold text-gray-600">Today's High</p>
             <p class="text-xl font-semibold"><%=  high %></p>
           </div>
           <div class="flex flex-col justify-start">
-            <p class="text-md uppercase">Today's Low</p>
+            <p class="text-md uppercase font-semibold text-gray-600">Today's Low</p>
             <p class="text-xl font-semibold"><%=  low %></p>
           </div>
           <div class="flex flex-col justify-start">
-            <p class="text-md uppercase">52 Week High</p>
+            <p class="text-md uppercase font-semibold text-gray-600">52 Week High</p>
             <p class="text-xl font-semibold"><%= weeksHigh %></p>
           </div>
           <div class="flex flex-col justify-start">
-            <p class="text-md uppercase">52 Week Low</p>
+            <p class="text-md uppercase font-semibold text-gray-600">52 Week Low</p>
             <p class="text-xl font-semibold"><%= weeksLow %></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <h2 class="text-xl font-bold mb-1">Overview</h2>
+    <section class="chart-container relative w-full bg-white shadow-md rounded px-4 pt-2 pb-4 mb-4" style="height: 50vh;">
+      <canvas id="chart"></canvas>
+    </section>
+
+    <h2 class="text-xl font-bold mb-1">Company Essentials</h2>
+    <section class="Comapany-summary my-8 bg-white shadow-md p-4 rounded">
+      <div class="table w-full">
+        <div
+          class="w-full grid grid-flow-col grid-cols-2 grid-rows-4 md:grid-cols-3 md:grid-rows-3 gap-4 lg:grid-cols-4 lg:grid-rows-2">
+          <div class="flex flex-col justify-start break-words">
+            <p class="text-md uppercase font-semibold text-gray-600">Market Cap</p>
+            <p class="text-xl font-semibold"><%=  MarketCap %></p>
+          </div>
+          <div class="flex flex-col justify-start break-words">
+            <p class="text-md uppercase font-semibold text-gray-600">EBITDA</p>
+            <p class="text-lg md:text-xl font-semibold"><%=  Ebitda %></p>
+          </div>
+          <div class="flex flex-col justify-start break-words">
+            <p class="text-md uppercase font-semibold text-gray-600">P/E</p>
+            <p class="text-lg md:text-xl font-semibold"><%= PERatio %></p>
+          </div>
+          <div class="flex flex-col justify-start break-words">
+            <p class="text-md uppercase font-semibold text-gray-600">P/B</p>
+            <p class="text-lg md:text-xl font-semibold"><%= PriceToBookRatio %></p>
+          </div>
+          <div class="flex flex-col justify-start break-words">
+            <p class="text-md uppercase font-semibold text-gray-600">EPS(TTM)</p>
+            <p class="text-lg md:text-xl font-semibold"><%=  EPS %></p>
+          </div>
+          <div class="flex flex-col justify-start break-words">
+            <p class="text-md uppercase font-semibold text-gray-600">Div. Yield</p>
+            <p class="text-lg md:text-xl font-semibold"><%=  DividendYield %></p>
+          </div>
+          <div class="flex flex-col justify-start break-words">
+            <p class="text-md uppercase font-semibold text-gray-600">Book Value</p>
+            <p class="text-lg md:text-xl font-semibold"><%= BookValue %></p>
+          </div>
+          <div class="flex flex-col justify-start break-words">
+            <p class="text-md uppercase font-semibold text-gray-600">Revenue(TTM)</p>
+            <p class="text-lg md:text-xl font-semibold"><%= RevenueTTM %></p>
           </div>
         </div>
       </div>
@@ -37,23 +82,24 @@
 </div>
 
 <script>
-  // var datesList = <% - JSON.stringify(dates) %>;
-  // var closingList = <% - JSON.stringify(closing) %> ;
-  // var ctx = document.getElementById('chart').getContext('2d');
-  // var myChart = new Chart(ctx, {
-  //   type: 'line',
-  //   data: {
-  //     labels: datesList, closingList,
-  //     datasets: [{
-  //       label: <% - JSON.stringify(symbol) %>,
-  //       data: closingList,
-  //       borderColor: "#3e95cd",
-  //       backgroundColor: "rgba(118,152,255,0.7)"
-  //     }]
-  //   },
-  //   options: {
-  //     responsive: true,
-  //     maintainAspectRatio: false,
-  //   },
-  // });
+  let datesList = <%- JSON.stringify(dates) %>;
+  let closingList = <%- JSON.stringify(closing) %> ;
+  var ctx = document.getElementById('chart').getContext('2d');
+  var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+          labels: datesList, closingList,
+          datasets: [{
+            label: <%- JSON.stringify(symbol) %>,
+            data: closingList,
+            borderColor: "#3e95cd",
+            backgroundColor: "rgba(118,152,255,0.4)"
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          
+        },
+      });
 </script>
