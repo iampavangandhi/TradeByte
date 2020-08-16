@@ -5,6 +5,7 @@ const router = express.Router();
 const alpha = require("alphavantage")({ key: process.env.ALPHA_VANTAGE_KEY });
 
 const jsonData = require("../../config/data-compact.json");
+const jsonData1 = require("../../config/data-total.json");
 const { ensureAuth, ensureGuest } = require("../../middleware/auth");
 
 // TODO
@@ -14,10 +15,11 @@ const { ensureAuth, ensureGuest } = require("../../middleware/auth");
 // @desc     Market page
 // @route    GET /Market
 // @access   Private
-router.get("/", ensureAuth, async (req, res) => {
-  res
-    .status(200)
-    .render("market", { layout: "layouts/app", jsonData, href: "/market" });
+router.get("/", ensureAuth, async(req, res) => {
+    res
+        .status(200)
+        .render("market", { layout: "layouts/app", jsonData1, href: "/market" }, { layout: "layouts/app", jsonData, href: "/market" });
 });
+
 
 module.exports = router;
