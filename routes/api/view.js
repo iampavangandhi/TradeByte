@@ -46,7 +46,6 @@ router.get("/:symbol", ensureAuth, async (req, res) => {
 
       //   const assetInformation = data["Meta Data"]["1. Information"];
       //   const lastRefreshed = data["Meta Data"]["3. Last Refreshed"];
-      console.log(intraDay);
       let dates = [];
       let opening = [];
       let closing = [];
@@ -64,7 +63,6 @@ router.get("/:symbol", ensureAuth, async (req, res) => {
         volumes.push(intraDay[keys[i]]["5. volume"]);
       }
       // reverse so dates appear from left to right
-      console.log(dates);
       dates.reverse();
       closing.reverse();
       //   dates = JSON.stringify(dates);
