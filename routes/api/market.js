@@ -18,7 +18,7 @@ const { ensureAuth, ensureGuest } = require("../../middleware/auth");
 router.get("/", ensureAuth, async(req, res) => {
     res
         .status(200)
-        .render("market", { layout: "layouts/app", jsonData1, href: "/market" }, { layout: "layouts/app", jsonData, href: "/market" });
+        .render("market", { layout: "layouts/app", jsonData, jsonData1, href: "/market" });
 });
 
 
