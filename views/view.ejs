@@ -1,114 +1,125 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tradebyte</title>
-    <link
-      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
-    <style>
-      .data-table {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 50px 0 30px 0;
-      }
-
-      .chartjs-container {
-        position: relative;
-        margin: auto;
-        height: 75vh;
-        width: 75vw;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="data-table">
-      <table class="table-auto border-2 border-gray-600">
-        <thead>
-          <tr>
-            <th class="px-4 py-2">Asset Type</th>
-            <th class="px-4 py-2">Asset Exchange</th>
-            <th class="px-4 py-2">Asset Exchange</th>
-            <th class="px-4 py-2">Currency</th>
-            <th class="px-4 py-2">Country</th>
-            <th class="px-4 py-2">Sector</th>
-            <th class="px-4 py-2">Market Cap</th>
-            <th class="px-4 py-2">EBITDA</th>
-            <th class="px-4 py-2">P/E Ratio</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="border-b-2 px-4 py-2"><%- AssetType %></td>
-            <td class="border-b-2 px-4 py-2"><%- assetExchange %></td>
-            <td class="border-b-2 px-4 py-2"><%- assetExchange %></td>
-            <td class="border-b-2 px-4 py-2"><%- Currency %></td>
-            <td class="border-b-2 px-4 py-2"><%- Country %></td>
-            <td class="border-b-2 px-4 py-2"><%- Sector %></td>
-            <td class="border-b-2 px-4 py-2"><%- MarketCap %></td>
-            <td class="border-b-2 px-4 py-2"><%- Ebitda %></td>
-            <td class="border-b-2 px-4 py-2"><%- PERatio %></td>
-          </tr>
-        </tbody>
-      </table>
+<div class="relative md:ml-64 py-6 px-3 w-full">
+  <div class="mx-auto max-w-4xl">
+    <h2 class="text-gray-700 text-4xl lg:text-6xl font-semibold leading-none tracking-wider">TradeByte</h2>
+    <div class="relative text-gray-600 my-8 shadow-md rounded-b-lg">
+      <input type="search" name="serch" placeholder="Search Stocks"
+        class="bg-transparent h-10 w-full px-5 pl-10 pr-10 rounded-full text-sm focus:outline-none">
+      <button type="submit" class="absolute left-0 top-0 mt-3 ml-4">
+        <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 56.966 56.966"
+          style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve" width="512px" height="512px">
+          <path
+            d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z" />
+        </svg>
+      </button>
     </div>
+    <div class="head flex justify-between items-center mx-auto mb-4">
+      <div class="company flex flex-col justify-start">
+        <h1 class="text-2xl md:text-3xl font-bold"><%= assetName %></h1>
+        <h3>Sector: <span class=" text-sm bg-blue-400 rounded-lg p-1"><%= Sector %></span></h3>
+      </div>
+      <div class="price">
+        <h1 class="text-3xl font-bold"><%= latestPrice%></h1>
+      </div>
+    </div>
+    <h2 class="text-xl font-bold mb-1">Price Summary</h2>
+    <section class="price-summary mb-8 bg-white shadow-md p-4 rounded">
+      <div class="table w-full">
+        <div class="w-full grid grid-flow-col grid-cols-2 grid-rows-2 gap-8 md:grid-cols-4 md:grid-rows-1">
+          <div class="flex flex-col justify-start">
+            <p class="text-md uppercase font-semibold text-gray-600">Today's High</p>
+            <p class="text-xl font-semibold"><%=  high %></p>
+          </div>
+          <div class="flex flex-col justify-start">
+            <p class="text-md uppercase font-semibold text-gray-600">Today's Low</p>
+            <p class="text-xl font-semibold"><%=  low %></p>
+          </div>
+          <div class="flex flex-col justify-start">
+            <p class="text-md uppercase font-semibold text-gray-600">52 Week High</p>
+            <p class="text-xl font-semibold"><%= weeksHigh %></p>
+          </div>
+          <div class="flex flex-col justify-start">
+            <p class="text-md uppercase font-semibold text-gray-600">52 Week Low</p>
+            <p class="text-xl font-semibold"><%= weeksLow %></p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <div class="chartjs-container">
+    <h2 class="text-xl font-bold mb-1">Overview</h2>
+    <section class="chart-container relative w-full bg-white shadow-md rounded px-4 pt-2 pb-4 mb-8"
+      style="height: 50vh;">
       <canvas id="chart"></canvas>
-    </div>
+    </section>
 
-    <div style="flex-direction: column;" class="data-table">
-      <%for(var i=50; i>=45; i--){%>
-      <table class="table-auto border-2 border-gray-600">
-        <thead>
-          <tr>
-            <th class="px-4 py-2">Date</th>
-            <th class="px-4 py-2">opening</th>
-            <th class="px-4 py-2">closing</th>
-            <th class="px-4 py-2">highs</th>
-            <th class="px-4 py-2">lows</th>
-            <th class="px-4 py-2">volumes</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="border-b-2 px-4 py-2"><%- dates[i] %></td>
-            <td class="border-b-2 px-4 py-2"><%- opening[i] %></td>
-            <td class="border-b-2 px-4 py-2"><%- closing[i] %></td>
-            <td class="border-b-2 px-4 py-2"><%- highs[i] %></td>
-            <td class="border-b-2 px-4 py-2"><%- lows[i] %></td>
-            <td class="border-b-2 px-4 py-2"><%- volumes[i] %></td>
-          </tr>
-        </tbody>
-      </table>
-      <%}%>
-    </div>
+    <h2 class="text-xl font-bold mb-1">Company Essentials</h2>
+    <section class="Comapany-summary mb-4 bg-white shadow-md p-4 rounded">
+      <div class="table w-full">
+        <div
+          class="w-full grid grid-flow-col grid-cols-2 grid-rows-4 md:grid-cols-3 md:grid-rows-3 gap-4 lg:grid-cols-4 lg:grid-rows-2">
+          <div class="flex flex-col justify-start break-words">
+            <p class="text-md uppercase font-semibold text-gray-600">Market Cap</p>
+            <p class="text-xl font-semibold"><%=  MarketCap %></p>
+          </div>
+          <div class="flex flex-col justify-start break-words">
+            <p class="text-md uppercase font-semibold text-gray-600">EBITDA</p>
+            <p class="text-lg md:text-xl font-semibold"><%=  Ebitda %></p>
+          </div>
+          <div class="flex flex-col justify-start break-words">
+            <p class="text-md uppercase font-semibold text-gray-600">P/E</p>
+            <p class="text-lg md:text-xl font-semibold"><%= PERatio %></p>
+          </div>
+          <div class="flex flex-col justify-start break-words">
+            <p class="text-md uppercase font-semibold text-gray-600">P/B</p>
+            <p class="text-lg md:text-xl font-semibold"><%= PriceToBookRatio %></p>
+          </div>
+          <div class="flex flex-col justify-start break-words">
+            <p class="text-md uppercase font-semibold text-gray-600">EPS(TTM)</p>
+            <p class="text-lg md:text-xl font-semibold"><%=  EPS %></p>
+          </div>
+          <div class="flex flex-col justify-start break-words">
+            <p class="text-md uppercase font-semibold text-gray-600">Div. Yield</p>
+            <p class="text-lg md:text-xl font-semibold"><%=  DividendYield %></p>
+          </div>
+          <div class="flex flex-col justify-start break-words">
+            <p class="text-md uppercase font-semibold text-gray-600">Book Value</p>
+            <p class="text-lg md:text-xl font-semibold"><%= BookValue %></p>
+          </div>
+          <div class="flex flex-col justify-start break-words">
+            <p class="text-md uppercase font-semibold text-gray-600">Revenue(TTM)</p>
+            <p class="text-lg md:text-xl font-semibold"><%= RevenueTTM %></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <a href="/cart/<%- symbol %>">
+    <button
+      class="m-8 p-0 w-16 h-16 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-700 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none fixed right-0 bottom-0">
+      Buy
+    </button>
+  </a>
+</div>
 
-    <script>
-      var datesList = <%- JSON.stringify(dates) %>;
-      var closingList = <%- JSON.stringify(closing) %> ;
-      var ctx = document.getElementById('chart').getContext('2d');
-      var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: datesList, closingList,
-          datasets: [{
-            label: <%- JSON.stringify(symbol) %>,
-            data: closingList,
-            borderColor: "#3e95cd",
-            backgroundColor: "rgba(118,152,255,0.4)"
-          }]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-        },
-      });
-    </script>
-  </body>
-</html>
+<script>
+  let datesList = <%- JSON.stringify(dates) %>;
+  let closingList = <%- JSON.stringify(closing) %> ;
+  var ctx = document.getElementById('chart').getContext('2d');
+  var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: datesList, closingList,
+      datasets: [{
+        label: <%- JSON.stringify(symbol) %>,
+        data: closingList,
+        borderColor: "#3e95cd",
+        backgroundColor: "rgba(118,152,255,0.4)"
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+
+    },
+  });
+</script>

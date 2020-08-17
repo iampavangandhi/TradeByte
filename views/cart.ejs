@@ -1,40 +1,106 @@
-<h1>Cart</h1>
+<div class="flex flex-col w-full py-8 px-4 md:py-16 md:px-8 text-gray-800 md:w-full md:ml-64">
+  <h1 class="text-2xl lg:text-4xl font-bold">Buy Stock</h1>
+  <div>
+    <table class="w-full text-sm lg:text-base border-4 " cellspacing="0">
+      <thead>
+        <tr class="h-12 uppercase">
+          <th class="text-left">Product</th>
+          <th class="lg:text-right text-left pl-5 lg:pl-0">
+            <span class="lg:hidden" title="Quantity">Qtd</span>
+            <span class="hidden lg:inline">Quantity</span>
+          </th>
+          <th class="hidden text-right md:table-cell">Unit price</th>
+          <th class="text-right">Total price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="bg-gray-600 border-b-2 text-white">
+          <td>
+            <a href="#">
+              <p class="mb-2 md:ml-4">Earphone</p>
+              <form action="" method="POST">
+                <button type="submit" class="md:ml-4">
+                  <small>(Remove item)</small>
+                </button>
+              </form>
+            </a>
+          </td>
+          <td class="justify-center md:justify-end md:flex mt-2">
+            <div class="w-20 h-10">
+              <div class="relative flex flex-row w-full h-8">
+                <input type="number" value="1"
+                  class="w-full font-semibold text-center text-gray-700 bg-gray-200 outline-none focus:outline-none hover:text-black focus:text-black" />
+              </div>
+            </div>
+          </td>
+          <td class="hidden text-right md:table-cell">
+            <span class="text-sm lg:text-base font-medium">
+              10.00€
+            </span>
+          </td>
+          <td class="text-right">
+            <span class="text-sm lg:text-base font-medium pr-1">
+              20.00€
+            </span>
+          </td>
+        </tr>
+        <tr class="bg-gray-600 border-b-2 text-white">
+          <td>
+            <p class="mb-2 md:ml-4">Tesla Model 3</p>
+            <form action="" method="POST">
+              <button type="submit" class="700 md:ml-4">
+                <small>(Remove item)</small>
+              </button>
+            </form>
+          </td>
+          <td class="justify-center md:justify-end md:flex md:mt-4">
+            <div class="w-20 h-10">
+              <div class="relative flex flex-row w-full h-8">
+                <input type="number" value="1"
+                  class="w-full font-semibold text-center text-gray-700 bg-gray-200 outline-none focus:outline-none hover:text-black focus:text-black" />
+              </div>
+            </div>
+          </td>
+          <td class="hidden text-right md:table-cell">
+            <span class="text-sm lg:text-base font-medium">
+              49,600.01€
+            </span>
+          </td>
+          <td class="text-right">
+            <span class="text-sm lg:text-base font-medium pr-1">
+              148,800.03€
+            </span>
+          </td>
+        </tr>
+        <tr class="bg-gray-600 border-b-2 text-white">
+          <td>
+            <p class="mb-2 md:ml-4">Bic 4 colour pen</p>
+            <form action="" method="POST">
+              <button type="submit" class="md:ml-4">
+                <small>(Remove item)</small>
+              </button>
+            </form>
+          </td>
+          <td class="justify-center md:justify-end md:flex md:mt-4">
+            <div class="w-20 h-10">
+              <div class="relative flex flex-row w-full h-8">
+                <input type="number" value="1"
+                  class="w-full font-semibold text-center text-gray-700 bg-gray-200 outline-none focus:outline-none hover:text-black focus:text-black" />
+              </div>
+            </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Company Symbol</th>
-      <th>Price</th>
-      <th>No of Stock</th>
-      <th>Buy</th>
-    </tr>
-  </thead>
-  <tbody>
-    <form action="/cart/buy" method="POST">
-      <tr>
-        <td>
-          <input
-            readonly
-            type="text"
-            name="companySymbol"
-            id="companySymbol"
-            value="<%= symbol %>"
-          />
-        </td>
-        <td>
-          <input
-            readonly
-            type="Number"
-            name="stockPrice"
-            id="stockPrice"
-            value="<%= price %>"
-          />
-        </td>
-        <td>
-          <input type="Number" name="noOfStock" id="noOfStock" value="1" />
-        </td>
-        <td><input type="submit" value="BUY" /></td>
-      </tr>
-    </form>
-  </tbody>
-</table>
+          </td>
+          <td class="hidden text-right md:table-cell">
+            <span class="text-sm lg:text-base font-medium">
+              1.50€
+            </span>
+          </td>
+          <td class="text-right">
+            <span class="text-sm lg:text-base font-medium pr-1">
+              7.50€
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

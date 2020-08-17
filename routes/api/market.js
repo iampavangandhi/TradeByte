@@ -28,11 +28,9 @@ for (var i = 0; i < dataCnt2; i++) {
 
 // @desc     Market page
 // @route    GET /Market
-// @access   Private
+// @access   Privat
 router.get("/", ensureAuth, async(req, res) => {
-    res
-        .status(200)
-        .render("market", { layout: "layouts/app", jsonData, href: "/market" });
+    res.status(200).render("market", { layout: "layouts/app", jsonData, href: '/market', avatar: req.user.image });
 });
 
 

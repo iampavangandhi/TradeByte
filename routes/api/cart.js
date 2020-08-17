@@ -17,9 +17,8 @@ const getPrice = require("../../helpers/getPrice");
 router.get("/:symbol", ensureAuth, async (req, res) => {
   const symbol = req.params.symbol;
   const price = await getPrice(symbol);
-  res
-    .status(200)
-    .render("cart", { layout: "layouts/app", symbol, price, href: "/market" });
+  res.status(200).render("cart", { layout: "layouts/app", symbol, price, href: '/market', avatar: req.user.image });
+
 });
 
 // @desc    To buy
@@ -27,7 +26,6 @@ router.get("/:symbol", ensureAuth, async (req, res) => {
 router.post("/buy", ensureAuth, async (req, res) => {
   let data = req.body;
   let user = req.user;
-  let companySymbol = req.body.companySymbol;
   let stockPrice = req.body.stockPrice;
   let noOfStock = req.body.noOfStock;
   let totalAmount = stockPrice * noOfStock;
