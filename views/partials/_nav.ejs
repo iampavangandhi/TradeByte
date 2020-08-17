@@ -19,7 +19,7 @@
   </div>
   <nav :class="{'block': open, 'hidden': !open}" class="flex-grow md:block px-4 pb-4 md:pb-0">
     <div class="flex justify-center align-center rounded-full">
-      <img class="h-20 w-20 border-8 border-blue-600 box-1 rounded-full" src="<%= avatar %>" alt="" />
+      
     </div>
     <a class="block w-2/5 md:w-4/5 max-w-xs lg:w-3/5 p-2 mt-4 mb-8 mx-auto text-xs font-bold text-gray-900 focus:shadow-outline flex justify-center bg-green-200 rounded-full text-green-900 font-bold"
       href="#"><svg class="w-5 mr-1 " fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -41,6 +41,11 @@
           stroke-width="2 " viewBox="0 0 24 24 " stroke="currentColor ">
           <path d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z "></path>
         </svg>Market</a>
+      <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-transparent hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline flex <%= href === '/market' ? 'bg-gray-200 border border-purple-700 border-l-8': '' %>"
+        href="/profile"><svg class="w-5 ml-2 mr-1" fill="none " stroke-linecap="round " stroke-linejoin="round "
+          stroke-width="2 " viewBox="0 0 24 24 " stroke="currentColor ">
+          <path d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z "></path>
+        </svg>Profile</a>
 
       <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-transparent hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline flex"
         href="/addBalance">+ Add Balance</a>
