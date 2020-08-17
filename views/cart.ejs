@@ -1,47 +1,52 @@
-<div class="relative md:ml-64 py-6 px-3 w-full">
+<div class="relative md:ml-56 lg:ml-64 py-6 px-3 w-full">
   <div class="mx-auto max-w-6xl flex flex-col w-full px-4 md:py-12 md:px-8 text-gray-800">
     <h1 class="text-2xl lg:text-4xl font-bold mt-8 mb-4">Buy Stock</h1>
     <form action="/cart/buy" method="POST">
       <div class="w-full text-sm lg:text-base border-4">
       </div>
       <div
-        class="new grid grid-flow-col grid-cols-3 md:grid-cols-4 grid-rows-2 md:gap-4 bg-white shadow-md p-2 lg:p-6 text-center">
-        <div class="head text-xs text-left lg:text-lg font-bold uppercase">
+        class="new grid grid-flow-col grid-cols-3 md:grid-cols-4 grid-rows-2 grig-gap-0 md:gap-4 bg-white shadow-md p-2 lg:p-6 text-center">
+        <div class="text-xs text-left lg:text-lg font-bold uppercase flex items-center lg:items-start">
           Company Name
         </div>
-        <div class="head text-xs lg:text-lg font-bold uppercase">
-          <input class="text-sm font-medium text-left text-xs lg:text-lg w-full" value="<%= symbol %>"
-            name="companySymbol" id="companySymbol" readonly />
+        <div class="text-xs lg:text-lg font-bold flex items-center lg:items-start">
+          <div class="flex flex items-center justify-start w-full">
+            <img class="hidden lg:block h-8 mr-2" src="<%= logoSrc %> " alt="<%= companyName %>">
+            <p class="font-medium text-left text-xs md:text-sm lg:text-md w-full md:break-all"
+              name="companySymbol" id="companySymbol"><%= companyName %></p>
+          </div>
         </div>
-        <div class="hidden md:block head text-xs lg:text-lg font-bold uppercase">
+        <div
+          class="hidden md:block text-xs lg:text-lg font-bold uppercase md:flex md:items-center md:justify-center lg:items-start">
           Unit Price
         </div>
-        <div class="hidden md:block head text-xs lg:text-lg font-bold uppercase">
+        <div class="hidden md:block md:flex md:justify-center text-xs lg:text-lg font-bold uppercase">
           <input class="text-sm lg:text-center font-medium text-xs lg:text-lg w-full text-center"
             value="<%= latestPrice %>" name="stockPrice" id="stockPrice" readonly />
         </div>
-        <div class="md:hidden head text-xs font-semibold uppercase">
+        <div class="md:hidden text-xs text-center font-semibold uppercase flex items-center justify-center">
           Qty
         </div>
-        <div class="hidden md:block head text-xs lg:text-lg font-bold uppercase">
+        <div
+          class="hidden md:block  text-xs lg:text-lg font-bold uppercase md:flex md:items-center md:justify-center lg:items-start">
           Quantity
         </div>
-        <div class="head text-xs lg:text-lg font-bold uppercase">
-          <div class="h-10">
+        <div class=" text-xs lg:text-lg font-bold uppercase flex items-center justify-center">
+          <div class="h-8">
             <div class="relative flex flex-row w-full h-8">
               <input type="number" value="1" min=1 name="noOfStock" id="noOfStock"
                 class="w-full font-semibold text-center text-gray-700 bg-gray-200 outline-none focus:outline-none hover:text-black focus:text-black" />
             </div>
           </div>
         </div>
-        <div class="head text-xs lg:text-lg text-right font-bold uppercase">
+        <div class=" text-xs lg:text-lg text-right font-bold uppercase flex items-center justify-end lg:items-start">
           Total Price
         </div>
-        <div class="head text-xs lg:text-lg font-bold uppercase">
-          <p class="text-sm  font-medium text-right text-xs lg:text-lg break-words" id="totalPrice">
+        <div class=" text-xs lg:text-lg font-bold uppercase flex items-center justify-end">
+          <p class="text-xs md:text-sm  font-medium text-right text-xs lg:text-lg break-words" id="totalPrice">
             <span class="total-price">
               <%= latestPrice %>
-            </span>$
+            </span> $
           </p>
         </div>
       </div>
@@ -50,8 +55,7 @@
           class="block uppercase ml-0 md:ml-auto mt-4 shadow  bg-blue-800 hover:bg-indigo-700  focus:shadow-outline focus:outline-none text-white font-semibold text-xs lg:text-sm py-3 px-4 rounded">Back
           to Market</a>
         <button type='submit'
-          class="block uppercase mt-4 ml-4 shadow bg-yellow-500 hover:bg-yellow-600 focus:shadow-outline focus:outline-none text-white font-semibold text-xs lg:text-sm py-3 px-4 rounded">Proceed
-          to Checkout</button>
+          class="block uppercase mt-4 ml-4 shadow bg-yellow-500 hover:bg-yellow-600 focus:shadow-outline focus:outline-none text-black font-semibold text-xs lg:text-sm py-3 px-4 rounded"><span class="hidden md:inline-block">Proceed to</span> Checkout</button>
       </div>
     </form>
   </div>

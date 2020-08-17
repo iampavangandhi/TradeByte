@@ -5,6 +5,7 @@ const { ensureAuth } = require("../../middleware/auth");
 
 const User = require("../../models/User");
 const getPrice = require("../../helpers/getPrice");
+const getCompanyNameAndLogo = require("../../helpers/getCompanyNameAndLogo");
 
 // TODO
 // Stocks Cart Buy/Sell
@@ -16,9 +17,9 @@ const getPrice = require("../../helpers/getPrice");
 // @route   GET /cart/:symbol
 router.get("/:symbol", ensureAuth, async (req, res) => {
   const symbol = req.params.symbol;
-  const {latestPrice} = await getPrice(symbol);
-  res.status(200).render("cart", { layout: "layouts/app", symbol, latestPrice, href: '/market', avatar: req.user.image });
-
+  const { latestPrice } = await getPrice(symbol);
+  const { companyName, logoSrc } = await getCompanyNameAndLogo(symbol);
+  res.status(200).render("cart", { layout: "layouts/app", symbol, latestPrice, logoSrc, companyName, href: '/market', avatar: req.user.image });
 });
 
 // @desc    To buy
