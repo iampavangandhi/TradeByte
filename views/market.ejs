@@ -1,30 +1,111 @@
-<section class="text-gray-700 body-font md:pl-64 md:mx-auto">
-  <div class="container px-5 py-24 mx-auto md:px-auto">
-    <div class="flex flex-wrap -m-4">
-      <% for(var i=0; i < jsonData.length; i++) { %>
-
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a class="block relative h-48 rounded overflow-hidden">
-          <img
-            alt="ecommerce"
-            class="object-cover object-center w-full h-full block"
-            src="https://dummyimage.com/420x260"
-          />
-        </a>
-        <div class="mt-4">
-          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">
-            <%- jsonData[i]["Symbol"] %>
-          </h3>
-          <h2 class="text-gray-900 title-font text-lg font-medium">
-            <%- jsonData[i]["Company Name"] %>
-          </h2>
-          <a href="/view/<%- jsonData[i]["Symbol"] %>">VIEW</a>
-          <a href="/cart/<%- jsonData[i]["Symbol"] %>">BUY</a>
-          <p class="mt-1">$0.00</p>
+<section class="text-gray-700 body-font md:ml-64 md:mx-auto md:pl-8 md:pr-14 w-screen inline">
+    <div class="container px-5 py-24 mx-auto md:px-auto">
+        <div class="my-4 absolute-center">
+            <h4 class="text-gray-700 lg:text-6xl text-5xl font-semibold leading-none tracking-wider px-5">Favorite Stocks</h2>
         </div>
-      </div>
+        <div class="container px-5 py-16 mx-auto pl-4">
 
-      <% } %>
+            <div class="flex -m-4 inline-block overflow-x-auto whitespace-no-wrap">
+                <% for(var i=1; i < jsonData[0]["dataLast1"]; i++) { %>
+
+                    <!-- <div class="lg:w-1/4 md:w-1/2 p-4 min-w-54 inline"> -->
+                    <div class="inline p-4 m-4">
+
+                        <a class="block relative h-48 rounded overflow-hidden">
+                            <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/420x260" />
+
+                        </a>
+                        <div class="mt-4">
+                            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">
+                                <%- jsonData[i]["Symbol"] %>
+                            </h3>
+                            <h2 class="text-gray-900 title-font text-lg font-medium">
+                                <%- jsonData[i]["Company Name"] %>
+                            </h2>
+                            <button class="w-14 bg-white tracking-wide text-gray-700 font-bold rounded border-b-2 border-blue-500 hover:border-blue-600 hover:bg-blue-500 hover:text-white shadow-md py-2 px-2 inline-flex items-center">
+              <span class="mx-auto"><a href="/view/<%- jsonData[i]["Symbol"] %>">VIEW</a></span>
+            </button>
+                            <!-- <a href="/view/<%- jsonData[i][" Symbol "] %>">VIEW</a> -->
+                            <button class="w-32 bg-white tracking-wide text-gray-700 font-bold rounded border-b-2 border-green-400 hover:border-green-400 hover:bg-green-400 hover:text-white shadow-md py-2 px-2 inline-flex items-center">
+              <span class="mx-auto"><a href="/cart/<%- jsonData[i]["Symbol"] %>">ADD TO CART</a></span>
+
+            </button>
+                            <!-- <a href="/cart/<%- jsonData[i][" Symbol "] %>">ADD TO CART</a> -->
+                            <p class="mt-1">$0.00</p>
+                        </div>
+                    </div>
+
+
+                    <% } %>
+
+            </div>
+
+
+            <!-- genral stocks section -->
+            <div class="pr-10">
+                <div class="my-4 absolute-center pt-20">
+                    <h4 class="text-gray-700 lg:text-6xl text-5xl font-semibold leading-none tracking-wider px-5">Trending Stocks</h2>
+                </div>
+
+                <div class="flex -m-4 inline-block flex-wrap pt-10">
+                    <% for(var i=jsonData[0]["dataStart2"]; i < jsonData.length; i++) { %>
+
+                        <div class="lg:w-1/4 md:w-1/2 p-4 min-w-54 ">
+                            <!-- <div class="p-4 m-4"> -->
+
+                            <a class="block relative h-48 rounded overflow-hidden">
+                                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/420x260" />
+                                <!-- <div class="symbolicon object-cover object-center w-full h-full block text">
+                            <%- jsonData[i][" Symbol "] %>
+                        </div> -->
+                            </a>
+                            <div class="mt-4">
+                                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">
+                                    <%- jsonData[i]["Symbol"] %>
+                                </h3>
+                                <h2 class="text-gray-900 title-font text-lg font-medium">
+                                    <%- jsonData[i]["Company Name"] %>
+                                </h2>
+                                <button class="w-14 bg-white tracking-wide text-gray-700 font-bold rounded border-b-2 border-blue-500 hover:border-blue-600 hover:bg-blue-500 hover:text-white shadow-md py-2 px-2 inline-flex items-center">
+              <span class="mx-auto"><a href="/view/<%- jsonData[i]["Symbol"] %>">VIEW</a></span>
+            </button>
+                                <!-- <a href="/view/<%- jsonData[i][" Symbol "] %>">VIEW</a> -->
+                                <button class="w-32 bg-white tracking-wide text-gray-700 font-bold rounded border-b-2 border-green-400 hover:border-green-400 hover:bg-green-400 hover:text-white shadow-md py-2 px-2 inline-flex items-center">
+              <span class="mx-auto"><a href="/cart/<%- jsonData[i]["Symbol"] %>">ADD TO CART</a></span>
+
+            </button>
+                                <!-- <a href="/cart/<%- jsonData[i][" Symbol "] %>">ADD TO CART</a> -->
+                                <p class="mt-1">$0.00</p>
+                            </div>
+                        </div>
+
+
+                        <% } %>
+                </div>
+
+
+                <!-- pagination element -->
+                <div class="pt-10">
+                    <div class="flex justify-between">
+                        <button class="border border-teal-500 text-teal-500 block rounded-sm font-bold py-4 px-6 mr-2 flex items-center hover:bg-teal-500 hover:text-white">
+                <svg class="h-5 w-5 mr-2 fill-current" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-49 141 512 512" style="enable-background:new -49 141 512 512;" xml:space="preserve">
+                    <path id="XMLID_10_" d="M438,372H36.355l72.822-72.822c9.763-9.763,9.763-25.592,0-35.355c-9.763-9.764-25.593-9.762-35.355,0 l-115.5,115.5C-46.366,384.01-49,390.369-49,397s2.634,12.989,7.322,17.678l115.5,115.5c9.763,9.762,25.593,9.763,35.355,0 c9.763-9.763,9.763-25.592,0-35.355L36.355,422H438c13.808,0,25-11.193,25-25S451.808,372,438,372z"></path>
+                </svg>
+                Previous page
+            </button>
+                        <button class="border border-teal-500 bg-teal-500 text-white block rounded-sm font-bold py-4 px-6 ml-2 flex items-center">
+                Next page
+                <svg class="h-5 w-5 ml-2 fill-current" clasversion="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                     viewBox="-49 141 512 512" style="enable-background:new -49 141 512 512;" xml:space="preserve">
+                <path id="XMLID_11_" d="M-24,422h401.645l-72.822,72.822c-9.763,9.763-9.763,25.592,0,35.355c9.763,9.764,25.593,9.762,35.355,0
+                    l115.5-115.5C460.366,409.989,463,403.63,463,397s-2.634-12.989-7.322-17.678l-115.5-115.5c-9.763-9.762-25.593-9.763-35.355,0
+                    c-9.763,9.763-9.763,25.592,0,35.355l72.822,72.822H-24c-13.808,0-25,11.193-25,25S-37.808,422-24,422z"/>
+                </svg>
+            </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
+
 </section>
