@@ -16,8 +16,8 @@ const getPrice = require("../../helpers/getPrice");
 // @route   GET /cart/:symbol
 router.get("/:symbol", ensureAuth, async (req, res) => {
   const symbol = req.params.symbol;
-  const price = await getPrice(symbol);
-  res.status(200).render("cart", { layout: "layouts/app", symbol, price, href: '/market', avatar: req.user.image });
+  const {latestPrice} = await getPrice(symbol);
+  res.status(200).render("cart", { layout: "layouts/app", symbol, latestPrice, href: '/market', avatar: req.user.image });
 
 });
 
@@ -26,14 +26,11 @@ router.get("/:symbol", ensureAuth, async (req, res) => {
 router.post("/buy", ensureAuth, async (req, res) => {
   let data = req.body;
   let user = req.user;
-  let stockPrice = req.body.stockPrice;
-  let noOfStock = req.body.noOfStock;
-  let totalAmount = stockPrice * noOfStock;
+  let stockPrice = data.stockPrice;
+  let noOfStock = data.noOfStock;
+  let totalAmount = parseFloat(stockPrice * noOfStock).toFixed(4);
 
   try {
-    console.log(req.user);
-    console.log(req.body);
-    // req.body.user = req.user.id
     if (totalAmount > req.user.balance) {
       let ExtraBalance = totalAmount - req.user.balance;
       res.render("transaction", {
