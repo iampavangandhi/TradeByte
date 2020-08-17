@@ -1,9 +1,9 @@
-<style>
+<!-- <style>
     #menu-toggle:checked+#menu {
         display: block;
     }
-</style>
-<div class="bg-gray-200 min-h-screen pb-24">
+</style> -->
+<!-- <div class="bg-gray-200 min-h-screen pb-24"> -->
     <header class="px-6 bg-white flex flex-wrap items-center lg:py-0 py-2">
         <div class="flex-1 flex justify-between items-center font-black text-gray-700">
             <a href="#">LOGO</a>
@@ -47,17 +47,19 @@
         <ul class="flex border-b border-gray-300 text-sm font-medium text-gray-600 mt-3 px-6 md:px-0">
             <li class="mr-8 text-gray-900 border-b-2 border-gray-800"><a href="#_" class="py-4 inline-block">Profile
                     Info</a></li>
-            <li class="mr-8 hover:text-gray-900"><a href="#_" class="py-4 inline-block">Security</a></li>
             <li class="mr-8 hover:text-gray-900"><a href="#_" class="py-4 inline-block">Billing</a></li>
+            <li class="mr-8 hover:text-gray-900"><a href="#_" class="py-4 inline-block">Settings</a></li>
         </ul>
         <form action="{{ route('profile.save') }}" method="POST" enctype="multipart/form-data">
             <!-- @csrf -->
+            
             <div class="w-full bg-white rounded-lg mx-auto mt-8 flex overflow-hidden rounded-b-none">
                 <div class="w-1/3 bg-gray-100 p-8 hidden md:inline-block">
                     <h2 class="font-medium text-md text-gray-700 mb-4 tracking-wide">Profile Info</h2>
                     <p class="text-xs text-gray-500">Update your basic profile information such as Email Address, Name,
                         and Image.</p>
                 </div>
+                
                 <div class="md:w-2/3 w-full">
                     <div class="py-8 px-16 clearfix">
                         <label for="photo" class="text-sm text-gray-600 w-full block">Photo</label>
@@ -101,5 +103,15 @@
                     value="Save">
             </div>
         </form>
+            <form action="/profile/edit" class="" method="post">
+                <label for="fname">First name:</label><br>
+                <input type="text" name="fname"><br>
+                <!-- <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname"><br><br> -->
+                <input type="submit" value="Submit">
+            </form>
+
+
+
     </div>
 </div>

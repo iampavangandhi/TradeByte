@@ -8,21 +8,41 @@ const app = express();
 //desc Shows edit page
 //@route Get/profile/edit
 const getdb = require("./../../config/db");
-const {ensureAuth} = require("../../middleware/auth");
-const { mongo } = require("mongoose");
+const {
+    ensureAuth
+} = require("../../middleware/auth");
+const {
+    mongo
+} = require("mongoose");
 const getOverview = require("../../helpers/getOverview");
-const { route } = require("./profile");
+const {
+    route
+} = require("./profile");
 const User = require("../../models/User");
 
-router.use(express.urlencoded({ extended: true }));
+router.use(express.urlencoded({
+    extended: true
+}));
 router.use(express.json());
 
-router.get("/", ensureAuth, (req, res) => {
+router.get("/edit", ensureAuth, (req, res) => {
     res.render("edit");
 });
 
 router.post('/edit', (req, res) => {
-    console.log(req.body);
+    const userId = req.user._id;
+    console.log(userId);
+
+    User.findByIdAndUpdate(userId, { firstName: req.body.fname},{lastName: req.body.lastName} ,function(err, docs){
+        if(err){
+            console.log(err);
+        }else{
+            console.log("Updataed User", docs);
+        }
+    });
+
+    console.log(req.body.fname);
+
 });
 
 module.exports = router;

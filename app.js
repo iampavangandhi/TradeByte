@@ -92,8 +92,8 @@ app.use("/done", require("./routes/api/done"));
 app.use("/addBalance", require("./routes/api/addBalance"));
 app.use("/transaction", require("./routes/api/transaction"));
 app.use("/profile", require("./routes/api/profile"));
-app.use("/edit", require("./routes/api/edit"));
 app.use("/profile/", require("./routes/api/edit"));
+
 
 // Port: Love You 3000
 const PORT = process.env.PORT || 3000;
