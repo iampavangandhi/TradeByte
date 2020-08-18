@@ -2,25 +2,10 @@
 
 const express = require("express");
 const router = express.Router();
-const alpha = require("alphavantage")({ key: process.env.ALPHA_VANTAGE_KEY });
-
-var jsonData = [];
-const jsonData1 = require("../../config/data-compact.json");
-const jsonData2 = require("../../config/data-total.json");
 const { ensureAuth, ensureGuest } = require("../../middleware/auth");
 
-const dataCnt1 = jsonData1.length;
-const dataCnt2 = jsonData2.length;
-const dataLast1 = dataCnt1 + 1;
-const dataStart2 = dataCnt1 + 1;
-
-jsonData.push({ data1: dataCnt1, data2: dataCnt2, dataLast1: dataLast1, dataStart2: dataStart2 })
-for (var i = 0; i < dataCnt1; i++) {
-    jsonData.push(jsonData1[i]);
-};
-for (var i = 0; i < dataCnt2; i++) {
-    jsonData.push(jsonData2[i]);
-};
+const compactData = require("../../config/data-compact.json");
+const totalData = require("../../config/data-total.json");
 
 // TODO
 // Implement Stocks Search
@@ -29,9 +14,42 @@ for (var i = 0; i < dataCnt2; i++) {
 // @desc     Market page
 // @route    GET /Market
 // @access   Privat
-router.get("/", ensureAuth, async(req, res) => {
-    res.status(200).render("market", { layout: "layouts/app", jsonData, href: '/market', avatar: req.user.image });
+router.get("/", ensureAuth, async (req, res) => {
+  let min = 0;
+  let max = 75;
+
+  res.status(200).render("market", {
+    layout: "layouts/app",
+    compactData,
+    totalData,
+    min,
+    max,
+    href: "/market",
+    avatar: req.user.image,
+  });
 });
 
+// @desc     Market page
+// @route    GET /Market/:page
+// @access   Private
+router.get("/:page", ensureAuth, async (req, res) => {
+  let page = req.params.page - 1;
+  let min = page * 75;
+  let max = page * 75 + 75;
+
+  if (page <= 0 || page >= 39) {
+    res.status(200).redirect("/market");
+  } else {
+    res.status(200).render("market", {
+      layout: "layouts/app",
+      compactData,
+      totalData,
+      min,
+      max,
+      href: "/market",
+      avatar: req.user.image,
+    });
+  }
+});
 
 module.exports = router;
