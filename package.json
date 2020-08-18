@@ -4,7 +4,7 @@
   "description": "Stocks Trading Simulation WebApp",
   "main": "app.js",
   "scripts": {
-    "build:css": "postcss style/tailwind.css -o ./public/css/style.css",
+    "build:css": "postcss public/css/tailwind.css -o public/css/style.css",
     "start": "concurrently \"cross-env NODE_ENV=production node app\" \"npm:build:css\"",
     "dev": "concurrently \"cross-env NODE_ENV=development nodemon app\" \"npm:build:css\""
   },
