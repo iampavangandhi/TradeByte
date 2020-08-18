@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS */
+/* Main CSS */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    background-color: rgb(226, 232, 240);
+}
+
+.chartjs-container {
+    position: relative;
+    margin: auto;
+    height: 75vh;
+    width: 75vw;
+}
+
+.symbolicon {
+    font-size: 72px;
+    background: -webkit-linear-gradient(#eee, #333);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
