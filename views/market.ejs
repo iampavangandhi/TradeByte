@@ -1,9 +1,9 @@
-<section class="text-gray-700 body-font md:ml-64 md:mx-auto md:pl-8 md:pr-14 w-screen inline">
+<section class="text-gray-700 body-font md:ml-56 lg:ml-64 md:mx-auto md:pr-14 w-screen inline">
     <div class="container px-5 py-10 mx-auto md:px-auto">
         <div class="my-4 absolute-center">
             <h4 class="text-gray-700 lg:text-6xl text-5xl font-semibold leading-none tracking-wider px-5">Favorite Stocks</h2>
         </div>
-        <div class="container px-5 py-16 mx-auto pl-4">
+        <div class="container py-16 mx-auto">
 
             <div class="flex -m-4 inline-block overflow-x-auto whitespace-no-wrap">
                 <% for(var i=0; i < compactData.length; i++) { %>
@@ -40,17 +40,17 @@
 
 
             <!-- genral stocks section -->
-            <div class="pr-12">
+            <div class="px-auto">
                 <div class="my-4 absolute-center pt-20">
                     <h4 class="text-gray-700 lg:text-6xl text-5xl font-semibold leading-none tracking-wider px-5">Trending Stocks</h2>
                 </div>
 
-                <div class="md:flex -m-4 inline-block flex-wrap pt-10">
+                <div class="md:flex -m-4 inline-block mx-auto w-full flex-wrap pt-10">
                     <% for(var i=min; i < max; i++) { %>
 
-                        <div class="lg:w-1/4 md:w-1/2 p-4 w-54">
-                                    <div class="py-6 max-w-sm rounded overflow-hidden shadow-lg hover:bg-white transition duration-500 bg-white ">
-                                        <div class="space-y-10">
+                        <div class="lg:w-1/4 md:w-1/2 p-4 w-54 flex justify-center">
+                                    <div class="flex items-center justify-center py-6 min-h-full w-full rounded overflow-hidden shadow-lg hover:bg-white transition duration-500 bg-white ">
+                                        <div class="space-y-10 w-full">
                                             <div class="py-2 px-4 md:px-10">
                                                 <div class="space-y-5">
                                                     <div class="font-bold text-2xl text-center mb-2">
@@ -59,8 +59,8 @@
                                                     <p class="text-gray-700 text-center text-base">
                                                         <%- totalData[i]["Company Name"] %>
                                                     </p>
-<div class="flex justify-between px-6 md:px-2">
-                                                    <button class="w-14 bg-white tracking-wide text-gray-700 font-bold rounded border-b-2 border-blue-500 hover:border-blue-600 hover:bg-blue-500 hover:text-white shadow-md py-2 px-2 inline-flex items-center">
+<div class="flex justify-around px-6 md:px-2 w-2/3 mx-auto">
+                                                    <button class="mr-1 w-14 bg-white tracking-wide text-gray-700 font-bold rounded border-b-2 border-blue-500 hover:border-blue-600 hover:bg-blue-500 hover:text-white shadow-md py-2 px-2 inline-flex items-center">
                                                     <span class="mx-auto"><a href="/view/<%- totalData[i]["Symbol"] %>">VIEW</a></span>
                                                   </button>
 
