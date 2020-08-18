@@ -33,7 +33,12 @@ router.post('/edit', (req, res) => {
     const userId = req.user._id;
     console.log(userId);
 
-    User.findByIdAndUpdate(userId, { firstName: req.body.fname},{lastName: req.body.lastName} ,function(err, docs){
+    User.findByIdAndUpdate(userId,{
+        displayName: req.body.userName,
+        firstName : req.body.fname,
+        lastName: req.body.Lname,
+
+    } ,function(err, docs){
         if(err){
             console.log(err);
         }else{
