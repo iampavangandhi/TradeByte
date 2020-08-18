@@ -1,9 +1,5 @@
 [
   {
-    "Company Name": "iShares MSCI All Country Asia Information Technology Index Fund",
-    "Symbol": "AAIT"
-  },
-  {
     "Company Name": "American Airlines Group, Inc.",
     "Symbol": "AAL"
   },
@@ -30,10 +26,6 @@
   {
     "Company Name": "Atlas Air Worldwide Holdings",
     "Symbol": "AAWW"
-  },
-  {
-    "Company Name": "iShares MSCI All Country Asia ex Japan Index Fund",
-    "Symbol": "AAXJ"
   },
   {
     "Company Name": "Aoxin Tianli Group, Inc.",
@@ -166,14 +158,6 @@
   {
     "Company Name": "Acura Pharmaceuticals, Inc.",
     "Symbol": "ACUR"
-  },
-  {
-    "Company Name": "iShares MSCI ACWI Index Fund",
-    "Symbol": "ACWI"
-  },
-  {
-    "Company Name": "iShares MSCI ACWI ex US Index Fund",
-    "Symbol": "ACWX"
   },
   {
     "Company Name": "Acxiom Corporation",
