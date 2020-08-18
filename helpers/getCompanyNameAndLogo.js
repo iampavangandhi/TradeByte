@@ -9,7 +9,6 @@ module.exports = async function getCompanyNameAndLogo(symbol) {
         )
         .then(async (resp) => {
             let companyName = resp.data.Name;
-            console.log(companyName);
             let logoSrc = await axios.get(`https://autocomplete.clearbit.com/v1/companies/suggest?query=:${companyName.split(' ')[0]}`).then((resp) => resp.data[0].logo).catch(err => console.log(err));
             return { companyName, logoSrc };
         })
