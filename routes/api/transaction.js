@@ -23,7 +23,7 @@ router.put("/confirm", ensureAuth, async (req, res) => {
       }
     );
     console.log(updatedUser);
-    res.redirect("/");
+    res.redirect("/done");
   } catch (err) {
     console.error(err);
     res.render("error/500");
