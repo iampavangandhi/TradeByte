@@ -4,9 +4,9 @@
   "description": "Stocks Trading Simulation WebApp",
   "main": "app.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=production node app",
     "build:css": "postcss style/tailwind.css -o ./public/css/style.css",
-    "dev": "cross-env NODE_ENV=development npm run build:css && nodemon app"
+    "start": "cross-env NODE_ENV=production node app",
+    "dev": "concurrently \"cross-env NODE_ENV=development nodemon app\" \"npm:build:css\""
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,7 @@
     "alphavantage": "^2.1.0",
     "autoprefixer": "^9.8.6",
     "axios": "^0.19.2",
+    "concurrently": "^5.3.0",
     "connect-mongo": "^3.2.0",
     "cross-env": "^7.0.2",
     "date-fns": "^2.15.0",
