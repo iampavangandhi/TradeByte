@@ -45,7 +45,7 @@ router.post('/edit', (req, res) => {
             console.log("Updataed User", docs);
         }
     });
-
+    res.render("edit");
     console.log(req.body.fname);
 
 });
