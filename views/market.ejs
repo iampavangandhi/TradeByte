@@ -6,7 +6,7 @@
         <div class="container px-5 py-16 mx-auto pl-4">
 
             <div class="flex -m-4 inline-block overflow-x-auto whitespace-no-wrap">
-                <% for(var i=1; i < jsonData[0]["dataLast1"]; i++) { %>
+                <% for(var i=0; i < compactData.length; i++) { %>
 
                     <!-- <div class="lg:w-1/4 md:w-1/2 p-4 min-w-54 inline"> -->
                     <div class="inline p-4 m-4">
@@ -15,18 +15,18 @@
                                 <div class="py-2 px-10">
                                     <div class="space-y-5">
                                         <div class="font-bold text-2xl text-center mb-2">
-                                            <%- jsonData[i]["Symbol"] %>
+                                            <%- compactData[i]["Symbol"] %>
                                         </div>
                                         <p class="text-gray-700 text-center text-base">
-                                            <%- jsonData[i]["Company Name"] %>
+                                            <%- compactData[i]["Company Name"] %>
                                         </p>
 
                                         <button class="w-14 bg-white tracking-wide text-gray-700 font-bold rounded border-b-2 border-blue-500 hover:border-blue-600 hover:bg-blue-500 hover:text-white shadow-md py-2 px-2 inline-flex items-center">
-                                        <span class="mx-auto"><a href="/view/<%- jsonData[i]["Symbol"] %>">VIEW</a></span>
+                                        <span class="mx-auto"><a href="/view/<%- compactData[i]["Symbol"] %>">VIEW</a></span>
                                       </button>
 
                                         <button class="w-32 bg-white tracking-wide text-gray-700 font-bold rounded border-b-2 border-green-400 hover:border-green-400 hover:bg-green-400 hover:text-white shadow-md py-2 px-2 inline-flex items-center">
-                                        <span class="mx-auto"><a href="/cart/<%- jsonData[i]["Symbol"] %>">BUY</a></span>
+                                        <span class="mx-auto"><a href="/cart/<%- compactData[i]["Symbol"] %>">BUY</a></span>
                                 </div>
                             </div>
                         </div>
@@ -46,7 +46,7 @@
                 </div>
 
                 <div class="md:flex -m-4 inline-block flex-wrap pt-10">
-                    <% for(var i=jsonData[0]["dataStart2"]; i < jsonData.length; i++) { %>
+                    <% for(var i=min; i < max; i++) { %>
 
                         <div class="lg:w-1/4 md:w-1/2 p-4 w-54">
                                     <div class="py-6 max-w-sm rounded overflow-hidden shadow-lg hover:bg-white transition duration-500 bg-white ">
@@ -54,18 +54,18 @@
                                             <div class="py-2 px-4 md:px-10">
                                                 <div class="space-y-5">
                                                     <div class="font-bold text-2xl text-center mb-2">
-                                                        <%- jsonData[i]["Symbol"] %>
+                                                        <%- totalData[i]["Symbol"] %>
                                                     </div>
                                                     <p class="text-gray-700 text-center text-base">
-                                                        <%- jsonData[i]["Company Name"] %>
+                                                        <%- totalData[i]["Company Name"] %>
                                                     </p>
 <div class="flex justify-between px-6 md:px-2">
                                                     <button class="w-14 bg-white tracking-wide text-gray-700 font-bold rounded border-b-2 border-blue-500 hover:border-blue-600 hover:bg-blue-500 hover:text-white shadow-md py-2 px-2 inline-flex items-center">
-                                                    <span class="mx-auto"><a href="/view/<%- jsonData[i]["Symbol"] %>">VIEW</a></span>
+                                                    <span class="mx-auto"><a href="/view/<%- totalData[i]["Symbol"] %>">VIEW</a></span>
                                                   </button>
 
                                         <button class="w-24 pl-2 bg-white tracking-wide text-gray-700 font-bold rounded border-b-2 border-green-400 hover:border-green-400 hover:bg-green-400 hover:text-white shadow-md py-2 px-2 inline-flex items-center">
-                                                    <span class="mx-auto"><a href="/cart/<%- jsonData[i]["Symbol"] %>">BUY</a></span>
+                                                    <span class="mx-auto"><a href="/cart/<%- totalData[i]["Symbol"] %>">BUY</a></span>
                                         </button>
                                     </div>
                                 </div>
@@ -84,13 +84,13 @@
         <!-- pagination element -->
         <div class="pt-10">
             <div class="flex justify-between">
-                <button class="border border-teal-500 text-teal-500 block rounded-sm font-bold py-4 px-6 mr-2 flex items-center hover:bg-teal-500 hover:text-white">
+                <button id="prev" class="prev border border-teal-500 text-teal-500 block rounded-sm font-bold py-4 px-6 mr-2 flex items-center hover:bg-teal-500 hover:text-white">
                 <svg class="h-5 w-5 mr-2 fill-current" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-49 141 512 512" style="enable-background:new -49 141 512 512;" xml:space="preserve">
                     <path id="XMLID_10_" d="M438,372H36.355l72.822-72.822c9.763-9.763,9.763-25.592,0-35.355c-9.763-9.764-25.593-9.762-35.355,0 l-115.5,115.5C-46.366,384.01-49,390.369-49,397s2.634,12.989,7.322,17.678l115.5,115.5c9.763,9.762,25.593,9.763,35.355,0 c9.763-9.763,9.763-25.592,0-35.355L36.355,422H438c13.808,0,25-11.193,25-25S451.808,372,438,372z"></path>
                 </svg>
                 Previous page
             </button>
-                <button class="border border-teal-500 bg-teal-500 text-white block rounded-sm font-bold py-4 px-6 ml-2 flex items-center">
+                <button id="next" class="next border border-teal-500 bg-teal-500 text-white block rounded-sm font-bold py-4 px-6 ml-2 flex items-center">
                 Next page
                 <svg class="h-5 w-5 ml-2 fill-current" clasversion="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                      viewBox="-49 141 512 512" style="enable-background:new -49 141 512 512;" xml:space="preserve">
@@ -106,3 +106,39 @@
     </div>
 
 </section>
+<script>
+    var prev = document.getElementById("prev").addEventListener("click", prevPage);
+    var next = document.getElementById("next").addEventListener("click", nextPage);
+
+    function prevPage() {
+        var url = window.location.href;
+        var pageNo = url.slice(url.length - 1, url.length);
+        var pageUrl = url.slice(0, url.length - 1);
+
+        if (pageNo == "t") {
+
+        } else if (pageNo == "/") {
+
+        } else {
+            window.location.href = pageUrl + (parseInt(pageNo) - 1);
+        }
+    }
+
+    function nextPage() {
+
+        if (window.location.pathname !== "/market/39") {
+            var url = window.location.href;
+            var pageNo = url.slice(url.length - 1, url.length) || 0;
+            var pageUrl = url.slice(0, url.length - 1);
+
+            if (pageNo == "t" ){
+                window.location.href = window.location.href + "/2"
+            } else if (pageNo == "/") {
+                window.location.href = window.location.href + "2"
+            } else {
+                window.location.href = pageUrl + (parseInt(pageNo) + 1);
+            }
+        }
+    }
+
+</script>
