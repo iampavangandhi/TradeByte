@@ -1,9 +1,7 @@
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 <div @click.away="open = false"
-  class="flex flex-col w-full md:w-56 lg:w-64 text-gray-700 bg-white flex-shrink-0 md:min-h-full md:fixed md:left-0 md:top-0 overflow-y-auto"
+  class="flex flex-col w-full md:w-56 lg:w-64 text-gray-700 bg-white flex-shrink-0 md:h-screen  md:z-50 md:fixed md:left-0 md:top-0"
   x-data="{ open: false }">
-  <div class="container rerelative flex flex-col">
-    <div class="container ">
       <div class="flex-shrink-0 px-6 py-4 flex flex-row items-center justify-between">
         <h1 class="font-bold uppercase border-b border-gray-100 w-full text-center">
           <a href="/" class="hover:text-gray-900 tracking-widest text-2xl md:text-2xl lg:text-3xl pb-2 pt-32">Tradebyte</a>
@@ -57,5 +55,3 @@
         </div>
       </nav>
     </div>
-  </div>
-</div>
