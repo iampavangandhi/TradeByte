@@ -82,7 +82,7 @@ app.use(function (req, res, next) {
 });
 
 // Static folder
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "/public")));
 
 // Routes
 app.use("/", require("./routes/api/index"));
