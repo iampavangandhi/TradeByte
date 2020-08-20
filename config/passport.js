@@ -13,11 +13,14 @@ module.exports = function (passport) {
         callbackURL: "/auth/google/callback",
       },
       async (accessToken, refreshToken, profile, done) => {
+        console.log(profile.emails[0].value);
         const newUser = {
           googleId: profile.id,
           displayName: profile.displayName,
           firstName: profile.name.givenName,
           lastName: profile.name.familyName,
+          email: profile.emails[0].value,
+          password: "google-oauth-MOGicvVFYPzk9O7Y1vAo",
           image: profile.photos[0].value,
           balance: 10000,
         };

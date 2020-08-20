@@ -29,6 +29,9 @@ connectDB();
 // App init
 const app = express();
 
+// Cache Fix
+app.disable("etag");
+
 // Body parser
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
