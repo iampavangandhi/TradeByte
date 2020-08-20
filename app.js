@@ -84,6 +84,7 @@ app.use(express.static(path.join(__dirname, "public")));
 // Routes
 app.use("/", require("./routes/api/index"));
 app.use("/auth", require("./routes/api/auth"));
+app.use("/user", require("./routes/api/user"));
 app.use("/portfolio", require("./routes/api/portfolio"));
 app.use("/market", require("./routes/api/market"));
 app.use("/view", require("./routes/api/view"));
