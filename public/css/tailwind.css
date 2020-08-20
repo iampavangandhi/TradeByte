@@ -1,7 +1,4 @@
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /* Custom CSS */
 /* Main CSS */
 
@@ -23,6 +20,8 @@ body {
     width: 75vw;
 }
 
+@tailwind components;
+
 .symbolicon {
     font-size: 72px;
     background: -webkit-linear-gradient(#eee, #333);
@@ -30,3 +29,15 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+.min-w{
+    min-width: 400px;
+}
+
+@media (max-width:400px){
+    .min-w{
+        min-width: 300px;
+    }
+}
+
+@tailwind utilities;

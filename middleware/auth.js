@@ -5,7 +5,8 @@ module.exports = {
     if (req.isAuthenticated()) {
       return next();
     } else {
-      res.redirect("/");
+      req.flash('error_msg', 'Please log in to view that resource');
+      res.redirect('/');
     }
   },
   ensureGuest: function (req, res, next) {
