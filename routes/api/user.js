@@ -8,12 +8,15 @@ const { ensureGuest } = require("../../middleware/auth");
 // Load User Model
 const User = require("../../models/User");
 
-// Sign Up Page
+// @desc     Sign Up Page
+// @route    GET /user/signup
+// @access   Public
 router.get('/signup', ensureGuest, (req, res) => {
     res.status(200).render('signup', { layout: 'layouts/login' })
 })
 
-// Submit Sign Up Form
+// @desc     Submit Sign Up Form
+// @route    GET /user/signup
 router.post('/signup', (req, res) => {
     const { firstName, lastName, password1, password2, email } = req.body;
     let errors = [];
@@ -62,6 +65,8 @@ router.post('/signup', (req, res) => {
     }
 })
 
+// @desc     Submit Sign In Form
+// @route    GET /user/signin
 router.post('/signin', (req, res, next) => {
     passport.authenticate('local', {
         successRedirect: '/portfolio',
