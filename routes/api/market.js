@@ -13,7 +13,7 @@ const totalData = require("../../config/data-total.json");
 
 // @desc     Market page
 // @route    GET /Market
-// @access   Privat
+// @access   Private
 router.get("/", ensureAuth, async (req, res) => {
   let min = 0;
   let max = 75;
