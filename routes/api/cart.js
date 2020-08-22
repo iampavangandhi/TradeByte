@@ -45,6 +45,8 @@ router.post("/buy", ensureAuth, async (req, res) => {
     if (totalAmount > req.user.balance) {
       let ExtraBalance = totalAmount - req.user.balance;
       res.render("transaction", {
+        data,
+        totalAmount,
         ExtraBalance,
         message: "Insufficent Balance",
       });
@@ -53,6 +55,7 @@ router.post("/buy", ensureAuth, async (req, res) => {
         data,
         user,
         totalAmount,
+        stockPrice,
         message: "Order Review",
       });
     }
