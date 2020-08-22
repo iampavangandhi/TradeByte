@@ -11,11 +11,7 @@ module.exports = {
           100: '#E2E2D5',
           200: '#888883',
         },
-
-
         // colors according to design 400->blue 200->red 500->green
-
-
         tempc: {
           100: '#365088',
           200: '#E93434',
