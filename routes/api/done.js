@@ -8,10 +8,7 @@ const { ensureAuth, ensureGuest } = require("../../middleware/auth");
 // @route    GET /done
 // @access   Private
 router.get("/", ensureAuth, (req, res) => {
-    res.status(200)
-        .render("done");
+  res.status(200).render("done");
 });
-
-
 
 module.exports = router;

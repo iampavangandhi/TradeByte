@@ -70,7 +70,7 @@ router.get("/:symbol", ensureAuth, async (req, res) => {
 
       res.status(200).render("view", {
         layout: "layouts/app",
-        href: '/market',
+        href: "/market",
         avatar: req.user.image,
         symbol,
         data,

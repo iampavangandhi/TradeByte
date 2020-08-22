@@ -20,7 +20,8 @@ module.exports = function (passport) {
           firstName: profile.name.givenName,
           lastName: profile.name.familyName,
           email: profile.emails[0].value,
-          password: "google-oauth-MOGicvVFYPzk9O7Y1vAo",
+          password:
+            process.env.OAUTH_PASS || "google-oauth-MOGicvVFYPzk9O7Y1vAo",
           image: profile.photos[0].value,
           balance: 10000,
         };
