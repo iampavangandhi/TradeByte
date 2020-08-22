@@ -21,13 +21,13 @@ router.get(
   }
 );
 
-router.post('/signin', (req, res, next) => {
-  passport.authenticate('local', {
-      successRedirect: '/portfolio',
-      failureRedirect: '/',
-      failureFlash: true
-  })(req, res, next)
-})
+router.post("/signin", (req, res, next) => {
+  passport.authenticate("local", {
+    successRedirect: "/portfolio",
+    failureRedirect: "/",
+    failureFlash: true,
+  })(req, res, next);
+});
 
 // @desc    Logout user
 // @route   /auth/logout

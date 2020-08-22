@@ -1,74 +1,127 @@
 <div class="relative md:ml-56 lg:ml-64 py-6 px-3 w-full">
-  <div class="mx-auto max-w-6xl flex flex-col w-full px-4 md:py-12 md:px-8 text-gray-800">
+  <div
+    class="mx-auto max-w-6xl flex flex-col w-full px-4 md:py-12 md:px-8 text-gray-800"
+  >
     <form action="/cart/buy" method="POST">
-      <h1 class="text-2xl lg:text-4xl font-bold mt-8 mb-4 flex">Buy Stock :<input class="bg-gray-300 max-w-sm w-24 ml-2"
-          type="text" readonly value="<%= symbol %>" id="companySymbol" name="companySymbol" /></h1>
-      <div class="w-full text-sm lg:text-base border-4">
-      </div>
+      <h1 class="text-2xl lg:text-4xl font-bold mt-8 mb-4 flex">
+        Buy Stock :<input
+          class="bg-gray-300 max-w-sm w-24 ml-2"
+          type="text"
+          readonly
+          value="<%= symbol %>"
+          id="companySymbol"
+          name="companySymbol"
+        />
+      </h1>
+      <div class="w-full text-sm lg:text-base border-4"></div>
       <div
-        class="new grid grid-flow-col grid-cols-3 md:grid-cols-4 grid-rows-2 grig-gap-0 md:gap-4 lg:grid-rows-3 bg-white shadow-md p-2 lg:p-6 text-center">
-        <div class="text-xs text-left lg:text-lg font-bold uppercase flex items-center lg:justify-center">
+        class="new grid grid-flow-col grid-cols-3 md:grid-cols-4 grid-rows-2 grig-gap-0 md:gap-4 lg:grid-rows-3 bg-white shadow-md p-2 lg:p-6 text-center"
+      >
+        <div
+          class="text-xs text-left lg:text-lg font-bold uppercase flex items-center lg:justify-center"
+        >
           Company Name
         </div>
-        <div class="text-xs lg:text-lg font-bold flex items-center lg:items-center lg:row-span-2">
+        <div
+          class="text-xs lg:text-lg font-bold flex items-center lg:items-center lg:row-span-2"
+        >
           <div class="flex flex-col items-center justify-center w-full">
-            <img class="hidden lg:block h-16" src="<%= logoSrc %> " alt="<%= companyName %>">
-            <p class="font-medium text-left text-xs md:text-sm lg:text-center lg:text-lg w-full md:break-all">
-              <%= companyName %></p>
+            <img
+              class="hidden lg:block h-16"
+              src="<%= logoSrc %> "
+              alt="<%= companyName %>"
+            />
+            <p
+              class="font-medium text-left text-xs md:text-sm lg:text-center lg:text-lg w-full md:break-all"
+            >
+              <%= companyName %>
+            </p>
           </div>
         </div>
         <div
-          class="hidden md:block text-xs lg:text-lg font-bold uppercase md:flex md:items-center md:justify-center lg:items-start">
+          class="hidden md:block text-xs lg:text-lg font-bold uppercase md:flex md:items-center md:justify-center lg:items-start"
+        >
           Unit Price
         </div>
-        <div class="hidden md:block md:flex md:justify-center text-xs lg:text-lg font-bold uppercase lg:row-span-2">
-          <input class="text-sm lg:text-center font-medium text-xs lg:text-lg w-full text-center"
-            value="<%= latestPrice %>" name="stockPrice" id="stockPrice" readonly />
+        <div
+          class="hidden md:block md:flex md:justify-center text-xs lg:text-lg font-bold uppercase lg:row-span-2"
+        >
+          <input
+            class="text-sm lg:text-center font-medium text-xs lg:text-lg w-full text-center"
+            value="<%= latestPrice %>"
+            name="stockPrice"
+            id="stockPrice"
+            readonly
+          />
         </div>
-        <div class="md:hidden text-xs text-center font-semibold uppercase flex items-center justify-center">
+        <div
+          class="md:hidden text-xs text-center font-semibold uppercase flex items-center justify-center"
+        >
           Qty
         </div>
         <div
-          class="hidden md:block  text-xs lg:text-lg font-bold uppercase md:flex md:items-center md:justify-center lg:items-start">
+          class="hidden md:block text-xs lg:text-lg font-bold uppercase md:flex md:items-center md:justify-center lg:items-start"
+        >
           Quantity
         </div>
-        <div class=" text-xs lg:text-lg font-bold uppercase flex items-center justify-center lg:row-span-2">
+        <div
+          class="text-xs lg:text-lg font-bold uppercase flex items-center justify-center lg:row-span-2"
+        >
           <div class="h-8">
             <div class="relative flex flex-row w-full h-8">
-              <input type="number" value="1" min=1 name="noOfStock" id="noOfStock"
-                class="w-full font-semibold text-center text-gray-700 bg-gray-200 outline-none focus:outline-none hover:text-black focus:text-black" />
+              <input
+                type="number"
+                value="1"
+                min="1"
+                name="noOfStock"
+                id="noOfStock"
+                class="w-full font-semibold text-center text-gray-700 bg-gray-200 outline-none focus:outline-none hover:text-black focus:text-black"
+              />
             </div>
           </div>
         </div>
-        <div class=" text-xs lg:text-lg text-right font-bold uppercase flex items-center justify-end lg:items-start">
+        <div
+          class="text-xs lg:text-lg text-right font-bold uppercase flex items-center justify-end lg:items-start"
+        >
           Total Price
         </div>
-        <div class=" text-xs lg:text-lg font-bold uppercase flex items-center justify-end lg:row-span-2">
-          <p class="text-xs md:text-sm  font-medium text-right text-xs lg:text-lg break-words" id="totalPrice">
+        <div
+          class="text-xs lg:text-lg font-bold uppercase flex items-center justify-end lg:row-span-2"
+        >
+          <p
+            class="text-xs md:text-sm font-medium text-right text-xs lg:text-lg break-words"
+            id="totalPrice"
+          >
             <span class="total-price">
               <%= latestPrice %>
-            </span> $
+            </span>
+            $
           </p>
         </div>
       </div>
       <div class="flex justify-end w-full items-center">
-        <a href="/market"
-          class="block uppercase ml-0 md:ml-auto mt-4 shadow  bg-blue-800 hover:bg-indigo-700  focus:shadow-outline focus:outline-none text-white font-semibold text-xs lg:text-sm py-3 px-4 rounded">Back
-          to Market</a>
-        <button type='submit'
-          class="block uppercase mt-4 ml-4 shadow bg-yellow-500 hover:bg-yellow-600 focus:shadow-outline focus:outline-none text-black font-semibold text-xs lg:text-sm py-3 px-4 rounded"><span
-            class="hidden md:inline-block">Proceed to</span> Checkout</button>
+        <a
+          href="/market"
+          class="block uppercase ml-0 md:ml-auto mt-4 shadow bg-blue-800 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white font-semibold text-xs lg:text-sm py-3 px-4 rounded"
+          >Back to Market</a
+        >
+        <button
+          type="submit"
+          class="block uppercase mt-4 ml-4 shadow bg-yellow-500 hover:bg-yellow-600 focus:shadow-outline focus:outline-none text-black font-semibold text-xs lg:text-sm py-3 px-4 rounded"
+        >
+          <span class="hidden md:inline-block">Proceed to</span> Checkout
+        </button>
       </div>
     </form>
   </div>
 </div>
 <script>
-  const stockPrice = document.querySelector('#stockPrice')
-  const noOfStock = document.querySelector('#noOfStock')
-  const totalPrice = document.querySelector('.total-price')
-  noOfStock.addEventListener('change', (e) => {
-    e.preventDefault()
-    const val = e.target.value
-    totalPrice.textContent = parseFloat(stockPrice.value * val).toFixed(4)
-  })
+  const stockPrice = document.querySelector("#stockPrice");
+  const noOfStock = document.querySelector("#noOfStock");
+  const totalPrice = document.querySelector(".total-price");
+  noOfStock.addEventListener("change", (e) => {
+    e.preventDefault();
+    const val = e.target.value;
+    totalPrice.textContent = parseFloat(stockPrice.value * val).toFixed(4);
+  });
 </script>
