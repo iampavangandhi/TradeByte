@@ -10,11 +10,10 @@ const User = require("../../models/User");
 // @access   Private
 router.get("/", ensureAuth, (req, res) => {
   let user = req.user;
-  res.status(200).render("addBalance", {
-      layout: "layouts/app",
-      href: "/addBalance",
+  res.status(200).render("addBalance"),
+    {
       user,
-    });
+    };
 });
 
 // TODO
