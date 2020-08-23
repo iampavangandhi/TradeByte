@@ -38,8 +38,9 @@ router.put("/confirm", ensureAuth, async (req, res) => {
       <p>Have a great Day!</p>
     `, // html body
     };
+    console.log(updatedUser);
 
-    emailHelper.sendEmail(options)
+    emailHelper.sendEmail(options);
 
     res.redirect("/done");
   } catch (err) {

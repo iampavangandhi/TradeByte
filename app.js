@@ -16,7 +16,7 @@ const session = require("express-session");
 const mongoose = require("mongoose");
 const MongoStore = require("connect-mongo")(session);
 const connectDB = require("./config/db");
-const flash = require('connect-flash');
+const flash = require("connect-flash");
 
 // Load config
 dotenv.config({ path: "./config/config.env" });
@@ -78,14 +78,14 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Connect Flash
-app.use(flash())
+app.use(flash());
 
 // Set Global variables
 app.use(function (req, res, next) {
   res.locals.user = req.user || null;
-  res.locals.success_msg = req.flash('success_msg');
-  res.locals.error_msg = req.flash('error_msg');
-  res.locals.error = req.flash('error');
+  res.locals.success_msg = req.flash("success_msg");
+  res.locals.error_msg = req.flash("error_msg");
+  res.locals.error = req.flash("error");
   next();
 });
 

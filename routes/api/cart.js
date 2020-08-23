@@ -19,17 +19,15 @@ router.get("/:symbol", ensureAuth, async (req, res) => {
   const symbol = req.params.symbol;
   const { latestPrice } = await getPrice(symbol);
   const { companyName, logoSrc } = await getCompanyNameAndLogo(symbol);
-  res
-    .status(200)
-    .render("cart", {
-      layout: "layouts/app",
-      symbol,
-      latestPrice,
-      logoSrc,
-      companyName,
-      href: "/market",
-      avatar: req.user.image,
-    });
+  res.status(200).render("cart", {
+    layout: "layouts/app",
+    symbol,
+    latestPrice,
+    logoSrc,
+    companyName,
+    href: "/market",
+    avatar: req.user.image,
+  });
 });
 
 // @desc    To buy
