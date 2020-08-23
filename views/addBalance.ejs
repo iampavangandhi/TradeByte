@@ -1,27 +1,26 @@
-<h1>ADD BALANCE</h1>
-<hr />
-<h3>Your Current Balance: <%= user.balance%></h3>
-<hr />
-<br />
-<form
-  action="/addBalance"
-  method="POST"
-  class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
->
-  <div class="mb-4">
-    <label class="block text-gray-700 text-sm font-bold mb-2">
+<main class="md:col-span-4 bg-gray-300 md:ml-56 lg:ml-64 md:pr-14 w-full rounded">
+    <div class="container px-5 py-10 mx-auto md:px-auto">
+        <header>
+            <h2 class="text-blue-700 text-4xl font-semibold leading-none tracking-wider"> <a href="/portfolio"><i class="fas fa-arrow-left"></i></a> AddBalance
+            </h2>
+        </header>
+        <div>
+            <div class="relative text--600 mt-12 shadow-md rounded-b-lg py-4 pl-2 font-bold">
+                <h3 class="underline sm:no-underline md:line-through lg:underline xl:no-underline text-blue-700"> Your Current Balance:
+                    <%= user.balance%>
+                </h3>
+            </div>
+            <div class="container py-16 mx-auto">
+                <form action="/addBalance" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                    <div class="mb-5">
+                        <label class="block text-gray-700 text-xl font-bold mb-2">
       Enter amount
     </label>
-    <input
-      type="number"
-      class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-      name="addAmount"
-      placeholder="amount"
-    />
-    <input
-      type="submit"
-      value="Add"
-      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-    />
-  </div>
-</form>
+                        <input type="number" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="addAmount" placeholder="amount" />
+                        <input type="submit" value="Add" class=" mt-2 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-6 rounded-full focus:outline-none focus:shadow-outline " />
+                    </div>
+                </form>
+            </div>
+
+        </div>
+</main>

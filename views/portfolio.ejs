@@ -1,28 +1,21 @@
 <main class="md:col-span-4 bg-gray-300 md:ml-56 lg:ml-64 md:pr-14 w-full">
-  <div class="container px-5 py-10 mx-auto md:px-auto">
-    <!-- <div class="absolute-center mx-auto"> -->
+    <div class="container px-5 py-10 mx-auto md:px-auto">
+        <!-- <div class="absolute-center mx-auto"> -->
 
-    <!-- header -->
+        <!-- header -->
 
-    <header class="mt-4 absolute-center">
-      <h2
-        class="text-gray-700 text-6xl font-semibold leading-none tracking-wider"
-      >
-        TradeByte
-      </h2>
-    </header>
+        <header class="mt-4 absolute-center">
+            <h2 class="text-gray-700 text-6xl font-semibold leading-none tracking-wider">
+                TradeByte
+            </h2>
+        </header>
 
-    <!-- search box -->
+        <!-- search box -->
 
-    <div>
-      <div class="relative text-gray-600 mt-12 shadow-md rounded-b-lg">
-        <input
-          type="search"
-          name="serch"
-          placeholder="        Search Stocks"
-          class="bg-transparent h-10 px-5 pr-10 rounded-full text-sm focus:outline-none"
-        />
-        <button type="submit" class="absolute left-0 top-0 mt-3 ml-4">
+        <div>
+            <div class="relative text-gray-600 mt-12 shadow-md rounded-b-lg">
+                <input type="search" name="serch" placeholder="Search Stocks" class="bg-transparent h-10 px-5 pr-10 rounded-full text-sm focus:outline-none" />
+                <button type="submit" class="absolute left-0 top-0 mt-3 ml-4">
           <svg
             class="h-4 w-4 fill-current"
             xmlns="http://www.w3.org/2000/svg"
@@ -42,79 +35,72 @@
             />
           </svg>
         </button>
-      </div>
+            </div>
 
-      <div class="mt-8 grid lg:grid-cols-3 gap-10">
-        <!-- cards go here -->
+            <div class="mt-8 grid lg:grid-cols-3 gap-10">
+                <!-- cards go here -->
 
-        <!-- card1 -->
+                <!-- card1 -->
 
-        <div
-          class="card rounded-xl flex items-center h-20 sm:h-20 w-full object-cover px-5 shadow-2xl"
-        >
-          <div class="flex-shrink-0 w-10 h-10">
-            <img class="w-full h-full" src="images/graph.jpeg" alt=" " />
-          </div>
-          <div class="font-bold text-xl xl:text-2xl ml-3">
-            <p class="text-gray-900 whitespace-no-wrap">
-              $40,342.04
-            </p>
-            <span class="block text-gray-500 text-sm">Total Portfolio</span>
-          </div>
+                <div class="card rounded-xl flex items-center h-20 sm:h-20 w-full object-cover px-5 shadow-2xl">
+                    <div class="flex-shrink-0 w-10 h-10">
+                        <img class="w-full h-full" src="images/graph.jpeg" alt=" " />
+                    </div>
+                    <div class="font-bold text-xl xl:text-2xl ml-3">
+                        <p class="text-gray-900 whitespace-no-wrap">
+                            $40,342.04
+                        </p>
+                        <span class="block text-gray-500 text-sm">Total Portfolio</span>
+                    </div>
+                </div>
+
+                <!-- card 2 -->
+
+                <div class="card rounded-xl flex items-center h-20 sm:h-20 w-full object-cover px-5 shadow-2xl">
+                    <div class="flex-shrink-0 w-10 h-10">
+                        <img class="w-full h-full" src="images/graph.jpeg " alt=" " />
+                    </div>
+                    <div class="font-bold text-xl xl:text-2xl ml-3 justify-center">
+                        <p class="text-gray-900 whitespace-no-wrap">
+                            $ 40,342.04
+                        </p>
+                        <span class="block text-gray-500 text-sm">Profit / Loss</span>
+                    </div>
+                </div>
+
+                <!-- card 3 -->
+
+                <div class="card rounded-xl flex items-center h-20 sm:h-20 w-full object-cover px-5 shadow-2xl">
+                    <div class="flex-shrink-0 w-10 h-10">
+                        <img class="w-full h-full" src="images/graph.jpeg " alt=" " />
+                    </div>
+                    <div class="font-bold text-xl xl:text-2xl ml-3">
+                        <p class="text-gray-900 whitespace-no-wrap">
+                            $40,342.04
+                        </p>
+                        <span class="block text-gray-500 text-sm">$ Balance</span>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <!-- card 2 -->
+        <!-- overview heading -->
 
-        <div
-          class="card rounded-xl flex items-center h-20 sm:h-20 w-full object-cover px-5 shadow-2xl"
-        >
-          <div class="flex-shrink-0 w-10 h-10">
-            <img class="w-full h-full" src="images/graph.jpeg " alt=" " />
-          </div>
-          <div class="font-bold text-xl xl:text-2xl ml-3 justify-center">
-            <p class="text-gray-900 whitespace-no-wrap">
-              $ 40,342.04
-            </p>
-            <span class="block text-gray-500 text-sm">Profit / Loss</span>
-          </div>
-        </div>
+        <h2 class="text-2xl font-bold leading-tight py-6 mt-6">Overview</h2>
+        <!-- graph card -->
+        <div class="card h-64 w-auto mb-10 shadow-2xl"></div>
 
-        <!-- card 3 -->
+        <!-- container for both tables -->
 
-        <div
-          class="card rounded-xl flex items-center h-20 sm:h-20 w-full object-cover px-5 shadow-2xl"
-        >
-          <div class="flex-shrink-0 w-10 h-10">
-            <img class="w-full h-full" src="images/graph.jpeg " alt=" " />
-          </div>
-          <div class="font-bold text-xl xl:text-2xl ml-3">
-            <p class="text-gray-900 whitespace-no-wrap">
-              $40,342.04
-            </p>
-            <span class="block text-gray-500 text-sm">$ Balance</span>
-          </div>
-        </div>
-      </div>
-    </div>
+        <div class="lg:grid lg:grid-cols-2 -mx-8">
+            <!-- table component 1 -->
 
-    <!-- overview heading -->
+            <div class="px-3 sm:px-6 py-4 overflow-hidden h-auto w-full">
+                <div class="flex justify-between">
+                    <!-- heading of table -->
 
-    <h2 class="text-2xl font-bold leading-tight py-6 mt-6">Overview</h2>
-    <!-- graph card -->
-    <div class="card h-64 w-auto mb-10 shadow-2xl"></div>
-
-    <!-- container for both tables -->
-
-    <div class="lg:grid lg:grid-cols-2 -mx-8">
-      <!-- table component 1 -->
-
-      <div class="px-3 sm:px-6 py-4 overflow-hidden h-auto w-full">
-        <div class="flex justify-between">
-          <!-- heading of table -->
-
-          <h2 class="text-2xl font-bold leading-tight py-6">Trade History</h2>
-          <a href="#" class="mt-6 mr-6 font-bold text-tempc-400"
-            >View All <span class="font-extrabold">></span></a
+                    <h2 class="text-2xl font-bold leading-tight py-6">Trade History</h2>
+                    <a href="#" class="mt-6 mr-6 font-bold text-tempc-400">View All <span class="font-extrabold">></span></a
           >
         </div>
 
