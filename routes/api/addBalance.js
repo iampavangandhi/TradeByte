@@ -10,20 +10,23 @@ const Transaction = require("../../models/Transaction");
 // @route    GET /
 // @access   Private
 router.get("/", ensureAuth, (req, res) => {
-  let user = req.user;
-  res.status(200).render("addBalance", {
-      layout: "layouts/app",
-      href: "/addBalance",
-      user,
-    });
+    let user = req.user;
+    let avatar = req.user.image;
+    res
+        .status(200).render("addBalance", {
+            layout: "layouts/app",
+            avatar,
+            user,
+            href: "/addBalance"
+        });
 });
 
 // TODO
-router.post("/", ensureAuth, async (req, res) => {
-  // why ensureGuest here?
-  let amount = Number(req.body.addAmount); // type cast amount to number as body parser take it as string
-  let finalAmont = amount + req.user.balance;
-
+router.post("/", ensureAuth, async(req, res) => {
+    // why ensureGuest here?
+    let amount = Number(req.body.addAmount); // type cast amount to number as body parser take it as string
+    let finalAmont = amount + req.user.balance;
+  
   try {
     // Updating balance to user's schema.
     req.body.user = req.user.id;
@@ -52,6 +55,7 @@ router.post("/", ensureAuth, async (req, res) => {
     console.error(err);
     res.render("error/500");
   }
+
 });
 
 module.exports = router;

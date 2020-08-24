@@ -28,7 +28,9 @@
     <h2 class="text-xl font-bold mb-1">Price Summary</h2>
     <section class="price-summary mb-8 bg-white shadow-md p-4 rounded">
       <div class="table w-full">
-        <div class="w-full grid grid-flow-col grid-cols-2 grid-rows-2 gap-8 md:grid-cols-4 md:grid-rows-1">
+        <div
+          class="w-full grid grid-flow-col grid-cols-2 grid-rows-2 gap-8 md:grid-cols-4 md:grid-rows-1"
+        >
           <div class="flex flex-col justify-start">
             <p class="text-md uppercase font-semibold text-gray-600">
               Today's High
@@ -58,8 +60,10 @@
     </section>
 
     <h2 class="text-xl font-bold mb-1">Overview</h2>
-    <section class="chart-container relative w-full bg-white shadow-md rounded px-4 pt-2 pb-4 mb-8"
-      style="height: 50vh;">
+    <section
+      class="chart-container relative w-full bg-white shadow-md rounded px-4 pt-2 pb-4 mb-8"
+      style="height: 50vh;"
+    >
       <canvas id="chart"></canvas>
     </section>
 
@@ -67,7 +71,8 @@
     <section class="Comapany-summary mb-4 bg-white shadow-md p-4 rounded">
       <div class="table w-full">
         <div
-          class="w-full grid grid-flow-col grid-cols-2 grid-rows-4 md:grid-cols-3 md:grid-rows-3 gap-4 lg:grid-cols-4 lg:grid-rows-2">
+          class="w-full grid grid-flow-col grid-cols-2 grid-rows-4 md:grid-cols-3 md:grid-rows-3 gap-4 lg:grid-cols-4 lg:grid-rows-2"
+        >
           <div class="flex flex-col justify-start break-words">
             <p class="text-md uppercase font-semibold text-gray-600">
               Market Cap
@@ -118,7 +123,8 @@
   </div>
   <a href="/cart/<%- symbol %>">
     <button
-      class="m-8 p-0 w-16 h-16 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-700 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none fixed right-0 bottom-0">
+      class="m-8 p-0 w-16 h-16 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-700 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none fixed right-0 bottom-0"
+    >
       Buy
     </button>
   </a>
@@ -131,8 +137,7 @@
   var myChart = new Chart(ctx, {
     type: 'line',
     data: {
-      labels: datesList,
-      closingList,
+      labels: datesList, closingList,
       datasets: [{
         label: <%- JSON.stringify(symbol) %>,
         data: closingList,
