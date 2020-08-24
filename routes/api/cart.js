@@ -35,25 +35,37 @@ router.get("/:symbol", ensureAuth, async (req, res) => {
 // @desc    To buy
 // @route   POST /cart/buy
 router.post("/buy", ensureAuth, async (req, res) => {
-  let data = req.body;
-  let user = req.user;
-  let stockPrice = data.stockPrice;
-  let noOfStock = data.noOfStock;
-  let totalAmount = parseFloat(stockPrice * noOfStock).toFixed(4);
+  const user = req.user;
+  const symbol = req.body.companySymbol;
+  const { latestPrice } = await getPrice(symbol);;
+  const noOfStock = req.body.noOfStock;
+  const totalAmount = parseFloat(latestPrice * noOfStock).toFixed(4);
+
+  const data = {
+    companySymbol: symbol,
+    stockPrice: latestPrice,
+    noOfStock: noOfStock,
+    totalAmount: totalAmount,
+  }
+
+  console.log(data)
 
   try {
     if (totalAmount > req.user.balance) {
       let ExtraBalance = totalAmount - req.user.balance;
-      res.render("transaction", {
+      res.render("transaction/transaction", {
+        layout: "layouts/app",
+        href: "/buy",
         ExtraBalance,
         message: "Insufficent Balance",
       });
     } else {
-      res.render("transaction", {
+      res.render("transaction/transaction", {
         data,
         user,
-        totalAmount,
         message: "Order Review",
+        layout: "layouts/app",
+        href: "/buy",
       });
     }
   } catch (err) {

@@ -20,6 +20,71 @@ body {
     width: 75vw;
 }
 
+.tradebyte-logo {
+    color: #1955E4;
+    text-shadow: 1px 2px 40px rgba(0, 0, 0, 0.5)
+}
+
+.line {
+    border: 1.5px solid #8e9aad;
+}
+
+.user-profile {
+    border-radius: 100px;
+    border: 10px solid #1955E4;
+    width: 130px;
+    height: 130px;
+}
+
+.tick {
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    background-color: #38cda0;
+    color: white;
+}
+
+.tick-background {
+    background: #a9f7e6;
+    border-radius: 29px;
+    color: #1b9b7f;
+}
+
+.tab-color {
+    border-radius: 10px;
+    border-color: #1955E4;
+    color: #1955E4;
+  }
+  
+.view-link {
+    color: #1955E4;
+}
+
+.view-link:hover {
+    color: #0d338a;
+}
+
+.button {
+    background-color: #1955E4;
+}
+
+.button:hover {
+    background-color: #0d338a;
+}
+
+  
+.table-content {
+    overflow: scroll;
+    overflow-x: scroll;
+    overflow-y: auto;
+}
+  
+.transaction-companySymbol {
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
 @tailwind components;
 
 .symbolicon {

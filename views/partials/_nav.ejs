@@ -34,24 +34,27 @@
               <path
                 d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4
         13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z ">
-              </path>
-            </svg>Dashboard</a>
-          <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-transparent hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline flex <%= href === '/market' ? 'bg-gray-200 border border-purple-700 border-l-8': '' %>"
-            href="/market"><svg class="w-5 ml-2 mr-1" fill="none " stroke-linecap="round " stroke-linejoin="round "
-              stroke-width="2 " viewBox="0 0 24 24 " stroke="currentColor ">
-              <path d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z "></path>
-            </svg>Market</a>
+          </path>
+        </svg>Dashboard</a>
 
-          <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-transparent hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline flex"
-            href="/addBalance">+ Add Balance</a>
-          <!-- only for development purpose i added ADD BALANCE button here on navbar. -->
+      <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 hover:text-blue-800 focus:text-blue-900 hover:bg-blue-100 focus:bg-blue-200 focus:outline-none focus:shadow-outline flex <%= href === '/market' ? 'border tab-color border-l-8': '' %>"
+        href="/market"><svg class="w-5 ml-2 mr-1" fill="none " stroke-linecap="round " stroke-linejoin="round "
+          stroke-width="2 " viewBox="0 0 24 24 " stroke="currentColor ">
+          <path d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z "></path>
+        </svg>Market</a>
 
-          <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-transparent hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline flex"
-            href="/auth/logout"><svg class="w-6 ml-2 mr-1" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd"
-                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                clip-rule="evenodd"></path>
-            </svg>Logout</a>
-        </div>
-      </nav>
+      <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 hover:text-blue-800 focus:text-blue-900 hover:bg-blue-100 focus:bg-blue-200 focus:outline-none focus:shadow-outline flex <%= href === '/addBalance' ? 'border tab-color border-l-8': '' %>"
+        href="/addBalance">+ Add Balance</a>
+      <!-- only for development purpose i added ADD BALANCE button here on navbar. -->
+
+      <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 hover:text-blue-800 focus:text-blue-900 hover:bg-blue-100 focus:bg-blue-200 focus:outline-none focus:shadow-outline flex <%= href === '/trasaction' ? 'border tab-color border-l-8': '' %>"
+        href="/transaction">$ Transactions History</a>
+      <!-- only for development purpose i added TRANSACTION HISTORY button here on navbar. -->
+
+      <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 hover:text-blue-800 focus:text-blue-900 hover:bg-blue-100 focus:bg-blue-200 focus:outline-none focus:shadow-outline flex <%= href === '/auth/logout' ? 'border tab-color border-l-8': '' %>"
+        href="/auth/logout"><svg class="w-6 ml-2 mr-1" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd"
+            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+            clip-rule="evenodd"></path>
+        </svg>Logout</a>
     </div>
