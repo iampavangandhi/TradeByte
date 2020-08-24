@@ -9,6 +9,7 @@ const { ensureAuth, ensureGuest } = require("../../middleware/auth");
 // @access   Private
 router.get("/", ensureAuth, (req, res) => {
   let user = req.user;
+  console.log(user)
   res
     .status(200)
     .render("portfolio", { layout: "layouts/app", user, href: "/portfolio" });

@@ -59,6 +59,19 @@ body {
 .view-link {
     color: #1955E4;
 }
+
+.view-link:hover {
+    color: #0d338a;
+}
+
+.button {
+    background-color: #1955E4;
+}
+
+.button:hover {
+    background-color: #0d338a;
+}
+
   
 .table-content {
     overflow: scroll;

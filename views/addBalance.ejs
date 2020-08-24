@@ -4,10 +4,11 @@
       <h2 class="text-gray-700 lg:text-6xl text-5xl font-semibold leading-none tracking-wider px-5">Add Balance</h2>
   </div>
       <hr class="line">
+      
       <div class="container py-16 mx-auto">
         <h3>Your Current Balance: <%= user.balance%></h3>
-        <form action="/addBalance" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 my-6">
-          <div class=" mb-4">
+        <form action="/addBalance" method="POST" class="bg-white shadow-md rounded-lg px-8 pt-6 pb-8 my-6">
+          <div class="text-center mb-4">
             <label class="block text-gray-700 text-sm font-bold mb-2">
               Enter amount
             </label>
@@ -15,10 +16,11 @@
               class="shadow appearance-none border rounded w-4/5 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               name="addAmount" placeholder="amount" />
             <input type="submit" value="Add"
-              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" />
+              class="button text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" />
           </div>
         </form>
       </div>
+
   </div>
 </section>
   
