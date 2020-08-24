@@ -40,19 +40,19 @@ app.use(express.json());
 
 // Method override
 app.use(
-  methodOverride(function (req, res) {
-    if (req.body && typeof req.body === "object" && "_method" in req.body) {
-      // look in urlencoded POST bodies and delete it
-      let method = req.body._method;
-      delete req.body._method;
-      return method;
-    }
-  })
+    methodOverride(function(req, res) {
+        if (req.body && typeof req.body === "object" && "_method" in req.body) {
+            // look in urlencoded POST bodies and delete it
+            let method = req.body._method;
+            delete req.body._method;
+            return method;
+        }
+    })
 );
 
 // Logging
 if (process.env.NODE_ENV === "development") {
-  app.use(morgan("dev"));
+    app.use(morgan("dev"));
 }
 
 // EJS
@@ -65,12 +65,12 @@ app.use(expressLayouts);
 
 // Sessions
 app.use(
-  session({
-    secret: "keyboard cat",
-    resave: false,
-    saveUninitialized: false,
-    store: new MongoStore({ mongooseConnection: mongoose.connection }),
-  })
+    session({
+        secret: "keyboard cat",
+        resave: false,
+        saveUninitialized: false,
+        store: new MongoStore({ mongooseConnection: mongoose.connection }),
+    })
 );
 
 // Passport middleware
@@ -81,12 +81,12 @@ app.use(passport.session());
 app.use(flash())
 
 // Set Global variables
-app.use(function (req, res, next) {
-  res.locals.user = req.user || null;
-  res.locals.success_msg = req.flash('success_msg');
-  res.locals.error_msg = req.flash('error_msg');
-  res.locals.error = req.flash('error');
-  next();
+app.use(function(req, res, next) {
+    res.locals.user = req.user || null;
+    res.locals.success_msg = req.flash('success_msg');
+    res.locals.error_msg = req.flash('error_msg');
+    res.locals.error = req.flash('error');
+    next();
 });
 
 // Static folder
@@ -103,12 +103,13 @@ app.use("/cart", require("./routes/api/cart"));
 app.use("/done", require("./routes/api/done"));
 app.use("/addBalance", require("./routes/api/addBalance"));
 app.use("/transaction", require("./routes/api/transaction"));
+app.use("/search", require("./routes/api/search"));
 
 // Port: Love You 3000
 const PORT = process.env.PORT || 3000;
 
 // Server Listening
 app.listen(
-  PORT,
-  console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`)
+    PORT,
+    console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`)
 );
