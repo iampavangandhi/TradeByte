@@ -37,6 +37,7 @@ router.post("/buy", ensureAuth, async (req, res) => {
   const symbol = req.body.companySymbol;
   const { latestPrice } = await getPrice(symbol);
   const noOfStock = req.body.noOfStock;
+  const stockPrice = req.body.stockPrice;
   const totalAmount = parseFloat(latestPrice * noOfStock).toFixed(4);
 
   const data = {
