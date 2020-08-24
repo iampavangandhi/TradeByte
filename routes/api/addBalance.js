@@ -4,6 +4,7 @@ const express = require("express");
 const router = express.Router();
 const { ensureAuth, ensureGuest } = require("../../middleware/auth");
 const User = require("../../models/User");
+const Transaction = require("../../models/Transaction");
 
 // @desc     // Add Balance page
 // @route    GET /
@@ -26,6 +27,7 @@ router.post("/", ensureAuth, async (req, res) => {
   let finalAmont = amount + req.user.balance;
 
   try {
+    // Updating balance to user's schema.
     req.body.user = req.user.id;
     const updateBalance = await User.findOneAndUpdate(
       { _id: req.user.id },
@@ -35,8 +37,20 @@ router.post("/", ensureAuth, async (req, res) => {
         runValidators: true, // it check weather the fields are valid or not
       }
     );
-    console.log(updateBalance);
-    res.redirect("/");
+
+    // Adding new transaction details on Transaction Schema.
+    const transactionDetails = "Balance Added to Wallet";
+    const transactionOpration = "Deposit";
+    const transactionUser = req.user.id;
+    const updateTransactoin = await Transaction.create({
+      details: transactionDetails,
+      amount: amount,
+      opration: transactionOpration,
+      user: transactionUser,
+    });
+
+    console.log(updateTransactoin);
+    res.redirect("/done");
   } catch (err) {
     console.error(err);
     res.render("error/500");

@@ -1,26 +1,31 @@
-<main class="md:col-span-4 bg-gray-300 md:ml-56 lg:ml-64 md:pr-14 w-full">
+<main class="md:col-span-4 md:ml-56 lg:ml-64 md:pr-14 w-full">
   <div class="container px-5 py-10 mx-auto md:px-auto">
     <!-- <div class="absolute-center mx-auto"> -->
 
     <!-- header -->
 
-    <header class="mt-4 absolute-center">
-      <h2
-        class="text-gray-700 text-6xl font-semibold leading-none tracking-wider"
+    <header class="my-4 absolute-center">
+      <span
+        class="text-gray-700 text-3xl font-semibold leading-none tracking-wider"
+        >Hello,</span
       >
-        TradeByte
+      <h2 class="text-gray-800 text-5xl leading-none tracking-wider view-link">
+        <%= user.displayName%>.
       </h2>
     </header>
+
+    <hr class="line" />
 
     <!-- search box -->
 
     <div>
       <div class="relative text-gray-600 mt-12 shadow-md rounded-b-lg">
         <input
+          id="searchbar"
           type="search"
           name="serch"
-          placeholder="Search Stocks"
-          class="bg-transparent h-10 px-5 pr-10 rounded-full text-sm focus:outline-none"
+          placeholder="Search Stocks by Symbols"
+          class="bg-transparent h-10 px-5 pl-10 rounded-full text-lg focus:outline-none"
         />
         <button type="submit" class="absolute left-0 top-0 mt-3 ml-4">
           <svg
@@ -43,6 +48,12 @@
           </svg>
         </button>
       </div>
+
+      <ul
+        id="search-result"
+        style="height: 0px; overflow: hidden; white-space: pre;"
+        class="text-lg p-5 ml-10 list-none mt-0 text-gray-700"
+      ></ul>
 
       <div class="mt-8 grid lg:grid-cols-3 gap-10">
         <!-- cards go here -->
@@ -99,9 +110,9 @@
 
     <!-- overview heading -->
 
-    <h2 class="text-2xl font-bold leading-tight py-6 mt-6">Overview</h2>
+    <h2 class="text-lg font-bold leading-tight py-3 mt-8">Overview</h2>
     <!-- graph card -->
-    <div class="card h-64 w-auto mb-10 shadow-2xl"></div>
+    <div class="bg-white rounded-lg card h-64 w-auto mb-10 shadow-2xl"></div>
 
     <!-- container for both tables -->
 
@@ -111,16 +122,17 @@
       <div class="px-3 sm:px-6 py-4 overflow-hidden h-auto w-full">
         <div class="flex justify-between">
           <!-- heading of table -->
-
-          <h2 class="text-2xl font-bold leading-tight py-6">Trade History</h2>
-          <a href="#" class="mt-6 mr-6 font-bold text-tempc-400"
+          <h2 class="text-lg font-bold leading-tight py-3">Trade History</h2>
+          <a href="#" class="mt-3 font-bold text-tempc-400"
             >View All <span class="font-extrabold">></span></a
           >
         </div>
 
         <!-- start of table -->
 
-        <div class="inline-block min-w-0 shadow-lg rounded-lg overflow-hidden">
+        <div
+          class="px-5 inline-block min-w-0 shadow-lg rounded-lg overflow-hidden"
+        >
           <table class="min-w-0 leading-normal">
             <thead>
               <tr>
@@ -171,7 +183,7 @@
                     btc/usd
                   </p>
                 </td>
-                <td class="px-3 py-3 border-b border-gray-200 text-sm">
+                <td class="px-5 py-3 border-b border-gray-200 text-sm">
                   <span
                     class="relative inline-block px-3 py-1 font-semibold text-white leading-tight"
                   >
@@ -194,7 +206,7 @@
                     Jan 8, 2020
                   </p>
                 </td>
-                <td class="px-5 py-5 border-b border-gray-200 text-sm">
+                <td class="px-3 py-3 border-b border-gray-200 text-sm">
                   <p class="text-gray-900 whitespace-no-wrap">
                     Bitterx
                   </p>
@@ -205,7 +217,7 @@
                   </p>
                 </td>
 
-                <td class="px-3 py-3 border-b border-gray-200 text-sm">
+                <td class="px-5 py-3 border-b border-gray-200 text-sm">
                   <span
                     class="relative inline-block px-3 py-1 font-semibold text-white leading-tight"
                   >
@@ -240,7 +252,7 @@
                   </p>
                 </td>
 
-                <td class="px-3 py-3 border-b border-gray-200 text-sm">
+                <td class="px-5 py-3 border-b border-gray-200 text-sm">
                   <span
                     class="relative inline-block px-3 py-1 font-semibold text-white leading-tight"
                   >
@@ -263,7 +275,7 @@
                     Jan 8, 2020
                   </p>
                 </td>
-                <td class="px-5 py-5 border-b border-gray-200 text-sm">
+                <td class="px-3 py-3 border-b border-gray-200 text-sm">
                   <p class="text-gray-900 whitespace-no-wrap">
                     Bitterx
                   </p>
@@ -274,7 +286,7 @@
                   </p>
                 </td>
 
-                <td class="px-3 py-3 border-b border-gray-200 text-sm">
+                <td class="px-5 py-3 border-b border-gray-200 text-sm">
                   <span
                     class="relative inline-block px-3 py-1 font-semibold text-white leading-tight"
                   >
@@ -298,18 +310,18 @@
                     Jan 21, 2020
                   </p>
                 </td>
-                <td class="px-5 py-5 border-b border-gray-200 text-sm">
+                <td class="px-3 py-3 border-b border-gray-200 text-sm">
                   <p class="text-gray-900 whitespace-no-wrap">
                     Gdax
                   </p>
                 </td>
-                <td class="px-5 py-5 border-b border-gray-200 text-sm">
+                <td class="px-3 py-3 border-b border-gray-200 text-sm">
                   <p class="text-gray-900 whitespace-no-wrap uppercase">
                     btc/usd
                   </p>
                 </td>
 
-                <td class="px-5 py-5 border-b border-gray-200 text-sm">
+                <td class="px-5 py-3 border-b border-gray-200 text-sm">
                   <span
                     class="relative inline-block px-3 py-1 font-semibold text-white leading-tight"
                   >
@@ -344,7 +356,7 @@
                   </p>
                 </td>
 
-                <td class="px-3 py-3 border-b border-gray-200 text-sm">
+                <td class="px-5 py-3 border-b border-gray-200 text-sm">
                   <span
                     class="relative inline-block px-3 py-1 font-semibold text-white leading-tight"
                   >
@@ -369,12 +381,12 @@
 
       <!-- table component 2 -->
 
-      <div class="px-3 sm:px-8 py-4 overflow-hidden h-auto w-full">
+      <div class="px-3 sm:px-8 py-4 overflow-auto h-auto w-full">
         <!-- table name stocks status -->
 
         <div class="flex justify-between">
-          <h2 class="text-2xl font-bold leading-tight py-6">Stock Status</h2>
-          <a href="#" class="mt-6 mr-6 font-bold text-tempc-400"
+          <h2 class="text-lg font-bold leading-tight py-3">Stock Status</h2>
+          <a href="#" class="mt-3 pr-42 font-bold text-tempc-400"
             >View All <span class="font-extrabold">></span></a
           >
         </div>
@@ -410,6 +422,11 @@
                 <th
                   class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
                 >
+                  Number Of Stock
+                </th>
+                <th
+                  class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                >
                   sell
                 </th>
               </tr>
@@ -418,313 +435,83 @@
             <!-- table body -->
 
             <tbody>
+              <% user.stock.forEach( (stock) => { %>
               <tr class="bg-white">
                 <td class="px-3 py-3 border-b border-gray-200 text-sm">
                   <p class="text-gray-900 whitespace-no-wrap">
-                    Gdax
+                    <%= stock.companySymbol %>
                   </p>
                 </td>
                 <td class="px-3 py-3 border-b border-gray-200 text-sm">
                   <p class="text-gray-900 whitespace-no-wrap">
-                    $11111
+                    <% currentPrice = 500 %> $<%= currentPrice %>
                   </p>
                 </td>
                 <td class="px-3 py-3 border-b border-gray-200 text-sm">
                   <p class="block px-4 flex">
-                    <span>0.2334</span>
-                    <svg
-                      class="w-6 h-4 text-tempc-400"
-                      fill="none"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
+                    <% let price = stock.stockPrice - currentPrice %> <%
+                    if(price < 0) { %> <% color="red" %>
+                    <span
+                      >$<%= price.toPrecision(4) %><span
+                        class="text-red-600 text-lg"
+                        >&#8595;</span
+                      ></span
                     >
-                      <path d="M8 7l4-4m0 0l4 4m-4-4v18"></path>
-                    </svg>
+                    <% } else { %> <% color="green" %>
+                    <span
+                      >$<%= price.toPrecision(4) %><span
+                        class="text-green-600 text-lg"
+                        >&#8593;</span
+                      ></span
+                    >
+                    <% } %>
                   </p>
                 </td>
-                <td class="px-3 py-3 border-b border-gray-200 text-sm">
+                <td
+                  class="px-3 py-3 border-b border-gray-200 text-<%= color%>-600 text-sm"
+                >
                   <p class="text-tempc-400 whitespace-no-wrap">
-                    +639
+                    <% if(stock.stockPrice > currentPrice) { %> <% loss =
+                    stock.stockPrice - currentPrice %> <% status =
+                    (loss/stock.stockPrice) * 100 %> <% } else
+                    if(stock.stockPrice < currentPrice) { %> <% gain =
+                    currentPrice - stock.stockPrice %> <% status =
+                    (gain/stock.stockPrice) * 100 %> <% } %>
+                    <span><%= status.toPrecision(4) %>%</span>
+                  </p>
+                </td>
+                <td class="px-3 py-3 border-b border-gray-200 text-sm">
+                  <p class="text-gray-900 whitespace-no-wrap">
+                    <%= stock.noOfStock %>
                   </p>
                 </td>
                 <td
                   class="px-3 py-3 border-b border-gray-200 text-sm text-tempc-400"
                 >
-                  <svg
-                    class="w-6 h-6"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
+                  <form
+                    action="/transaction/sell/<%= stock._id%>"
+                    method="POST"
+                    id="sell-stock"
                   >
-                    <path
-                      d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                    ></path>
-                  </svg>
+                    <button type="submit">
+                      <svg
+                        class="w-6 h-6"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                        stroke="green"
+                      >
+                        <path
+                          d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </form>
                 </td>
               </tr>
-              <tr class="bg-gray-100">
-                <td class="px-3 py-3 border-b border-gray-200 text-sm">
-                  <p class="text-gray-900 whitespace-no-wrap">
-                    Gdax1
-                  </p>
-                </td>
-                <td class="px-3 py-3 border-b border-gray-200 text-sm">
-                  <p class="text-gray-900 whitespace-no-wrap">
-                    $11112
-                  </p>
-                </td>
-
-                <td class="px-3 py-3 border-b border-gray-200 text-sm">
-                  <p class="block px-4 flex">
-                    <span>0.2334</span>
-                    <svg
-                      class="w-6 h-4 text-tempc-200"
-                      fill="none"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path d="M16 17l-4 4m0 0l-4-4m4 4V3"></path>
-                    </svg>
-                  </p>
-                </td>
-                <td class="px-3 py-3 border-b border-gray-200 text-sm">
-                  <p class="text-tempc-200 whitespace-no-wrap">
-                    -639
-                  </p>
-                </td>
-                <td
-                  class="px-3 py-3 border-b border-gray-200 text-sm text-tempc-400"
-                >
-                  <svg
-                    class="w-6 h-6"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                    ></path>
-                  </svg>
-                </td>
-              </tr>
-              <tr class="bg-white">
-                <td class="px-3 py-3 border-b border-gray-200 text-sm">
-                  <p class="text-gray-900 whitespace-no-wrap">
-                    Gdax
-                  </p>
-                </td>
-                <td class="px-3 py-3 border-b border-gray-200 text-sm">
-                  <p class="text-gray-900 whitespace-no-wrap">
-                    $11111
-                  </p>
-                </td>
-                <td class="px-3 py-3 border-b border-gray-200 text-sm">
-                  <p class="block px-4 flex">
-                    <span>0.2334</span>
-                    <svg
-                      class="w-6 h-4 text-tempc-400"
-                      fill="none"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path d="M8 7l4-4m0 0l4 4m-4-4v18"></path>
-                    </svg>
-                  </p>
-                </td>
-
-                <td class="px-3 py-3 border-b border-gray-200 text-sm">
-                  <p class="text-tempc-400 whitespace-no-wrap">
-                    +639
-                  </p>
-                </td>
-
-                <td
-                  class="px-3 py-3 border-b border-gray-200 text-sm text-tempc-400"
-                >
-                  <svg
-                    class="w-6 h-6"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                    ></path>
-                  </svg>
-                </td>
-              </tr>
-              <tr class="bg-gray-100">
-                <td class="px-3 py-3 border-b border-gray-200 text-sm">
-                  <p class="text-gray-900 whitespace-no-wrap">
-                    Gdax
-                  </p>
-                </td>
-                <td class="px-3 py-3 border-b border-gray-200 text-sm">
-                  <p class="text-gray-900 whitespace-no-wrap">
-                    $11111
-                  </p>
-                </td>
-                <td class="px-3 py-3 border-b border-gray-200 text-sm">
-                  <p class="block px-4 flex">
-                    <span>0.2334</span>
-                    <svg
-                      class="w-6 h-4 text-tempc-200"
-                      fill="none"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path d="M16 17l-4 4m0 0l-4-4m4 4V3"></path>
-                    </svg>
-                  </p>
-                </td>
-                <td class="px-3 py-3 border-b border-gray-200 text-sm">
-                  <p class="text-tempc-200 whitespace-no-wrap">
-                    -119
-                  </p>
-                </td>
-
-                <td
-                  class="px-3 py-3 border-b border-gray-200 text-sm text-tempc-400"
-                >
-                  <svg
-                    class="w-6 h-6"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                    ></path>
-                  </svg>
-                </td>
-              </tr>
-              <tr class="bg-white">
-                <td class="px-3 py-3 border-b border-gray-200 text-sm">
-                  <p class="text-gray-900 whitespace-no-wrap">
-                    Gdax
-                  </p>
-                </td>
-                <td class="px-3 py-3 border-b border-gray-200 text-sm">
-                  <p class="text-gray-900 whitespace-no-wrap">
-                    $11111
-                  </p>
-                </td>
-                <td class="px-3 py-3 border-b border-gray-200 text-sm">
-                  <p class="block px-4 flex">
-                    <span>0.2334</span>
-                    <svg
-                      class="w-6 h-4 text-tempc-400"
-                      fill="none"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path d="M8 7l4-4m0 0l4 4m-4-4v18"></path>
-                    </svg>
-                  </p>
-                </td>
-
-                <td class="px-3 py-3 border-b border-gray-200 text-sm">
-                  <p class="text-tempc-400 whitespace-no-wrap">
-                    +639
-                  </p>
-                </td>
-
-                <td
-                  class="px-3 py-3 border-b border-gray-200 text-sm text-tempc-400"
-                >
-                  <svg
-                    class="w-6 h-6"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                    ></path>
-                  </svg>
-                </td>
-              </tr>
-              <tr class="bg-gray-100">
-                <td class="px-3 py-3 border-b border-gray-200 text-sm">
-                  <p class="text-gray-900 whitespace-no-wrap">
-                    Gdax
-                  </p>
-                </td>
-                <td class="px-3 py-3 border-b border-gray-200 text-sm">
-                  <p class="text-gray-900 whitespace-no-wrap">
-                    $11111
-                  </p>
-                </td>
-
-                <td class="px-3 py-3 border-b border-gray-200 text-sm">
-                  <p class="block px-4 flex">
-                    <span>0.2334</span>
-                    <svg
-                      class="w-6 h-4 text-tempc-200"
-                      fill="none"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path d="M16 17l-4 4m0 0l-4-4m4 4V3"></path>
-                    </svg>
-                  </p>
-                </td>
-                <td class="px-3 py-3 border-b border-gray-200 text-sm">
-                  <p class="text-tempc-200 whitespace-no-wrap">
-                    -339
-                  </p>
-                </td>
-                <td
-                  class="px-3 py-3 border-b border-gray-200 text-sm text-tempc-400 pr-4"
-                >
-                  <svg
-                    class="w-6 h-6"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                    ></path>
-                  </svg>
-                </td>
-              </tr>
+              <% }) %>
             </tbody>
           </table>
         </div>
@@ -744,3 +531,28 @@
 
   <!-- </div> -->
 </main>
+
+<!-- script for search bar -->
+
+<script>
+  const inputField = document.getElementById('searchbar')
+  inputField.addEventListener('input', (event) => {
+      console.log(event.target.value)
+      const value = event.target.value
+          //sample data
+      const dataset = <%- JSON.stringify(totalData) %>;
+
+      let data = dataset.filter(function(el) {
+          return el.Symbol.includes(value.toUpperCase())
+      })
+
+      let list = "";
+      if (value === "") {
+          list = "";
+          data = [];
+      }
+      let n = data.length
+      for (i = 0; i <= (n - 1); i++) {
+          let item = data[i];
+          list += `<li><a href='/view/${item.Symbol}'>${item.Symbol}</a></li>` } document.getElementById('search-result').innerHTML = list ;console.log(data) })
+</script>
