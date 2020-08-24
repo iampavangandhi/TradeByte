@@ -28,6 +28,12 @@ router.put("/confirm", ensureAuth, async (req, res) => {
       }
     );
 
+    console.log(
+      process.env.GMAIL_OAUTH_CLIENT_ID,
+      process.env.GMAIL_OAUTH_CLIENT_SECRET,
+      process.env.GMAIL_OAUTH_REDIRECT_URL
+    );
+
     const options = {
       to: email, // list of receivers
       subject: "Hello from TradeByte✔", // Subject line

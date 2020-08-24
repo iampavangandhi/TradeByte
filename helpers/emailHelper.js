@@ -1,12 +1,12 @@
 require("dotenv").config();
-const nodemailer = require('nodemailer');
+const nodemailer = require("nodemailer");
 
 const transporter = nodemailer.createTransport({
-  host: 'smtp.gmail.com',
+  host: "smtp.gmail.com",
   port: 465,
   secure: true,
   auth: {
-    type: 'OAuth2',
+    type: "OAuth2",
     user: process.env.GMAIL_ADDRESS,
     clientId: process.env.GMAIL_OAUTH_CLIENT_ID,
     clientSecret: process.env.GMAIL_OAUTH_CLIENT_SECRET,
@@ -16,12 +16,15 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-exports.sendEmail = mailOptions => new Promise((resolve, reject) => {
-  transporter.sendMail(mailOptions, (error) => {
-    if (error) {
-      console.error(error.stack || error);
-      return reject(error);
-    }
-    resolve();
+exports.sendEmail = (mailOptions) =>
+  new Promise((resolve, reject) => {
+    transporter.sendMail(mailOptions, (error) => {
+      if (error) {
+        console.error(error.stack || error);
+        return reject(error);
+      }
+      resolve();
+    });
+  }).catch((error) => {
+    console.log(error);
   });
-});
