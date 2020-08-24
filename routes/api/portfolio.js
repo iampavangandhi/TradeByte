@@ -10,6 +10,7 @@ const totalData = require("../../config/data-total.json");
 // @route    GET /portfolio
 // @access   Private
 router.get("/", ensureAuth, (req, res) => {
+    let user = req.user;
     let avatar = req.user.image;
     res
         .status(200)

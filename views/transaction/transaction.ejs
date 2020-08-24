@@ -4,7 +4,6 @@
 <h2>Please Add <%= ExtraBalance %> or more to complete the Transaction.</h2>
 <% } else { %>
 <h2><%= message %></h2>
-<% } %>
 <hr />
 <h2>Your Balance: <%= user.balance%></h2>
 <hr />
@@ -43,8 +42,10 @@
       readonly
       type="Number"
       name="totalAmount"
-      value="<%= totalAmount%>"
+      value="<%= data.totalAmount%>"
     />
   </h4>
   <input type="submit" value="BUY" />
 </form>
+
+<% } %>

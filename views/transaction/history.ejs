@@ -1,0 +1,46 @@
+<section class="text-gray-700 body-font md:ml-56 lg:ml-64 md:mx-auto md:pr-14 w-screen inline">
+    <div class="container px-5 py-10 mx-auto md:px-auto">
+      <div class="my-4 absolute-center">
+        <h2 class="text-gray-700 lg:text-6xl text-5xl font-semibold leading-none tracking-wider px-5">Transaction History</h2>
+    </div>
+        <hr class="line">
+    
+        <div class="container mx-20 py-16"></div>
+          <h3>Current Balance: <%= user.balance%></h3>
+          
+            <table class="my-64 mb-24" border="5">
+              <thead>
+                <tr class="text-center">
+                  <th>Date</th>
+                  <th>Opration</th>
+                  <th>Amount</th>
+                  <th>Details</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% transactions.forEach( (stock) => { %>
+                  <tr>
+                    <td>
+                      <p><%= stock.createdAt %></p>
+                    </td>
+                    <td>
+                      <p><%= stock.opration %></p>
+                    </td>
+                    <td>
+                      <p><%= stock.amount %></p>
+                    </td>
+                    <td>
+                      <p><%= stock.details %></p>
+                    </td>
+                  </tr>
+                <% }) %>
+                  
+              </tbody>
+            </table>
+        </div>
+        <!-- Footer -->
+        <%- include('../partials/_footer.ejs') %>
+  
+    </div>
+  </section>
+    
