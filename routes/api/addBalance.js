@@ -37,6 +37,7 @@ router.post("/", ensureAuth, async (req, res) => {
         runValidators: true, // it check weather the fields are valid or not
       }
     );
+
     // Adding new transaction details on Transaction Schema.
     const transactionDetails = "Balance Added to Wallet";
     const transactionOpration = "Deposit";

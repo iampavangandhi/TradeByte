@@ -7,16 +7,19 @@ const User = require("../../models/User");
 const Transaction = require("../../models/Transaction");
 const getPrice = require("../../helpers/getPrice");
 
+// Import emailHelper helper function
+const emailHelper = require("../../helpers/emailHelper");
+
 // @desc     To Buy Transaction Page
 // @route    POST transaction/confirm
 // @access   Private
 router.put("/confirm", ensureAuth, async (req, res) => {
   try {
-    let balance = req.user.balance - req.body.totalAmount;
-
+    const totalPrice = req.body.totalAmount;
+    let balance = req.user.balance - totalPrice;
+    console.log(req.user.displayName + "this is the name");
     req.body.user = req.user.id;
-
-    console.log(req.body);
+    const { email, displayName } = req.user;
 
     const updatedUser = await User.findOneAndUpdate(
       { _id: req.user.id },
@@ -26,6 +29,20 @@ router.put("/confirm", ensureAuth, async (req, res) => {
         runValidators: true, // it check weather the fields are valid or not
       }
     );
+
+    const options = {
+      to: email, // list of receivers
+      subject: "Hello from TradeByte✔", // Subject line
+      html: `
+      <b>Hello ${displayName}</b>
+      <p>You bought stocks from TradeByte of amount ${totalPrice}, your remaining TradeByte balance is ${balance}</p>
+      <p>This is a demo Project made by TradeByte team for educational purpose only.</p>
+      <p>Have a great Day!</p>
+    `, // html body
+    };
+    console.log(updatedUser);
+
+    emailHelper.sendEmail(options);
 
     // Add data transaction
     // Adding new transaction details on Transaction Schema.

@@ -3,6 +3,7 @@
 const express = require("express");
 const passport = require("passport");
 const router = express.Router();
+const { ensureGuest } = require("../../middleware/auth");
 
 // @desc    Auth with Google
 // @route   GET /auth/google
@@ -20,14 +21,6 @@ router.get(
     res.status(200).redirect("/portfolio");
   }
 );
-
-router.post("/signin", (req, res, next) => {
-  passport.authenticate("local", {
-    successRedirect: "/portfolio",
-    failureRedirect: "/",
-    failureFlash: true,
-  })(req, res, next);
-});
 
 // @desc    Logout user
 // @route   /auth/logout
