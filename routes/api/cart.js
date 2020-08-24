@@ -19,17 +19,15 @@ router.get("/:symbol", ensureAuth, async (req, res) => {
   const symbol = req.params.symbol;
   const { latestPrice } = await getPrice(symbol);
   const { companyName, logoSrc } = await getCompanyNameAndLogo(symbol);
-  res
-    .status(200)
-    .render("cart", {
-      layout: "layouts/app",
-      symbol,
-      latestPrice,
-      logoSrc,
-      companyName,
-      href: "/market",
-      avatar: req.user.image,
-    });
+  res.status(200).render("cart", {
+    layout: "layouts/app",
+    symbol,
+    latestPrice,
+    logoSrc,
+    companyName,
+    href: "/market",
+    avatar: req.user.image,
+  });
 });
 
 // @desc    To buy
@@ -37,7 +35,7 @@ router.get("/:symbol", ensureAuth, async (req, res) => {
 router.post("/buy", ensureAuth, async (req, res) => {
   const user = req.user;
   const symbol = req.body.companySymbol;
-  const { latestPrice } = await getPrice(symbol);;
+  const { latestPrice } = await getPrice(symbol);
   const noOfStock = req.body.noOfStock;
   const totalAmount = parseFloat(latestPrice * noOfStock).toFixed(4);
 
@@ -46,9 +44,9 @@ router.post("/buy", ensureAuth, async (req, res) => {
     stockPrice: latestPrice,
     noOfStock: noOfStock,
     totalAmount: totalAmount,
-  }
+  };
 
-  console.log(data)
+  console.log(data);
 
   try {
     if (totalAmount > req.user.balance) {

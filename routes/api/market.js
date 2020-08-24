@@ -14,43 +14,42 @@ const totalData = require("../../config/data-total.json");
 // @desc     Market page
 // @route    GET /Market
 // @access   Privat
-router.get("/", ensureAuth, async(req, res) => {
-    let min = 0;
-    let max = 75;
+router.get("/", ensureAuth, async (req, res) => {
+  let min = 0;
+  let max = 75;
 
-
-    res.status(200).render("market", {
-        layout: "layouts/app",
-        compactData,
-        totalData,
-        min,
-        max,
-        href: "/market",
-        avatar: req.user.image,
-    });
+  res.status(200).render("market", {
+    layout: "layouts/app",
+    compactData,
+    totalData,
+    min,
+    max,
+    href: "/market",
+    avatar: req.user.image,
+  });
 });
 
 // @desc     Market page
 // @route    GET /Market/:page
 // @access   Private
-router.get("/:page", ensureAuth, async(req, res) => {
-    let page = req.params.page - 1;
-    let min = page * 75;
-    let max = page * 75 + 75;
+router.get("/:page", ensureAuth, async (req, res) => {
+  let page = req.params.page - 1;
+  let min = page * 75;
+  let max = page * 75 + 75;
 
-    if (page <= 0 || page >= 39) {
-        res.status(200).redirect("/market");
-    } else {
-        res.status(200).render("market", {
-            layout: "layouts/app",
-            compactData,
-            totalData,
-            min,
-            max,
-            href: "/market",
-            avatar: req.user.image,
-        });
-    }
+  if (page <= 0 || page >= 39) {
+    res.status(200).redirect("/market");
+  } else {
+    res.status(200).render("market", {
+      layout: "layouts/app",
+      compactData,
+      totalData,
+      min,
+      max,
+      href: "/market",
+      avatar: req.user.image,
+    });
+  }
 });
 
 module.exports = router;
