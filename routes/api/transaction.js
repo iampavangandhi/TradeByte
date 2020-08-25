@@ -47,14 +47,14 @@ router.put("/confirm", ensureAuth, async (req, res) => {
     // Add data transaction
     // Adding new transaction details on Transaction Schema.
     const transactionDetails = `Added ${req.body.noOfStock} ${req.body.companySymbol} stock`;
-    const transactionOpration = "Debited";
+    const transactionOperation = "Debited";
     const transactionUser = req.user.id;
     const transactionAmount = Number(req.body.totalAmount);
 
     const updateTransactoin = await Transaction.create({
       details: transactionDetails,
       amount: transactionAmount,
-      opration: transactionOpration,
+      operation: transactionOperation,
       user: transactionUser,
     });
 
@@ -101,7 +101,7 @@ router.post("/sell/:id", ensureAuth, async (req, res) => {
       if (stock._id == req.params.id) {
         // Adding new transaction details on Transaction Schema.
         const transactionDetails = `Sold ${stock.noOfStock} stock of ${stock.companySymbol}`;
-        const transactionOpration = "Credit";
+        const transactionOperation = "Credit";
         const transactionUser = req.user.id;
 
         // update balance get real time update
@@ -113,7 +113,7 @@ router.post("/sell/:id", ensureAuth, async (req, res) => {
         const updateTransaction = await Transaction.create({
           details: transactionDetails,
           amount: totalAmount,
-          opration: transactionOpration,
+          operation: transactionOperation,
           user: transactionUser,
         });
 

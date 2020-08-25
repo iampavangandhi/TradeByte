@@ -108,7 +108,10 @@
           >
             <i class="fas fa-share-alt"></i> Share
             <div class="container">
-              <div class="addthis_inline_share_toolbox"></div>
+              <div
+                class="addthis_inline_share_toolbox"
+                data-url="localhost:3000/share/<%= userId %>"
+              ></div>
               <div class="addthis_sharing_toolbox"></div>
             </div>
           </button>
@@ -118,22 +121,22 @@
 
     <!---------------------java script-------------------------->
     <script>
-      var AddThisJSLoaded = false; // Addthis not loaded yet
-      var clickedOnShare = false; // share button is not clicked
+      let AddThisJSLoaded = false; // Addthis not loaded yet
+      let clickedOnShare = false; // share button is not clicked
 
       function back() {
         window.location.href = "/";
       }
 
       //this is a publicer id
-      var AddthisPubID = "ra-5f3af90d32b2c7af";
-      var AddThisJS =
+      let AddthisPubID = "ra-5f3af90d32b2c7af";
+      let AddThisJS =
         "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f3af90d32b2c7af";
 
       function share(button) {
         if (!AddThisJSLoaded && !clickedOnShare) {
           //when AddThis not loaded
-          clickedOnShare = true; // shsre button is clicked
+          clickedOnShare = true; // share button is clicked
           showLoading(button);
           shareByAddThis(button);
         } else {
@@ -142,12 +145,12 @@
       }
 
       function shareByAddThis(button) {
-        var script = document.createElement("script");
+        let script = document.createElement("script");
         script.async = true;
         script.src = AddThisJS;
 
         script.onload = function () {
-          clickedOnShare = false; // AddTHis js is loaded
+          clickedOnShare = false; // AddThis js is loaded
           addthis.user.ready(function (data) {
             AddThisJSLoaded = true; //loaded and ready to use
             hideLoading(button);

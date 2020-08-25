@@ -8,7 +8,8 @@ const { ensureAuth, ensureGuest } = require("../../middleware/auth");
 // @route    GET /done
 // @access   Private
 router.get("/", ensureAuth, (req, res) => {
-  res.status(200).render("done");
+  const userId = req.user.id;
+  res.status(200).render("done", { userId }); // pass userId for the share link generation
 });
 
 module.exports = router;

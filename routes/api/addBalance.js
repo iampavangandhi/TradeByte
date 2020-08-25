@@ -28,7 +28,7 @@ router.post("/", ensureAuth, async (req, res) => {
 
   try {
     // Updating balance to user's schema.
-    req.body.user = req.user.id;
+    // req.body.user = req.user.id;
     const updateBalance = await User.findOneAndUpdate(
       { _id: req.user.id },
       { balance: finalAmont },
@@ -40,12 +40,12 @@ router.post("/", ensureAuth, async (req, res) => {
 
     // Adding new transaction details on Transaction Schema.
     const transactionDetails = "Balance Added to Wallet";
-    const transactionOpration = "Deposit";
+    const transactionOperation = "Deposit";
     const transactionUser = req.user.id;
     const updateTransactoin = await Transaction.create({
       details: transactionDetails,
       amount: amount,
-      opration: transactionOpration,
+      operation: transactionOperation,
       user: transactionUser,
     });
 

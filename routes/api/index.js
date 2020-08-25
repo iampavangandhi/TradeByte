@@ -2,13 +2,21 @@
 
 const express = require("express");
 const router = express.Router();
-const { ensureAuth, ensureGuest } = require("../../middleware/auth");
+const { ensureGuest } = require("../../middleware/auth");
 
 // @desc     Login/Landing page
 // @route    GET /
 // @access   Public
 router.get("/", ensureGuest, (req, res) => {
   res.status(200).render("login", { layout: "layouts/login" });
+});
+
+// @desc     Login from Referral link
+// @route    GET /share/:id (will be redirected to login page)
+// @access   Public
+router.get("/share/:id", ensureGuest, (req, res) => {
+  let user1 = req.params.id;
+  res.cookie("prevUser", user1, { expire: 604800 + Date.now() }).redirect("/");
 });
 
 module.exports = router;
