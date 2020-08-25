@@ -37,6 +37,7 @@ router.post("/signup", ensureGuest, (req, res) => {
       layout: "layouts/login",
       errors,
       firstName,
+      email,
       lastName,
       password1,
       password2,
