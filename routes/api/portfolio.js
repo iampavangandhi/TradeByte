@@ -77,6 +77,11 @@ router.get("/", ensureAuth, async (req, res) => {
     }
   }
 
+  // If a cookie exists but the user has balance more than 10000 which means he already have an account, set the cookie value to empty
+  if (req.cookies.prevUser !== "" && req.user.balance !== 10000) {
+    res.cookie("prevUser", "");
+  }
+
   res.status(200).render("portfolio", {
     layout: "layouts/app",
     avatar,
