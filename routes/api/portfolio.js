@@ -48,7 +48,8 @@ router.get("/", ensureAuth, async (req, res) => {
       console.log(updateBalanceForCurrentUser);
 
       // Adding new transaction details on Transaction Schema for user who signed up using the share link
-      const transactionDetails = "50$ Balance Added to Wallet from share link";
+      const transactionDetails =
+        "50$ Balance Added to Wallet from the share link";
       const transactionOperation = "Debited";
       const transactionUser = req.user.id;
       const updateTransactoinForCurrentUser = await Transaction.create({
@@ -62,7 +63,7 @@ router.get("/", ensureAuth, async (req, res) => {
 
       // Adding new transaction details on Transaction Schema for the user who shared the link
       const updateTransactoinForOtherUser = await Transaction.create({
-        details: "100$ Balance Added to Wallet from share link",
+        details: "100$ Balance Added to Wallet from the shared link",
         amount: 100,
         operation: transactionOperation,
         user: req.cookies.prevUser,

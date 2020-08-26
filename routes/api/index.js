@@ -16,7 +16,7 @@ router.get("/", ensureGuest, (req, res) => {
 // @access   Public
 router.get("/share/:id", ensureGuest, (req, res) => {
   let user1 = req.params.id;
-  res.cookie("prevUser", user1, { expire: 604800 + Date.now() }).redirect("/");
+  res.cookie("prevUser", user1, { expire: 36000 + Date.now() }).redirect("/");
 });
 
 module.exports = router;
