@@ -78,10 +78,10 @@
     </style>
   </head>
 
-  <body style="display: flex; justify-content: center; align-items: center;">
+  <body style="display: flex; justify-content: center; align-items: center">
     <!---Card component-->
     <div
-      style="display: flex; justify-content: center; align-items: center;"
+      style="display: flex; justify-content: center; align-items: center"
       class="done-container max-w-sm mx-auto flex p-5 bg-white rounded-lg shadow-2xl"
     >
       <div class="py-4">
@@ -90,11 +90,9 @@
           <i id="check" class="far fa-check-circle fa-7x"></i>
         </div>
         <div>
-          <p class="text-black-700 text-center">
-            Thankyou for using TradeByte
-          </p>
+          <p class="text-black-700 text-center">Thankyou for using TradeByte</p>
         </div>
-        <div style="display: flex; justify-content: center;">
+        <div style="display: flex; justify-content: center">
           <button
             onclick="back()"
             class="bg-gray-700 hover:bg-red-400 text-white font-bold py-2 px-5 mx-2 mt-4 mb-3 rounded-full"
@@ -108,7 +106,10 @@
           >
             <i class="fas fa-share-alt"></i> Share
             <div class="container">
-              <div class="addthis_inline_share_toolbox"></div>
+              <div
+                class="addthis_inline_share_toolbox"
+                data-url="<%= host %>/share/<%= userId %>"
+              ></div>
               <div class="addthis_sharing_toolbox"></div>
             </div>
           </button>
@@ -118,22 +119,22 @@
 
     <!---------------------java script-------------------------->
     <script>
-      var AddThisJSLoaded = false; // Addthis not loaded yet
-      var clickedOnShare = false; // share button is not clicked
+      let AddThisJSLoaded = false; // Addthis not loaded yet
+      let clickedOnShare = false; // share button is not clicked
 
       function back() {
         window.location.href = "/";
       }
 
       //this is a publicer id
-      var AddthisPubID = "ra-5f3af90d32b2c7af";
-      var AddThisJS =
+      let AddthisPubID = "ra-5f3af90d32b2c7af";
+      let AddThisJS =
         "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f3af90d32b2c7af";
 
       function share(button) {
         if (!AddThisJSLoaded && !clickedOnShare) {
           //when AddThis not loaded
-          clickedOnShare = true; // shsre button is clicked
+          clickedOnShare = true; // share button is clicked
           showLoading(button);
           shareByAddThis(button);
         } else {
@@ -142,12 +143,12 @@
       }
 
       function shareByAddThis(button) {
-        var script = document.createElement("script");
+        let script = document.createElement("script");
         script.async = true;
         script.src = AddThisJS;
 
         script.onload = function () {
-          clickedOnShare = false; // AddTHis js is loaded
+          clickedOnShare = false; // AddThis js is loaded
           addthis.user.ready(function (data) {
             AddThisJSLoaded = true; //loaded and ready to use
             hideLoading(button);
