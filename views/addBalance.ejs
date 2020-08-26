@@ -12,29 +12,41 @@
     <hr class="line" />
 
     <div class="container py-16 mx-auto">
-      <h3>Your Current Balance: <%= user.balance%></h3>
+      <h3 class="text-2xl">Your Current Balance: <%= user.balance%></h3>
       <form
         action="/addBalance"
         method="POST"
         class="bg-white shadow-md rounded-lg px-8 pt-6 pb-8 my-6"
       >
         <div class="text-center mb-4">
-          <label class="block text-gray-700 text-sm font-bold mb-2">
+          <label class="block text-gray-700 text-2xl font-bold mb-2">
             Enter amount
           </label>
           <input
+            id="amount"
+            min="10"
+            max="4999"
+            value="10"
             type="number"
-            class="shadow appearance-none border rounded w-4/5 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            class="shadow appearance-none border rounded w-4/5 py-2 px-3 my-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             name="addAmount"
-            placeholder="amount"
+            placeholder="$ Amount"
           />
-          <input
-            type="submit"
-            value="Add"
-            class="button text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          />
+          <input type="hidden" name="_csrf" />
+          <!-- below key is a publishable test key by stripe -->
+          <script
+            id="stripe"
+            class="stripe-button"
+            data-key="pk_test_51HJXY7LQt0nnsdDXDLOAd3oeKUqMRVwpgkR3H7e0q4ghJqhfMg8RPpCWLeOFZ35zOBiccvV5Xq85VRjuRtCQGtFL00ZKyBN7Kr"
+            src="https://checkout.stripe.com/checkout.js"
+            data-image="images/TradeByte.png"
+            data-name="TradeByte"
+            data-description="TradeByte Balance"
+          ></script>
         </div>
       </form>
     </div>
   </div>
 </section>
+
+<script src="https://js.stripe.com/v3/"></script>

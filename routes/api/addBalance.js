@@ -2,12 +2,15 @@
 
 const express = require("express");
 const router = express.Router();
+const stripe = require("stripe")(process.env.SK_TEST);
+
 const { ensureAuth, ensureGuest } = require("../../middleware/auth");
+
 const User = require("../../models/User");
 const Transaction = require("../../models/Transaction");
 
-// @desc     // Add Balance page
-// @route    GET /
+// @desc     Add Balance
+// @route    GET /addBalance
 // @access   Private
 router.get("/", ensureAuth, (req, res) => {
   let user = req.user;
@@ -16,19 +19,41 @@ router.get("/", ensureAuth, (req, res) => {
     layout: "layouts/app",
     avatar,
     user,
+    publishableKey: process.env.PK_TEST,
     href: "/addBalance",
   });
 });
 
-// TODO
+// @desc     Add Balance
+// @route    POST /addBalance
+// @access   Private
 router.post("/", ensureAuth, async (req, res) => {
-  // why ensureGuest here?
   let amount = Number(req.body.addAmount); // type cast amount to number as body parser take it as string
+
   let finalAmont = amount + req.user.balance;
 
+  const { stripeToken } = req.body;
+
   try {
+    // Stripe Payment
+    await stripe.charges.create(
+      {
+        amount: req.user.balance * 100,
+        currency: "usd",
+        source: stripeToken,
+        description: req.user.email,
+      },
+      (err) => {
+        if (err && err.type === "StripeCardError") {
+          return res.render("error/500");
+        } else {
+          console.log("Payment Success");
+        }
+      }
+    );
+
     // Updating balance to user's schema.
-    // req.body.user = req.user.id;
+    req.body.user = req.user.id;
     const updateBalance = await User.findOneAndUpdate(
       { _id: req.user.id },
       { balance: finalAmont },
