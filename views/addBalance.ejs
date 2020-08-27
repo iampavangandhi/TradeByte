@@ -12,29 +12,116 @@
     <hr class="line" />
 
     <div class="container py-16 mx-auto">
-      <h3>Your Current Balance: <%= user.balance%></h3>
+      <h3 class="text-2xl">Your Current Balance:<b> <%= user.balance%> </b></h3>
       <form
         action="/addBalance"
         method="POST"
         class="bg-white shadow-md rounded-lg px-8 pt-6 pb-8 my-6"
       >
         <div class="text-center mb-4">
-          <label class="block text-gray-700 text-sm font-bold mb-2">
-            Enter amount
+          <label class="block text-gray-700 text-2xl font-bold mb-2">
+            Enter amount : Minimun $50
           </label>
           <input
+            id="amount"
+            min="50"
+            max="4999"
+            value="50"
             type="number"
-            class="shadow appearance-none border rounded w-4/5 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            class="shadow appearance-none border rounded w-2/5 py-2 px-3 my-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             name="addAmount"
-            placeholder="amount"
+            placeholder="$ Amount"
           />
-          <input
-            type="submit"
-            value="Add"
-            class="button text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          />
+          <input type="hidden" name="_csrf" />
+          <!-- below key is a publishable test key by stripe -->
+          <script
+            id="stripe"
+            class="stripe-button"
+            data-key="pk_test_51HJXY7LQt0nnsdDXDLOAd3oeKUqMRVwpgkR3H7e0q4ghJqhfMg8RPpCWLeOFZ35zOBiccvV5Xq85VRjuRtCQGtFL00ZKyBN7Kr"
+            src="https://checkout.stripe.com/checkout.js"
+            data-image="images/TradeByte.png"
+            data-name="TradeByte"
+            data-description="TradeByte Balance"
+          ></script>
         </div>
       </form>
+
+      <div class="card flex flex-wrap justify-around sm:flex-col md:flex-col">
+        <div class="max-w-sm bg-white my-4 rounded overflow-hidden shadow-lg">
+          <div class="px-6 py-4">
+            <div class="font-bold text-xl mb-2">Test Card 1</div>
+            <p class="text-gray-700 mb-6 text-base text-base">
+              4242 4242 4242 4242
+            </p>
+          </div>
+          <div class="px-6 pt-4 pb-2">
+            <span
+              class="inline-block bg-gray-200 px-4 py-1 text-sm font-semibold text-gray-700 mr-6 mb-2"
+              >MM/YY : 01/30</span
+            >
+            <span
+              class="inline-block bg-gray-200 px-4 py-1 text-sm font-semibold text-gray-700 mr-6 mb-2"
+              >CVC : 123</span
+            >
+          </div>
+        </div>
+        <div class="max-w-sm bg-white my-4 rounded overflow-hidden shadow-lg">
+          <div class="px-6 py-4">
+            <div class="font-bold text-xl mb-2">Test Card 2</div>
+            <p class="text-gray-700 mb-6 text-base text-base">
+              5555 5555 5555 4444
+            </p>
+          </div>
+          <div class="px-6 pt-4 pb-2">
+            <span
+              class="inline-block bg-gray-200 px-4 py-1 text-sm font-semibold text-gray-700 mr-6 mb-2"
+              >MM/YY : 12/40</span
+            >
+            <span
+              class="inline-block bg-gray-200 px-4 py-1 text-sm font-semibold text-gray-700 mr-6 mb-2"
+              >CVC : 555</span
+            >
+          </div>
+        </div>
+        <div class="max-w-sm bg-white my-4 rounded overflow-hidden shadow-lg">
+          <div class="px-6 py-4">
+            <div class="font-bold text-xl mb-2">Test Card 3</div>
+            <p class="text-gray-700 mb-6 text-base text-base">
+              5105 1051 0510 5100
+            </p>
+          </div>
+          <div class="px-6 pt-4 pb-2">
+            <span
+              class="inline-block bg-gray-200 px-4 py-1 text-sm font-semibold text-gray-700 mr-6 mb-2"
+              >MM/YY : 11/31</span
+            >
+            <span
+              class="inline-block bg-gray-200 px-4 py-1 text-sm font-semibold text-gray-700 mr-6 mb-2"
+              >CVC : 005</span
+            >
+          </div>
+        </div>
+        <div class="max-w-sm bg-white my-4 rounded overflow-hidden shadow-lg">
+          <div class="px-6 py-4">
+            <div class="font-bold text-xl mb-2">Test Card 4</div>
+            <p class="text-gray-700 mb-6 text-base text-base">
+              4000 0566 5566 5556
+            </p>
+          </div>
+          <div class="px-6 pt-4 pb-2">
+            <span
+              class="inline-block bg-gray-200 px-4 py-1 text-sm font-semibold text-gray-700 mr-6 mb-2"
+              >MM/YY : 10/40</span
+            >
+            <span
+              class="inline-block bg-gray-200 px-4 py-1 text-sm font-semibold text-gray-700 mr-6 mb-2"
+              >CVC : 999</span
+            >
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
+<script src="https://js.stripe.com/v3/"></script>
