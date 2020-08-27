@@ -1,18 +1,15 @@
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
-<div @click.away="open = false"
-  class="flex flex-col w-full md:w-56 lg:w-64 text-gray-700 bg-white flex-shrink-0 md:h-screen  md:z-50 md:fixed md:left-0 md:top-0"
-  x-data="{ open: false }">
+<div @click.away="open = false" class="flex flex-col w-full md:w-56 lg:w-64 text-gray-700 bg-white flex-shrink-0 md:h-screen  md:z-50 md:fixed md:left-0 md:top-0" x-data="{ open: false }">
 
-  <div class="flex-shrink-0 px-6 py-4 flex flex-row items-center justify-between">
-    <div class="flex-shrink-0 text-center">
-      <img class="h-8 w-8 tradebyte-logo " src="../images/TradeByte-Favicon.png" alt="Logo">
-    </div>
-    <h4 class="font-bold text-center pt-1">
-      <a href="/"
-        class="hover:text-gray-900 tracking-widest text-2xl md:text-2xl lg:text-3xl tradebyte-logo">Tradebyte</a>
-    </h4>
-    <button class="rounded-lg md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
+    <div class="flex-shrink-0 px-6 py-4 flex flex-row items-center justify-between">
+        <div class="flex-shrink-0 text-center">
+            <img class="h-8 w-8 tradebyte-logo " src="../images/TradeByte-Favicon.png" alt="Logo">
+        </div>
+        <h4 class="font-bold text-center pt-1">
+            <a href="/" class="hover:text-gray-900 tracking-widest text-2xl md:text-2xl lg:text-3xl tradebyte-logo">Tradebyte</a>
+        </h4>
+        <button class="rounded-lg md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
       <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
         <path x-show="!open" fill-rule="evenodd"
           d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
@@ -23,60 +20,66 @@
       </svg>
     </button>
 
-  </div>
-
-
-  <nav :class="{'block': open, 'hidden': !open}" class="flex-grow md:block px-4 pb-4 md:pb-0">
-
-    <hr class="line mb-6">
-
-    <div class="flex justify-center align-center rounded-full">
-      <img class="h-16 w-16 border-8 user-profile box-1 rounded-full" src="<%= user.image %>" alt="" />
     </div>
 
-    <a class="block w-2/5 md:w-4/5 max-w-xs p-2 mt-4 mb-8 mx-auto text-xs font-bold text-gray-900 focus:shadow-outline flex justify-center rounded-full text-green-900 font-bold tick-background"
-      href="#">
-      <div class="tick mr-1">
-        <svg class="w-5 mr-1 " fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          viewBox="0 0 24 24" stroke="currentColor">
+
+    <nav :class="{'block': open, 'hidden': !open}" class="flex-grow md:block px-4 pb-4 md:pb-0">
+
+        <hr class="line mb-6">
+
+        <div class="flex justify-center align-center rounded-full">
+            <img class="h-16 w-16 border-8 user-profile box-1 rounded-full" src="<%= user.image %>" alt="" />
+        </div>
+
+        <a class="block w-2/5 md:w-4/5 max-w-xs p-2 mt-4 mb-8 mx-auto text-xs font-bold text-gray-900 focus:shadow-outline flex justify-center rounded-full text-green-900 font-bold tick-background" href="#">
+            <div class="tick mr-1">
+                <svg class="w-5 mr-1 " fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
           <path d="M5 13l4 4L19 7"></path>
         </svg>
-      </div> Trading Active
-    </a>
+            </div> Trading Active
+        </a>
 
-    <div class="nav-box flex flex-col justify-start">
+        <div class="nav-box flex flex-col justify-start">
 
-      <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 hover:text-blue-800 focus:text-blue-900 hover:bg-blue-100 focus:bg-blue-200 focus:outline-none focus:shadow-outline flex <%= href === '/portfolio' ? 'border tab-color border-l-8': '' %>"
-        href="/portfolio">
-        <svg class="w-5 ml-2 mr-1" fill="none " stroke-linecap="round " stroke-linejoin="round " stroke-width="2 "
-          viewBox="0 0 24 24 " stroke="currentColor ">
+            <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 hover:text-blue-800 focus:text-blue-900 hover:bg-blue-100 focus:bg-blue-200 focus:outline-none focus:shadow-outline flex <%= href === '/portfolio' ? 'border tab-color border-l-8': '' %>"
+                href="/portfolio">
+                <svg class="w-5 ml-2 mr-1" fill="none " stroke-linecap="round " stroke-linejoin="round " stroke-width="2 " viewBox="0 0 24 24 " stroke="currentColor ">
           <path
             d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4
         13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z ">
           </path>
         </svg>Dashboard</a>
 
-      <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 hover:text-blue-800 focus:text-blue-900 hover:bg-blue-100 focus:bg-blue-200 focus:outline-none focus:shadow-outline flex <%= href === '/market' ? 'border tab-color border-l-8': '' %>"
-        href="/market"><svg class="w-5 ml-2 mr-1" fill="none " stroke-linecap="round " stroke-linejoin="round "
+            <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 hover:text-blue-800 focus:text-blue-900 hover:bg-blue-100 focus:bg-blue-200 focus:outline-none focus:shadow-outline flex <%= href === '/edit/user._id' ? 'border tab-color border-l-8': '' %>"
+                href="/edit/<%= user._id %>">
+                <svg class="w-5 ml-2 mr-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+          </svg> Edit Profile
+            </a>
+
+
+
+            <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 hover:text-blue-800 focus:text-blue-900 hover:bg-blue-100 focus:bg-blue-200 focus:outline-none focus:shadow-outline flex <%= href === '/market' ? 'border tab-color border-l-8': '' %>"
+                href="/market"><svg class="w-5 ml-2 mr-1" fill="none " stroke-linecap="round " stroke-linejoin="round "
           stroke-width="2 " viewBox="0 0 24 24 " stroke="currentColor ">
           <path d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z "></path>
         </svg>Market</a>
 
-      <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 hover:text-blue-800 focus:text-blue-900 hover:bg-blue-100 focus:bg-blue-200 focus:outline-none focus:shadow-outline flex <%= href === '/addBalance' ? 'border tab-color border-l-8': '' %>"
-        href="/addBalance">+ Add Balance</a>
-      <!-- only for development purpose i added ADD BALANCE button here on navbar. -->
+            <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 hover:text-blue-800 focus:text-blue-900 hover:bg-blue-100 focus:bg-blue-200 focus:outline-none focus:shadow-outline flex <%= href === '/addBalance' ? 'border tab-color border-l-8': '' %>"
+                href="/addBalance">+ Add Balance</a>
+            <!-- only for development purpose i added ADD BALANCE button here on navbar. -->
 
-      <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 hover:text-blue-800 focus:text-blue-900 hover:bg-blue-100 focus:bg-blue-200 focus:outline-none focus:shadow-outline flex <%= href === '/trasaction' ? 'border tab-color border-l-8': '' %>"
-        href="/transaction">$ Transactions History</a>
-      <!-- only for development purpose i added TRANSACTION HISTORY button here on navbar. -->
+            <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 hover:text-blue-800 focus:text-blue-900 hover:bg-blue-100 focus:bg-blue-200 focus:outline-none focus:shadow-outline flex <%= href === '/trasaction' ? 'border tab-color border-l-8': '' %>"
+                href="/transaction">$ Transactions History</a>
+            <!-- only for development purpose i added TRANSACTION HISTORY button here on navbar. -->
 
-      <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 hover:text-blue-800 focus:text-blue-900 hover:bg-blue-100 focus:bg-blue-200 focus:outline-none focus:shadow-outline flex <%= href === '/auth/logout' ? 'border tab-color border-l-8': '' %>"
-        href="/auth/logout"><svg class="w-6 ml-2 mr-1" fill="currentColor" viewBox="0 0 20 20">
+            <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 hover:text-blue-800 focus:text-blue-900 hover:bg-blue-100 focus:bg-blue-200 focus:outline-none focus:shadow-outline flex <%= href === '/auth/logout' ? 'border tab-color border-l-8': '' %>"
+                href="/auth/logout"><svg class="w-6 ml-2 mr-1" fill="currentColor" viewBox="0 0 20 20">
           <path fill-rule="evenodd"
             d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
             clip-rule="evenodd"></path>
         </svg>Logout</a>
 
-    </div>
-  </nav>
+        </div>
+    </nav>
 </div>
