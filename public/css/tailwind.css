@@ -13,6 +13,8 @@ body {
   background-color: rgb(226, 232, 240);
 }
 
+@tailwind components;
+
 .chartjs-container {
   position: relative;
   margin: auto;
@@ -83,8 +85,6 @@ body {
   font-weight: 700;
   font-size: 1.1rem;
 }
-
-@tailwind components;
 
 .symbolicon {
   font-size: 72px;
