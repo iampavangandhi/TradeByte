@@ -1,33 +1,3 @@
-<!-- <div class="m-auto">
-
-    <h3 class="m-auto">Edit Profile</h3>
-    <div class="row m-auto">
-        <form action="/edit/<%=_id%>" method="POST" class="col s12">
-            <input type="hidden" name="_method" value="PUT">
-            <h4>
-                USER-FIRSTNAME
-                <input type="text" name="firstName" value="<%=firstName%>" />
-            </h4>
-            <div class="row">
-                <div class="input-field">
-                    <input type="text" id="lastName" name="lastName" value="<%=lastName%>">
-                    <label for="lastName">lastName</label>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="input-field">
-                    <input type="email" id="email" name="email" value="<%=email%>">
-                    <label for="email">Email</label>
-                </div>
-            </div>
-            <div class="row">
-                <input type="submit" value="Save" class="btn">
-                <a href="/portfolio" class="btn orange">Cancel</a>
-            </div>
-        </form>
-    </div>
-</div> -->
 <main class="md:col-span-4 md:ml-56 lg:ml-64 md:pr-14 w-full">
     <div class="container px-5 py-10 mx-auto md:px-auto ">
         <!-- header -->
@@ -42,7 +12,7 @@
    <!--form  -->
 
 
-        <form action="/edit/<%=_id%>" method="POST" class="w-full max-w-sm md:pl-48 m-auto">
+        <form action="/edit" method="POST" class="w-full max-w-sm m-auto">
             <input type="hidden" name="_method" value="PUT">
             <div class="md:flex md:items-center mb-6">
                 <div class="md:w-1/3">
@@ -69,7 +39,7 @@
             <div class="md:flex md:items-center mb-6">
                 <div class="md:w-1/3">
                     <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4 mr-4" for="inline-full-name">
-          Email_____ <span class="mr-10">:</span>
+          Email :
             </label>
     </div>
     <div class="md:w-2/3">
@@ -79,18 +49,15 @@
     </div>
 
 
-    <div class="md:flex md:items-center">
-        <div class="md:w-1/2">
-            <input type="submit" value="Save" class="btn mb-4 shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
-            <!-- <button class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
-                    Save
-                  </button> -->
-        </div>
-        <div class="md:w-1/2">
-            <button class="mb-4 shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
+    <div class="md:flex justify-center">
+        <!-- <div class="md:w-1/2"> -->
+            <input type="submit" value="Save" class="save_btn ml-6 cursor-pointer lg:ml-24 btn mb-4 shadow bg-blue-700 hover:bg-blue-800 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
+        <!-- </div> -->
+        <!-- <div class="md:w-1/2"> -->
+            <button class="mb-4 ml-6 shadow bg-yellow-500 hover:bg-yellow-600 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button" style="margin-left: 6px;">
           <a href="/portfolio">Cancel</a>
         </button>
-        </div>
+        <!-- </div> -->
     </div>
     </form>
     </div>

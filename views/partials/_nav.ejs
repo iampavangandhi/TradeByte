@@ -28,7 +28,16 @@
         <hr class="line mb-6">
 
         <div class="flex justify-center align-center rounded-full">
-            <img class="h-16 w-16 border-8 user-profile box-1 rounded-full" src="<%= user.image %>" alt="" />
+            <div class="notification">
+                <img class="h-16 w-16 border-8 user-profile box-1 rounded-full" src="<%= user.image %>" alt="" />
+
+                <a href="/edit"><span class="badge">
+                    <svg class="w-5 ml-2 mr-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                      </svg>
+                 </span>
+               </a>
+            </div>
         </div>
 
         <a class="block w-2/5 md:w-4/5 max-w-xs p-2 mt-4 mb-8 mx-auto text-xs font-bold text-gray-900 focus:shadow-outline flex justify-center rounded-full text-green-900 font-bold tick-background" href="#">
@@ -50,12 +59,11 @@
           </path>
         </svg>Dashboard</a>
 
-            <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 hover:text-blue-800 focus:text-blue-900 hover:bg-blue-100 focus:bg-blue-200 focus:outline-none focus:shadow-outline flex <%= href === '/edit/user._id' ? 'border tab-color border-l-8': '' %>"
-                href="/edit/<%= user._id %>">
+            <!-- <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 hover:text-blue-800 focus:text-blue-900 hover:bg-blue-100 focus:bg-blue-200 focus:outline-none focus:shadow-outline flex <%= href === '/edit' ? 'border tab-color border-l-8': '' %>" href="/edit">
                 <svg class="w-5 ml-2 mr-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
           </svg> Edit Profile
-            </a>
+            </a> -->
 
 
 
