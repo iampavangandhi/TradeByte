@@ -93,10 +93,6 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-.min-w {
-  min-width: 400px;
-}
-
 .notification {
   position: relative;
   display: inline-block;
@@ -110,6 +106,10 @@ body {
   border-radius: 50%;
   background-color: #0072ff;
   color: white;
+}
+
+.min-w {
+  min-width: 400px;
 }
 
 @media (max-width: 400px) {
