@@ -1,9 +1,45 @@
 <section class="text-gray-700 body-font md:ml-56 lg:ml-64 md:mx-auto md:pr-14 w-screen inline">
     <div class="container px-5 py-10 mx-auto md:px-auto">
-        <div class="my-4 absolute-center">
-            <h2 class="text-gray-700 lg:text-6xl text-5xl font-semibold leading-none tracking-wider px-5">Favorite Stocks</h2>
+        <div class="my-4 absolute-center md:flex">
+            <div class="md:w-1/2">
+
+                <h2 class="text-gray-700 lg:text-6xl text-5xl font-semibold leading-none tracking-wider px-5">Favorite Stocks</h2>
+            </div>
+
+            <!-- search box -->
+            <div class="md:w-1/2">
+                <div>
+                    <div class="relative text-gray-600 mt-4 mr-12 shadow-md rounded-b-lg">
+                        <input id="searchbar" type="search" name="serch" placeholder="Search Stocks by Symbols" class="bg-transparent h-10 px-5 pl-10 rounded-full text-lg focus:outline-none" />
+                        <button type="submit" class="absolute left-0 top-0 mt-3 ml-4">
+                    <svg
+                      class="h-4 w-4 fill-current"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      version="1.1"
+                      id="Capa_1"
+                      x="0px"
+                      y="0px"
+                      viewBox="0 0 56.966 56.966"
+                      style="enable-background: new 0 0 56.966 56.966;"
+                      xml:space="preserve"
+                      width="512px"
+                      height="512px"
+                    >
+                      <path
+                        d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"
+                      />
+                    </svg>
+                  </button>
+                    </div>
+
+                    <ul id="search-result" style="height: 0px; overflow: hidden; white-space: pre;" class="text-lg p-5 ml-10 list-none mt-0 text-gray-700"></ul>
+
+                    <!-- end of search box -->
+                </div>
+            </div>
         </div>
-        <div class="container py-16 mx-auto">
+        <div class="container pb-16 pt-8 mx-auto">
 
             <div class="flex -m-4 inline-block overflow-x-auto whitespace-no-wrap">
                 <% for(var i=0; i < compactData.length; i++) { %>
@@ -140,4 +176,48 @@
             }
         }
     }
+</script>
+
+<!-- script for search bar -->
+
+<script>
+    const inputField = document.getElementById('searchbar')
+    inputField.addEventListener('input', (event) => {
+        console.log(event.target.value)
+        const value = event.target.value
+            //sample data
+        const dataset = <%- JSON.stringify(totalData) %>;
+
+        // searching the symbol
+
+        let data = dataset.filter(function(el) {
+            return el.Symbol.includes(value.toUpperCase())
+        })
+
+        // when no symbol matched
+
+        if (data.length === 0) {
+
+            let data1 = dataset.filter(function(el) {
+                return (el["Company Name"].toLowerCase().includes(value.toLowerCase()))
+            })
+            data = data1;
+        }
+
+        let list = "";
+        if (value === "") {
+            list = "";
+            data = [];
+        }
+
+        let n = data.length
+
+        for (i = 0; i <= (n - 1); i++) {
+            let item = data[i];
+            list += `<li><a href='/view/${item.Symbol}'>${item.Symbol}</a></li>`
+        }
+        document.getElementById('search-result').innerHTML = list;
+
+        console.log(data)
+    })
 </script>
