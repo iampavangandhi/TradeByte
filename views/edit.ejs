@@ -1,1 +1,111 @@
-<h1>Edit Profile</h1>
+<main class="md:col-span-4 md:ml-56 lg:ml-64 md:pr-14 w-full">
+  <div class="container px-5 py-10 mx-auto md:px-auto">
+    <!-- header -->
+
+    <header class="my-4 absolute-center">
+      <span
+        class="text-gray-700 text-3xl font-semibold leading-none tracking-wider"
+        >Edit Profile</span
+      >
+    </header>
+
+    <hr class="line my-4" />
+
+    <!--form  -->
+
+    <form action="/edit" method="POST" class="w-full max-w-sm m-auto">
+      <input type="hidden" name="_method" value="PUT" />
+      <div class="md:flex md:items-center mb-6">
+        <div class="md:w-1/3">
+          <label
+            class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4 mr-4"
+            for="inline-full-name"
+          >
+            Display :
+          </label>
+        </div>
+        <div class="md:w-2/3">
+          <input
+            type="text"
+            id="displayName"
+            name="displayName"
+            value="<%=displayName%>"
+            class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+          />
+        </div>
+      </div>
+      <div class="md:flex md:items-center mb-6">
+        <div class="md:w-1/3">
+          <label
+            class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4 mr-4"
+            for="inline-full-name"
+          >
+            First Name :
+          </label>
+        </div>
+        <div class="md:w-2/3">
+          <input
+            type="text"
+            name="firstName"
+            value="<%=firstName%>"
+            class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+          />
+        </div>
+      </div>
+      <div class="md:flex md:items-center mb-6">
+        <div class="md:w-1/3">
+          <label
+            class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4 mr-4"
+            for="inline-full-name"
+          >
+            Last Name :
+          </label>
+        </div>
+        <div class="md:w-2/3">
+          <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            value="<%=lastName%>"
+            class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+          />
+        </div>
+      </div>
+      <div class="md:flex md:items-center mb-6">
+        <div class="md:w-1/3">
+          <label
+            class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4 mr-4"
+            for="inline-full-name"
+          >
+            Email :
+          </label>
+        </div>
+        <div class="md:w-2/3">
+          <input
+            class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+            type="email"
+            id="email"
+            name="email"
+            value="<%=email%>"
+          />
+        </div>
+      </div>
+
+      <div class="md:flex justify-center">
+        <input
+          type="submit"
+          value="Save"
+          class="save_btn ml-6 cursor-pointer lg:ml-24 btn mb-4 shadow bg-blue-700 hover:bg-blue-800 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+        />
+
+        <button
+          class="mb-4 ml-6 shadow bg-yellow-500 hover:bg-yellow-600 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+          type="button"
+          style="margin-left: 6px"
+        >
+          <a href="/portfolio">Cancel</a>
+        </button>
+      </div>
+    </form>
+  </div>
+</main>

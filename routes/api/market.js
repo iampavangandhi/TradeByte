@@ -16,7 +16,7 @@ const totalData = require("../../config/data-total.json");
 // @access   Private
 router.get("/", ensureAuth, async (req, res) => {
   let min = 0;
-  let max = 75;
+  let max = 50;
 
   res.status(200).render("market", {
     layout: "layouts/app",
@@ -34,10 +34,10 @@ router.get("/", ensureAuth, async (req, res) => {
 // @access   Private
 router.get("/:page", ensureAuth, async (req, res) => {
   let page = req.params.page - 1;
-  let min = page * 75;
-  let max = page * 75 + 75;
+  let min = page * 50;
+  let max = page * 50 + 50;
 
-  if (page <= 0 || page >= 39) {
+  if (page <= 0 || page >= 59) {
     res.status(200).redirect("/market");
   } else {
     res.status(200).render("market", {
