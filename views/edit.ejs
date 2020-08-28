@@ -4,12 +4,12 @@
 
     <header class="my-4 absolute-center">
       <span
-        class="text-gray-700 text-3xl font-semibold leading-none tracking-wider"
+        class="text-gray-700 lg:text-6xl text-5xl font-semibold leading-none tracking-wider"
         >Edit Profile</span
       >
     </header>
 
-    <hr class="line my-4" />
+    <hr class="line my-4 mb-8" />
 
     <!--form  -->
 
@@ -18,7 +18,7 @@
       <div class="md:flex md:items-center mb-6">
         <div class="md:w-1/3">
           <label
-            class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4 mr-4"
+            class="block text-gray-600 font-bold md:text-right mb-1 md:mb-0 pr-4 mr-4"
             for="inline-full-name"
           >
             Display :
@@ -37,7 +37,7 @@
       <div class="md:flex md:items-center mb-6">
         <div class="md:w-1/3">
           <label
-            class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4 mr-4"
+            class="block text-gray-600 font-bold md:text-right mb-1 md:mb-0 pr-4 mr-4"
             for="inline-full-name"
           >
             First Name :
@@ -55,7 +55,7 @@
       <div class="md:flex md:items-center mb-6">
         <div class="md:w-1/3">
           <label
-            class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4 mr-4"
+            class="block text-gray-600 font-bold md:text-right mb-1 md:mb-0 pr-4 mr-4"
             for="inline-full-name"
           >
             Last Name :
@@ -74,7 +74,7 @@
       <div class="md:flex md:items-center mb-6">
         <div class="md:w-1/3">
           <label
-            class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4 mr-4"
+            class="block text-gray-600 font-bold md:text-right mb-1 md:mb-0 pr-4 mr-4"
             for="inline-full-name"
           >
             Email :
@@ -95,16 +95,18 @@
         <input
           type="submit"
           value="Save"
-          class="save_btn ml-6 cursor-pointer lg:ml-24 btn mb-4 shadow bg-blue-700 hover:bg-blue-800 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+          class="save_btn ml-6 mx-2 cursor-pointer lg:ml-24 btn mb-4 shadow bg-blue-700 hover:bg-blue-800 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
         />
 
-        <button
-          class="mb-4 ml-6 shadow bg-yellow-500 hover:bg-yellow-600 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-          type="button"
-          style="margin-left: 6px"
-        >
-          <a href="/portfolio">Cancel</a>
-        </button>
+        <a href="/portfolio">
+          <button
+            class="mb-4 ml-6 mx-2 shadow bg-yellow-500 hover:bg-yellow-600 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+            type="button"
+            style="margin-left: 6px"
+          >
+            Cancel
+          </button>
+        </a>
       </div>
     </form>
   </div>

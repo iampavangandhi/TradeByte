@@ -38,8 +38,8 @@ body {
 }
 
 .tick {
-  height: 22px;
-  width: 22px;
+  height: 20px;
+  width: 20px;
   border-radius: 50%;
   background-color: #38cda0;
   color: white;
