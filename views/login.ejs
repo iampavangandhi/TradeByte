@@ -2,11 +2,11 @@
   href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
   rel="stylesheet"
 />
-<div class="antialiased bg-gray-300 w-full h-full">
-  <div class="bg-white w-full text-gray-700">
+<div class="antialiased w-full h-full">
+  <div class="bg-white w-full text-gray-700 shadow-lg">
     <div
       x-data="{ open: false }"
-      class="flex flex-col w-full mx-auto md:items-center md:justify-between md:flex-row container mx-auto"
+      class="flex flex-col max-w-5xl mx-auto md:items-center md:justify-between md:flex-row container"
     >
       <div class="flex flex-row items-center justify-between p-4">
         <a href="#" class="flex-shrink-0 text-center">
@@ -70,7 +70,7 @@
         <div class="auth-box flex justify-center items-center">
           <button
             onClick="openModal()"
-            class="bg-red-700 text-white px-4 py-2 mt-2 text-xs font-semibold bg-transparent rounded md:mt-0 md:ml-4 hover:bg-red-400 focus:bg-red-600 focus:outline-none focus:shadow-outline"
+            class="bg-red-700 text-white px-4 py-2 mt-2 mr-1 text-xs font-semibold bg-transparent rounded md:mt-0 md:ml-4 hover:bg-red-400 focus:bg-red-600 focus:outline-none focus:shadow-outline"
             href="#"
           >
             Sign In / Register
@@ -81,12 +81,12 @@
   </div>
   <!-- Hero Section -->
   <div class="max-w-4xl lg:max-w-5xl my-4 md:my-0 mx-4 md:mx-auto">
-    <div class="wrapper flex flex-col md:flex-row items-center justify-center max-w-6xl mx-auto">
-      <div class="text-box md:w-1/2 flex justify-start flex-col text-center md:text-left md:ml-8">
-        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-bold mb-4">TradeByte</h1>
-        <p class="text-md sm:text-2xl">Welcome to TradeByte, your one stop to all the latest stocks and their insights.</p>
+    <div class="wrapper flex flex-col md:flex-row items-center justify-between max-w-6xl h-2/3 mx-auto">
+      <div class="text-box md:w-1/2 flex justify-start flex-col text-center md:text-left md:ml-8 md:mb-16">
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-bold mb-4 text-gray-900">TradeByte</h1>
+        <p class="text-md sm:text-2xl text-gray-700">Welcome to TradeByte, stocks trading simulation webapp. Your one stop to all the latest stocks and their insights.</p>
       </div>
-      <div class="illustration-box w-2/3">
+      <div class="illustration-box w-1/2">
         <img src="../images/desktop-mockup.png" alt="TradeByte Illustration" />
       </div>
     </div>
@@ -94,9 +94,9 @@
   <footer class="flex justify-center px-4 text-gray-100 bg-gray-800">
     <div class="container py-6">
       <div
-        class="heading md:flex md:max-w-xl md:justify-center md:items-center md:mx-auto"
+        class="heading md:flex md:max-w-3xl md:justify-center md:items-center md:mx-auto"
       >
-        <h1 class="text-center text-lg font-bold lg:text-2xl">
+        <h1 class="text-center md:text-left text-lg font-bold lg:text-2xl">
           Join TradeByte to keep up with the latest news about stocks and
           trading.
         </h1>
@@ -104,9 +104,9 @@
         <div class="flex justify-center items-center md:ml-6">
           <div class="bg-white rounded-lg mt-4">
             <button
-              class="w-full p-2 text-sm bg-red-700 rounded-lg font-semibold uppercase px-8 lg:w-auto"
+              class="w-full p-2 text-sm bg-red-700 rounded-lg font-semibold uppercase px-3 "
             >
-              Join
+              SignUp
             </button>
           </div>
         </div>
