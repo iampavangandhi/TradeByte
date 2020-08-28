@@ -3,6 +3,7 @@
   rel="stylesheet"
 />
 <div class="antialiased w-full h-full">
+  <!--  Navbar -->
   <div class="bg-white w-full text-gray-700 shadow-lg">
     <div
       x-data="{ open: false }"
@@ -84,13 +85,15 @@
     <div class="wrapper flex flex-col md:flex-row items-center justify-between max-w-6xl h-2/3 mx-auto">
       <div class="text-box md:w-1/2 flex justify-start flex-col text-center md:text-left md:ml-8 md:mb-16 ld:ml-0">
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 text-gray-900">TradeByte</h1>
-        <p class="text-md sm:text-xl lg:text-2xl text-gray-700">Welcome to TradeByte, stocks trading simulation webapp. Your one stop to all the latest stocks and their insights.</p>
+        <p class="text-lg sm:text-xl lg:text-2xl text-gray-700">Welcome to TradeByte, stocks trading simulation webapp. Your one stop to all the latest stocks and their insights.</p>
       </div>
-      <div class="illustration-box w-2/3">
+      <div class="illustration-box w-full md:w-2/3">
         <img src="../images/desktop-mockup.png" alt="TradeByte Illustration" />
       </div>
     </div>
   </div>
+  <!--  -->
+  <!-- Footer -->
   <footer class="flex justify-center px-4 text-gray-100 bg-gray-800">
     <div class="container py-6">
       <div
@@ -114,7 +117,7 @@
 
       <hr class="h-px mt-6 bg-gray-700 border-none" />
 
-      <div class="flex flex-col items-center justify-between mt-6 md:flex-row">
+      <div class="flex flex-col text-xs md:text-sm items-center justify-between mt-6 md:flex-row">
         <div class="text-center md:text-left">
           <a href="/" class="text-xl font-bold">TradeByte</a>
           <p>This app is made for educational purpose only.</p>
