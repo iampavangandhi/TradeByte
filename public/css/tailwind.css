@@ -161,4 +161,17 @@ animated {
   }
 }
 
+.serif {
+  font-family: "Zilla Slab", serif;
+}
+
+[x-cloak] {
+  display: none;
+}
+
+.grid-indigo {
+  background-image: radial-gradient(#5a67d8 2px, transparent 2px);
+  background-size: 16px 16px;
+}
+
 @tailwind utilities;
