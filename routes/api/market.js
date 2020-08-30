@@ -1,15 +1,13 @@
 // Market Routes
 
+//jshint esversion:8
+
 const express = require("express");
 const router = express.Router();
 const { ensureAuth, ensureGuest } = require("../../middleware/auth");
 
 const compactData = require("../../config/data-compact.json");
 const totalData = require("../../config/data-total.json");
-
-// TODO
-// Implement Stocks Search
-// https://www.alphavantage.co/documentation/#symbolsearch
 
 // @desc     Market page
 // @route    GET /Market

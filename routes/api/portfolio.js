@@ -1,5 +1,7 @@
 // Portfolio Routes
 
+//jshint esversion:8
+
 const express = require("express");
 const router = express.Router();
 const { ensureAuth, ensureGuest } = require("../../middleware/auth");
@@ -25,7 +27,7 @@ router.get("/", ensureAuth, async (req, res) => {
       });
 
       // Update the balance of user who shared the share link
-      const updateBalanceForOtherUser = await User.findOneAndUpdate(
+      await User.findOneAndUpdate(
         { _id: req.cookies.prevUser },
         { balance: prevUserBalance + 100 }, // updating existing balance
         {
@@ -34,10 +36,8 @@ router.get("/", ensureAuth, async (req, res) => {
         }
       );
 
-      console.log(updateBalanceForOtherUser);
-
       // Update the balance of user who used the share link
-      const updateBalanceForCurrentUser = await User.findOneAndUpdate(
+      await User.findOneAndUpdate(
         { _id: req.user.id },
         { balance: req.user.balance + 50 },
         {
@@ -46,31 +46,25 @@ router.get("/", ensureAuth, async (req, res) => {
         }
       );
 
-      console.log(updateBalanceForCurrentUser);
-
       // Adding new transaction details on Transaction Schema for user who signed up using the share link
       const transactionDetails =
         "50$ Balance Added to Wallet from the share link";
       const transactionOperation = "Debited";
       const transactionUser = req.user.id;
-      const updateTransactoinForCurrentUser = await Transaction.create({
+      await Transaction.create({
         details: transactionDetails,
         amount: 50,
         operation: transactionOperation,
         user: transactionUser,
       });
 
-      console.log(updateTransactoinForCurrentUser);
-
       // Adding new transaction details on Transaction Schema for the user who shared the link
-      const updateTransactoinForOtherUser = await Transaction.create({
+      await Transaction.create({
         details: "100$ Balance Added to Wallet from the shared link",
         amount: 100,
         operation: transactionOperation,
         user: req.cookies.prevUser,
       });
-
-      console.log(updateTransactoinForOtherUser);
 
       // set prevUser cookie to empty string after one user signed up using it
       res.cookie("prevUser", "");
@@ -84,32 +78,30 @@ router.get("/", ensureAuth, async (req, res) => {
     res.cookie("prevUser", "");
   }
 
-  console.log(user)
-
   const transactions = await Transaction.find({
-    user: req.user.id
+    user: req.user.id,
   })
-  .populate("user")
-  .sort({
-    createdAt: -1
-  })
-  .lean();
+    .populate("user")
+    .sort({
+      createdAt: -1,
+    })
+    .lean();
 
-  var TransactionMessage = ''
-  
-  if(Object.keys(transactions).length == 0) {
-    TransactionMessage = 'No Transaction'
+  var TransactionMessage = "";
+
+  if (Object.keys(transactions).length == 0) {
+    TransactionMessage = "No Transaction";
   } else {
-    TransactionMessage = ''
+    TransactionMessage = "";
   }
 
-  var StockMessage = ''
-  stocks = user.stock
+  var StockMessage = "";
+  stocks = user.stock;
 
-  if(Object.keys(stocks).length == 0) {
-    StockMessage = 'No Stock'
+  if (Object.keys(stocks).length == 0) {
+    StockMessage = "No Stock";
   } else {
-    StockMessage = ''
+    StockMessage = "";
   }
 
   res.render("portfolio", {
@@ -122,7 +114,6 @@ router.get("/", ensureAuth, async (req, res) => {
     layout: "layouts/app",
     href: "/portfolio",
   });
-
 });
 
 module.exports = router;

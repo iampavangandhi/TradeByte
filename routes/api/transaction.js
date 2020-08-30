@@ -1,5 +1,7 @@
 // Cart Routes
 
+//jshint esversion:8
+
 const express = require("express");
 const router = express.Router();
 const { ensureAuth } = require("../../middleware/auth");
@@ -67,14 +69,12 @@ router.put("/confirm", ensureAuth, async (req, res) => {
     const transactionUser = req.user.id;
     const transactionAmount = Number(req.body.totalAmount);
 
-    const updateTransactoin = await Transaction.create({
+    await Transaction.create({
       details: transactionDetails,
       amount: transactionAmount,
       operation: transactionOperation,
       user: transactionUser,
     });
-
-    console.log(updateTransactoin);
 
     res.redirect("/done");
   } catch (err) {
@@ -144,7 +144,7 @@ router.post("/sell/:id", ensureAuth, async (req, res) => {
         const newBalance = req.user.balance + totalAmount;
 
         // Added to Transaction
-        const updateTransaction = await Transaction.create({
+        await Transaction.create({
           details: transactionDetails,
           amount: totalAmount,
           operation: transactionOperation,
@@ -152,7 +152,7 @@ router.post("/sell/:id", ensureAuth, async (req, res) => {
         });
 
         // Update the User Balance and Deleted the Sold Stock
-        const updatedBalance = await User.findOneAndUpdate(
+        await User.findOneAndUpdate(
           {
             _id: req.user.id,
           },
@@ -165,10 +165,6 @@ router.post("/sell/:id", ensureAuth, async (req, res) => {
             },
           }
         );
-
-        console.log(updatedBalance);
-        console.log(updateTransaction);
-        console.log(newBalance);
       }
     });
 
