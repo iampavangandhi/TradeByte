@@ -12,6 +12,7 @@ body {
   height: 100%;
   overflow-x: hidden;
   box-sizing: border-box;
+  background: linear-gradient(122.51deg, #e6ecfc 30%, #7fb4f1 100%) !important;
 }  
 
 @tailwind components;
