@@ -4,12 +4,8 @@
     "Symbol": "AAPL"
   },
   {
-    "Company Name": "Adobe Systems",
+    "Company Name": "Adobe Systems, Inc.",
     "Symbol": "ADBE"
-  },
-  {
-    "Company Name": "Advent Software, Inc.",
-    "Symbol": "ADVS"
   },
   {
     "Company Name": "Advance Micro Devices",
@@ -20,6 +16,10 @@
     "Symbol": "AMZN"
   },
   {
+    "Company Name": "Alibaba Group, Inc.",
+    "Symbol": "BABA"
+  },
+  {
     "Company Name": "Cisco Systems, Inc.",
     "Symbol": "CSCO"
   },
@@ -28,11 +28,7 @@
     "Symbol": "FB"
   },
   {
-    "Company Name": "Forward Industries, Inc.",
-    "Symbol": "FORD"
-  },
-  {
-    "Company Name": "Google Inc.",
+    "Company Name": "Google, Inc.",
     "Symbol": "GOOGL"
   },
   {
@@ -40,12 +36,16 @@
     "Symbol": "INTC"
   },
   {
-    "Company Name": "Intuit Inc.",
+    "Company Name": "Intuit, Inc.",
     "Symbol": "INTU"
   },
   {
     "Company Name": "iRobot Corporation",
     "Symbol": "IRBT"
+  },
+  {
+    "Company Name": "Mastercard, Inc.",
+    "Symbol": "MA"
   },
   {
     "Company Name": "Microsoft Corporation",
@@ -64,19 +64,19 @@
     "Symbol": "QCOM"
   },
   {
-    "Company Name": "SanDisk Corporation",
-    "Symbol": "SNDK"
-  },
-  {
-    "Company Name": "TripAdvisor, Inc.",
-    "Symbol": "TRIP"
-  },
-  {
     "Company Name": "Tesla Motors, Inc.",
     "Symbol": "TSLA"
   },
   {
-    "Company Name": "Yahoo! Inc.",
-    "Symbol": "YHOO"
+    "Company Name": "Visa, Inc.",
+    "Symbol": "V"
+  },
+  {
+    "Company Name": "Walmart, Inc.",
+    "Symbol": "WMT"
+  },
+  {
+    "Company Name": "Zoom Video, Inc.",
+    "Symbol": "ZM"
   }
 ]
