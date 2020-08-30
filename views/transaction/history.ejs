@@ -1,47 +1,68 @@
-<section class="text-gray-700 body-font md:ml-56 lg:ml-64 md:mx-auto md:pr-14 w-screen inline">
-    <div class="container px-5 py-10 mx-auto md:px-auto">
-      <div class="my-4 absolute-center md:flex">
-        <h2 class="text-gray-700 text-4xl font-semibold leading-none tracking-wider px-5">Transaction History</h2>
-        <p class="md:w-1/2 flex items-center justify-end text-xl pr-4 font-medium"><span class="view-link font-semibold">Your Balance :</span> $<%= user.balance%></p>
+<section
+  class="text-gray-700 body-font md:ml-56 lg:ml-64 md:mx-auto md:pr-14 w-screen inline"
+>
+  <div class="container px-5 py-10 mx-auto md:px-auto">
+    <div class="my-4 absolute-center md:flex">
+      <header class="my-4 absolute-center">
+        <span
+          class="text-gray-700 lg:text-6xl text-5xl font-semibold leading-none tracking-wider"
+          >Transaction History</span
+        >
+      </header>
     </div>
-        <hr class="line">
+    <hr class="line my-4 mb-8" />
 
-        <div class="mt-10">
-          <% if(message === '') { %>
-            <table class="table-fixed w-full">
-                <thead>
-                  <tr class="bg-gray-200">
-                    <th class="w-1/2 px-4 py-2 text-base ">Date</th>
-                    <th class="w-1/5 px-4 py-2 text-base ">Operation</th>
-                    <th class="w-1/3 px-4 py-2 text-base ">Amount</th>
-                    <th class="w-1/4 px-4 py-2 text-base ">Transaction About</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <% transactions.forEach( (stock) => { %>
-                    <tr class="bg-white">
-                      <td class="border px-4 py-2 text-base"><%= stock.createdAt %></td>
-                      <td class="border px-4 py-2 text-base">
-                          <% if(stock.operation == "Debited") {%>
-                            <p class="text-center text-gray-100 rounded-full md:text-sm bg-tempc-400"><%= stock.operation %></p>
-                          <%} else {%>
-                            <p class="text-center text-gray-100 rounded-full bg-tempc-500"><%= stock.operation %></p>
-                          <%}%>  
-                     </td>
-                      <td class="border px-4 py-2 text-center text-base"><%= stock.amount %></td>
-                      <td class="border px-4 py-2 text-base"><%= stock.details %></td>
-                    </tr>
-                  <% }) %>
-                </tbody>
-              </table>
-              <% } else { %>
-                <p><%= message %></p>
-              <% } %>
+    <div class="flex flex-col lg:items-center">
+      <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+          <div
+            class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg"
+          >
+            <% if(message === '') { %>
+            <table class="mt-6 min-w-full table-auto divide-y divide-gray-200">
+              <thead>
+                <tr class="bg-gray-200 px-12">
+                  <th class="px-8 py-2 text-base">Date</th>
+                  <th class="px-8 py-2 text-base">Operation</th>
+                  <th class="px-8 py-2 text-base">Amount</th>
+                  <th class="px-8 py-2 text-base">Details</th>
+                </tr>
+              </thead>
+              <% transactions.forEach( (stock) => { %>
+              <tr class="bg-white">
+                <td class="border px-4 py-2 text-base">
+                  <%= stock.createdAt %>
+                </td>
+                <td class="border px-4 py-2 text-base">
+                  <% if(stock.operation == "Debited") {%>
+                  <p
+                    class="text-center text-gray-100 rounded-full md:text-sm bg-tempc-400"
+                  >
+                    <%= stock.operation %>
+                  </p>
+                  <%} else {%>
+                  <p
+                    class="text-center text-gray-100 rounded-full bg-tempc-500"
+                  >
+                    <%= stock.operation %>
+                  </p>
+                  <%}%>
+                </td>
+                <td class="border px-4 py-2 text-center text-base">
+                  <%= stock.amount %>
+                </td>
+                <td class="border px-4 py-2 text-base"><%= stock.details %></td>
+              </tr>
+              <% }) %>
+            </table>
+            <% } else { %>
+            <p><%= message %></p>
+            <% } %>
+          </div>
         </div>
-        </div>
-        <!-- Footer -->
-        <%- include('../partials/_footer.ejs') %>
-  
+      </div>
     </div>
-  </section>
-    
+  </div>
+  <!-- Footer -->
+  <%- include('../partials/_footer.ejs') %>
+</section>

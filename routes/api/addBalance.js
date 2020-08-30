@@ -1,5 +1,7 @@
 // Add Balance Routes
 
+//jshint esversion:8
+
 const express = require("express");
 const router = express.Router();
 const stripe = require("stripe")(process.env.SK_TEST);
@@ -30,7 +32,7 @@ router.get("/", ensureAuth, (req, res) => {
 router.post("/", ensureAuth, async (req, res) => {
   let amount = Number(req.body.addAmount); // type cast amount to number as body parser take it as string
 
-  let finalAmont = amount + req.user.balance;
+  let finalAmount = amount + req.user.balance;
 
   const { stripeToken } = req.body;
 
@@ -54,9 +56,9 @@ router.post("/", ensureAuth, async (req, res) => {
 
     // Updating balance to user's schema.
     req.body.user = req.user.id;
-    const updateBalance = await User.findOneAndUpdate(
+    await User.findOneAndUpdate(
       { _id: req.user.id },
-      { balance: finalAmont },
+      { balance: finalAmount },
       {
         new: true, // it will create a new one, if it doesn't exist
         runValidators: true, // it check weather the fields are valid or not
@@ -67,14 +69,13 @@ router.post("/", ensureAuth, async (req, res) => {
     const transactionDetails = "Balance Added to Wallet";
     const transactionOperation = "Deposit";
     const transactionUser = req.user.id;
-    const updateTransactoin = await Transaction.create({
+    await Transaction.create({
       details: transactionDetails,
       amount: amount,
       operation: transactionOperation,
       user: transactionUser,
     });
 
-    console.log(updateTransactoin);
     res.redirect("/done");
   } catch (err) {
     console.error(err);

@@ -1,4 +1,7 @@
 // Cart Routes
+
+//jshint esversion:8
+
 const express = require("express");
 const router = express.Router();
 const { ensureAuth } = require("../../middleware/auth");
@@ -7,14 +10,9 @@ const User = require("../../models/User");
 const getPrice = require("../../helpers/getPrice");
 const getCompanyNameAndLogo = require("../../helpers/getCompanyNameAndLogo");
 
-// TODO
-// Stocks Cart Buy/Sell
-
-// TODO
-// Empty Cart Route
-
-// @desc    To buy
-// @route   GET /cart/:symbol
+// @desc     To buy
+// @route    GET /cart/:symbol
+// @access   Private
 router.get("/:symbol", ensureAuth, async (req, res) => {
   const symbol = req.params.symbol;
   const { latestPrice } = await getPrice(symbol);
@@ -32,6 +30,7 @@ router.get("/:symbol", ensureAuth, async (req, res) => {
 
 // @desc    To buy
 // @route   POST /cart/buy
+// @access   Private
 router.post("/buy", ensureAuth, async (req, res) => {
   const user = req.user;
   const symbol = req.body.companySymbol;
