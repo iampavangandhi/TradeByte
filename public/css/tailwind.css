@@ -13,7 +13,7 @@ body {
   overflow-x: hidden;
   box-sizing: border-box;
   background: linear-gradient(122.51deg, #e6ecfc 30%, #7fb4f1 100%) !important;
-}  
+}
 
 @tailwind components;
 
@@ -84,18 +84,6 @@ body {
   color: rgb(0, 0, 0);
   font-weight: 700;
   font-size: 1.1rem;
-}
-
-.transaction-page {
-  margin-left: 280px;
-  margin-right: 280px;
-  margin-top: 90px;
-  margin-bottom: 100px;
-  background-color: white;
-  padding-left: 100px;
-  padding-right: 100px;
-  padding-top: 30px;
-  padding-bottom: 40px;
 }
 
 .transaction-input:focus {

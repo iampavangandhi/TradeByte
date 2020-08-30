@@ -1,69 +1,112 @@
-<section class="text-gray-700 body-font md:ml-56 lg:ml-64 md:mx-auto md:pr-14 w-screen inline">
+<div class="md:col-span-4 md:ml-56 lg:ml-64 md:pr-14 w-full">
   <div class="container px-5 py-10 mx-auto md:px-auto">
-    <div class="my-4 absolute-center md:flex">
-      <h2 class="md:w-1/2 text-gray-700 lg:text-6xl text-5xl font-semibold leading-none tracking-wider px-5">
-        Transaction
-      </h2>
-      <p class="md:w-1/2 flex items-center justify-end text-xl pr-4 font-medium"><span class="view-link font-semibold">Your Balance :</span> $<%= user.balance%></p>
-    </div>
-    <hr class="line" />
+    <!-- header -->
 
-    <div class="transaction-page rounded-lg">
-      <div class="text-xl">
-        <% if(message === "Insufficent Balance") {      %>
-          <div style="margin-bottom: 350px;">
-            <p>Please Add <span class="text-red-500">$<%= ExtraBalance %></span> or more to complete the Transaction.</p>
-          <button style="margin-top: 10px;" class="transaction-buy text-white font-bold py-2 px-4 border-b-4 rounded">
-            <a href="/addBalance">Add Balance</a>
-          </button>
-          </div>
-        <% } else {                                     %>
-         <p><%= message %></p>
-         <hr class="text-red-500 mt-3 line"/>
+    <header class="my-4 absolute-center">
+      <span
+        class="text-gray-700 lg:text-6xl text-5xl font-semibold leading-none tracking-wider"
+        >Transaction</span
+      >
+      <!-- <span class="lg:text-3xl text-2xl view-link font-semibold"
+          >Your Balance : $<%= user.balance%></span
+        > -->
+    </header>
+
+    <hr class="line my-4 mb-8" />
+  </div>
+
+  <div
+    class="rounded-lg bg-white w-auto flex flex-col items-center justify-center"
+  >
+    <div class="text-xl">
+      <% if(message === "Insufficent Balance") { %>
+      <div style="margin-bottom: 350px">
+        <p>
+          Please Add <span class="text-red-500">$<%= ExtraBalance %></span> or
+          more to complete the Transaction.
+        </p>
+        <button
+          style="margin-top: 10px"
+          class="text-white font-bold py-2 px-4 border-b-4 rounded"
+        >
+          <a href="/addBalance">Add Balance</a>
+        </button>
       </div>
-    
+    </div>
+    <% } else { %>
+    <p class="flex text-center justify-center my-4 text-2xl"><%= message %></p>
     <form action="/transaction/confirm" method="POST">
       <input type="hidden" name="_method" value="PUT" />
-      <table class="table-fixed w-full rounded-lg">
+      <table class="table-auto min-w-full rounded-lg">
         <tbody>
-          <tr class="w-1/2">
-            <td class="border px-4 py-2">Company Symbol:</td>
-            <td class="border px-4 py-2">
-              <input class="text-right transaction-input" readonly type="text" name="companySymbol" value="<%= data.companySymbol%>" />
+          <tr>
+            <td class="border py-2">Company Symbol:</td>
+            <td class="border py-2">
+              <input
+                class="text-right transaction-input"
+                readonly
+                type="text"
+                name="companySymbol"
+                value="<%= data.companySymbol%>"
+              />
             </td>
           </tr>
-          <tr class="bg-gray-100 w-1/2">
-            <td class="border px-4 py-2">Stock Price:</td>
-            <td class="border px-4 py-2">
-              <input class="text-right bg-gray-100 transaction-input" readonly type="Number" name="stockPrice" value="<%= data.stockPrice%>" />
+          <tr class="bg-gray-100">
+            <td class="border py-2">Stock Price:</td>
+            <td class="border py-2">
+              <input
+                class="text-right bg-gray-100 transaction-input"
+                readonly
+                type="Number"
+                name="stockPrice"
+                value="<%= data.stockPrice%>"
+              />
             </td>
           </tr>
-          <tr class="w-1/2">
-            <td class="border px-4 py-2">Number of Stock:</td>
-            <td class="border px-4 py-2">
-              <input class="text-right transaction-input" readonly type="Number" name="noOfStock" value="<%= data.noOfStock%>" />
+          <tr class="">
+            <td class="border py-2">Number of Stock:</td>
+            <td class="border py-2">
+              <input
+                class="text-right transaction-input"
+                readonly
+                type="Number"
+                name="noOfStock"
+                value="<%= data.noOfStock%>"
+              />
             </td>
           </tr>
-          <tr class="bg-gray-100 w-1/2">
-            <td class="border px-4 py-2">Total Amount:</td>
-            <td class="border px-4 py-2">
-              <input class="text-right bg-gray-100 transaction-input" readonly type="Number" name="totalAmount" value="<%= data.totalAmount%>" />
+          <tr class="bg-gray-100">
+            <td class="border py-2">Total Amount:</td>
+            <td class="border py-2">
+              <input
+                class="text-right bg-gray-100 transaction-input"
+                readonly
+                type="Number"
+                name="totalAmount"
+                value="<%= data.totalAmount%>"
+              />
             </td>
           </tr>
         </tbody>
       </table>
-      <div class="flex justify-between mt-10">
-        <button  class="transaction-cancel text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+      <div class="flex justify-center mt-4">
+        <button
+          class="transaction-cancel text-white font-bold py-2 mx-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
+        >
           <a href="/">Cancel</a>
         </button>
         <button>
-          <input class="transaction-buy text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" type="submit" value="BUY" />
+          <input
+            class="transaction-buy text-white font-bold py-2 mx-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
+            type="submit"
+            value="BUY"
+          />
         </button>
       </div>
     </form>
     <% } %>
-    </div>
-     <!-- Footer -->
-     <%- include('../partials/_footer.ejs') %>
   </div>
-</section>
+
+  <!-- Footer -->
+  <%- include('../partials/_footer.ejs') %>
+</div>

@@ -2,9 +2,7 @@
 
 const express = require("express");
 const router = express.Router();
-const {
-  ensureAuth
-} = require("../../middleware/auth");
+const { ensureAuth } = require("../../middleware/auth");
 const User = require("../../models/User");
 const Transaction = require("../../models/Transaction");
 const getPrice = require("../../helpers/getPrice");
@@ -17,15 +15,12 @@ const emailHelper = require("../../helpers/emailHelper");
 // @access   Private
 router.put("/confirm", ensureAuth, async (req, res) => {
   try {
-    const stockCount = Number(req.body.noOfStock)
+    const stockCount = Number(req.body.noOfStock);
     const totalPrice = Number(req.body.totalAmount);
     let balance = Number(req.user.balance) - totalPrice;
     console.log(req.user.displayName + " this is the name");
     req.body.user = req.user.id;
-    const {
-      email,
-      displayName
-    } = req.user;
+    const { email, displayName } = req.user;
 
     // console.log(stockCount)
 
@@ -37,20 +32,21 @@ router.put("/confirm", ensureAuth, async (req, res) => {
     //   }
     // );
     // console.log(`${updatedUser} : U P D A T E D U S E R`);
-      
+
     const addedNewUser = await User.findOneAndUpdate(
-    { _id: req.user.id }, 
-    { balance: balance,
-      $push: {
-        stock: req.body
+      { _id: req.user.id },
+      {
+        balance: balance,
+        $push: {
+          stock: req.body,
+        },
+      },
+      {
+        new: true, // it will create a new one, if it doesn't exist
+        runValidators: true, // it check weather the fields are valid or not
       }
-    }, 
-    {
-      new: true, // it will create a new one, if it doesn't exist
-      runValidators: true, // it check weather the fields are valid or not
-    });
+    );
     console.log(addedNewUser);
-    
 
     const options = {
       to: email, // list of receivers
@@ -94,16 +90,16 @@ router.get("/", ensureAuth, async (req, res) => {
   const user = req.user;
   try {
     const transactions = await Transaction.find({
-        user: req.user.id
-      })
+      user: req.user.id,
+    })
       .populate("user")
       .sort({
-        createdAt: -1
+        createdAt: -1,
       })
       .lean();
-    
-    if(Object.keys(transactions).length == 0) {
-      var message = 'No Transaction'
+
+    if (Object.keys(transactions).length == 0) {
+      var message = "No Transaction";
       res.render("transaction/history", {
         message,
         transactions,
@@ -112,7 +108,7 @@ router.get("/", ensureAuth, async (req, res) => {
         href: "/transaction",
       });
     } else {
-      var message = ''
+      var message = "";
       res.render("transaction/history", {
         message,
         transactions,
@@ -121,7 +117,6 @@ router.get("/", ensureAuth, async (req, res) => {
         href: "/transaction",
       });
     }
-
   } catch (err) {
     console.error(err);
     res.render("error/500");
@@ -157,16 +152,19 @@ router.post("/sell/:id", ensureAuth, async (req, res) => {
         });
 
         // Update the User Balance and Deleted the Sold Stock
-        const updatedBalance = await User.findOneAndUpdate({
-          _id: req.user.id
-        }, {
-          balance: newBalance,
-          $pull: {
-            stock: {
-              _id: req.params.id
-            }
+        const updatedBalance = await User.findOneAndUpdate(
+          {
+            _id: req.user.id,
+          },
+          {
+            balance: newBalance,
+            $pull: {
+              stock: {
+                _id: req.params.id,
+              },
+            },
           }
-        });
+        );
 
         console.log(updatedBalance);
         console.log(updateTransaction);
