@@ -13,7 +13,7 @@
             alt="Logo"
           />
         </a>
-        <h4 class="font-bold text-center pt-1">
+        <h4 class="font-bold text-center ml-2 pt-1">
           <a
             href="/"
             class="hover:text-gray-900 tracking-widest text-2xl md:text-2xl lg:text-3xl tradebyte-logo"
@@ -46,22 +46,17 @@
       >
         <a
           class="px-4 py-2 mt-2 text-sm font-semibold text-sm lg:text-md rounded md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-          href="#"
+          href="#features"
           >Features</a
         >
         <a
           class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent text-sm lg:text-md rounded md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-          href="#"
+          href="#testimonials"
           >Reviews</a
         >
         <a
           class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent text-sm lg:text-md rounded md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-          href="#"
-          >About</a
-        >
-        <a
-          class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent text-sm lg:text-md rounded md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-          href="#"
+          href="#contact"
           >Contact</a
         >
         <div class="auth-box flex justify-center items-center">
@@ -100,7 +95,7 @@
     </div>
   </section>
   <!-- Features -->
-  <section class="features bg-gray-200">
+  <section id="features" class="features bg-gray-200">
     <div class="max-w-5xl mx-auto p-8">
       <h2
         class="heading text-gray-800 text-3xl md:text-5xl text-center font-bold italic mb-6 underline"
@@ -203,7 +198,7 @@
     </div>
   </section>
   <!-- Testimonials -->
-  <section class="testimonials">
+  <section id="testimonials" class="testimonials">
     <div class="max-w-5xl mx-auto p-8">
       <h2
         class="heading text-gray-800 text-3xl md:text-5xl text-center font-bold italic mb-6 underline"
@@ -212,7 +207,7 @@
       </h2>
       <div
         class="my-10 md:my-16 flex flex-col md:flex-row shadow-sm overflow-hidden max-w-4xl mx-auto"
-        x-data="{ testimonialActive: 2 }"
+        x-data="{ testimonialActive: 1 }"
         x-cloak
       >
         <div
@@ -386,7 +381,7 @@
               >
                 <img
                   src="https://avatars3.githubusercontent.com/u/42767012?s=460&v=4"
-                  class="rounded-full w-16 h-16 mr-1"
+                  class="rounded-full w-16 h-16 mr-2"
                   alt="Fab Rizvi"
                 />
                 <div class="text-left">
@@ -396,7 +391,7 @@
                     Pavan Gandhi
                   </h2>
                   <small class="text-gray-500 text-xs md:text-sm truncate"
-                    >Maintainer, TradeByte</small
+                    >Maintainer & Contributor, TradeByte</small
                   >
                 </div>
               </div>
@@ -428,8 +423,8 @@
               >
                 <img
                   src="https://avatars0.githubusercontent.com/u/45004977?s=460&u=539cc5aa793a4f49a6ec2a24087a9b0cfcac58b3&v=4"
-                  class="rounded-full w-16 h-16 mr-1"
-                  alt="Fab Rizvi"
+                  class="rounded-full w-16 h-16 mr-2"
+                  alt="Somyaranjan Rout"
                 />
                 <div class="text-left">
                   <h2
@@ -449,8 +444,8 @@
               >
                 <img
                   src="https://avatars2.githubusercontent.com/u/44470092?s=460&u=71c5c4fb3385ac85bf787fbd88af40436345c4ae&v=4"
-                  class="rounded-full w-16 h-16 mr-1"
-                  alt="Fab Rizvi"
+                  class="rounded-full w-16 h-16 mr-2"
+                  alt="Garima Singh"
                 />
                 <div class="text-left">
                   <h2
@@ -470,7 +465,7 @@
               >
                 <img
                   src="https://avatars1.githubusercontent.com/u/55693389?s=460&v=4"
-                  class="rounded-full w-16 h-16 mr-1"
+                  class="rounded-full w-16 h-16 mr-2"
                   alt="Anjali Kumari"
                 />
                 <div class="text-left">
@@ -491,7 +486,7 @@
               >
                 <img
                   src="https://avatars3.githubusercontent.com/u/40737659?s=460&u=c19943b18103a3c626216c757f1ebec89b905203&v=4"
-                  class="rounded-full w-16 h-16 mr-1"
+                  class="rounded-full w-16 h-16 mr-2"
                   alt="Ankit Pal"
                 />
                 <div class="text-left">
@@ -512,7 +507,10 @@
     </div>
   </section>
   <!-- Footer -->
-  <footer class="flex justify-center px-4 text-gray-100 bg-gray-800">
+  <footer
+    id="contact"
+    class="flex justify-center px-4 text-gray-100 bg-gray-800"
+  >
     <div class="container py-6">
       <div
         class="heading md:flex md:max-w-5xl md:justify-between md:items-center md:mx-auto"
@@ -542,16 +540,19 @@
         class="flex flex-col text-xs md:text-sm items-center justify-between mt-6 md:flex-row"
       >
         <div class="text-center md:text-left">
-          <a href="/" class="text-xl font-bold">TradeByte</a>
+          <a href="/" class="text-2xl font-bold">TradeByte</a>
+          <p class="text-base">Stocks Trading Simulation WebApp.</p>
           <p>This app is made for educational purpose only.</p>
         </div>
         <div class="flex mt-4 md:m-0 items-start">
           <div class="-mx-4 text-center md:text-right">
-            <p>&copy;Copyright TradeByte Team, 2020</p>
+            <p class="mb-2">&copy; Copyright TradeByte Team, 2020</p>
+            <hr class="my-2 bg-gray-700 border-none" />
+            <p>Email: pavangandhi100@gmail.com</p>
             <a
               target="_blank"
               href="https://github.com/iampavangandhi/TradeByte"
-              >Check the code on GitHub</a
+              >Check and Star ❤️ The Repo on GitHub</a
             >
           </div>
         </div>
