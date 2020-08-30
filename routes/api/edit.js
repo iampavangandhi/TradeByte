@@ -1,12 +1,17 @@
-// Edit Profile Route
+// Edit Profile Routes
+
+//jshint esversion:8
+
 const express = require("express");
 const router = express.Router();
+
 const { ensureAuth } = require("../../middleware/auth");
 
 const User = require("../../models/User.js");
 
-// @desc    Show edit page
-// @route   GET /edit
+// @desc     Show edit page
+// @route    GET /edit
+// @access   Private
 router.get("/", ensureAuth, (req, res) => {
   let avatar = req.user.image;
 
@@ -26,6 +31,9 @@ router.get("/", ensureAuth, (req, res) => {
   });
 });
 
+// @desc     Edit page
+// @route    PUT /edit
+// @access   Private
 router.put("/", ensureAuth, async (req, res) => {
   try {
     let curruser1 = await User.findById(req.user._id).lean();

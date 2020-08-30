@@ -1,8 +1,10 @@
 // Done Route
 
+//jshint esversion:8
+
 const express = require("express");
 const router = express.Router();
-const { ensureAuth, ensureGuest } = require("../../middleware/auth");
+const { ensureAuth } = require("../../middleware/auth");
 
 // @desc     Done page
 // @route    GET /done

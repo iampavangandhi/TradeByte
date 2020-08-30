@@ -160,25 +160,25 @@
             <table class="table-fixed w-full">
                 <thead>
                   <tr class="bg-gray-200">
-                    <th class="w-1/2 px-4 py-2 lg:text-base sm:text-xs sm:px-0">Date</th>
-                    <th class="w-1/5 px-4 py-2 lg:text-base sm:text-xs sm:px-0">Operation</th>
-                    <th class="w-1/3 px-4 py-2 lg:text-base sm:text-xs sm:px-0">Amount</th>
-                    <th class="w-1/4 px-4 py-2 lg:text-base sm:text-xs sm:px-0">Transaction About</th>
+                    <th class="w-1/2 px-4 py-2 lg:text-base">Date</th>
+                    <th class="w-1/5 px-4 py-2 lg:text-base">Operation</th>
+                    <th class="w-1/3 px-4 py-2 lg:text-base">Amount</th>
+                    <th class="w-1/4 px-4 py-2 lg:text-base">Transaction About</th>
                   </tr>
                 </thead>
                 <tbody>
                   <% transactions.forEach( (stock) => { %>
                     <tr class="bg-white">
-                      <td class="border px-4 py-2 text-base sm:text-xs"><%= stock.createdAt %></td>
-                      <td class="border px-4 py-2 text-base sm:text-xs">
+                      <td class="border px-4 py-2 text-base "><%= stock.createdAt %></td>
+                      <td class="border px-4 py-2 text-base">
                           <% if(stock.operation == "Debited") {%>
                             <p class="text-center text-gray-100 rounded-full bg-tempc-400"><%= stock.operation %></p>
                           <%} else {%>
                             <p class="text-center text-gray-100 rounded-full bg-tempc-500"><%= stock.operation %></p>
                           <%}%>  
                      </td>
-                      <td class="border px-4 py-2 text-center text-base sm:text-xs"><%= stock.amount %></td>
-                      <td class="border px-4 py-2 text-base sm:text-xs"><%= stock.details %></td>
+                      <td class="border px-4 py-2 text-center text-base"><%= stock.amount %></td>
+                      <td class="border px-4 py-2 text-base"><%= stock.details %></td>
                     </tr>
                   <% }) %>
                 </tbody>
