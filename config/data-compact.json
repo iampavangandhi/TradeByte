@@ -1,82 +1,57 @@
-[
-  {
-    "Company Name": "Apple Inc.",
-    "Symbol": "AAPL"
-  },
-  {
-    "Company Name": "Adobe Systems, Inc.",
-    "Symbol": "ADBE"
-  },
-  {
-    "Company Name": "Advance Micro Devices",
-    "Symbol": "AMD"
-  },
-  {
-    "Company Name": "Amazon.com, Inc.",
-    "Symbol": "AMZN"
-  },
-  {
-    "Company Name": "Alibaba Group, Inc.",
-    "Symbol": "BABA"
-  },
-  {
-    "Company Name": "Cisco Systems, Inc.",
-    "Symbol": "CSCO"
-  },
-  {
-    "Company Name": "Facebook, Inc.",
-    "Symbol": "FB"
-  },
-  {
-    "Company Name": "Google, Inc.",
-    "Symbol": "GOOGL"
-  },
-  {
-    "Company Name": "Intel Corporation",
-    "Symbol": "INTC"
-  },
-  {
-    "Company Name": "Intuit, Inc.",
-    "Symbol": "INTU"
-  },
-  {
-    "Company Name": "iRobot Corporation",
-    "Symbol": "IRBT"
-  },
-  {
-    "Company Name": "Mastercard, Inc.",
-    "Symbol": "MA"
-  },
-  {
-    "Company Name": "Microsoft Corporation",
-    "Symbol": "MSFT"
-  },
-  {
-    "Company Name": "Netflix, Inc.",
-    "Symbol": "NFLX"
-  },
-  {
-    "Company Name": "NVIDIA Corporation",
-    "Symbol": "NVDA"
-  },
-  {
-    "Company Name": "Qualcomm, Inc.",
-    "Symbol": "QCOM"
-  },
-  {
-    "Company Name": "Tesla Motors, Inc.",
-    "Symbol": "TSLA"
-  },
-  {
-    "Company Name": "Visa, Inc.",
-    "Symbol": "V"
-  },
-  {
-    "Company Name": "Walmart, Inc.",
-    "Symbol": "WMT"
-  },
-  {
-    "Company Name": "Zoom Video, Inc.",
-    "Symbol": "ZM"
-  }
+[{
+        "Company Name": "Apple Inc.",
+        "Symbol": "AAPL"
+    },
+    {
+        "Company Name": "Adobe Systems, Inc.",
+        "Symbol": "ADBE"
+    },
+    {
+        "Company Name": "Advance Micro Devices",
+        "Symbol": "AMD"
+    },
+    {
+        "Company Name": "Amazon.com, Inc.",
+        "Symbol": "AMZN"
+    },
+    {
+        "Company Name": "Alibaba Group, Inc.",
+        "Symbol": "BABA"
+    },
+    {
+        "Company Name": "Facebook, Inc.",
+        "Symbol": "FB"
+    },
+    {
+        "Company Name": "Google, Inc.",
+        "Symbol": "GOOGL"
+    },
+    {
+        "Company Name": "Intel Corporation",
+        "Symbol": "INTC"
+    },
+    {
+        "Company Name": "Intuit, Inc.",
+        "Symbol": "INTU"
+    },
+    {
+        "Company Name": "Mastercard, Inc.",
+        "Symbol": "MA"
+    },
+    {
+        "Company Name": "Microsoft Corporation",
+        "Symbol": "MSFT"
+    },
+    {
+        "Company Name": "Netflix, Inc.",
+        "Symbol": "NFLX"
+    },
+    {
+        "Company Name": "Visa, Inc.",
+        "Symbol": "V"
+    },
+    {
+        "Company Name": "Zoom Video, Inc.",
+        "Symbol": "ZM"
+    }
 ]
