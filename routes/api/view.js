@@ -4,11 +4,12 @@
 
 const express = require("express");
 const router = express.Router();
-const getPrice = require("../../helpers/getPrice");
+
 const alpha = require("alphavantage")({
   key: process.env.ALPHA_VANTAGE_KEY,
 });
 
+const getPrice = require("../../helpers/getPrice");
 const getOverview = require("../../helpers/getOverview");
 const { ensureAuth } = require("../../middleware/auth");
 
@@ -38,14 +39,11 @@ router.get("/:symbol", ensureAuth, async (req, res) => {
   let weeksLow = data["weeksLow"];
   let weeksHigh = data["weeksHigh"];
 
-  // console.log(data);
   alpha.data
     .intraday(symbol, "compact", "json", "60min")
     .then((data) => {
       const intraDay = data["Time Series (60min)"];
 
-      //   const assetInformation = data["Meta Data"]["1. Information"];
-      //   const lastRefreshed = data["Meta Data"]["3. Last Refreshed"];
       let dates = [];
       let opening = [];
       let closing = [];
@@ -62,11 +60,10 @@ router.get("/:symbol", ensureAuth, async (req, res) => {
         closing.push(intraDay[keys[i]]["4. close"]);
         volumes.push(intraDay[keys[i]]["5. volume"]);
       }
+
       // reverse so dates appear from left to right
       dates.reverse();
       closing.reverse();
-      //   dates = JSON.stringify(dates);
-      //   closing = JSON.stringify(closing);
 
       res.status(200).render("view", {
         layout: "layouts/app",

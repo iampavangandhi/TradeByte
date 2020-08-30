@@ -1,8 +1,11 @@
-// search Routes
+// Search Routes
+
+//jshint esversion:8
 
 const express = require("express");
 const router = express.Router();
-const { ensureAuth, ensureGuest } = require("../../middleware/auth");
+
+const { ensureAuth } = require("../../middleware/auth");
 
 const totalData = require("../../config/data-total.json");
 

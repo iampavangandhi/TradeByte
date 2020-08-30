@@ -1,3 +1,7 @@
+// User Routes
+
+//jshint esversion:8
+
 const express = require("express");
 const router = express.Router();
 const passport = require("passport");
@@ -90,6 +94,7 @@ router.post("/signup", ensureGuest, (req, res) => {
 
 // @desc     Submit Sign In Form
 // @route    GET /user/signin
+// @access   Public
 router.post("/signin", ensureGuest, (req, res, next) => {
   passport.authenticate("local", {
     successRedirect: "/portfolio",
