@@ -15,6 +15,7 @@ const Transaction = require("../../models/Transaction");
 // @access   Private
 router.get("/", ensureAuth, async (req, res) => {
   let avatar = req.user.image;
+  const user = req.user;
   // See if prevUser cookie exists and the new user have balance of 10000 (amount for the newly created account)
   if (req.cookies.prevUser !== "" && req.user.balance === 10000) {
     try {
@@ -83,12 +84,45 @@ router.get("/", ensureAuth, async (req, res) => {
     res.cookie("prevUser", "");
   }
 
-  res.status(200).render("portfolio", {
-    layout: "layouts/app",
+  console.log(user)
+
+  const transactions = await Transaction.find({
+    user: req.user.id
+  })
+  .populate("user")
+  .sort({
+    createdAt: -1
+  })
+  .lean();
+
+  var TransactionMessage = ''
+  
+  if(Object.keys(transactions).length == 0) {
+    TransactionMessage = 'No Transaction'
+  } else {
+    TransactionMessage = ''
+  }
+
+  var StockMessage = ''
+  stocks = user.stock
+
+  if(Object.keys(stocks).length == 0) {
+    StockMessage = 'No Stock'
+  } else {
+    StockMessage = ''
+  }
+
+  res.render("portfolio", {
+    StockMessage,
+    TransactionMessage,
+    transactions,
+    user,
     avatar,
     totalData,
+    layout: "layouts/app",
     href: "/portfolio",
   });
+
 });
 
 module.exports = router;

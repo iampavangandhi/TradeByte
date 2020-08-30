@@ -64,7 +64,7 @@ router.post("/buy", ensureAuth, async (req, res) => {
         user,
         totalAmount,
         stockPrice,
-        message: "Order Review",
+        message: "Transaction Review",
         layout: "layouts/app",
         href: "/buy",
       });
