@@ -12,9 +12,9 @@ body {
   height: 100%;
   overflow-x: hidden;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
-  background: linear-gradient(122.51deg, #e6ecfc 30%, #7fb4f1 100%) !important;
-}
+}  
+
+@tailwind components;
 
 .chartjs-container {
   position: relative;
@@ -38,8 +38,8 @@ body {
 }
 
 .tick {
-  height: 22px;
-  width: 22px;
+  height: 20px;
+  width: 20px;
   border-radius: 50%;
   background-color: #38cda0;
   color: white;
@@ -125,10 +125,6 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-.min-w {
-  min-width: 400px;
-}
-
 .notification {
   position: relative;
   display: inline-block;
@@ -144,11 +140,70 @@ body {
   color: white;
 }
 
+.min-w {
+  min-width: 400px;
+}
+
 @media (max-width: 400px) {
   .min-w {
     min-width: 300px;
   }
 }
 
-@tailwind components;
+/* Login Page */
+animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animated.faster {
+  -webkit-animation-duration: 500ms;
+  animation-duration: 500ms;
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+.fadeOut {
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.serif {
+  font-family: "Zilla Slab", serif;
+}
+
+[x-cloak] {
+  display: none;
+}
+
+.grid-indigo {
+  background-image: radial-gradient(#5a67d8 2px, transparent 2px);
+  background-size: 16px 16px;
+}
+
 @tailwind utilities;

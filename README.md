@@ -7,7 +7,9 @@
 </div><br/>
 
 > ### TradeByte Project Board: [Here]()
+>
 > #### TradeByte Project Excel Sheet: [Here](https://docs.google.com/spreadsheets/d/1_vg-F2dk6jWy9jcYlGuKqAnXUX6NwbbnLg9Bmn_Ulrk/edit?usp=sharing)
+>
 > #### Checkout TheNodeCourse at [https://github.com/iampavangandhi/TheNodeCourse](https://github.com/iampavangandhi/TheNodeCourse)
 
 ## Table of Contents
@@ -95,7 +97,6 @@ This project exists thanks to all the people who contribute.
 ## API Credits
 
 <img height="40" src="https://miro.medium.com/max/512/1*UCZCB7Vx3EJ9FN-pen4BqQ.png" alt="alpha-vantage">
-
 
 ### [Alpha Vantage](https://www.alphavantage.co/)
 

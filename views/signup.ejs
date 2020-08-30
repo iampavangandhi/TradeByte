@@ -1,111 +1,113 @@
-<section class="p-4" style="min-width: 300px;">
-  <h2 class="text-blue-200 text-center text-4xl lg:text-5xl font-semibold">
-    TradeByte
-  </h2>
-  <div class="flex flex-col my-6 shadow-lg rounded-lg bg-gray-300">
-    <div
-      class="rounded-t mb-0 px-6 py-6 text-lg font-bold w-full flex justify-center items-center flex-col"
-    >
-      <p>Sign Up for&nbsp; <a href="/" class="text-blue-700">TradeByte</a></p>
-      <%- include('./partials/_messages') %>
-    </div>
-    <div class="flex-auto px-4 lg:px-10 py-8 pt-0">
-      <form method="POST" action="/user/signup">
-        <div class="relative flex items-center justify-center w-full mb-3">
-          <div class="relative w-1/2 mr-1">
+<section class="w-full min-h-screen bg-gray-800">
+  <div class="form max-w-sm mx-auto mt-6" style="min-width: 300px">
+    <h2 class="text-blue-200 text-center text-4xl lg:text-5xl font-semibold">
+      TradeByte
+    </h2>
+    <div class="flex flex-col shadow-lg rounded-lg bg-gray-300 mt-4">
+      <div
+        class="rounded-t mb-0 px-6 py-6 text-lg font-bold w-full flex justify-center items-center flex-col"
+      >
+        <p>Sign Up for&nbsp; <a href="/" class="text-blue-700">TradeByte</a></p>
+        <%- include('./partials/_messages') %>
+      </div>
+      <div class="flex-auto px-4 lg:px-10 py-8 pt-0">
+        <form method="POST" action="/user/signup">
+          <div class="relative flex items-center justify-center w-full mb-3">
+            <div class="relative w-1/2 mr-1">
+              <label
+                class="block uppercase text-gray-700 text-xs font-bold mb-2"
+                for="grid-password"
+                >First Name</label
+              >
+              <input
+                type="text"
+                required
+                value="<%= typeof firstName != 'undefined' ? firstName : '' %>"
+                class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
+                name="firstName"
+                placeholder="First Name"
+                style="transition: all 0.15s ease 0s"
+              />
+            </div>
+            <div class="relative w-1/2 ml-1">
+              <label
+                class="block uppercase text-gray-700 text-xs font-bold mb-2"
+                for="grid-password"
+                >Last Name</label
+              >
+              <input
+                type="text"
+                required
+                name="lastName"
+                value="<%= typeof lastName != 'undefined' ? lastName : '' %>"
+                class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
+                placeholder="Last Name"
+                style="transition: all 0.15s ease 0s"
+              />
+            </div>
+          </div>
+          <div class="relative w-full mb-3">
             <label
               class="block uppercase text-gray-700 text-xs font-bold mb-2"
               for="grid-password"
-              >First Name</label
+              >Email</label
             >
             <input
-              type="text"
-              required
-              value="<%= typeof firstName != 'undefined' ? firstName : '' %>"
+              type="email"
+              name="email"
+              value="<%= typeof email != 'undefined' ? email : '' %>"
               class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
-              name="firstName"
-              placeholder="First Name"
-              style="transition: all 0.15s ease 0s;"
+              placeholder="Email"
+              style="transition: all 0.15s ease 0s"
+              required
             />
           </div>
-          <div class="relative w-1/2 ml-1">
+          <div class="relative w-full mb-3">
             <label
               class="block uppercase text-gray-700 text-xs font-bold mb-2"
               for="grid-password"
-              >Last Name</label
+              >Password</label
             >
             <input
-              type="text"
-              required
-              name="lastName"
-              value="<%= typeof lastName != 'undefined' ? lastName : '' %>"
+              type="password"
+              name="password1"
+              value="<%= typeof password1 != 'undefined' ? password1 : '' %>"
               class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
-              placeholder="Last Name"
-              style="transition: all 0.15s ease 0s;"
+              placeholder="Password"
+              style="transition: all 0.15s ease 0s"
+              required
             />
           </div>
-        </div>
-        <div class="relative w-full mb-3">
-          <label
-            class="block uppercase text-gray-700 text-xs font-bold mb-2"
-            for="grid-password"
-            >Email</label
-          >
-          <input
-            type="email"
-            name="email"
-            value="<%= typeof email != 'undefined' ? email : '' %>"
-            class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
-            placeholder="Email"
-            style="transition: all 0.15s ease 0s;"
-            required
-          />
-        </div>
-        <div class="relative w-full mb-3">
-          <label
-            class="block uppercase text-gray-700 text-xs font-bold mb-2"
-            for="grid-password"
-            >Password</label
-          >
-          <input
-            type="password"
-            name="password1"
-            value="<%= typeof password1 != 'undefined' ? password1 : '' %>"
-            class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
-            placeholder="Password"
-            style="transition: all 0.15s ease 0s;"
-            required
-          />
-        </div>
-        <div class="relative w-full mb-3">
-          <label
-            class="block uppercase text-gray-700 text-xs font-bold mb-2"
-            for="grid-password"
-            >Enter your Password again</label
-          >
-          <input
-            type="password"
-            name="password2"
-            value="<%= typeof password2 != 'undefined' ? password2 : '' %>"
-            class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
-            placeholder="Password"
-            style="transition: all 0.15s ease 0s;"
-            required
-          />
-        </div>
-        <div class="text-center mt-4">
-          <button
-            class="bg-gray-900 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full"
-            type="submit"
-            style="transition: all 0.15s ease 0s;"
-          >
-            Sign Up
-          </button>
-          <p class="mt-2">
-            Go back to <a href="/" class="text-red-600">Login</a>
-          </p>
-        </div>
-      </form>
+          <div class="relative w-full mb-3">
+            <label
+              class="block uppercase text-gray-700 text-xs font-bold mb-2"
+              for="grid-password"
+              >Enter your Password again</label
+            >
+            <input
+              type="password"
+              name="password2"
+              value="<%= typeof password2 != 'undefined' ? password2 : '' %>"
+              class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
+              placeholder="Password"
+              style="transition: all 0.15s ease 0s"
+              required
+            />
+          </div>
+          <div class="text-center mt-4">
+            <button
+              class="bg-gray-900 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full"
+              type="submit"
+              style="transition: all 0.15s ease 0s"
+            >
+              Sign Up
+            </button>
+            <p class="mt-2">
+              Go back to <a href="/" class="text-red-600">Login</a>
+            </p>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </section>

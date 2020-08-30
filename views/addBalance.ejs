@@ -1,7 +1,11 @@
-<section class="text-gray-700 body-font md:ml-56 lg:ml-64 md:mx-auto md:pr-14 w-screen inline">
+<section
+  class="text-gray-700 body-font md:ml-56 lg:ml-64 md:mx-auto md:pr-14 w-screen inline"
+>
   <div class="container px-5 py-10 mx-auto md:px-auto">
     <div class="my-4 absolute-center">
-      <h2 class="text-gray-700 lg:text-6xl text-5xl font-semibold leading-none tracking-wider px-5">
+      <h2
+        class="text-gray-700 lg:text-6xl text-5xl font-semibold leading-none tracking-wider px-5"
+      >
         Add Balance
       </h2>
     </div>
@@ -9,64 +13,99 @@
 
     <div class="container py-16 mx-auto">
       <h3 class="text-2xl">Your Current Balance:<b> <%= user.balance%> </b></h3>
-      <form action="/addBalance" method="POST" class="bg-white shadow-md rounded-lg px-8 pt-6 pb-8 my-6">
+      <form
+        action="/addBalance"
+        method="POST"
+        class="bg-white shadow-md rounded-lg px-8 pt-6 pb-8 my-6"
+      >
         <div class="text-center mb-4">
           <label class="block text-gray-700 text-2xl font-bold mb-2">
             Enter amount : Minimun $50
           </label>
-          <input id="amount" min="50" max="4999" value="50" type="number"
+          <input
+            id="amount"
+            min="50"
+            max="4999"
+            value="50"
+            type="number"
+            onchange="check(this.value)"
             class="shadow appearance-none border rounded w-2/5 py-2 px-3 my-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            name="addAmount" placeholder="$ Amount" />
+            name="addAmount"
+            placeholder="$ Amount"
+          />
           <input type="hidden" name="_csrf" />
           <!-- below key is a publishable test key by stripe -->
-          <script id="stripe" class="stripe-button"
+          <script
+            id="stripe"
+            class="stripe-button"
             data-key="pk_test_51HJXY7LQt0nnsdDXDLOAd3oeKUqMRVwpgkR3H7e0q4ghJqhfMg8RPpCWLeOFZ35zOBiccvV5Xq85VRjuRtCQGtFL00ZKyBN7Kr"
-            src="https://checkout.stripe.com/checkout.js" data-image="images/TradeByte.png" data-name="TradeByte"
-            data-description="TradeByte Balance"></script>
+            src="https://checkout.stripe.com/checkout.js"
+            data-image="images/TradeByte.png"
+            data-name="TradeByte"
+            data-description="TradeByte Balance"
+          ></script>
         </div>
       </form>
 
       <div class="card flex flex-wrap justify-around">
         <div class="w-auto bg-white my-4 rounded overflow-hidden shadow-lg">
           <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2">Test Card 1</div>
-            <p class="text-gray-700 mb-6 text-base text-base">
+            <div class="font-bold text-xl mb-2">VISA</div>
+            <p
+              class="bg-gray-100 text-gray-700 italic mb-1 flex justify-center font-bold text-2xl mt-6"
+            >
               4242 4242 4242 4242
             </p>
           </div>
           <div class="px-6 pt-4 pb-2">
-            <span class="inline-block bg-gray-200 px-4 py-1 text-sm font-semibold text-gray-700 mr-6 mb-2">MM/YY :
-              01/30</span>
-            <span class="inline-block bg-gray-200 px-4 py-1 text-sm font-semibold text-gray-700 mr-6 mb-2">CVC :
-              123</span>
+            <span
+              class="inline-block bg-gray-200 px-4 py-1 text-sm font-semibold text-gray-700 ml-2 mr-4 mb-2"
+              >MM/YY : 01/30</span
+            >
+            <span
+              class="inline-block bg-gray-200 px-4 py-1 text-sm font-semibold text-gray-700 mb-2"
+              >CVC : 123</span
+            >
           </div>
         </div>
         <div class="w-auto bg-white my-4 rounded overflow-hidden shadow-lg">
           <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2">Test Card 2</div>
-            <p class="text-gray-700 mb-6 text-base text-base">
+            <div class="font-bold text-xl mb-2">VISA PREPAID</div>
+            <p
+              class="bg-gray-100 text-gray-700 italic mb-1 flex justify-center font-bold text-2xl mt-6"
+            >
               5555 5555 5555 4444
             </p>
           </div>
           <div class="px-6 pt-4 pb-2">
-            <span class="inline-block bg-gray-200 px-4 py-1 text-sm font-semibold text-gray-700 mr-6 mb-2">MM/YY :
-              12/40</span>
-            <span class="inline-block bg-gray-200 px-4 py-1 text-sm font-semibold text-gray-700 mr-6 mb-2">CVC :
-              555</span>
+            <span
+              class="inline-block bg-gray-200 px-4 py-1 text-sm font-semibold text-gray-700 ml-2 mr-4 mb-2"
+              >MM/YY : 12/40</span
+            >
+            <span
+              class="inline-block bg-gray-200 px-4 py-1 text-sm font-semibold text-gray-700 mb-2"
+              >CVC : 555</span
+            >
           </div>
         </div>
         <div class="w-auto bg-white my-4 rounded overflow-hidden shadow-lg">
           <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2">Test Card 3</div>
-            <p class="text-gray-700 mb-6 text-base text-base">
+            <div class="font-bold text-xl mb-2">MASTERCARD</div>
+            <p
+              class="bg-gray-100 text-gray-700 italic mb-1 flex justify-center font-bold text-2xl mt-6"
+            >
               5105 1051 0510 5100
             </p>
           </div>
           <div class="px-6 pt-4 pb-2">
-            <span class="inline-block bg-gray-200 px-4 py-1 text-sm font-semibold text-gray-700 mr-6 mb-2">MM/YY :
-              11/31</span>
-            <span class="inline-block bg-gray-200 px-4 py-1 text-sm font-semibold text-gray-700 mr-6 mb-2">CVC :
-              005</span>
+            <span
+              class="inline-block bg-gray-200 px-4 py-1 text-sm font-semibold text-gray-700 ml-2 mr-4 mb-2"
+              >MM/YY : 11/31</span
+            >
+            <span
+              class="inline-block bg-gray-200 px-4 py-1 text-sm font-semibold text-gray-700 mb-2"
+              >CVC : 005</span
+            >
           </div>
         </div>
       </div>
@@ -75,3 +114,11 @@
 </section>
 
 <script src="https://js.stripe.com/v3/"></script>
+<script>
+  function check(value) {
+    if (value < 50) {
+      alert("Minimum $50 is valid only");
+      document.getElementById("amount").value = 50;
+    }
+  }
+</script>

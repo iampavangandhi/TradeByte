@@ -1,76 +1,692 @@
-<section class="p-1 min-w">
-  <h2 class="text-blue-200 text-center text-4xl lg:text-6xl font-semibold">
-    TradeByte
-  </h2>
-  <div class="flex flex-col mb-6 shadow-lg rounded-lg bg-gray-300">
-    <div class="rounded-t mb-0 px-6 pt-6 pb-2">
-      <div class="btn-wrapper text-center">
-        <a href="/auth/google" class="w-full">
-          <button
-            class="bg-white active:bg-gray-100 text-gray-800 font-normal px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs justify-center w-full"
-            type="button"
-            style="transition: all 0.15s ease 0s;"
-          >
-            <img alt="..." class="w-5 mr-1" src="/images/google.png" />Sign in
-            with Google
-          </button>
+<div class="antialiased w-full h-full">
+  <!--  Navbar -->
+  <div class="bg-white w-full text-gray-700 shadow-lg">
+    <div
+      x-data="{ open: false }"
+      class="flex flex-col max-w-5xl mx-auto md:items-center md:justify-between md:flex-row container"
+    >
+      <div class="flex flex-row items-center justify-between p-4">
+        <a href="#" class="flex-shrink-0 text-center">
+          <img
+            class="h-8 w-8 tradebyte-logo"
+            src="../images/TradeByte-Favicon.png"
+            alt="Logo"
+          />
         </a>
-      </div>
-      <%- include('./partials/_messages') %>
-      <hr class="mt-6 border-b-1 border-gray-400" />
-    </div>
-    <div class="flex-auto px-4 lg:px-10 pb-10 pt-0">
-      <div class="text-gray-500 text-center mb-3 font-bold">
-        <small>Or sign in with credentials</small>
-      </div>
-      <form action="/user/signin" method="POST">
-        <div class="relative w-full mb-3">
-          <label
-            class="block uppercase text-gray-700 text-xs font-bold mb-2"
-            for="grid-password"
-            >Email</label
+        <h4 class="font-bold text-center ml-2 pt-1">
+          <a
+            href="/"
+            class="hover:text-gray-900 tracking-widest text-2xl md:text-2xl lg:text-3xl tradebyte-logo"
+            >Tradebyte</a
           >
-          <input
-            type="email"
-            name="email"
-            class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
-            placeholder="Email"
-            style="transition: all 0.15s ease 0s;"
-          />
-        </div>
-        <div class="relative w-full mb-3">
-          <label
-            class="block uppercase text-gray-700 text-xs font-bold mb-2"
-            for="grid-password"
-            >Password</label
-          >
-          <input
-            type="password"
-            name="password"
-            class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
-            placeholder="Password"
-            style="transition: all 0.15s ease 0s;"
-          />
-        </div>
-        <div class="text-center mt-6">
+        </h4>
+        <button
+          class="rounded-lg md:hidden focus:outline-none focus:shadow-outline"
+          @click="open = !open"
+        >
+          <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+            <path
+              x-show="!open"
+              fill-rule="evenodd"
+              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+              clip-rule="evenodd"
+            ></path>
+            <path
+              x-show="open"
+              fill-rule="evenodd"
+              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <nav
+        :class="{'flex': open, 'hidden': !open}"
+        class="flex-col hidden pb-4 md:pb-0 md:flex md:justify-center md:flex-row"
+      >
+        <a
+          class="px-4 py-2 mt-2 text-sm font-semibold text-sm lg:text-md rounded md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+          href="#features"
+          >Features</a
+        >
+        <a
+          class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent text-sm lg:text-md rounded md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+          href="#testimonials"
+          >Reviews</a
+        >
+        <a
+          class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent text-sm lg:text-md rounded md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+          href="#contact"
+          >Contact</a
+        >
+        <div class="auth-box flex justify-center items-center">
           <button
-            class="bg-gray-900 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full"
-            type="submit"
-            style="transition: all 0.15s ease 0s;"
+            onClick="openModal()"
+            class="bg-red-700 text-white px-4 py-2 mt-2 mr-1 text-xs font-semibold bg-transparent rounded md:mt-0 md:ml-4 hover:bg-red-400 focus:bg-red-600 focus:outline-none focus:shadow-outline"
+            href="#"
           >
-            Sign In
+            Sign In / Register
           </button>
         </div>
-      </form>
-      <a href="/user/signup"
-        ><button
-          class="bg-red-900 text-white active:bg-red-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full"
-          type="button"
-          style="transition: all 0.15s ease 0s;"
-        >
-          Sign Up
-        </button>
-      </a>
+      </nav>
     </div>
   </div>
-</section>
+  <!-- Hero Section -->
+  <section class="max-w-4xl lg:max-w-5xl my-4 md:my-0 mx-4 md:mx-auto">
+    <div
+      class="wrapper flex flex-col md:flex-row items-center justify-between max-w-6xl h-2/3 mx-auto"
+    >
+      <div
+        class="text-box md:w-1/2 flex justify-start flex-col text-center md:text-left md:ml-8 md:mb-16 ld:ml-0"
+      >
+        <h1
+          class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 text-gray-900"
+        >
+          TradeByte
+        </h1>
+        <p class="text-lg sm:text-xl lg:text-2xl text-gray-700">
+          Welcome to TradeByte, stocks trading simulation webapp. Your one stop
+          to all the latest stocks and their insights.
+        </p>
+      </div>
+      <div class="illustration-box w-full md:w-2/3">
+        <img src="../images/desktop-mockup.png" alt="TradeByte Illustration" />
+      </div>
+    </div>
+  </section>
+  <!-- Features -->
+  <section id="features" class="features bg-gray-200">
+    <div class="max-w-5xl mx-auto p-8">
+      <h2
+        class="heading text-gray-800 text-3xl md:text-5xl text-center font-bold italic mb-6 underline"
+      >
+        Features of TradeByte
+      </h2>
+      <div class="feature-box mb-8 md:mb-0 flex justify-between items-center">
+        <div class="text w-full text-center md:text-left md:w-1/2">
+          <h3
+            class="text-2xl md:text-3xl lg:text-4xl font-semibold mb-2 text-gray-700"
+          >
+            Search for Stocks in Market
+          </h3>
+          <p class="text-sm md:text-lg lg:text-xl text-gray-600">
+            You can search for multiple stocks from different companies and know
+            their insights from past trends. The User Interface will make it
+            easy for you to navigate through the web app. You can also mark your
+            favourite stocks to keep a track of the companies.
+          </p>
+        </div>
+        <div class="hidden md:block img-box w-1/2 h-1/2">
+          <img
+            class="transform -skew-x-6 skew-y-6 -mr-8 lg:-mr-16"
+            src="/images/mobile-market-mockup.png"
+            alt="View Page Illustration"
+          />
+        </div>
+      </div>
+      <div
+        class="feature-box mb-8 md:mb-0 flex flex-row-reverse justify-between items-center"
+      >
+        <div class="text w-full text-center md:text-left md:w-1/2">
+          <h3
+            class="text-2xl md:text-3xl lg:text-4xl font-semibold mb-2 text-gray-700"
+          >
+            View Analysis of a stock
+          </h3>
+          <p class="text-sm md:text-lg lg:text-xl text-gray-600">
+            We provide Analysis of a stock from a particular company as well in
+            the form of graphs and other related information like market
+            capital, profit margin and loads of other things. You can buy the
+            stocks easily and securely.
+          </p>
+        </div>
+        <div class="hidden md:block img-box w-1/2 h-1/2">
+          <img
+            class="transform skew-x-6 -skew-y-6 -ml-8 lg:-ml-16"
+            src="/images/mobile-view-mockup.png"
+            alt="View Page Illustration"
+          />
+        </div>
+      </div>
+      <div class="feature-box mb-8 md:mb-0 flex justify-between items-center">
+        <div class="text w-full text-center md:text-left md:w-1/2">
+          <h3
+            class="text-2xl md:text-3xl lg:text-4xl font-semibold mb-2 text-gray-700"
+          >
+            Buy and Sell stocks
+          </h3>
+          <p class="text-sm md:text-lg lg:text-xl text-gray-600">
+            Buying and selling stocks was never this easier, we have made a
+            wallet for you where you can transfer your balance and directly make
+            payments while buying a stock. You can also buy multiple stocks. We
+            provide a confirmation email as well to make sure it was you doing
+            the transaction.
+          </p>
+        </div>
+        <div class="hidden md:block img-box w-1/2 h-1/2">
+          <img
+            class="transform -skew-x-6 skew-y-6 -mr-8 lg:-mr-16"
+            src="/images/mobile-buy-mockup.png"
+            alt="View Page Illustration"
+          />
+        </div>
+      </div>
+      <div
+        class="feature-box mb-8 md:mb-0 flex flex-row-reverse justify-between items-center"
+      >
+        <div class="text w-full text-center md:text-left md:w-1/2">
+          <h3
+            class="text-2xl md:text-3xl lg:text-4xl font-semibold mb-2 text-gray-700"
+          >
+            Safe Payment Gateway with Stripe
+          </h3>
+          <p class="text-sm md:text-lg lg:text-xl text-gray-600">
+            We have created a wallet for our app where you can add balance with
+            the help of secure payment gateway with stripe which is really
+            popular for all transactions internationally as well. Don't worry
+            your money is safe with us!
+          </p>
+        </div>
+        <div class="hidden md:block img-box w-1/2 h-1/2">
+          <img
+            class="transform skew-x-6 -skew-y-6 -ml-8 lg:-ml-16"
+            src="/images/mobile-payment-mockup.png"
+            alt="View Page Illustration"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Testimonials -->
+  <section id="testimonials" class="testimonials">
+    <div class="max-w-5xl mx-auto p-8">
+      <h2
+        class="heading text-gray-800 text-3xl md:text-5xl text-center font-bold italic mb-6 underline"
+      >
+        From Our Maintainer and Contributors
+      </h2>
+      <div
+        class="my-10 md:my-16 flex flex-col md:flex-row shadow-sm overflow-hidden max-w-4xl mx-auto"
+        x-data="{ testimonialActive: 1 }"
+        x-cloak
+      >
+        <div
+          class="relative w-full py-2 md:py-24 bg-blue-900 md:w-1/2 flex flex-col item-center justify-center"
+        >
+          <div
+            class="absolute top-0 left-0 z-10 grid-indigo w-16 h-16 md:w-40 md:h-40 md:ml-20 md:mt-24"
+          ></div>
+
+          <div
+            class="relative text-2xl md:text-5xl py-2 px-6 md:py-6 md:px-1 md:w-64 md:mx-auto text-white font-semibold leading-tight tracking-tight mb-0 z-20"
+          >
+            <span class="md:block">What</span>
+            <span class="md-block">TradeByte Team</span>
+            <span class="block">is saying!</span>
+          </div>
+
+          <div class="absolute right-0 bottom-0 mr-4 mb-4 hidden md:block">
+            <button
+              class="rounded-l-full border-r bg-gray-100 text-gray-500 focus:outline-none hover:text-blue-900 font-bold w-12 h-10"
+              x-on:click="testimonialActive = testimonialActive === 1 ? 6 : testimonialActive - 1"
+            >
+              &#8592;</button
+            ><button
+              class="rounded-r-full bg-gray-100 text-gray-500 focus:outline-none hover:text-blue-900 font-bold w-12 h-10"
+              x-on:click="testimonialActive = testimonialActive >= 6 ? 1 : testimonialActive + 1"
+            >
+              &#8594;
+            </button>
+          </div>
+        </div>
+
+        <div class="bg-gray-100 md:w-1/2">
+          <div class="flex flex-col h-full relative">
+            <div class="absolute top-0 left-0 mt-2 ml-2 lg:ml-6">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="text-blue-200 fill-current w-12 h-12 md:w-16 md:h-16"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M6.5 10c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35.208-.086.39-.16.539-.222.302-.125.474-.197.474-.197L9.758 4.03c0 0-.218.052-.597.144C8.97 4.222 8.737 4.278 8.472 4.345c-.271.05-.56.187-.882.312C7.272 4.799 6.904 4.895 6.562 5.123c-.344.218-.741.4-1.091.692C5.132 6.116 4.723 6.377 4.421 6.76c-.33.358-.656.734-.909 1.162C3.219 8.33 3.02 8.778 2.81 9.221c-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539.017.109.025.168.025.168l.026-.006C2.535 17.474 4.338 19 6.5 19c2.485 0 4.5-2.015 4.5-4.5S8.985 10 6.5 10zM17.5 10c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35.208-.086.39-.16.539-.222.302-.125.474-.197.474-.197L20.758 4.03c0 0-.218.052-.597.144-.191.048-.424.104-.689.171-.271.05-.56.187-.882.312-.317.143-.686.238-1.028.467-.344.218-.741.4-1.091.692-.339.301-.748.562-1.05.944-.33.358-.656.734-.909 1.162C14.219 8.33 14.02 8.778 13.81 9.221c-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539.017.109.025.168.025.168l.026-.006C13.535 17.474 15.338 19 17.5 19c2.485 0 4.5-2.015 4.5-4.5S19.985 10 17.5 10z"
+                />
+              </svg>
+            </div>
+
+            <div class="h-full relative z-10">
+              <div x-show.immediate="testimonialActive === 1">
+                <p
+                  class="text-gray-600 serif font-normal italic px-6 py-6 md:py-12 lg:px-16 md:py-6 text-md lg:text-xl"
+                  x-show.transition="testimonialActive == 1"
+                >
+                  It was fun to mentor a team for the first time while guiding
+                  them through their learning process in 3 months. The active
+                  team members did really well and the project turned out to be
+                  the way I wanted exactly.
+                </p>
+              </div>
+
+              <div x-show.immediate="testimonialActive === 2">
+                <p
+                  class="text-gray-600 serif font-normal italic px-6 py-6 md:py-12 lg:px-16 md:py-6 text-md lg:text-xl"
+                  x-show.transition="testimonialActive == 2"
+                >
+                  Working with TradeByte team was a great experience! Thanks to
+                  our mentor Pavan and other active members who made the project
+                  possible. I love the final app with all the features. I
+                  learned a lot of things I never knew before and successfully
+                  completed all the tasks, it was really fun to collaborate with
+                  others.
+                </p>
+              </div>
+
+              <div x-show.immediate="testimonialActive === 3">
+                <p
+                  class="text-gray-600 serif font-normal italic px-6 py-6 md:py-12 lg:px-16 md:py-6 text-md lg:text-xl"
+                  x-show.transition="testimonialActive == 3"
+                >
+                  It was really good collaborating with a team while learning a
+                  stack together. Luckily, we had a good mentor who guided us
+                  all
+                </p>
+              </div>
+
+              <div x-show.immediate="testimonialActive === 4">
+                <p
+                  class="text-gray-600 serif font-normal italic px-6 py-6 md:py-12 lg:px-16 md:py-6 text-md lg:text-xl"
+                  x-show.transition="testimonialActive == 4"
+                >
+                  I am really happy that I was a part of this amazing team and
+                  had chance to work with awesome mentor and team members. They
+                  were really helpful throughout the project. I learned a lot
+                  from everyone and the project itself.
+                </p>
+              </div>
+
+              <div x-show.immediate="testimonialActive === 5">
+                <p
+                  class="text-gray-600 serif font-normal italic px-6 py-6 md:py-12 lg:px-16 md:py-6 text-md lg:text-xl"
+                  x-show.transition="testimonialActive == 5"
+                >
+                  The TradeByte project is really nice and all the features are
+                  really great and insightful. I loved the wallet feature to
+                  make our work easier while buying a stock. It was a great
+                  experience working with Pavan and team.
+                </p>
+              </div>
+
+              <div x-show.immediate="testimonialActive === 6">
+                <p
+                  class="text-gray-600 serif font-normal italic px-6 py-6 md:py-12 lg:px-16 md:py-6 text-md lg:text-xl"
+                  x-show.transition="testimonialActive == 6"
+                >
+                  I had fun learning Node and making a project at last which
+                  turned out really well. I learned many things about backend
+                  and contribution while working with TradeByte team. It was a
+                  good experience.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex my-4 justify-center items-center flex-wrap">
+              <button
+                @click.prevent="testimonialActive = 1"
+                class="text-center font-bold shadow-xs focus:outline-none focus:shadow-outline inline-block rounded-full mx-2"
+                :class="{'h-12 w-12 opacity-25 bg-blue-300 text-gray-600': testimonialActive != 1, 'h-16 w-16 opacity-100 bg-blue-900 text-white': testimonialActive == 1 }"
+              >
+                PG
+              </button>
+              <button
+                @click.prevent="testimonialActive = 2"
+                class="text-center font-bold shadow-xs focus:outline-none focus:shadow-outline h-16 w-16 inline-block bg-blue-900 rounded-full mx-2 my-2"
+                :class="{'h-12 w-12 opacity-25 bg-blue-300 text-gray-600': testimonialActive != 2, 'h-16 w-16 opacity-100 bg-blue-900 text-white': testimonialActive == 2 }"
+              >
+                FR
+              </button>
+              <button
+                @click.prevent="testimonialActive = 3"
+                class="text-center font-bold shadow-xs focus:outline-none focus:shadow-outline h-12 w-12 inline-block bg-blue-900 rounded-full mx-2 my-2"
+                :class="{'h-12 w-12 opacity-25 bg-blue-300 text-gray-600': testimonialActive != 3, 'h-16 w-16 opacity-100 bg-blue-900 text-white': testimonialActive == 3 }"
+              >
+                SR
+              </button>
+              <button
+                @click.prevent="testimonialActive = 4"
+                class="text-center font-bold shadow-xs focus:outline-none focus:shadow-outline h-12 w-12 inline-block bg-blue-900 rounded-full mx-2 my-2"
+                :class="{'h-12 w-12 opacity-25 bg-blue-300 text-gray-600': testimonialActive != 4, 'h-16 w-16 opacity-100 bg-blue-900 text-white': testimonialActive == 4 }"
+              >
+                GS
+              </button>
+              <button
+                @click.prevent="testimonialActive = 5"
+                class="text-center font-bold shadow-xs focus:outline-none focus:shadow-outline h-12 w-12 inline-block bg-blue-900 rounded-full mx-2 my-2"
+                :class="{'h-12 w-12 opacity-25 bg-blue-300 text-gray-600': testimonialActive != 5, 'h-16 w-16 opacity-100 bg-blue-900 text-white': testimonialActive == 5 }"
+              >
+                AK
+              </button>
+              <button
+                @click.prevent="testimonialActive = 6"
+                class="text-center font-bold shadow-xs focus:outline-none focus:shadow-outline h-12 w-12 inline-block bg-blue-900 rounded-full mx-2 my-2"
+                :class="{'h-12 w-12 opacity-25 bg-blue-300 text-gray-600': testimonialActive != 6, 'h-16 w-16 opacity-100 bg-blue-900 text-white': testimonialActive == 6 }"
+              >
+                AP
+              </button>
+            </div>
+
+            <div class="flex justify-center px-6 pt-2 pb-6 md:py-6">
+              <div
+                class="flex items-center justify-center"
+                x-show="testimonialActive == 1"
+              >
+                <img
+                  src="https://avatars3.githubusercontent.com/u/42767012?s=460&v=4"
+                  class="rounded-full w-16 h-16 mr-2"
+                  alt="Fab Rizvi"
+                />
+                <div class="text-left">
+                  <h2
+                    class="text-sm md:text-base font-bold text-gray-700 leading-tight"
+                  >
+                    Pavan Gandhi
+                  </h2>
+                  <small class="text-gray-500 text-xs md:text-sm truncate"
+                    >Maintainer & Contributor, TradeByte</small
+                  >
+                </div>
+              </div>
+
+              <div
+                class="flex items-center justify-center"
+                x-show="testimonialActive == 2"
+              >
+                <img
+                  src="https://avatars0.githubusercontent.com/u/48706652?s=460&u=8ce212fab10137d684ddee9c6a3503f9273f530a&v=4"
+                  class="rounded-full w-16 h-16 mr-1"
+                  alt="Fab Rizvi"
+                />
+                <div class="text-left">
+                  <h2
+                    class="text-sm md:text-base font-bold text-gray-700 leading-tight"
+                  >
+                    Fab Rizvi
+                  </h2>
+                  <small class="text-gray-500 text-xs md:text-sm truncate"
+                    >Contributor, TradeByte</small
+                  >
+                </div>
+              </div>
+
+              <div
+                class="flex justify-center items-center"
+                x-show="testimonialActive == 3"
+              >
+                <img
+                  src="https://avatars0.githubusercontent.com/u/45004977?s=460&u=539cc5aa793a4f49a6ec2a24087a9b0cfcac58b3&v=4"
+                  class="rounded-full w-16 h-16 mr-2"
+                  alt="Somyaranjan Rout"
+                />
+                <div class="text-left">
+                  <h2
+                    class="text-sm md:text-base font-bold text-gray-700 leading-tight"
+                  >
+                    Somyaranjan Rout
+                  </h2>
+                  <small class="text-gray-500 text-xs md:text-sm truncate"
+                    >Contributor, TradeByte</small
+                  >
+                </div>
+              </div>
+
+              <div
+                class="flex items-center justify-center"
+                x-show="testimonialActive == 4"
+              >
+                <img
+                  src="https://avatars2.githubusercontent.com/u/44470092?s=460&u=71c5c4fb3385ac85bf787fbd88af40436345c4ae&v=4"
+                  class="rounded-full w-16 h-16 mr-2"
+                  alt="Garima Singh"
+                />
+                <div class="text-left">
+                  <h2
+                    class="text-sm md:text-base font-bold text-gray-700 leading-tight"
+                  >
+                    Garima Singh
+                  </h2>
+                  <small class="text-gray-500 text-xs md:text-sm truncate"
+                    >Contributor, TradeByte</small
+                  >
+                </div>
+              </div>
+
+              <div
+                class="flex justify-center items-center"
+                x-show="testimonialActive == 5"
+              >
+                <img
+                  src="https://avatars1.githubusercontent.com/u/55693389?s=460&v=4"
+                  class="rounded-full w-16 h-16 mr-2"
+                  alt="Anjali Kumari"
+                />
+                <div class="text-left">
+                  <h2
+                    class="text-sm md:text-base font-bold text-gray-700 leading-tight"
+                  >
+                    Anjali Kumari
+                  </h2>
+                  <small class="text-gray-500 text-xs md:text-sm truncate"
+                    >Contributor, TradeByte</small
+                  >
+                </div>
+              </div>
+
+              <div
+                class="flex items-center justify-center"
+                x-show="testimonialActive == 6"
+              >
+                <img
+                  src="https://avatars3.githubusercontent.com/u/40737659?s=460&u=c19943b18103a3c626216c757f1ebec89b905203&v=4"
+                  class="rounded-full w-16 h-16 mr-2"
+                  alt="Ankit Pal"
+                />
+                <div class="text-left">
+                  <h2
+                    class="text-sm md:text-base font-bold text-gray-700 leading-tight"
+                  >
+                    Ankit Pal
+                  </h2>
+                  <small class="text-gray-500 text-xs md:text-sm truncate"
+                    >Contributor, TradeByte</small
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer
+    id="contact"
+    class="flex justify-center px-4 text-gray-100 bg-gray-800"
+  >
+    <div class="container py-6">
+      <div
+        class="heading md:flex md:max-w-5xl md:justify-between md:items-center md:mx-auto"
+      >
+        <h1
+          class="text-center md:text-left text-lg font-bold lg:text-2xl max-w-4xl"
+        >
+          Join TradeByte to keep up with the latest news about stocks and
+          trading.
+        </h1>
+
+        <div class="flex justify-center items-center md:ml-6">
+          <div class="bg-white rounded-lg mt-4 md:mt-0">
+            <a
+              href="/user/signup"
+              class="w-full p-3 text-sm bg-red-700 rounded-lg font-semibold uppercase px-6 lg:px-10"
+            >
+              SignUp
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <hr class="h-px mt-6 bg-gray-700 border-none" />
+
+      <div
+        class="flex flex-col text-xs md:text-sm items-center justify-between mt-6 md:flex-row"
+      >
+        <div class="text-center md:text-left">
+          <a href="/" class="text-2xl font-bold">TradeByte</a>
+          <p class="text-base">Stocks Trading Simulation WebApp.</p>
+          <p>This app is made for educational purpose only.</p>
+        </div>
+        <div class="flex mt-4 md:m-0 items-start">
+          <div class="-mx-4 text-center md:text-right">
+            <p class="mb-2">&copy; Copyright TradeByte Team, 2020</p>
+            <hr class="my-2 bg-gray-700 border-none" />
+            <p>Email: pavangandhi100@gmail.com</p>
+            <a
+              target="_blank"
+              href="https://github.com/iampavangandhi/TradeByte"
+              >Check and Star ❤️ The Repo on GitHub</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- Modal for Sign In -->
+<div
+  class="main-modal fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster"
+  style="background: rgba(0, 0, 0, 0.7)"
+>
+  <div
+    class="border border-teal-500 shadow-lg modal-container bg-gray-100 w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto"
+  >
+    <div class="modal-content py-4 text-left px-6">
+      <!--Title-->
+      <div class="flex justify-between items-center pb-3">
+        <p class="text-2xl font-bold">Sign In</p>
+        <div class="modal-close cursor-pointer z-50">
+          <svg
+            class="fill-current text-black"
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 18 18"
+          >
+            <path
+              d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"
+            ></path>
+          </svg>
+        </div>
+      </div>
+      <!--Body-->
+      <div class="flex flex-col mb-2">
+        <div class="rounded-t mb-0 px-6 pt-6 pb-2">
+          <div class="btn-wrapper text-center">
+            <a href="/auth/google" class="w-full">
+              <button
+                class="bg-white active:bg-gray-100 text-gray-800 font-normal px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs justify-center w-full"
+                type="button"
+                style="transition: all 0.15s ease 0s"
+              >
+                <img alt="..." class="w-5 mr-1" src="/images/google.png" />Sign
+                in with Google
+              </button>
+            </a>
+          </div>
+          <%- include('./partials/_messages') %>
+          <hr class="mt-6 border-b-1 border-gray-400" />
+        </div>
+        <div class="flex-auto px-4 lg:px-10 pb-10 pt-0">
+          <div class="text-gray-500 text-center mb-3 font-bold">
+            <small>Or sign in with credentials</small>
+          </div>
+          <form action="/user/signin" method="POST">
+            <div class="relative w-full mb-3">
+              <label
+                class="block uppercase text-gray-700 text-xs font-bold mb-2"
+                for="grid-password"
+                >Email</label
+              >
+              <input
+                type="email"
+                name="email"
+                class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
+                placeholder="Email"
+                style="transition: all 0.15s ease 0s"
+              />
+            </div>
+            <div class="relative w-full mb-3">
+              <label
+                class="block uppercase text-gray-700 text-xs font-bold mb-2"
+                for="grid-password"
+                >Password</label
+              >
+              <input
+                type="password"
+                name="password"
+                class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
+                placeholder="Password"
+                style="transition: all 0.15s ease 0s"
+              />
+            </div>
+            <div class="text-center mt-6">
+              <button
+                class="bg-gray-900 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full"
+                type="submit"
+                style="transition: all 0.15s ease 0s"
+              >
+                Sign In
+              </button>
+            </div>
+          </form>
+          <a href="/user/signup"
+            ><button
+              class="bg-red-900 text-white active:bg-red-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full"
+              type="button"
+              style="transition: all 0.15s ease 0s"
+            >
+              Sign Up
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const modal = document.querySelector(".main-modal");
+  const closeButton = document.querySelectorAll(".modal-close");
+
+  const modalClose = () => {
+    modal.classList.remove("fadeIn");
+    modal.classList.add("fadeOut");
+    setTimeout(() => {
+      modal.style.display = "none";
+    }, 500);
+  };
+
+  const openModal = () => {
+    modal.classList.remove("fadeOut");
+    modal.classList.add("fadeIn");
+    modal.style.display = "flex";
+  };
+
+  for (let i = 0; i < closeButton.length; i++) {
+    const elements = closeButton[i];
+    elements.onclick = (e) => modalClose();
+    modal.style.display = "none";
+    window.onclick = function (event) {
+      if (event.target == modal) modalClose();
+    };
+  }
+</script>
