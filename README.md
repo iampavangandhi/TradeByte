@@ -10,6 +10,8 @@
 
 ## Website : https://tradebyte.herokuapp.com/
 
+</div>
+
 ---
 
 <br/>
