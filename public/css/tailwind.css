@@ -77,6 +77,17 @@ body {
   overflow-y: auto;
 }
 
+input::-webkit-outer-spin-button.without-arrow,
+input::-webkit-inner-spin-button.without-arrow {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"].without-arrow {
+  -moz-appearance: textfield;
+}
+
 .transaction-companySymbol {
   color: rgb(0, 0, 0);
   font-weight: 700;
