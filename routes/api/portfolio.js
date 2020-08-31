@@ -87,14 +87,7 @@ router.get("/", ensureAuth, async (req, res) => {
     })
     .lean();
 
-  var TransactionMessage = "";
-
-  if (Object.keys(transactions).length == 0) {
-    TransactionMessage = "No Transaction";
-  } else {
-    TransactionMessage = "";
-  }
-
+  // Stock Message
   var StockMessage = "";
   stocks = user.stock;
 
@@ -104,9 +97,17 @@ router.get("/", ensureAuth, async (req, res) => {
     StockMessage = "";
   }
 
+  // Total Portfolio
+  totalPortfolio = 0;
+
+  stocks.forEach((stock) => {
+    totalPortfolio = totalPortfolio + stock.totalAmount;
+  });
+
+  // Render
   res.render("portfolio", {
     StockMessage,
-    TransactionMessage,
+    totalPortfolio,
     transactions,
     user,
     avatar,

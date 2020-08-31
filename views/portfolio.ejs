@@ -67,7 +67,9 @@
             <img class="w-full h-full" src="images/graph1.png" alt=" " />
           </div>
           <div class="font-bold text-xl xl:text-2xl ml-3">
-            <p class="text-gray-900 whitespace-no-wrap">$40,342.04</p>
+            <p class="text-gray-900 whitespace-no-wrap">
+              $ <%= totalPortfolio%>
+            </p>
             <span class="block text-gray-500 text-sm">Total Portfolio</span>
           </div>
         </div>
@@ -81,7 +83,14 @@
             <img class="w-full h-full" src="images/graph2.png" alt=" " />
           </div>
           <div class="font-bold text-xl xl:text-2xl ml-3 justify-center">
-            <p class="text-gray-900 whitespace-no-wrap">$ 40,342.04</p>
+            <p class="text-gray-900 whitespace-no-wrap">
+              $ <%= profitLoss.toFixed(2)%> <% if(profitLoss < 0) { %> <%
+              color="red" %>
+              <span class="text-red-600 font-black text-2xl">&#8595;</span>
+              <% } else { %> <% color="green" %>
+              <span class="text-green-600 font-black text-2xl">&#8593;</span>
+              <% } %>
+            </p>
             <span class="block text-gray-500 text-sm">Profit / Loss</span>
           </div>
         </div>
@@ -122,7 +131,7 @@
           </tr>
         </thead>
         <tbody>
-          <% user.stock.forEach( (stock) => { %>
+          <% profitLoss = 0 %> <% user.stock.forEach( (stock) => { %>
           <tr class="bg-white border-b text-center">
             <td class="px-4 py-2 text-center"><%= stock.companySymbol %></td>
             <td class="px-4 py-2 text-center">
@@ -130,17 +139,16 @@
               %> $<%= currentPrice %>
             </td>
             <td class="px-4 py-2 text-center">
-              <% let price = currentPrice - stock.stockPrice %> <% if(price < 0)
-              { %> <% color="red" %>
+              <% let price = currentPrice - stock.stockPrice %> <% profitLoss =
+              profitLoss + price %> <% if(price < 0) { %> <% color="red" %>
               <span
-                >$<%= price.toPrecision(3) %><span class="text-red-600 text-lg"
+                >$<%= price.toFixed(2) %><span class="text-red-600 text-lg"
                   >&#8595;</span
                 ></span
               >
               <% } else { %> <% color="green" %>
               <span
-                >$<%= price.toPrecision(3) %><span
-                  class="text-green-600 text-lg"
+                >$<%= price.toFixed(2) %><span class="text-green-600 text-lg"
                   >&#8593;</span
                 ></span
               >
