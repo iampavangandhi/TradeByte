@@ -14,18 +14,20 @@
       </h2>
     </header>
 
-    <hr class="line" />
+    <hr class="border-2 border-gray-700" />
 
     <!-- search box -->
 
     <div>
-      <div class="bg-white relative text-gray-800 mt-12 shadow-md rounded-lg">
+      <div
+        class="bg-white relative text-gray-800 mt-12 shadow-md rounded-lg z-50 w-full"
+      >
         <input
           id="searchbar"
           type="search"
           name="serch"
           placeholder="Search Stocks"
-          class="bg-transparent h-10 px-5 pl-10 block w-full rounded-full text-lg focus:outline-none"
+          class="bg-transparent h-10 px-5 pl-10 block w-full rounded-full text-lg focus:outline-none z-50"
         />
         <button type="submit" class="absolute left-0 top-0 mt-3 ml-4">
           <svg
@@ -49,11 +51,12 @@
         </button>
       </div>
 
-      <ul
-        id="search-result"
-        style="height: 0px; overflow: hidden; white-space: pre"
-        class="text-lg p-5 ml-10 list-none mt-0 text-gray-700"
-      ></ul>
+      <div class="relative w-full">
+        <ul
+          id="search-result"
+          class="pt-2 -mt-2 bg-gray-300 rounded-full rounded-t-none absolute top-0 left-0 w-full"
+        ></ul>
+      </div>
 
       <div class="mt-4 grid lg:grid-cols-3 gap-10">
         <!-- cards go here -->
@@ -203,7 +206,15 @@
   }
 
   const inputField = document.getElementById('searchbar')
+  const inputResult = document.getElementById('search-result')
+
+  document.addEventListener('click', (e)=>{
+    if(e.target !== inputField && e.target !== inputResult){
+      console.log('ertrete')
+    }
+  })
   inputField.addEventListener('input', (event) => {
+      inputResult.classList.add('bg-white')
       console.log(event.target.value)
       const value = event.target.value
       //sample data
@@ -233,7 +244,10 @@
       let n = data.length
       for (i = 0; i <= (n - 1); i++) {
           let item = data[i];
-          list += `<li><a href='/view/${item.Symbol}'>${item.Symbol}</a></li>`
+          list += `
+          <a href='/view/${item.Symbol}'>
+          <li class="bg-white p-2 w-full ${(i%2===0) ? 'bg-gray-300' : 'bg-gray-100'}">${item.Symbol}</li>
+          </a>`
       }
       document.getElementById('search-result').innerHTML = list;
       console.log(data)
