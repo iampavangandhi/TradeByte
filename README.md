@@ -10,19 +10,13 @@
 
 ## Website : https://tradebyte.herokuapp.com/
 
-[![Project Board](https://img.shields.io/badge/-Project%20Board-0e76a8?style=for-the-badge&logo=Github&logoColor=white)](ttps://github.com/iampavangandhi/TradeByte/projects/1)
+[![Project Board](https://img.shields.io/badge/-Project%20Board-0e76a8?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/iampavangandhi/TradeByte/projects/1) [![Project Report](https://img.shields.io/badge/-Project%20Report-3b5998?style=for-the-badge&logo=Github&logoColor=white)](https://docs.google.com/spreadsheets/d/1_vg-F2dk6jWy9jcYlGuKqAnXUX6NwbbnLg9Bmn_Ulrk/edit?usp=sharing) [![TheNodeCourse](https://img.shields.io/badge/-TheNodeCourse-23c58c?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/iampavangandhi/TheNodeCourse)
 
 </div>
 
 ---
 
 <br/>
-
-> ### TradeByte Project Board: [Here]()
->
-> #### TradeByte Project Excel Sheet: [Here](https://docs.google.com/spreadsheets/d/1_vg-F2dk6jWy9jcYlGuKqAnXUX6NwbbnLg9Bmn_Ulrk/edit?usp=sharing)
->
-> #### Checkout TheNodeCourse at [https://github.com/iampavangandhi/TheNodeCourse](https://github.com/iampavangandhi/TheNodeCourse)
 
 ## Table of Contents
 
