@@ -142,3 +142,11 @@ This project exists thanks to all the people who contribute.
 ## License
 
 [MIT](LICENSE) © Pavan Gandhi
+
+---
+
+<div align="center">
+
+### Show some ❤️ by starring the repository!
+
+</div>
