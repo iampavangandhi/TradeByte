@@ -10,6 +10,8 @@
 
 ## Website : https://tradebyte.herokuapp.com/
 
+[![Project Board](https://img.shields.io/badge/-Project%20Board-0e76a8?style=for-the-badge&logo=Github&logoColor=white)](ttps://github.com/iampavangandhi/TradeByte/projects/1)
+
 </div>
 
 ---
