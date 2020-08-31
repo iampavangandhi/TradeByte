@@ -1,5 +1,5 @@
 <main class="md:col-span-4 md:ml-56 lg:ml-64 w-full">
-  <div class="container px-5 py-10 mx-auto md:px-auto">
+  <div class="max-w-6xl px-5 py-10 mx-auto md:px-auto">
     <!-- <div class="absolute-center mx-auto"> -->
 
     <!-- header -->
@@ -21,10 +21,10 @@
     <div>
       <%- include('./partials/_search.ejs') %>
 
-      <div class="relative w-full result">
+      <div class="relative w-full result hidden">
         <ul
           id="search-result"
-          class="pt-2 -mt-2 bg-gray-300 rounded-full rounded-t-none absolute top-0 left-0 w-full"
+          class="pt-2 -mt-2 bg-white rounded-full rounded-t-none absolute top-0 left-0 w-full z-50"
         ></ul>
       </div>
 
@@ -37,7 +37,7 @@
           class="card bg-white rounded-lg flex items-center h-20 sm:h-20 w-full object-cover px-5 shadow-2xl"
         >
           <div class="flex-shrink-0 w-10 h-10">
-            <img class="w-full h-full" src="images/graph1.png" alt=" " />
+            <img class="w-full h-full" src="images/graph1.png" alt="graph" />
           </div>
           <div class="font-bold text-xl xl:text-2xl ml-3">
             <p class="text-gray-900 whitespace-no-wrap">
@@ -53,7 +53,7 @@
           class="card bg-white rounded-lg flex items-center h-20 sm:h-20 w-full object-cover px-5 shadow-2xl"
         >
           <div class="flex-shrink-0 w-10 h-10">
-            <img class="w-full h-full" src="images/graph2.png" alt=" " />
+            <img class="w-full h-full" src="images/graph2.png" alt="graph" />
           </div>
           <div class="font-bold text-xl xl:text-2xl ml-3 justify-center">
             <p
@@ -70,7 +70,7 @@
           class="card bg-white rounded-lg flex items-center h-20 sm:h-20 w-full object-cover px-5 shadow-2xl"
         >
           <div class="flex-shrink-0 w-10 h-10">
-            <img class="w-full h-full" src="images/graph3.png" alt=" " />
+            <img class="w-full h-full" src="images/graph3.png" alt="graph" />
           </div>
           <div class="font-bold text-xl xl:text-2xl ml-3">
             <p class="text-gray-900 whitespace-no-wrap">
@@ -155,7 +155,6 @@
           <% }) %>
         </tbody>
       </table>
-
       <p class="hidden" id="profitLoss"><%= profitLoss %></p>
 
       <% } else { %>
@@ -171,21 +170,9 @@
 <!-- script for search bar -->
 
 <script>
-  let profitLossVal = document.getElementById("profitLoss").innerText;
-
-  if (profitLossVal < 0) {
-    document.getElementById("profitLossValue").innerHTML =
-      parseFloat(profitLossVal).toFixed(2) +
-      `<span class="text-red-600 ml-1 text-red-600 font-black text-2xl">&#8595;</span>`;
-  } else {
-    document.getElementById("profitLossValue").innerHTML =
-      parseFloat(profitLossVal).toFixed(2) +
-      `<span class="text-red-600 ml-1 text-green-600 font-black text-2xl">&#8593;</span>`;
-  }
-
-  const inputField = document.getElementById('searchbar')
-  const inputResult = document.getElementById('search-result')
-  const result = document.querySelector('.result')
+      const inputField = document.getElementById('searchbar')
+    const inputResult = document.getElementById('search-result')
+    const result = document.querySelector('.result')
 
   document.addEventListener('click', (e)=>{
     if( document.activeElement === inputField) {
@@ -196,42 +183,54 @@
   })
 
   inputField.addEventListener('input', (event) => {
-    inputResult.classList.add('bg-white')
-    console.log(event.target.value)
-    const value = event.target.value
-    //sample data
-    const dataset = <%- JSON.stringify(totalData) %> ;
+      inputResult.classList.add('bg-white')
+      const value = event.target.value
+      //sample data
+      const dataset = <%- JSON.stringify(totalData) %>;
 
-    // when symbol matches
-
-    let data = dataset.filter(function (el) {
-      return el.Symbol.includes(value.toUpperCase())
-    })
-
-    // when no symbol matches
-
-    if (data.length === 0) {
-
-      let data1 = dataset.filter(function (el) {
-        return (el["Company Name"].toLowerCase().includes(value.toLowerCase()))
+      // when symbol matches
+      let data = dataset.filter(function (el) {
+          return el.Symbol.includes(value.toUpperCase())
       })
-      data = data1;
-    }
 
-    let list = "";
-    if (value === "") {
-      list = "";
-      data = [];
-    }
-    let n = data.length
-    for (i = 0; i <= (n - 1); i++) {
-      let item = data[i];
-      list += `
-      <a href='/view/${item.Symbol}'>
-        <li class="bg-white p-2 w-full ${(i%2===0) ? 'bg-gray-300' : 'bg-gray-100'} hover:bg-gray-600 hover:text-white">${item.Symbol}</li>
-        </a>`
+      // when no symbol matches
+
+      if (data.length === 0) {
+          let data1 = dataset.filter(function (el) {
+              return (el["Company Name"].toLowerCase().includes(value.toLowerCase()))
+          })
+          data = data1;
+      }
+
+      let list = "";
+      if (value === "") {
+          list = "";
+          data = [];
+      }
+      let n = data.length
+      for (i = 0; i <= (n - 1); i++) {
+          let item = data[i];
+          list += `
+          <a href='/view/${item.Symbol}'>
+          <li class="bg-white p-2 w-full ${(i%2===0) ? 'bg-gray-300' : 'bg-gray-100'}">${item.Symbol}</li>
+          </a>`
       }
       document.getElementById('search-result').innerHTML = list;
       console.log(data)
-    })
+  })
+
+  let profitLossVal = document.getElementById("profitLoss");
+  function insertProfitValue(profitLossVal) {
+
+    if(!profitLossVal) {
+      return
+    }; // if its null/undefined then do not proceed further
+
+    if (profitLossVal.innerHTML < 0) {
+      document.getElementById("profitLossValue").innerHTML = parseFloat(profitLossVal).toFixed(2) + `<span class="text-red-600 ml-1 text-red-600 font-black text-2xl">&#8595;</span>`;
+    } else {
+      document.getElementById("profitLossValue").innerHTML = parseFloat(profitLossVal).toFixed(2) + `<span class="text-red-600 ml-1 text-green-600 font-black text-2xl">&#8593;</span>`;
+    }
+  }
+  insertProfitValue(profitLossVal)
 </script>
