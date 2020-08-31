@@ -35,7 +35,7 @@ router.get("/:page", ensureAuth, async (req, res) => {
   let min = page * 50;
   let max = page * 50 + 50;
 
-  if (page <= 0 || page >= 59) {
+  if (page <= 0 || page >= 10) {
     res.status(200).redirect("/market");
   } else {
     res.status(200).render("market", {

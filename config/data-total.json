@@ -20,96 +20,24 @@
     "Symbol": "AAPL"
   },
   {
-    "Company Name": "Acxiom Holdings Inc",
-    "Symbol": "ACXM"
-  },
-  {
     "Company Name": "Adobe Inc",
     "Symbol": "ADBE"
-  },
-  {
-    "Company Name": "Adept Technology Inc",
-    "Symbol": "ADEP"
   },
   {
     "Company Name": "Advanced Emissions Solutions Inc",
     "Symbol": "ADES"
   },
   {
-    "Company Name": "Alcobra Ltd",
-    "Symbol": "ADHD"
-  },
-  {
-    "Company Name": "Atlantic American Corporation",
-    "Symbol": "AAME"
-  },
-  {
     "Company Name": "Affimed N.V",
     "Symbol": "AFMD"
-  },
-  {
-    "Company Name": "Alliance Fiber Optic Products Inc",
-    "Symbol": "AFOP"
-  },
-  {
-    "Company Name": "AAON Inc",
-    "Symbol": "AAON"
-  },
-  {
-    "Company Name": "Apple Inc",
-    "Symbol": "AAPL"
-  },
-  {
-    "Company Name": "AmTrust Financial Services Inc",
-    "Symbol": "AFSI"
   },
   {
     "Company Name": "AstroNova Inc",
     "Symbol": "ALOT"
   },
   {
-    "Company Name": "Adobe Inc",
-    "Symbol": "ADBE"
-  },
-  {
-    "Company Name": "Adept Technology Inc",
-    "Symbol": "ADEP"
-  },
-  {
-    "Company Name": "Alaska Communications Systems Group Inc",
-    "Symbol": "ALSK"
-  },
-  {
-    "Company Name": "Advanced Emissions Solutions Inc",
-    "Symbol": "ADES"
-  },
-  {
-    "Company Name": "American Airlines Group Inc",
-    "Symbol": "AAL"
-  },
-  {
     "Company Name": "AMERISAFE Inc",
     "Symbol": "AMSF"
-  },
-  {
-    "Company Name": "Affimed N.V",
-    "Symbol": "AFMD"
-  },
-  {
-    "Company Name": "Atlantic American Corporation",
-    "Symbol": "AAME"
-  },
-  {
-    "Company Name": "Alliance Fiber Optic Products Inc",
-    "Symbol": "AFOP"
-  },
-  {
-    "Company Name": "Amsurg Corp",
-    "Symbol": "AMSG"
-  },
-  {
-    "Company Name": "American Capital Senior Floating Ltd",
-    "Symbol": "ACSF"
   },
   {
     "Company Name": "Asia Pacific Wire & Cable Corporation Limited",
@@ -120,92 +48,32 @@
     "Symbol": "ALKS"
   },
   {
-    "Company Name": "Acasti Pharma Inc",
-    "Symbol": "ACST"
-  },
-  {
     "Company Name": "Allot Ltd",
     "Symbol": "ALLT"
-  },
-  {
-    "Company Name": "Actua Corporation",
-    "Symbol": "ACTA"
-  },
-  {
-    "Company Name": "Acacia Research Corporation",
-    "Symbol": "ACTG"
-  },
-  {
-    "Company Name": "Affimed N.V",
-    "Symbol": "AFMD"
   },
   {
     "Company Name": "American Woodmark Corporation",
     "Symbol": "AMWD"
   },
   {
-    "Company Name": "Atlantic American Corporation",
-    "Symbol": "AAME"
-  },
-  {
     "Company Name": "Amazon.com Inc",
     "Symbol": "AMZN"
-  },
-  {
-    "Company Name": "Alliance Fiber Optic Products Inc",
-    "Symbol": "AFOP"
   },
   {
     "Company Name": "ASML Holding N.V",
     "Symbol": "ASML"
   },
   {
-    "Company Name": "Applied Optoelectronics Inc",
-    "Symbol": "AAOI"
-  },
-  {
-    "Company Name": "Anacor Pharmaceuticals Inc",
-    "Symbol": "ANAC"
-  },
-  {
     "Company Name": "Analog Devices Inc",
     "Symbol": "ADI"
-  },
-  {
-    "Company Name": "Aurinia Pharmaceuticals Inc",
-    "Symbol": "AUPH"
   },
   {
     "Company Name": "Alexion Pharmaceuticals Inc",
     "Symbol": "ALXN"
   },
   {
-    "Company Name": "ADMA Biologics Inc",
-    "Symbol": "ADMA"
-  },
-  {
-    "Company Name": "ARI Network Services Inc",
-    "Symbol": "ARIS"
-  },
-  {
-    "Company Name": "AMAG Pharmaceuticals Inc",
-    "Symbol": "AMAG"
-  },
-  {
     "Company Name": "Adamis Pharmaceuticals Corporation",
     "Symbol": "ADMP"
-  },
-  {
-    "Company Name": "ANI Pharmaceuticals Inc",
-    "Symbol": "ANIP"
-  },
-  {
-    "Company Name": "Alliance Holdings GP L.P",
-    "Symbol": "AHGP"
-  },
-  {
-    "Company Name": "Atlantic American Corporation",
-    "Symbol": "AAME"
   },
   {
     "Company Name": "Brightcove Inc",
@@ -218,10 +86,6 @@
   {
     "Company Name": "Allied Healthcare Products Inc",
     "Symbol": "AHPI"
-  },
-  {
-    "Company Name": "Applied Optoelectronics Inc",
-    "Symbol": "AAOI"
   },
   {
     "Company Name": "Balchem Corporation",
@@ -244,10 +108,6 @@
     "Symbol": "AMCX"
   },
   {
-    "Company Name": "ADMA Biologics Inc",
-    "Symbol": "ADMA"
-  },
-  {
     "Company Name": "ASB Bancorp Inc",
     "Symbol": "ASBB"
   },
@@ -268,10 +128,6 @@
     "Symbol": "AGRX"
   },
   {
-    "Company Name": "Atlantic American Corporation",
-    "Symbol": "AAME"
-  },
-  {
     "Company Name": "AVEO Pharmaceuticals Inc",
     "Symbol": "AVEO"
   },
@@ -282,10 +138,6 @@
   {
     "Company Name": "Applied Genetic Technologies Corporation",
     "Symbol": "AGTC"
-  },
-  {
-    "Company Name": "Applied Optoelectronics Inc",
-    "Symbol": "AAOI"
   },
   {
     "Company Name": "Aptose Biosciences Inc",
@@ -308,24 +160,12 @@
     "Symbol": "ASYS"
   },
   {
-    "Company Name": "Adobe Inc",
-    "Symbol": "ADBE"
-  },
-  {
-    "Company Name": "Atlantic American Corporation",
-    "Symbol": "AAME"
-  },
-  {
     "Company Name": "Aspen Technology Inc",
     "Symbol": "AZPN"
   },
   {
     "Company Name": "CareDx Inc",
     "Symbol": "CDNA"
-  },
-  {
-    "Company Name": "Agile Therapeutics Inc",
-    "Symbol": "AGRX"
   },
   {
     "Company Name": "Boulevard Acquisition Corp Wt Exp 02/19/2019",
@@ -336,20 +176,12 @@
     "Symbol": "CACQ"
   },
   {
-    "Company Name": "Applied Optoelectronics Inc",
-    "Symbol": "AAOI"
-  },
-  {
     "Company Name": "Cadence Design Systems Inc",
     "Symbol": "CDNS"
   },
   {
     "Company Name": "China Natural Resources Inc",
     "Symbol": "CHNR"
-  },
-  {
-    "Company Name": "BioSpecifics Technologies Corp",
-    "Symbol": "BSTC"
   },
   {
     "Company Name": "Baidu Inc",
@@ -408,10 +240,6 @@
     "Symbol": "AIRM"
   },
   {
-    "Company Name": "Atlantic American Corporation",
-    "Symbol": "AAME"
-  },
-  {
     "Company Name": "Popular Capital Trust II PFD GTD 6.125%",
     "Symbol": "BPOPM"
   },
@@ -426,10 +254,6 @@
   {
     "Company Name": "DT Asia Investments Ltd Rt",
     "Symbol": "CADTR"
-  },
-  {
-    "Company Name": "Alcobra Ltd",
-    "Symbol": "ADHD"
   },
   {
     "Company Name": "America First Multifamily Investors L.P",
@@ -456,14 +280,6 @@
     "Symbol": "CADTU"
   },
   {
-    "Company Name": "Atlantic American Corporation",
-    "Symbol": "AAME"
-  },
-  {
-    "Company Name": "Applied Genetic Technologies Corporation",
-    "Symbol": "AGTC"
-  },
-  {
     "Company Name": "Criteo S.A",
     "Symbol": "CRTO"
   },
@@ -488,20 +304,8 @@
     "Symbol": "CHCO"
   },
   {
-    "Company Name": "Applied Optoelectronics Inc",
-    "Symbol": "AAOI"
-  },
-  {
     "Company Name": "Agilysys Inc",
     "Symbol": "AGYS"
-  },
-  {
-    "Company Name": "Acxiom Holdings Inc",
-    "Symbol": "ACXM"
-  },
-  {
-    "Company Name": "American National Bankshares Inc",
-    "Symbol": "AMNB"
   },
   {
     "Company Name": "Cavco Industries Inc",
@@ -542,22 +346,6 @@
   {
     "Company Name": "Connecture Inc",
     "Symbol": "CNXR"
-  },
-  {
-    "Company Name": "Agile Therapeutics Inc",
-    "Symbol": "AGRX"
-  },
-  {
-    "Company Name": "Popular Capital Trust II PFD GTD 6.125%",
-    "Symbol": "BPOPM"
-  },
-  {
-    "Company Name": "American Realty Capital Properties Inc",
-    "Symbol": "ARCP"
-  },
-  {
-    "Company Name": "Atlantic American Corporation",
-    "Symbol": "AAME"
   },
   {
     "Company Name": "Carolina Bank Holding Inc. (NC)",
@@ -628,10 +416,6 @@
     "Symbol": "BPOPN"
   },
   {
-    "Company Name": "Air Methods Corp",
-    "Symbol": "AIRM"
-  },
-  {
     "Company Name": "Bed Bath & Beyond Inc",
     "Symbol": "BBBY"
   },
@@ -660,16 +444,8 @@
     "Symbol": "EAC"
   },
   {
-    "Company Name": "Allied Motion Technologies Inc",
-    "Symbol": "AMOT"
-  },
-  {
     "Company Name": "Entegra Financial Corp",
     "Symbol": "ENFC"
-  },
-  {
-    "Company Name": "BIOLASE Inc",
-    "Symbol": "BIOL"
   },
   {
     "Company Name": "Callidus Software Inc",
@@ -686,10 +462,6 @@
   {
     "Company Name": "ASPX",
     "Symbol": "ASPX"
-  },
-  {
-    "Company Name": "Popular Capital Trust II PFD GTD 6.125%",
-    "Symbol": "BPOPM"
   },
   {
     "Company Name": "Emclaire Financial Corp",
@@ -712,10 +484,6 @@
     "Symbol": "DCOM"
   },
   {
-    "Company Name": "Conn's Inc",
-    "Symbol": "CONN"
-  },
-  {
     "Company Name": "ClickSoftware Technologies Ltd",
     "Symbol": "CKSW"
   },
@@ -728,28 +496,12 @@
     "Symbol": "DRNA"
   },
   {
-    "Company Name": "Popular Capital Trust I PFD 6.70% GTD",
-    "Symbol": "BPOPN"
-  },
-  {
-    "Company Name": "Bel Fuse Inc",
-    "Symbol": "BELFB"
-  },
-  {
     "Company Name": "Courier Corp",
     "Symbol": "CRRC"
   },
   {
     "Company Name": "Compugen Ltd",
     "Symbol": "CGEN"
-  },
-  {
-    "Company Name": "Ames National Corporation",
-    "Symbol": "ATLO"
-  },
-  {
-    "Company Name": "DT Asia Investments Ltd Unit 1 Shs & 1 Rt & 1 Wt",
-    "Symbol": "CADTU"
   },
   {
     "Company Name": "Electro Scientific Industries Inc",
@@ -776,20 +528,8 @@
     "Symbol": "CGIX"
   },
   {
-    "Company Name": "Bed Bath & Beyond Inc",
-    "Symbol": "BBBY"
-  },
-  {
     "Company Name": "FARO Technologies Inc",
     "Symbol": "FARO"
-  },
-  {
-    "Company Name": "Celldex Therapeutics Inc",
-    "Symbol": "CLDX"
-  },
-  {
-    "Company Name": "Cboe Global Markets Inc",
-    "Symbol": "CBOE"
   },
   {
     "Company Name": "Fluidigm Corporation",
@@ -832,10 +572,6 @@
     "Symbol": "FIBK"
   },
   {
-    "Company Name": "ContraFect Corporation",
-    "Symbol": "CFRX"
-  },
-  {
     "Company Name": "BIND Therapeutics Inc",
     "Symbol": "BIND"
   },
@@ -868,20 +604,8 @@
     "Symbol": "ENSG"
   },
   {
-    "Company Name": "Biocept Inc",
-    "Symbol": "BIOC"
-  },
-  {
     "Company Name": "The Finish Line Inc",
     "Symbol": "FINL"
-  },
-  {
-    "Company Name": "Data I/O Corporation",
-    "Symbol": "DAIO"
-  },
-  {
-    "Company Name": "Citizens Holding Company",
-    "Symbol": "CIZN"
   },
   {
     "Company Name": "Shanda Games Limited(ADR)",
@@ -906,10 +630,6 @@
   {
     "Company Name": "Boston Private Financial Holdings Inc",
     "Symbol": "BPFHP"
-  },
-  {
-    "Company Name": "Daktronics Inc",
-    "Symbol": "DAKT"
   },
   {
     "Company Name": "Capital Bank Financial Corp",
@@ -952,14 +672,6 @@
     "Symbol": "CTRN"
   },
   {
-    "Company Name": "Caesars Acquisition Company",
-    "Symbol": "CACQ"
-  },
-  {
-    "Company Name": "Daktronics Inc",
-    "Symbol": "DAKT"
-  },
-  {
     "Company Name": "Emmis Communications Corporation - 6.25% Series A Cumulative Convertible Preferred Stock",
     "Symbol": "EMMSP"
   },
@@ -974,10 +686,6 @@
   {
     "Company Name": "L.B. Foster Company",
     "Symbol": "FSTR"
-  },
-  {
-    "Company Name": "Capitala Finance Corp",
-    "Symbol": "CPTA"
   },
   {
     "Company Name": "eBay Inc",
@@ -1010,10 +718,6 @@
   {
     "Company Name": "Gentex Corporation",
     "Symbol": "GNTX"
-  },
-  {
-    "Company Name": "Electro Scientific Industries Inc",
-    "Symbol": "ESIO"
   },
   {
     "Company Name": "First Business Financial Services Inc",
@@ -1088,10 +792,6 @@
     "Symbol": "HIHO"
   },
   {
-    "Company Name": "Cumberland Pharmaceuticals Inc",
-    "Symbol": "CPIX"
-  },
-  {
     "Company Name": "Fox Factory Holding Corp",
     "Symbol": "FOXF"
   },
@@ -1130,14 +830,6 @@
   {
     "Company Name": "ChipMOS TECHNOLOGIES INC",
     "Symbol": "IMOS"
-  },
-  {
-    "Company Name": "Fox Factory Holding Corp",
-    "Symbol": "FOXF"
-  },
-  {
-    "Company Name": "Caesarstone Ltd",
-    "Symbol": "CSTE"
   },
   {
     "Company Name": "HD Supply Holdings Inc",
@@ -1212,10 +904,6 @@
     "Symbol": "KIRK"
   },
   {
-    "Company Name": "First Business Financial Services Inc",
-    "Symbol": "FBIZ"
-  },
-  {
     "Company Name": "JD.com Inc",
     "Symbol": "JD"
   },
@@ -1246,10 +934,6 @@
   {
     "Company Name": "Energy Recovery Inc",
     "Symbol": "ERII"
-  },
-  {
-    "Company Name": "DTS Inc",
-    "Symbol": "DTSI"
   },
   {
     "Company Name": "Hawaiian Holdings Inc",
@@ -1322,10 +1006,6 @@
   {
     "Company Name": "U.S. Global Investors Inc",
     "Symbol": "GROW"
-  },
-  {
-    "Company Name": "EnerNOC Inc",
-    "Symbol": "ENOC"
   },
   {
     "Company Name": "ICU Medical Inc",
@@ -1448,10 +1128,6 @@
     "Symbol": "IBCA"
   },
   {
-    "Company Name": "Ignite Restaurant Group Inc",
-    "Symbol": "IRG"
-  },
-  {
     "Company Name": "Green Mountain Coffee Roasters Inc",
     "Symbol": "GMCR"
   },
@@ -1484,10 +1160,6 @@
     "Symbol": "MCUR"
   },
   {
-    "Company Name": "Hollysys Automation Technologies Ltd",
-    "Symbol": "HOLI"
-  },
-  {
     "Company Name": "Golar LNG Partners LP",
     "Symbol": "GMLP"
   },
@@ -1504,16 +1176,8 @@
     "Symbol": "NEOG"
   },
   {
-    "Company Name": "NeoGenomics Inc",
-    "Symbol": "NEO"
-  },
-  {
     "Company Name": "Galectin Therapeutics Inc",
     "Symbol": "GALT"
-  },
-  {
-    "Company Name": "Hawaiian Holdings Inc",
-    "Symbol": "HA"
   },
   {
     "Company Name": "Novatel Wireless Inc",
@@ -1536,16 +1200,8 @@
     "Symbol": "KBSF"
   },
   {
-    "Company Name": "Martin Midstream Partners L.P",
-    "Symbol": "MMLP"
-  },
-  {
     "Company Name": "NTELOS Holdings Corp",
     "Symbol": "NTLS"
-  },
-  {
-    "Company Name": "Neogen Corporation",
-    "Symbol": "NEOG"
   },
   {
     "Company Name": "Galectin Therapeutics Inc. - Units",
@@ -1596,10 +1252,6 @@
     "Symbol": "JIVE"
   },
   {
-    "Company Name": "Karyopharm Therapeutics Inc",
-    "Symbol": "KPTI"
-  },
-  {
     "Company Name": "Heartland Financial USA Inc",
     "Symbol": "HTLF"
   },
@@ -1626,10 +1278,6 @@
   {
     "Company Name": "OncoGenex Pharmaceuticals Inc",
     "Symbol": "OGXI"
-  },
-  {
-    "Company Name": "Ignite Restaurant Group Inc",
-    "Symbol": "IRG"
   },
   {
     "Company Name": "Kraft Foods Group Inc",
@@ -1684,10 +1332,6 @@
     "Symbol": "HDP"
   },
   {
-    "Company Name": "Nanosphere Inc",
-    "Symbol": "NSPH"
-  },
-  {
     "Company Name": "Lantronix Inc",
     "Symbol": "LTRX"
   },
@@ -1698,10 +1342,6 @@
   {
     "Company Name": "LaPorte Bancorp Inc",
     "Symbol": "LPSB"
-  },
-  {
-    "Company Name": "Kraft Foods Group Inc",
-    "Symbol": "KRFT"
   },
   {
     "Company Name": "Intuit Inc",
@@ -1752,16 +1392,8 @@
     "Symbol": "OREX"
   },
   {
-    "Company Name": "Legacy Reserves LP",
-    "Symbol": "LGCYO"
-  },
-  {
     "Company Name": "Maiden Holdings Ltd. - 7.25% Mandatory Convertible Preference Shares Series B",
     "Symbol": "MHLDO"
-  },
-  {
-    "Company Name": "Independent Bank Group Inc",
-    "Symbol": "IBTX"
   },
   {
     "Company Name": "Mercantile Bank Corporation",
@@ -1794,10 +1426,6 @@
   {
     "Company Name": "Perficient Inc",
     "Symbol": "PRFT"
-  },
-  {
-    "Company Name": "Life Partners Holdings Inc",
-    "Symbol": "LPHI"
   },
   {
     "Company Name": "Mattress Firm Holding Corp",
@@ -1884,14 +1512,6 @@
     "Symbol": "PLUS"
   },
   {
-    "Company Name": "Neogen Corporation",
-    "Symbol": "NEOG"
-  },
-  {
-    "Company Name": "Nanosphere Inc",
-    "Symbol": "NSPH"
-  },
-  {
     "Company Name": "Microsoft Corporation",
     "Symbol": "MSFT"
   },
@@ -1970,10 +1590,6 @@
   {
     "Company Name": "Old National Bancorp",
     "Symbol": "ONB"
-  },
-  {
-    "Company Name": "Metabolix Inc",
-    "Symbol": "MBLX"
   },
   {
     "Company Name": "Marinus Pharmaceuticals Inc",
@@ -2120,10 +1736,6 @@
     "Symbol": "SSRI"
   },
   {
-    "Company Name": "Rush Enterprises Inc",
-    "Symbol": "RUSHB"
-  },
-  {
     "Company Name": "The Wendy's Company",
     "Symbol": "WEN"
   },
@@ -2164,10 +1776,6 @@
     "Symbol": "PSDV"
   },
   {
-    "Company Name": "Triumph Bancorp Inc",
-    "Symbol": "TBK"
-  },
-  {
     "Company Name": "Tenax Therapeutics Inc",
     "Symbol": "TENX"
   },
@@ -2190,10 +1798,6 @@
   {
     "Company Name": "Vascular Solutions Inc",
     "Symbol": "VASC"
-  },
-  {
-    "Company Name": "Syntel Inc",
-    "Symbol": "SYNT"
   },
   {
     "Company Name": "Torchlight Energy Resources Inc",
@@ -2226,10 +1830,6 @@
   {
     "Company Name": "LendingTree Inc",
     "Symbol": "TREE"
-  },
-  {
-    "Company Name": "Wheeler Real Estate Investment Trust Inc",
-    "Symbol": "WHLR"
   },
   {
     "Company Name": "Tesla Inc",
@@ -2320,14 +1920,6 @@
     "Symbol": "XOOM"
   },
   {
-    "Company Name": "Unity Bancorp Inc",
-    "Symbol": "UNTY"
-  },
-  {
-    "Company Name": "Tenax Therapeutics Inc",
-    "Symbol": "TENX"
-  },
-  {
     "Company Name": "SEI Investments Company",
     "Symbol": "SEIC"
   },
@@ -2362,10 +1954,6 @@
   {
     "Company Name": "Wave Systems Corp",
     "Symbol": "WAVX"
-  },
-  {
-    "Company Name": "Viasystems Group Inc",
-    "Symbol": "VIAS"
   },
   {
     "Company Name": "Silicon Motion Technology Corporation",
@@ -2436,10 +2024,6 @@
     "Symbol": "WEYS"
   },
   {
-    "Company Name": "Virgin America Inc",
-    "Symbol": "VA"
-  },
-  {
     "Company Name": "World Acceptance Corporation",
     "Symbol": "WRLD"
   },
@@ -2480,10 +2064,6 @@
     "Symbol": "TACT"
   },
   {
-    "Company Name": "Vanguard Natural Resources LLC",
-    "Symbol": "VNRBP"
-  },
-  {
     "Company Name": "ZAGG Inc",
     "Symbol": "ZAGG"
   },
@@ -2502,10 +2082,6 @@
   {
     "Company Name": "Tecnoglass Inc",
     "Symbol": "TGLS"
-  },
-  {
-    "Company Name": "Trinity Biotech plc",
-    "Symbol": "TRIB"
   },
   {
     "Company Name": "Westmoreland Coal Company",
@@ -2540,28 +2116,8 @@
     "Symbol": "ZUMZ"
   },
   {
-    "Company Name": "Unico American Corporation",
-    "Symbol": "UNAM"
-  },
-  {
-    "Company Name": "Union Bankshares Inc",
-    "Symbol": "UNB"
-  },
-  {
-    "Company Name": "United Natural Foods Inc",
-    "Symbol": "UNFI"
-  },
-  {
     "Company Name": "Unilife Corp",
     "Symbol": "UNIS"
-  },
-  {
-    "Company Name": "Value Line Inc",
-    "Symbol": "VALU"
-  },
-  {
-    "Company Name": "Vascular Solutions Inc",
-    "Symbol": "VASC"
   },
   {
     "Company Name": "Village Bank and Trust Financial Corp",
@@ -2596,22 +2152,6 @@
     "Symbol": "VSEC"
   },
   {
-    "Company Name": "Verastem Inc",
-    "Symbol": "VSTM"
-  },
-  {
-    "Company Name": "Vitae Pharmaceuticals Inc",
-    "Symbol": "VTAE"
-  },
-  {
-    "Company Name": "Whole Foods Market Inc",
-    "Symbol": "WFM"
-  },
-  {
-    "Company Name": "WaferGen Bio-systems Inc",
-    "Symbol": "WGBS"
-  },
-  {
     "Company Name": "WhiteHorse Finance Inc",
     "Symbol": "WHF"
   },
@@ -2622,10 +2162,6 @@
   {
     "Company Name": "Wilhelmina International Inc",
     "Symbol": "WHLM"
-  },
-  {
-    "Company Name": "Wheeler Real Estate Investment Trust Inc",
-    "Symbol": "WHLR"
   },
   {
     "Company Name": "Wayside Technology Group Inc",
@@ -2646,25 +2182,5 @@
   {
     "Company Name": "Wintrust Financial Corporation WT EXP 121918",
     "Symbol": "WTFCW"
-  },
-  {
-    "Company Name": "JOYY Inc",
-    "Symbol": "YY"
-  },
-  {
-    "Company Name": "Zillow Group Inc",
-    "Symbol": "Z"
-  },
-  {
-    "Company Name": "ZAGG Inc",
-    "Symbol": "ZAGG"
-  },
-  {
-    "Company Name": "Zebra Technologies Corporation",
-    "Symbol": "ZBRA"
-  },
-  {
-    "Company Name": "Olympic Steel Inc",
-    "Symbol": "ZEUS"
   }
 ]
