@@ -67,7 +67,9 @@
             <img class="w-full h-full" src="images/graph1.png" alt=" " />
           </div>
           <div class="font-bold text-xl xl:text-2xl ml-3">
-            <p class="text-gray-900 whitespace-no-wrap">$40,342.04</p>
+            <p class="text-gray-900 whitespace-no-wrap">
+              $ <%= totalPortfolio.toFixed(2)%>
+            </p>
             <span class="block text-gray-500 text-sm">Total Portfolio</span>
           </div>
         </div>
@@ -81,7 +83,10 @@
             <img class="w-full h-full" src="images/graph2.png" alt=" " />
           </div>
           <div class="font-bold text-xl xl:text-2xl ml-3 justify-center">
-            <p class="text-gray-900 whitespace-no-wrap">$ 40,342.04</p>
+            <p
+              id="profitLossValue"
+              class="text-gray-900 whitespace-no-wrap"
+            ></p>
             <span class="block text-gray-500 text-sm">Profit / Loss</span>
           </div>
         </div>
@@ -95,7 +100,9 @@
             <img class="w-full h-full" src="images/graph3.png" alt=" " />
           </div>
           <div class="font-bold text-xl xl:text-2xl ml-3">
-            <p class="text-gray-900 whitespace-no-wrap">$ <%= user.balance%></p>
+            <p class="text-gray-900 whitespace-no-wrap">
+              $ <%= user.balance.toFixed(2)%>
+            </p>
             <span class="block text-gray-500 text-sm">Balance</span>
           </div>
         </div>
@@ -126,26 +133,27 @@
           <tr class="bg-white border-b text-center">
             <td class="px-4 py-2 text-center"><%= stock.companySymbol %></td>
             <td class="px-4 py-2 text-center">
-              <% currentPrice = Math.floor(stock.stockPrice*(Math.random()+0.6))
+              <% currentPrice = Math.floor(stock.stockPrice*(Math.random()+0.7))
               %> $<%= currentPrice %>
             </td>
             <td class="px-4 py-2 text-center">
-              <% let price = currentPrice - stock.stockPrice %> <% if(price < 0)
-              { %> <% color="red" %>
+              <% let price = currentPrice - stock.stockPrice %> <% profitLoss =
+              + currentPrice - stock.stockPrice %> <% if(price < 0) { %> <%
+              color="red" %>
               <span
-                >$<%= price.toPrecision(3) %><span class="text-red-600 text-lg"
+                >$<%= price.toFixed(2) %><span class="text-red-600 text-lg"
                   >&#8595;</span
                 ></span
               >
               <% } else { %> <% color="green" %>
               <span
-                >$<%= price.toPrecision(3) %><span
-                  class="text-green-600 text-lg"
+                >$<%= price.toFixed(2) %><span class="text-green-600 text-lg"
                   >&#8593;</span
                 ></span
               >
               <% } %>
             </td>
+
             <td class="px-4 py-2 text-center"><%= stock.noOfStock %></td>
             <td class="px-4 py-2 text-center">
               <form action="/transaction/sell/<%= stock._id%>" method="POST">
@@ -170,6 +178,9 @@
           <% }) %>
         </tbody>
       </table>
+
+      <p class="hidden" id="profitLoss"><%= profitLoss %></p>
+
       <% } else { %>
       <p><%= StockMessage %></p>
       <% } %>
@@ -183,6 +194,14 @@
 <!-- script for search bar -->
 
 <script>
+  let profitLossVal = document.getElementById("profitLoss").innerText;
+
+  if (profitLossVal < 0) {
+    document.getElementById("profitLossValue").innerHTML = parseFloat(profitLossVal).toFixed(2) + `<span class="text-red-600 ml-1 text-red-600 font-black text-2xl">&#8595;</span>`;
+  } else {
+    document.getElementById("profitLossValue").innerHTML = parseFloat(profitLossVal).toFixed(2) + `<span class="text-red-600 ml-1 text-green-600 font-black text-2xl">&#8593;</span>`;
+  }
+
   const inputField = document.getElementById('searchbar')
   inputField.addEventListener('input', (event) => {
       console.log(event.target.value)
