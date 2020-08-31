@@ -9,7 +9,9 @@
         class="text-gray-700 text-3xl font-semibold leading-none tracking-wider"
         >Hello,</span
       >
-      <h2 class="text-5xl leading-none tracking-wider text-blue-900 select-none">
+      <h2
+        class="text-5xl leading-none tracking-wider text-blue-900 select-none"
+      >
         <%= user.displayName%>.
       </h2>
     </header>
@@ -219,14 +221,9 @@
       console.log(data)
   })
 
-  let profitLossVal = document.getElementById("profitLoss");
+  let profitLossVal = document.getElementById("profitLoss").innerHTML;
   function insertProfitValue(profitLossVal) {
-
-    if(!profitLossVal) {
-      return
-    }; // if its null/undefined then do not proceed further
-
-    if (profitLossVal.innerHTML < 0) {
+    if (profitLossVal < 0) {
       document.getElementById("profitLossValue").innerHTML = parseFloat(profitLossVal).toFixed(2) + `<span class="text-red-600 ml-1 text-red-600 font-black text-2xl">&#8595;</span>`;
     } else {
       document.getElementById("profitLossValue").innerHTML = parseFloat(profitLossVal).toFixed(2) + `<span class="text-red-600 ml-1 text-green-600 font-black text-2xl">&#8593;</span>`;
