@@ -27,18 +27,51 @@
 ## Tech Stack
 
 <code><img height="40" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png" alt="javascript"></code>
-<code><img height="40" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSTTzPAw-55ssm1Im594xYZ9eRQu2JylrkYLg&usqp=CAU" alt="mongodb"></code>
 <code><img height="40" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/nodejs/nodejs.png" alt="nodejs"></code>
-<code><img height="40" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/express/express.png" alt="express"></code>
+<code><img height="40" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/npm/npm.png" alt="npm"></code>
+<code><img height="40" src="https://cdn.glitch.com/project-avatar/fa1f1a9a-054c-42b2-93ab-83ec4f40695d.png?2017-09-13T18:38:00.967Z" alt="express"></code>
+<code><img height="40" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSTTzPAw-55ssm1Im594xYZ9eRQu2JylrkYLg&usqp=CAU" alt="mongodb"></code>
 <code><img height="40" src="https://cdn.icon-icons.com/icons2/2148/PNG/512/ejs_icon_132422.png" alt="ejs"></code>
 <code><img height="40" src="https://ph-files.imgix.net/108b5bdd-db00-4050-8a20-675ddfc5d99a?auto=format" alt="tailwind-css"></code>
 <code><img height="40" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/google/google.png" alt="google"></code>
+<code><img height="40" src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/112-gmail_email_mail-512.png" alt="gmail"></code>
 <code><img height="40" src="https://cdn.glitch.com/project-avatar/0d184ee3-fd8d-4b94-acf4-b4e686e57375.png?2016-11-21T13:18:58.896Z" alt="passport"></code>
+<code><img height="40" src="https://cdn.iconscout.com/icon/free/png-256/stripe-2-498440.png" alt="stripe"></code>
 <code><img height="40" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSCjjrUqDfgOQsyoil76OpCKOnnpmEu71jHFQ&usqp=CAU" alt="heroku"></code>
 
-## Build Setup
+## Config Setup
 
-Add your [MongoDB URI](https://www.mongodb.com/cloud/atlas), [Google OAuth credentials](console.developers.google.com/) and [Alpha Vantage Keys](https://www.alphavantage.co/) to the config.env file see config.env.example for details.
+#### Add following keys into the config.env file. These all are free to use keys.
+
+- [MongoDB URI](https://www.mongodb.com/cloud/atlas)
+- [Alpha Vantage Keys](https://www.alphavantage.co/)
+- [Google OAuth Credentials](console.developers.google.com/)
+- [GMAIL API Credentials](https://www.woolha.com/tutorials/node-js-send-email-using-gmail-with-nodemailer-oauth-2)
+- [Stripe Payment Gateway Keys](https://stripe.com/)
+
+### config.env format
+
+```bash
+PORT = XXXX
+MONGO_URI = XXXX
+ALPHA_VANTAGE_KEY = XXXX
+
+GOOGLE_CLIENT_ID = XXXX
+GOOGLE_CLIENT_SECRET = XXXX
+
+GMAIL_ADDRESS = XXXX
+GMAIL_OAUTH_CLIENT_ID = XXXX
+GMAIL_OAUTH_CLIENT_SECRET = XXXX
+GMAIL_OAUTH_REFRESH_TOKEN = XXXX
+GMAIL_OAUTH_ACCESS_TOKEN = XXXX
+GMAIL_OAUTH_TOKEN_EXPIRE = XXXX
+
+PK_TEST = XXXX
+SK_TEST = XXXX
+
+```
+
+## Build Setup
 
 ```bash
 # install dependencies
@@ -60,7 +93,7 @@ npm run dev
     ├── 📁 middleware              # Expresss middlewares
     ├── 📁 models                  # Mongoose models
     ├── 📁 project-plan            # Project planning files
-        └── 📁 ui-designs
+    │   └── 📁 ui-designs
     ├── 📁 public                  # Public folder
     │    ├── 📁 css
     │    ├── 📁 images
@@ -70,11 +103,12 @@ npm run dev
     └── 📁 views                   # EJS views
          ├── 📁 error
          ├── 📁 layouts
-         └── 📁 partials
+         ├── 📁 partials
+         └── 📁 transaction
 
 ## Project Plan
 
-![](project-plan/TradeByte.jpg)
+![Project Plan](project-plan/TradeByte.jpg)
 
 ## Contributing
 
