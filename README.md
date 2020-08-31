@@ -16,8 +16,6 @@
 
 ---
 
-<br/>
-
 ## Table of Contents
 
 - [**TradeByte**](#img-srcpublicimagestradebyte-faviconpng-width30-tradebyte)
