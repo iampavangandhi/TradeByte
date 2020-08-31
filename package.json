@@ -43,7 +43,6 @@
     "express-session": "^1.17.1",
     "express-validator": "^6.6.0",
     "googleapis": "^39.2.0",
-    "lodash": "^4.17.19",
     "method-override": "^3.0.0",
     "mongoose": "^5.9.25",
     "mongoose-float": "^1.0.4",
