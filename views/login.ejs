@@ -1,4 +1,5 @@
 <div class="antialiased w-full h-full">
+  <%- include('./partials/_messages') %>
   <!--  Navbar -->
   <div class="bg-white w-full text-gray-700 shadow-lg">
     <div
@@ -42,7 +43,7 @@
       </div>
       <nav
         :class="{'flex': open, 'hidden': !open}"
-        class="flex-col hidden pb-4 md:pb-0 md:flex md:justify-center md:flex-row"
+        class="flex-col hidden pb-4 md:pb-0 md:flex md:justify-center md:flex-row mr-3"
       >
         <a
           class="px-4 py-2 mt-2 text-sm font-semibold text-sm lg:text-md rounded md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
@@ -609,7 +610,6 @@
               </button>
             </a>
           </div>
-          <%- include('./partials/_messages') %>
           <hr class="mt-6 border-b-1 border-gray-400" />
         </div>
         <div class="flex-auto px-4 lg:px-10 pb-10 pt-0">
@@ -629,6 +629,7 @@
                 class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
                 placeholder="Email"
                 style="transition: all 0.15s ease 0s"
+                required
               />
             </div>
             <div class="relative w-full mb-3">
@@ -643,6 +644,8 @@
                 class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
                 placeholder="Password"
                 style="transition: all 0.15s ease 0s"
+                min="6"
+                required
               />
             </div>
             <div class="text-center mt-6">
@@ -686,6 +689,7 @@
     modal.classList.remove("fadeOut");
     modal.classList.add("fadeIn");
     modal.style.display = "flex";
+    window.location.href += "#";
   };
 
   for (let i = 0; i < closeButton.length; i++) {

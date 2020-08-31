@@ -96,11 +96,31 @@ router.post("/signup", ensureGuest, (req, res) => {
 // @route    GET /user/signin
 // @access   Public
 router.post("/signin", ensureGuest, (req, res, next) => {
-  passport.authenticate("local", {
-    successRedirect: "/portfolio",
-    failureRedirect: "/",
-    failureFlash: true,
-  })(req, res, next);
+  const { password, email } = req.body;
+  let errors = [];
+
+  if (!password || !email) {
+    errors.push({ msg: "Please enter all fields" });
+  }
+
+  if (password.length < 6) {
+    errors.push({ msg: "Password must be longer than 6 characters" });
+  }
+
+  if (errors.length > 0) {
+    res.render("login", {
+      layout: "layouts/login",
+      errors,
+      email,
+      password,
+    });
+  } else {
+    passport.authenticate("local", {
+      successRedirect: "/portfolio",
+      failureRedirect: "/",
+      failureFlash: true,
+    })(req, res, next);
+  }
 });
 
 module.exports = router;
