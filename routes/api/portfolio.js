@@ -78,15 +78,6 @@ router.get("/", ensureAuth, async (req, res) => {
     res.cookie("prevUser", "");
   }
 
-  const transactions = await Transaction.find({
-    user: req.user.id,
-  })
-    .populate("user")
-    .sort({
-      createdAt: -1,
-    })
-    .lean();
-
   // Stock Message
   var StockMessage = "";
   stocks = user.stock;
@@ -108,7 +99,6 @@ router.get("/", ensureAuth, async (req, res) => {
   res.render("portfolio", {
     StockMessage,
     totalPortfolio,
-    transactions,
     user,
     avatar,
     totalData,
