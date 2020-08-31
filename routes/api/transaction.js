@@ -17,10 +17,10 @@ const emailHelper = require("../../helpers/emailHelper");
 // @access   Private
 router.put("/confirm", ensureAuth, async (req, res) => {
   try {
+    const companySymbol = req.body.companySymbol;
     const stockCount = Number(req.body.noOfStock);
     const totalPrice = Number(req.body.totalAmount);
     let balance = Number(req.user.balance) - totalPrice;
-    console.log(req.user.displayName + " this is the name");
     req.body.user = req.user.id;
     const { email, displayName } = req.user;
 
@@ -35,7 +35,7 @@ router.put("/confirm", ensureAuth, async (req, res) => {
     // );
     // console.log(`${updatedUser} : U P D A T E D U S E R`);
 
-    const addedNewUser = await User.findOneAndUpdate(
+    await User.findOneAndUpdate(
       { _id: req.user.id },
       {
         balance: balance,
@@ -48,15 +48,25 @@ router.put("/confirm", ensureAuth, async (req, res) => {
         runValidators: true, // it check weather the fields are valid or not
       }
     );
-    console.log(addedNewUser);
+
+    let msg = "";
+
+    if (stockCount == 1) {
+      msg = "stock";
+    } else {
+      msg = "stocks";
+    }
 
     const options = {
       to: email, // list of receivers
-      subject: "Hello from TradeByte✔", // Subject line
+      subject: "Hello from TradeByte ✔", // Subject line
       html: `
-      <b>Hello ${displayName}</b>
-      <p>You bought stocks from TradeByte of amount ${totalPrice}, your remaining TradeByte balance is ${balance}</p>
-      <p>This is a demo Project made by TradeByte team for educational purpose only.</p>
+      <b>Hello ${displayName},</b>
+      <p>You bought ${stockCount} ${msg} of ${companySymbol} from TradeByte of amount ${totalPrice.toFixed(
+        2
+      )}, your remaining TradeByte balance is ${balance.toFixed(2)}</p>
+      <p>This is a Demo Project made by TradeByte team for educational purpose only.</p>
+      <p>You can check the <a href="https://github.com/iampavangandhi/TradeByte">Github Repo</a> for details.</p>
       <p>Have a great Day!</p>
     `, // html body
     };
