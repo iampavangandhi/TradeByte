@@ -1,10 +1,10 @@
 <div class="md:col-span-4 md:ml-56 lg:ml-64 md:pr-14 w-full">
-  <div class="container px-5 py-10 mx-auto md:px-auto">
+  <div class="container p-5 mx-auto md:px-auto">
     <!-- header -->
 
     <header class="my-4 absolute-center">
       <span
-        class="text-gray-700 lg:text-6xl text-5xl font-semibold leading-none tracking-wider"
+        class="text-gray-700 lg:text-6xl text-4xl font-semibold leading-none tracking-wider"
         >Transaction</span
       >
       <!-- <span class="lg:text-3xl text-2xl view-link font-semibold"
@@ -12,99 +12,102 @@
         > -->
     </header>
 
-    <hr class="line my-4 mb-8" />
+    <hr class="line my-4 mb-4" />
   </div>
 
-  <div
-    class="rounded-lg bg-white w-auto flex flex-col items-center justify-center"
-  >
-    <div class="text-xl">
-      <% if(message === "Insufficent Balance") { %>
-      <div style="margin-bottom: 350px">
-        <p>
-          Please Add <span class="text-red-500">$<%= ExtraBalance %></span> or
-          more to complete the Transaction.
-        </p>
-        <button
-          style="margin-top: 10px"
-          class="text-white font-bold py-2 px-4 border-b-4 rounded"
-        >
-          <a href="/addBalance">Add Balance</a>
-        </button>
+  <div class="mx-2">
+    <div
+      class="rounded-lg bg-white flex flex-col items-center justify-center max-w-sm sm:max-w-lg mx-auto p-2"
+    >
+      <div>
+        <% if(message === "Insufficent Balance") { %>
+        <div class="text-center p-4 md:p-12">
+          <p class="text-xl">
+            Please Add <span class="text-red-500">$<%= ExtraBalance %></span> or
+            more to complete the Transaction.
+          </p>
+          <button
+            class="text-white font-bold py-2 px-4 mt-6 border-b-4 rounded bg-green-400"
+          >
+            <a href="/addBalance">Add Balance</a>
+          </button>
+        </div>
       </div>
+      <% } else { %>
+      <p class="flex text-center justify-center my-4 text-2xl">
+        <%= message %>
+      </p>
+      <form action="/transaction/confirm" method="POST">
+        <input type="hidden" name="_method" value="PUT" />
+        <table class="table-auto min-w-full rounded-lg">
+          <tbody>
+            <tr>
+              <td class="border py-2 text-sm sm:text-xl">Company Symbol:</td>
+              <td class="border py-2">
+                <input
+                  class="text-right transaction-input text-sm sm:text-xl"
+                  readonly
+                  type="text"
+                  name="companySymbol"
+                  value="<%= data.companySymbol%>"
+                />
+              </td>
+            </tr>
+            <tr class="bg-gray-100">
+              <td class="border py-2 text-sm sm:text-xl">Stock Price:</td>
+              <td class="border py-2">
+                <input
+                  class="text-right bg-gray-100 transaction-input text-sm sm:text-xl"
+                  readonly
+                  type="Number"
+                  name="stockPrice"
+                  value="<%= data.stockPrice%>"
+                />
+              </td>
+            </tr>
+            <tr class="">
+              <td class="border py-2 text-sm sm:text-xl">Number of Stock:</td>
+              <td class="border py-2">
+                <input
+                  class="text-right transaction-input text-sm sm:text-xl"
+                  readonly
+                  type="Number"
+                  name="noOfStock"
+                  value="<%= data.noOfStock%>"
+                />
+              </td>
+            </tr>
+            <tr class="bg-gray-100">
+              <td class="border py-2 text-sm sm:text-xl">Total Amount:</td>
+              <td class="border py-2">
+                <input
+                  class="text-right bg-gray-100 transaction-input text-sm sm:text-xl"
+                  readonly
+                  type="Number"
+                  name="totalAmount"
+                  value="<%= data.totalAmount%>"
+                />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="flex justify-center mt-4">
+          <button
+            class="transaction-cancel uppercase text-white font-bold py-2 mx-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
+          >
+            <a href="/">Cancel</a>
+          </button>
+          <button>
+            <input
+              class="transaction-buy text-white font-bold py-2 mx-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
+              type="submit"
+              value="BUY"
+            />
+          </button>
+        </div>
+      </form>
+      <% } %>
     </div>
-    <% } else { %>
-    <p class="flex text-center justify-center my-4 text-2xl"><%= message %></p>
-    <form action="/transaction/confirm" method="POST">
-      <input type="hidden" name="_method" value="PUT" />
-      <table class="table-auto min-w-full rounded-lg">
-        <tbody>
-          <tr>
-            <td class="border py-2">Company Symbol:</td>
-            <td class="border py-2">
-              <input
-                class="text-right transaction-input"
-                readonly
-                type="text"
-                name="companySymbol"
-                value="<%= data.companySymbol%>"
-              />
-            </td>
-          </tr>
-          <tr class="bg-gray-100">
-            <td class="border py-2">Stock Price:</td>
-            <td class="border py-2">
-              <input
-                class="text-right bg-gray-100 transaction-input"
-                readonly
-                type="Number"
-                name="stockPrice"
-                value="<%= data.stockPrice%>"
-              />
-            </td>
-          </tr>
-          <tr class="">
-            <td class="border py-2">Number of Stock:</td>
-            <td class="border py-2">
-              <input
-                class="text-right transaction-input"
-                readonly
-                type="Number"
-                name="noOfStock"
-                value="<%= data.noOfStock%>"
-              />
-            </td>
-          </tr>
-          <tr class="bg-gray-100">
-            <td class="border py-2">Total Amount:</td>
-            <td class="border py-2">
-              <input
-                class="text-right bg-gray-100 transaction-input"
-                readonly
-                type="Number"
-                name="totalAmount"
-                value="<%= data.totalAmount%>"
-              />
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="flex justify-center mt-4">
-        <button
-          class="transaction-cancel text-white font-bold py-2 mx-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
-        >
-          <a href="/">Cancel</a>
-        </button>
-        <button>
-          <input
-            class="transaction-buy text-white font-bold py-2 mx-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
-            type="submit"
-            value="BUY"
-          />
-        </button>
-      </div>
-    </form>
-    <% } %>
   </div>
 
   <!-- Footer -->
