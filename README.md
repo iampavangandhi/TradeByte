@@ -4,7 +4,15 @@
 
 ## Stocks Trading Simulation WebApp
 
-</div><br/>
+![Stars](https://img.shields.io/github/stars/iampavangandhi/TradeByte?color=2948ff&label=Stars&style=flat-square) ![Forks](https://img.shields.io/github/forks/iampavangandhi/TradeByte?color=2948ff&label=Forks&style=flat-square) ![Contributors](https://img.shields.io/github/contributors/iampavangandhi/TradeByte?color=2948ff&label=Contributors&style=flat-square) ![Issues](https://img.shields.io/github/issues/iampavangandhi/TradeByte?color=2948ff&label=Issues&style=flat-square) ![Pull Requests](https://img.shields.io/github/issues-pr/iampavangandhi/TradeByte?color=2948ff&label=Pull%20Requests&style=flat-square)
+
+![License](https://img.shields.io/github/license/iampavangandhi/TradeByte?color=2948ff&label=License&style=flat-square) ![Language](https://img.shields.io/github/languages/top/iampavangandhi/TradeByte?color=2948ff&label=Language&style=flat-square) ![Version](https://img.shields.io/github/package-json/v/iampavangandhi/TradeByte?color=2948ff&label=Version&style=flat-square) ![Deployment](https://img.shields.io/github/deployments/iampavangandhi/TradeByte/tradebyte?color=2948ff&label=Deployment&style=flat-square) ![Repo Size](https://img.shields.io/github/repo-size/iampavangandhi/TradeByte?color=2948ff&label=Repo%20Size&style=flat-square)
+
+## Website : https://tradebyte.herokuapp.com/
+
+---
+
+<br/>
 
 > ### TradeByte Project Board: [Here]()
 >
@@ -16,6 +24,7 @@
 
 - [**TradeByte**](#img-srcpublicimagestradebyte-faviconpng-width30-tradebyte)
   - [Tech Stack](#tech-stack)
+  - [Config Setup](#config-setup)
   - [Build Setup](#build-setup)
   - [Folder Structure](#folder-structure)
   - [Contributing](#contributing)
