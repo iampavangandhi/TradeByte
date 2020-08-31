@@ -1,5 +1,5 @@
-<main class="md:col-span-4 md:ml-56 lg:ml-64 md:pr-14 w-full">
-  <div class="container px-5 py-10 mx-auto md:px-auto">
+<main class="md:col-span-4 md:ml-56 lg:ml-64 w-full">
+  <div class="max-w-6xl px-5 py-10 mx-auto md:px-auto">
     <!-- <div class="absolute-center mx-auto"> -->
 
     <!-- header -->
@@ -9,51 +9,24 @@
         class="text-gray-700 text-3xl font-semibold leading-none tracking-wider"
         >Hello,</span
       >
-      <h2 class="text-5xl leading-none tracking-wider view-link">
+      <h2 class="text-5xl leading-none tracking-wider text-blue-900 select-none">
         <%= user.displayName%>.
       </h2>
     </header>
 
-    <hr class="line" />
+    <hr class="border-2 border-gray-700 mb-8" />
 
     <!-- search box -->
 
     <div>
-      <div class="bg-white relative text-gray-800 mt-12 shadow-md rounded-lg">
-        <input
-          id="searchbar"
-          type="search"
-          name="serch"
-          placeholder="Search Stocks"
-          class="bg-transparent h-10 px-5 pl-10 block w-full rounded-full text-lg focus:outline-none"
-        />
-        <button type="submit" class="absolute left-0 top-0 mt-3 ml-4">
-          <svg
-            class="h-4 w-4 fill-current"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            version="1.1"
-            id="Capa_1"
-            x="0px"
-            y="0px"
-            viewBox="0 0 56.966 56.966"
-            style="enable-background: new 0 0 56.966 56.966"
-            xml:space="preserve"
-            width="512px"
-            height="512px"
-          >
-            <path
-              d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"
-            />
-          </svg>
-        </button>
-      </div>
+      <%- include('./partials/_search.ejs') %>
 
-      <ul
-        id="search-result"
-        style="height: 0px; overflow: hidden; white-space: pre"
-        class="text-lg p-5 ml-10 list-none mt-0 text-gray-700"
-      ></ul>
+      <div class="relative w-full result hidden">
+        <ul
+          id="search-result"
+          class="pt-2 -mt-2 bg-white rounded-full rounded-t-none absolute top-0 left-0 w-full z-50"
+        ></ul>
+      </div>
 
       <div class="mt-4 grid lg:grid-cols-3 gap-10">
         <!-- cards go here -->
@@ -64,7 +37,7 @@
           class="card bg-white rounded-lg flex items-center h-20 sm:h-20 w-full object-cover px-5 shadow-2xl"
         >
           <div class="flex-shrink-0 w-10 h-10">
-            <img class="w-full h-full" src="images/graph1.png" alt=" " />
+            <img class="w-full h-full" src="images/graph1.png" alt="graph" />
           </div>
           <div class="font-bold text-xl xl:text-2xl ml-3">
             <p class="text-gray-900 whitespace-no-wrap">
@@ -80,7 +53,7 @@
           class="card bg-white rounded-lg flex items-center h-20 sm:h-20 w-full object-cover px-5 shadow-2xl"
         >
           <div class="flex-shrink-0 w-10 h-10">
-            <img class="w-full h-full" src="images/graph2.png" alt=" " />
+            <img class="w-full h-full" src="images/graph2.png" alt="graph" />
           </div>
           <div class="font-bold text-xl xl:text-2xl ml-3 justify-center">
             <p
@@ -97,7 +70,7 @@
           class="card bg-white rounded-lg flex items-center h-20 sm:h-20 w-full object-cover px-5 shadow-2xl"
         >
           <div class="flex-shrink-0 w-10 h-10">
-            <img class="w-full h-full" src="images/graph3.png" alt=" " />
+            <img class="w-full h-full" src="images/graph3.png" alt="graph" />
           </div>
           <div class="font-bold text-xl xl:text-2xl ml-3">
             <p class="text-gray-900 whitespace-no-wrap">
@@ -116,7 +89,7 @@
         <h2 class="text-lg font-bold leading-tight py-3">Your Stock Status</h2>
       </div>
       <% if( StockMessage === '') { %>
-      <table class="table-fixed w-full">
+      <table class="table-fixed w-full select-none">
         <thead>
           <tr
             class="bg-gray-100 font-semibold text-gray-600 text-xs uppercase border-b tracking-wider"
@@ -131,7 +104,11 @@
         <tbody>
           <% user.stock.forEach( (stock) => { %>
           <tr class="bg-white border-b text-center">
-            <td class="px-4 py-2 text-center"><%= stock.companySymbol %></td>
+            <td class="px-4 py-2 text-center">
+              <a href="/view/<%= stock.companySymbol %> "
+                ><%= stock.companySymbol %></a
+              >
+            </td>
             <td class="px-4 py-2 text-center">
               <% currentPrice = Math.floor(stock.stockPrice*(Math.random()+0.7))
               %> $<%= currentPrice %>
@@ -178,7 +155,6 @@
           <% }) %>
         </tbody>
       </table>
-
       <p class="hidden" id="profitLoss"><%= profitLoss %></p>
 
       <% } else { %>
@@ -194,23 +170,25 @@
 <!-- script for search bar -->
 
 <script>
-  let profitLossVal = document.getElementById("profitLoss").innerText;
+      const inputField = document.getElementById('searchbar')
+    const inputResult = document.getElementById('search-result')
+    const result = document.querySelector('.result')
 
-  if (profitLossVal < 0) {
-    document.getElementById("profitLossValue").innerHTML = parseFloat(profitLossVal).toFixed(2) + `<span class="text-red-600 ml-1 text-red-600 font-black text-2xl">&#8595;</span>`;
-  } else {
-    document.getElementById("profitLossValue").innerHTML = parseFloat(profitLossVal).toFixed(2) + `<span class="text-red-600 ml-1 text-green-600 font-black text-2xl">&#8593;</span>`;
-  }
+  document.addEventListener('click', (e)=>{
+    if( document.activeElement === inputField) {
+      result.classList.remove('hidden')
+    } else if(document.activeElement !== inputField){
+      result.classList.add('hidden')
+    }
+  })
 
-  const inputField = document.getElementById('searchbar')
   inputField.addEventListener('input', (event) => {
-      console.log(event.target.value)
+      inputResult.classList.add('bg-white')
       const value = event.target.value
       //sample data
-      const dataset = <%- JSON.stringify(totalData) %> ;
+      const dataset = <%- JSON.stringify(totalData) %>;
 
       // when symbol matches
-
       let data = dataset.filter(function (el) {
           return el.Symbol.includes(value.toUpperCase())
       })
@@ -218,7 +196,6 @@
       // when no symbol matches
 
       if (data.length === 0) {
-
           let data1 = dataset.filter(function (el) {
               return (el["Company Name"].toLowerCase().includes(value.toLowerCase()))
           })
@@ -233,9 +210,27 @@
       let n = data.length
       for (i = 0; i <= (n - 1); i++) {
           let item = data[i];
-          list += `<li><a href='/view/${item.Symbol}'>${item.Symbol}</a></li>`
+          list += `
+          <a href='/view/${item.Symbol}'>
+          <li class="bg-white p-2 w-full ${(i%2===0) ? 'bg-gray-300' : 'bg-gray-100'}">${item.Symbol}</li>
+          </a>`
       }
       document.getElementById('search-result').innerHTML = list;
       console.log(data)
   })
+
+  let profitLossVal = document.getElementById("profitLoss");
+  function insertProfitValue(profitLossVal) {
+
+    if(!profitLossVal) {
+      return
+    }; // if its null/undefined then do not proceed further
+
+    if (profitLossVal.innerHTML < 0) {
+      document.getElementById("profitLossValue").innerHTML = parseFloat(profitLossVal).toFixed(2) + `<span class="text-red-600 ml-1 text-red-600 font-black text-2xl">&#8595;</span>`;
+    } else {
+      document.getElementById("profitLossValue").innerHTML = parseFloat(profitLossVal).toFixed(2) + `<span class="text-red-600 ml-1 text-green-600 font-black text-2xl">&#8593;</span>`;
+    }
+  }
+  insertProfitValue(profitLossVal)
 </script>

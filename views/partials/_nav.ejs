@@ -20,7 +20,8 @@
     <h4 class="font-bold text-center pt-1">
       <a
         href="/"
-        class="hover:text-gray-900 tracking-widest text-2xl md:text-2xl lg:text-3xl tradebyte-logo"
+        class="hover:text-gray-900 tracking-widest text-2xl md:text-2xl lg:text-3xl text-blue-900"
+        style="text-shadow: 1px 2px 40px rgba(0, 0, 0, 0.5)"
         >Tradebyte</a
       >
     </h4>
@@ -49,18 +50,18 @@
     :class="{'block': open, 'hidden': !open}"
     class="flex-grow md:block px-4 pb-4 md:pb-0"
   >
-    <hr class="line mb-6" />
+    <hr class="border-2 border-gray-700 mb-4" />
 
     <div class="flex justify-center align-center rounded-full">
-      <div class="notification">
+      <div class="notification relative inline-block">
         <img
-          class="w-24 border-8 user-profile box-1 rounded-full"
+          class="w-24 border-8 rounded-full border-8 border-blue-900 box-1 rounded-full"
           src="<%= user.image %>"
           alt=""
         />
 
         <a href="/edit"
-          ><span class="badge relative w-10 h-10">
+          ><span class="badge w-10 h-10">
             <svg
               class="w-6 h-6 ml-2 absolute top-0 left-0 mt-2"
               xmlns="http://www.w3.org/2000/svg"
@@ -81,10 +82,10 @@
     </div>
 
     <a
-      class="block w-3/4 md:w-4/5 max-w-xs p-2 mt-4 mb-8 mx-auto text-xs font-bold text-gray-900 focus:shadow-outline flex justify-center items-center text-sm rounded-full text-green-900 font-bold tick-background"
+      class="block w-3/4 md:w-4/5 max-w-xs p-2 mt-4 mb-8 mx-auto font-bold focus:shadow-outline flex justify-center items-center text-sm font-bold bg-green-200 rounded-full text-green-700"
       href="#"
     >
-      <div class="tick mr-1">
+      <div class="h-6 w-6 rounded-full bg-green-400 text-white mr-1 flex justify-center items-center">
         <svg
           class="w-5"
           fill="none"
@@ -102,7 +103,7 @@
 
     <div class="nav-box flex flex-col justify-start">
       <a
-        class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 hover:text-blue-800 focus:text-blue-900 hover:bg-blue-100 focus:bg-blue-200 focus:outline-none focus:shadow-outline flex <%= href === '/portfolio' ? 'border tab-color border-l-8': '' %>"
+        class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 hover:text-blue-800 focus:text-blue-900 hover:bg-blue-100 focus:bg-blue-200 focus:outline-none focus:shadow-outline flex <%= href === '/portfolio' ? 'border rounded-lg border-blue-900 text-blue-900 border-l-8': '' %>"
         href="/portfolio"
       >
         <svg
@@ -122,7 +123,7 @@
       >
 
       <a
-        class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 hover:text-blue-800 focus:text-blue-900 hover:bg-blue-100 focus:bg-blue-200 focus:outline-none focus:shadow-outline flex <%= href === '/market' ? 'border tab-color border-l-8': '' %>"
+        class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 hover:text-blue-800 focus:text-blue-900 hover:bg-blue-100 focus:bg-blue-200 focus:outline-none focus:shadow-outline flex <%= href === '/market' ? 'border rounded-lg border-blue-900 text-blue-900 border-l-8': '' %>"
         href="/market"
         ><svg
           class="w-5 ml-2 mr-1"
@@ -140,7 +141,7 @@
       >
 
       <a
-        class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 hover:text-blue-800 focus:text-blue-900 hover:bg-blue-100 focus:bg-blue-200 focus:outline-none focus:shadow-outline flex <%= href === '/addBalance' ? 'border tab-color border-l-8': '' %>"
+        class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 hover:text-blue-800 focus:text-blue-900 hover:bg-blue-100 focus:bg-blue-200 focus:outline-none focus:shadow-outline flex <%= href === '/addBalance' ? 'border rounded-lg border-blue-900 text-blue-900 border-l-8': '' %>"
         href="/addBalance"
       >
         <svg
@@ -161,7 +162,7 @@
       <!-- only for development purpose i added ADD BALANCE button here on navbar. -->
 
       <a
-        class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 hover:text-blue-800 focus:text-blue-900 hover:bg-blue-100 focus:bg-blue-200 focus:outline-none focus:shadow-outline flex <%= href === '/transaction' ? 'border tab-color border-l-8': '' %>"
+        class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 hover:text-blue-800 focus:text-blue-900 hover:bg-blue-100 focus:bg-blue-200 focus:outline-none focus:shadow-outline flex <%= href === '/transaction' ? 'border rounded-lg border-blue-900 text-blue-900 border-l-8': '' %>"
         href="/transaction"
         ><svg
           class="w-5 ml-2 mr-1"
@@ -179,7 +180,7 @@
       >
 
       <a
-        class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 hover:text-blue-800 focus:text-blue-900 hover:bg-blue-100 focus:bg-blue-200 focus:outline-none focus:shadow-outline flex <%= href === '/auth/logout' ? 'border tab-color border-l-8': '' %>"
+        class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 hover:text-blue-800 focus:text-blue-900 hover:bg-blue-100 focus:bg-blue-200 focus:outline-none focus:shadow-outline flex <%= href === '/auth/logout' ? 'border rounded-lg border-blue-900 text-blue-900 border-l-8': '' %>"
         href="/auth/logout"
         ><svg class="w-5 ml-2 mr-1" fill="currentColor" viewBox="0 0 20 20">
           <path
