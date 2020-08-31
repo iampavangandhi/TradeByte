@@ -124,14 +124,9 @@ body {
   color: white;
 }
 
-.min-w {
-  min-width: 400px;
-}
-
-@media (max-width: 400px) {
-  .min-w {
-    min-width: 300px;
-  }
+/* search bar */
+#searchbar:focus .search-list {
+  display: block;
 }
 
 /* Login Page */
