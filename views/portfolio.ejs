@@ -104,7 +104,11 @@
         <tbody>
           <% user.stock.forEach( (stock) => { %>
           <tr class="bg-white border-b text-center">
-            <td class="px-4 py-2 text-center"><%= stock.companySymbol %></td>
+            <td class="px-4 py-2 text-center">
+              <a href="/view/<%= stock.companySymbol %> "
+                ><%= stock.companySymbol %></a
+              >
+            </td>
             <td class="px-4 py-2 text-center">
               <% currentPrice = Math.floor(stock.stockPrice*(Math.random()+0.7))
               %> $<%= currentPrice %>
