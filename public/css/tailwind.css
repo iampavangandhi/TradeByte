@@ -25,58 +25,6 @@ body {
   width: 75vw;
 }
 
-.tradebyte-logo {
-  color: #1955e4;
-  text-shadow: 1px 2px 40px rgba(0, 0, 0, 0.5);
-}
-
-.user-profile {
-  border-radius: 100px;
-  border: 10px solid #1955e4;
-}
-
-.tick {
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
-  background-color: #38cda0;
-  color: white;
-}
-
-.tick-background {
-  background: #a9f7e6;
-  border-radius: 29px;
-  color: #1b9b7f;
-}
-
-.tab-color {
-  border-radius: 10px;
-  border-color: #1955e4;
-  color: #1955e4;
-}
-
-.view-link {
-  color: #1955e4;
-}
-
-.view-link:hover {
-  color: #0d338a;
-}
-
-.button {
-  background-color: #1955e4;
-}
-
-.button:hover {
-  background-color: #0d338a;
-}
-
-.table-content {
-  overflow: scroll;
-  overflow-x: scroll;
-  overflow-y: auto;
-}
-
 input::-webkit-outer-spin-button.without-arrow,
 input::-webkit-inner-spin-button.without-arrow {
   -webkit-appearance: none;
@@ -88,43 +36,12 @@ input[type="number"].without-arrow {
   -moz-appearance: textfield;
 }
 
-.transaction-companySymbol {
-  color: rgb(0, 0, 0);
-  font-weight: 700;
-  font-size: 1.1rem;
-}
-
-.transaction-input:focus {
-  outline: none;
-}
-
-.transaction-cancel {
-  background-color: rgb(246, 76, 76);
-}
-
-.transaction-cancel:hover {
-  background-color: rgb(208, 7, 7);
-}
-
-.transaction-buy {
-  background-color: #52af93;
-}
-
-.transaction-buy:hover {
-  background-color: #089e7e;
-}
-
 .symbolicon {
   font-size: 72px;
   background: -webkit-linear-gradient(#eee, #333);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-.notification {
-  position: relative;
-  display: inline-block;
 }
 
 .notification .badge {

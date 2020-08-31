@@ -39,10 +39,14 @@
       </p>
       <form action="/transaction/confirm" method="POST">
         <input type="hidden" name="_method" value="PUT" />
-        <table class="table-auto min-w-full rounded-lg select-none">
+        <table
+          class="table-auto min-w-full rounded-lg select-none"
+        >
           <tbody>
             <tr>
-              <td class="border py-2 px-2 text-sm sm:text-xl">Company Symbol:</td>
+              <td class="border py-2 px-2 text-sm sm:text-xl">
+                Company Symbol:
+              </td>
               <td class="border py-2">
                 <input
                   class="text-right px-2 transaction-input text-sm sm:text-xl"
@@ -66,7 +70,9 @@
               </td>
             </tr>
             <tr class="">
-              <td class="border py-2 px-2 text-sm sm:text-xl">Number of Stock:</td>
+              <td class="border py-2 px-2 text-sm sm:text-xl">
+                Number of Stock:
+              </td>
               <td class="border py-2">
                 <input
                   class="text-right px-2 transaction-input text-sm sm:text-xl without-arrow"
@@ -93,13 +99,13 @@
         </table>
         <div class="flex justify-center mt-4">
           <button
-            class="transaction-cancel uppercase text-white font-bold py-2 mx-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
+            class="bg-red-600 hover:bg-red-500 uppercase text-white font-bold py-2 mx-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
           >
             <a href="/">Cancel</a>
           </button>
           <button>
             <input
-              class="transaction-buy text-white font-bold py-2 mx-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
+              class="bg-green-600 hover:bg-green-500 text-white font-bold py-2 mx-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
               type="submit"
               value="BUY"
             />
