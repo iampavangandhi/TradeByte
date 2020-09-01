@@ -3,9 +3,9 @@
     <h2 class="text-gray-800 text-center text-4xl lg:text-5xl font-semibold">
       TradeByte
     </h2>
-    <div class="flex flex-col shadow-lg rounded-lg bg-white mt-4">
+    <div class="flex flex-col shadow-lg rounded-lg bg-white mx-2 mt-4">
       <div
-        class="rounded-t mb-0 px-6 py-6 text-lg font-bold w-full flex justify-center items-center flex-col"
+        class="rounded-t mb-0 px-6 py-3 text-lg font-bold w-full flex justify-center items-center flex-col"
       >
         <p>Sign Up for&nbsp; <a href="/" class="text-blue-700">TradeByte</a></p>
         <%- include('./partials/_messages') %>
@@ -78,7 +78,7 @@
               pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{6,13}$"
               required
             />
-            <p class="password-pattern text-xs mt-2 text-red-700">
+            <p class="password-pattern text-xs mt-2 text-gray-700">
               Password must be 6 to 13 characters long which should contain one
               lower case letter, one upper case letter, one digit, and no
               spaces.
@@ -139,6 +139,7 @@
       pattern.classList.add("font-semibold");
     } else {
       pattern.classList.remove("text-green-700");
+      pattern.classList.add("text-red-700");
     }
 
     if(password2.value.length > 0 && e.target.value !== password2.value) {
