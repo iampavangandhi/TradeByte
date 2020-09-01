@@ -682,7 +682,6 @@
                 pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{6,13}$"
                 required
               />
-              <p class="password-pattern text-xs mt-2 text-red-700">Password must be 6 to 13 characters long which should contain one lower case letter, one upper case letter, one digit, and no spaces.</p>
             </div>
             <div class="text-center mt-6">
               <button
@@ -712,18 +711,6 @@
 <script>
   const modal = document.querySelector(".main-modal");
   const closeButton = document.querySelectorAll(".modal-close");
-  const password = document.querySelector(".password-input");
-  const pattern = document.querySelector(".password-pattern");
-  const regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{6,13}$/;
-
-  password.addEventListener('input', (e) => {
-    if(regex.test(e.target.value)) {
-      pattern.classList.add('text-green-700');
-      pattern.classList.add('font-semibold');
-    } else {
-      pattern.classList.remove('text-green-700');
-    }
-  })
 
   const modalClose = () => {
     modal.classList.remove("fadeIn");
