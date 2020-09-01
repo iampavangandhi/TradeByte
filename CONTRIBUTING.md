@@ -2,7 +2,7 @@
 
 This is a group project under The Uplift Project (Nodejs Stack) by Girlscript Foundation. But It's open for contribution from everyone who is interested.
 
-Kindly write a proper description while making pull requests.
+Kindly write a proper description while making issues or pull requests.
 
 ## Ways of Contributing
 
