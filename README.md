@@ -54,7 +54,7 @@
 - [GMAIL API Credentials](https://www.woolha.com/tutorials/node-js-send-email-using-gmail-with-nodemailer-oauth-2)
 - [Stripe Payment Gateway Keys](https://stripe.com/)
 
-### config.env format
+### Check config.env format
 
 ```bash
 PORT = XXXX
@@ -93,8 +93,8 @@ npm run dev
 
     .
     ├── 📁 .github                 # Github files (don't change)
-    ├── 📁 config                  # Config files
-    ├── 📁 helpers                 # Helper on controller files
+    ├── 📁 config                  # Configuration files
+    ├── 📁 helpers                 # Helper or Controller files
     ├── 📁 middleware              # Expresss middlewares
     ├── 📁 models                  # Mongoose models
     ├── 📁 project-plan            # Project planning files
