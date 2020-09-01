@@ -32,14 +32,14 @@
     <div class="flex overflow-x-auto p-2">
       <% for(var i=0; i < compactData.length; i++) { %>
       <div class="bg-white mr-4 p-4 rounded shadow-lg">
-        <div class="box w-56 h-56 flex flex-col justify-center items-center">
-          <div class="font-bold text-2xl text-center mb-2">
+        <div class="box w-48 sm:w-56 h-56 flex flex-col justify-center items-center">
+          <div class="font-bold text-2xl text-center mb-4">
             <%- compactData[i]["Symbol"] %>
           </div>
-          <p class="text-gray-700 break-words text-center text-base">
+          <p class="text-gray-700 break-words text-center text-base mb-6">
             <%- compactData[i]["Company Name"] %>
           </p>
-          <div class="btns flex justify-between items-center ">
+          <div class="btns flex justify-between items-center mb-4">
             <a href="/view/<%- compactData[i]["Symbol"] %>">
               <button
                 class="mr-1 w-14 bg-white tracking-wide text-gray-700 font-bold rounded border-b-2 border-blue-500 hover:border-blue-600 hover:bg-blue-500 hover:text-white shadow-md py-2 px-2 inline-flex items-center"
