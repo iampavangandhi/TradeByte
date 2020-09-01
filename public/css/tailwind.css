@@ -2,8 +2,6 @@
 
 /* Custom CSS */
 
-/* Main CSS */
-
 html,
 body {
   margin: 0;
@@ -25,6 +23,7 @@ body {
   width: 75vw;
 }
 
+/* Remove number input arrow buttons on transaction page */
 input::-webkit-outer-spin-button.without-arrow,
 input::-webkit-inner-spin-button.without-arrow {
   -webkit-appearance: none;
@@ -44,7 +43,8 @@ input[type="number"].without-arrow {
   -webkit-text-fill-color: transparent;
 }
 
-.notification .badge {
+/* Edit icon */
+.icon .badge {
   position: absolute;
   top: -5px;
   right: -5px;
@@ -54,12 +54,12 @@ input[type="number"].without-arrow {
   color: white;
 }
 
-/* search bar */
+/* Search bar */
 #searchbar:focus .search-list {
   display: block;
 }
 
-/* Login Page */
+/* Login Page animations */
 animated {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
@@ -113,6 +113,22 @@ animated {
 .grid-indigo {
   background-image: radial-gradient(#5a67d8 2px, transparent 2px);
   background-size: 16px 16px;
+}
+
+/* Done page */
+.share > .container {
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.4s all ease-in-out;
+  transform: translateY(50%);
+}
+
+/* Share button */
+.share.showAddThisButtons > .container {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(40%);
+  margin-top: 0.5rem;
 }
 
 @tailwind utilities;

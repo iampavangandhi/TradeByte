@@ -1,4 +1,5 @@
 <div class="antialiased w-full h-full">
+  <%- include('./partials/_messages') %>
   <!--  Navbar -->
   <div class="bg-white w-full text-gray-700 shadow-lg">
     <div
@@ -42,7 +43,7 @@
       </div>
       <nav
         :class="{'flex': open, 'hidden': !open}"
-        class="flex-col hidden pb-4 md:pb-0 md:flex md:justify-center md:flex-row"
+        class="flex-col hidden pb-4 md:pb-0 md:flex md:justify-center md:flex-row mr-3"
       >
         <a
           class="px-4 py-2 mt-2 text-sm font-semibold text-sm lg:text-md rounded md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
@@ -275,9 +276,7 @@
                   Working with TradeByte team was a great experience! Thanks to
                   our mentor Pavan and other active members who made the project
                   possible. I love the final app with all the features. I
-                  learned a lot of things I never knew before and successfully
-                  completed all the tasks, it was really fun to collaborate with
-                  others.
+                  learned and worked on backend for the first time so I was scared but it turned out really well and I learned a lot apart from code like working with a team. The tasks were cool and challenging and I am proud to say I completed them all and even did extra work. Really loved the collaboration with the team.
                 </p>
               </div>
 
@@ -286,15 +285,9 @@
                   class="text-gray-600 serif font-normal italic px-6 py-6 md:py-12 lg:px-16 md:py-6 text-md lg:text-xl"
                   x-show.transition="testimonialActive == 3"
                 >
-                  I had a great learning experience here, and throughout the
-                  Uplift project we develop 3 apps including the main project.
-                  Pavan Gandhi our mentor, he created a well organised
-                  curriculum which Cover all the basics topics to the advance
-                  topics needed to create the main project. And also he managed
-                  us and assigned us task according to our area of interest. And
-                  also had a great team members and i was great to work with
-                  these guys and we may do some other projects together in
-                  future.
+                  I had a great learning experience here, we developed 3 apps including the main project.
+                  Our mentor Pavan created a well great curriculum which covered all topics from basic to the advanced
+                  needed to create the main project. He managed the team very well and assigned us task according to our area of interest. TradeByte team members were great to work with. I would like to do some project together again in future.
                 </p>
               </div>
 
@@ -327,9 +320,9 @@
                   class="text-gray-600 serif font-normal italic px-6 py-6 md:py-12 lg:px-16 md:py-6 text-md lg:text-xl"
                   x-show.transition="testimonialActive == 6"
                 >
-                  Tradebyte was my lovely project on working with open-source
-                  technologies and following AGILE principles we had awesome
-                  learnings and delivering the code on Fly. kudos to the team
+                  Tradebyte was a lovely project. Working with open-source
+                  technologies to following AGILE principles we had awesome
+                  learnings and delivering the code on Fly. Kudos to the team
                   for helping each other and making it to the production-ready
                   app.
                 </p>
@@ -400,6 +393,13 @@
                   <small class="text-gray-500 text-xs md:text-sm truncate"
                     >Maintainer & Contributor, TradeByte</small
                   >
+                  <p class="text-gray-800 text-2xl truncate">
+                    <a target="_blank" href="https://www.linkedin.com/in/iampavangandhi/"><i class="mr-2 fab fa-linkedin"></i></a>
+                    <a target="_blank" href="https://www.instagram.com/iampavangandhi/""><i class="mr-2 fab fa-instagram"></i></a>
+                    <a target="_blank" href="https://twitter.com/iampavangandhi"><i class="mr-2 fab fa-twitter-square"></i></a>
+                    <a target="_blank" href="https://github.com/iampavangandhi"><i class="mr-2 fab fa-github"></i></a>
+                    <a target="_blank" href="mailto:pavangandhi100@gmail.com"><i class="fas fa-envelope"></i></a>
+                  </p>
                 </div>
               </div>
 
@@ -421,6 +421,13 @@
                   <small class="text-gray-500 text-xs md:text-sm truncate"
                     >Contributor, TradeByte</small
                   >
+                  <p class="text-gray-800 text-2xl truncate">
+                    <a target="_blank" href="https://www.linkedin.com/in/fabcodingzest/"><i class="mr-2 fab fa-linkedin"></i></a>
+                    <a target="_blank" href="https://twitter.com/fabcodingzest/"><i class="mr-2 fab fa-instagram"></i></a>
+                    <a target="_blank" href="https://www.twitter.com/fabcodingzest/"><i class="mr-2 fab fa-twitter-square"></i></a>
+                    <a target="_blank" href="https://github.com/fabcodingzest/"><i class="mr-2 fab fa-github"></i></a>
+                    <a target="_blank" href="mailto:fabcodingzest@gmail.com"><i class="fas fa-envelope"></i></a>
+                  </p>
                 </div>
               </div>
 
@@ -442,6 +449,13 @@
                   <small class="text-gray-500 text-xs md:text-sm truncate"
                     >Contributor, TradeByte</small
                   >
+                  <p class="text-gray-800 text-2xl truncate">
+                    <a target="_blank" href="https://www.linkedin.com/in/somyaranjanrout/"><i class="mr-2 fab fa-linkedin"></i></a>
+                    <a target="_blank" href="https://www.instagram.com/somyaranjan_26/""><i class="mr-2 fab fa-instagram"></i></a>
+                    <a target="_blank" href="https://twitter.com/somyaranjancr7"><i class="mr-2 fab fa-twitter-square"></i></a>
+                    <a target="_blank" href="https://github.com/somyaranjan26"><i class="mr-2 fab fa-github"></i></a>
+                    <a target="_blank" href="mailto:somyaranjanmac1@gmail.com"><i class="fas fa-envelope"></i></a>
+                  </p>
                 </div>
               </div>
 
@@ -463,6 +477,11 @@
                   <small class="text-gray-500 text-xs md:text-sm truncate"
                     >Contributor, TradeByte</small
                   >
+                  <p class="text-gray-800 text-2xl truncate">
+                    <a target="_blank" href="https://www.linkedin.com/in/garima-singh-190b35170/"><i class="mr-2 fab fa-linkedin"></i></a>
+                    <a target="_blank" href="https://github.com/garimasingh22"><i class="mr-2 fab fa-github"></i></a>
+                    <a target="_blank" href="mailto:10garima22ii@gmail.com"><i class="fas fa-envelope"></i></a>
+                  </p>
                 </div>
               </div>
 
@@ -484,6 +503,10 @@
                   <small class="text-gray-500 text-xs md:text-sm truncate"
                     >Contributor, TradeByte</small
                   >
+                  <p class="text-gray-800 text-2xl truncate">
+                    <a target="_blank" href="https://github.com/somyaranjan26"><i class="mr-2 fab fa-github"></i></a>
+                    <a target="_blank" href="https://github.com/Anjalikumari148"><i class="fas fa-envelope"></i></a>
+                  </p>
                 </div>
               </div>
 
@@ -505,6 +528,12 @@
                   <small class="text-gray-500 text-xs md:text-sm truncate"
                     >Contributor, TradeByte</small
                   >
+                  <p class="text-gray-800 text-2xl truncate">
+                    <a target="_blank" href="https://www.linkedin.com/in/ankit-pal-632a72109/"><i class="mr-2 fab fa-linkedin"></i></a>
+                    <a target="_blank" href="https://www.instagram.com/howdy_ankit/""><i class="mr-2 fab fa-instagram"></i></a>
+                    <a target="_blank" href="https://github.com/howdyAnkit"><i class="mr-2 fab fa-github"></i></a>
+                    <a target="_blank" href="mailto:palankit35@gmail.com"><i class="fas fa-envelope"></i></a>
+                  </p>
                 </div>
               </div>
             </div>
@@ -555,7 +584,6 @@
           <div class="-mx-4 text-center md:text-right">
             <p class="text-base mb-2">&copy; Copyright TradeByte Team, 2020</p>
             <hr class="my-2 bg-gray-700 border-none" />
-            <p>Email: pavangandhi100@gmail.com</p>
             <p>
               Check and Star ❤️
               <a
@@ -615,7 +643,6 @@
               </button>
             </a>
           </div>
-          <%- include('./partials/_messages') %>
           <hr class="mt-6 border-b-1 border-gray-400" />
         </div>
         <div class="flex-auto px-4 lg:px-10 pb-10 pt-0">
@@ -635,6 +662,7 @@
                 class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
                 placeholder="Email"
                 style="transition: all 0.15s ease 0s"
+                required
               />
             </div>
             <div class="relative w-full mb-3">
@@ -646,9 +674,13 @@
               <input
                 type="password"
                 name="password"
-                class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
+                class="password-input px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
                 placeholder="Password"
                 style="transition: all 0.15s ease 0s"
+                min="6"
+                max="13"
+                pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{6,13}$"
+                required
               />
             </div>
             <div class="text-center mt-6">
@@ -692,6 +724,7 @@
     modal.classList.remove("fadeOut");
     modal.classList.add("fadeIn");
     modal.style.display = "flex";
+    window.location.href += "#";
   };
 
   for (let i = 0; i < closeButton.length; i++) {

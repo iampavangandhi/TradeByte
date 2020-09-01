@@ -1,84 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TradeByte</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
-      integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o="
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-    <link
-      rel="shortcut icon"
-      href="../images/TradeByte-Favicon.png"
-      type="image/x-icon"
-    />
-
-    <style>
-      #error {
-        color: gray;
-      }
-
-      #cogs {
-        display: flex;
-        justify-content: center;
-      }
-      .error {
-        color: #3a7bd5;
-      }
-      .container {
-        width: 450px;
-      }
-
-      h1 {
-        font-size: 100px;
-        font-weight: bold;
-      }
-
-      .para {
-        font-weight: bold;
-      }
-    </style>
-  </head>
-
-  <body style="display: flex; justify-content: center; align-items: center">
-    <div
-      style="display: flex; justify-content: center; align-items: center"
-      class="max-w-sm w-full lg:max-w-full lg:flex"
-    >
-      <div
-        class="container mt-10 border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-6 flex flex-col shadow-lg"
-      >
-        <div class="mb-8">
-          <h1 class="text-4xl text-center text-black">ERROR 500</h1>
-          <p class="para text-red-600 text-center mb-2">Unexpected error :(</p>
-          <i id="cogs" class="fas fa-cogs fa-7x"></i>
-          <p class="text-black text-center text-xl mt-2">
-            There seems to be a problem
-          </p>
-          <p class="text-black text-center text-xl mt-2">Let's get to back</p>
-        </div>
-        <div>
-          <div style="display: flex; justify-content: center">
-            <button
-              onclick="back()"
-              class="error hover:bg-blue-100 font-bold py-2 px-4 mb-2 border border-blue-700 rounded"
-            >
-              Go to Homepage
-            </button>
-          </div>
-        </div>
+<div class="flex justify-center items-center m-2 max-w-md">
+  <div class="bg-white rounded-lg shadow-xl py-4 px-2">
+    <div class="mb-4 flex justify-center items-center flex-col px-2 sm:px-6">
+      <h1 class="text-4xl text-center text-black font-bold">ERROR 500</h1>
+      <p class="para text-red-600 text-center mb-2 font-semibold">
+        Unexpected error :(
+      </p>
+      <i class="fas fa-cogs fa-7x my-4"></i>
+      <p class="text-black text-center text-xl mt-2">
+        There seems to be a problem
+      </p>
+      <p class="text-black text-center text-xl mt-2">Let's get to back</p>
+    </div>
+    <div>
+      <div class="flex justify-center items-center">
+        <button
+          onclick="back()"
+          class="text-blue-700 hover:bg-blue-100 font-bold py-2 px-4 mb-2 border border-blue-700 rounded"
+        >
+          Go to Homepage
+        </button>
       </div>
     </div>
-  </body>
-</html>
+  </div>
+</div>
+
+<!-- JavaScript -->
+
 <script>
   function back() {
     window.location.href = "/";

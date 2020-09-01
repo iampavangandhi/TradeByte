@@ -9,7 +9,7 @@
         Add Balance
       </h2>
     </div>
-    
+
     <hr class="border-2 border-gray-700" />
 
     <div class="container py-16 mx-auto">
@@ -26,13 +26,14 @@
           <input
             id="amount"
             min="50"
-            max="4999"
+            max="50000"
             value="50"
             type="number"
             onchange="check(this.value)"
             class="shadow appearance-none border rounded w-2/5 py-2 px-3 my-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             name="addAmount"
             placeholder="$ Amount"
+            required
           />
           <input type="hidden" name="_csrf" />
           <!-- below key is a publishable test key by stripe -->
@@ -118,7 +119,13 @@
 <script>
   function check(value) {
     if (value < 50) {
+      window.location.href = "/addBalance";
       alert("Minimum $50 is valid only");
+      document.getElementById("amount").value = 50;
+    }
+    if (value > 50000) {
+      window.location.href = "/addBalance";
+      alert("You can add $50,000 at a time.");
       document.getElementById("amount").value = 50;
     }
   }

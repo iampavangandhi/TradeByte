@@ -60,7 +60,7 @@ router.put("/", ensureAuth, async (req, res) => {
     res.redirect("/portfolio");
   } catch (err) {
     console.error(err);
-    return res.render("error/500");
+    return res.render("error/500", { layout: "layouts/simple-page" });
   }
 });
 

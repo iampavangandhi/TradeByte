@@ -53,11 +53,11 @@
     <hr class="border-2 border-gray-700 mb-4" />
 
     <div class="flex justify-center align-center rounded-full">
-      <div class="notification relative inline-block">
+      <div class="icon relative inline-block w-24 rounded-full">
         <img
-          class="w-24 border-8 rounded-full border-8 border-blue-900 box-1 rounded-full"
+          class="w-24 h-24 border-8 rounded-full border-8 border-blue-900 box-1 rounded-full text-xs flex justify-center items-center text-center font-semibold"
           src="<%= user.image %>"
-          alt=""
+          alt="User Profile Image "
         />
 
         <a href="/edit"
@@ -85,7 +85,9 @@
       class="block w-3/4 md:w-4/5 max-w-xs p-2 mt-4 mb-8 mx-auto font-bold focus:shadow-outline flex justify-center items-center text-sm font-bold bg-green-200 rounded-full text-green-700"
       href="#"
     >
-      <div class="h-6 w-6 rounded-full bg-green-400 text-white mr-1 flex justify-center items-center">
+      <div
+        class="h-6 w-6 rounded-full bg-green-400 text-white mr-1 flex justify-center items-center"
+      >
         <svg
           class="w-5"
           fill="none"

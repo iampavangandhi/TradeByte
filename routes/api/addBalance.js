@@ -47,7 +47,7 @@ router.post("/", ensureAuth, async (req, res) => {
       },
       (err) => {
         if (err && err.type === "StripeCardError") {
-          return res.render("error/500");
+          return res.render("error/500", { layout: "layouts/simple-page" });
         } else {
           console.log("Payment Success");
         }
@@ -79,7 +79,7 @@ router.post("/", ensureAuth, async (req, res) => {
     res.redirect("/done");
   } catch (err) {
     console.error(err);
-    res.render("error/500");
+    res.render("error/500", { layout: "layouts/simple-page" });
   }
 });
 

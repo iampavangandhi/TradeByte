@@ -5,7 +5,7 @@
     <form action="/cart/buy" method="POST">
       <h1 class="text-xl lg:text-3xl font-bold mt-8 mb-4 flex">
         Buy Stock :<input
-          class="bg-gray-300 max-w-sm w-24 ml-2"
+          class="bg-transparent max-w-sm w-24 ml-2"
           type="text"
           readonly
           value="<%= symbol %>"
@@ -73,6 +73,7 @@
                 type="number"
                 value="1"
                 min="1"
+                max="30"
                 name="noOfStock"
                 id="noOfStock"
                 class="w-full font-semibold text-center text-gray-700 bg-gray-200 outline-none focus:outline-none hover:text-black focus:text-black"

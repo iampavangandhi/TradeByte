@@ -3,9 +3,9 @@
     <h2 class="text-gray-800 text-center text-4xl lg:text-5xl font-semibold">
       TradeByte
     </h2>
-    <div class="flex flex-col shadow-lg rounded-lg bg-white mt-4">
+    <div class="flex flex-col shadow-lg rounded-lg bg-white mx-2 mt-4">
       <div
-        class="rounded-t mb-0 px-6 py-6 text-lg font-bold w-full flex justify-center items-center flex-col"
+        class="rounded-t mb-0 px-6 py-3 text-lg font-bold w-full flex justify-center items-center flex-col"
       >
         <p>Sign Up for&nbsp; <a href="/" class="text-blue-700">TradeByte</a></p>
         <%- include('./partials/_messages') %>
@@ -72,11 +72,17 @@
               type="password"
               name="password1"
               value="<%= typeof password1 != 'undefined' ? password1 : '' %>"
-              class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
+              class="password1 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
               placeholder="Password"
               style="transition: all 0.15s ease 0s"
+              pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{6,13}$"
               required
             />
+            <p class="password-pattern text-xs mt-2 text-gray-700">
+              Password must be 6 to 13 characters long which should contain one
+              lower case letter, one upper case letter, one digit, and no
+              spaces.
+            </p>
           </div>
           <div class="relative w-full mb-3">
             <label
@@ -88,11 +94,16 @@
               type="password"
               name="password2"
               value="<%= typeof password2 != 'undefined' ? password2 : '' %>"
-              class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
+              class="password2 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
               placeholder="Password"
               style="transition: all 0.15s ease 0s"
               required
             />
+            <p
+              class="password-match text-xs mt-2 text-red-700 hidden font-semibold"
+            >
+              Password do not match
+            </p>
           </div>
           <div class="text-center mt-4">
             <button
@@ -111,3 +122,47 @@
     </div>
   </div>
 </section>
+
+<!-- JavaScript -->
+
+<script>
+  const password1 = document.querySelector(".password1");
+  const password2 = document.querySelector(".password2");
+  const pattern = document.querySelector(".password-pattern");
+  const passwordMatch = document.querySelector(".password-match");
+  const regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{6,13}$/;
+
+  password1.addEventListener("input", (e) => {
+    e.preventDefault();
+    if (regex.test(e.target.value)) {
+      pattern.classList.add("text-green-700");
+      pattern.classList.add("font-semibold");
+    } else {
+      pattern.classList.remove("text-green-700");
+      pattern.classList.add("text-red-700");
+    }
+
+    if(password2.value.length > 0 && e.target.value !== password2.value) {
+      passwordMatch.classList.remove("text-green-700")
+      passwordMatch.classList.add("text-red-700")
+      passwordMatch.textContent = "Password do not match";
+    } else {
+      passwordMatch.textContent = "Password match";
+      passwordMatch.classList.remove("text-red-700")
+      passwordMatch.classList.add("text-green-700")
+    }
+  });
+
+  password2.addEventListener("input", (e) => {
+    e.preventDefault();
+    if (e.target.value !== password1.value) {
+      passwordMatch.classList.remove("hidden");
+      passwordMatch.textContent = "Password do not match";
+      passwordMatch.classList.remove("text-green-700");
+      passwordMatch.classList.add("text-red-700");
+    } else {
+      passwordMatch.textContent = "Password match";
+      passwordMatch.classList.add("text-green-700");
+    }
+  });
+</script>

@@ -1,74 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TradeByte</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
-      integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o="
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-    <link
-      rel="shortcut icon"
-      href="../images/TradeByte-Favicon.png"
-      type="image/x-icon"
-    />
-
-    <style>
-      .error {
-        color: #3a7bd5;
-      }
-
-      h1 {
-        font-weight: bold;
-      }
-
-      h2 {
-        font-weight: bold;
-      }
-    </style>
-  </head>
-
-  <body style="display: flex; justify-content: center; align-items: center">
-    <div
-      style="display: flex; justify-content: center; align-items: center"
-      class="max-w-sm w-full lg:max-w-full lg:flex"
-    >
-      <div
-        class="mt-10 border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-6 flex flex-col shadow-lg"
-      >
-        <div class="mb-4">
-          <h1 class="text-center text-6xl">
-            4 <i class="error fas fa-frown"></i> 4
-          </h1>
-          <h2 class="text-center text-black text-2xl">PAGE NOT FOUND</h2>
-          <p class="text-black text-center px-2 text-xl mt-2">
-            The page/stock you are looking <br />
-            for was moved or doesn't exist
-          </p>
-        </div>
-        <div>
-          <p class="text-black text-center text-xl">Let's get back</p>
-        </div>
-        <div style="display: flex; justify-content: center">
-          <button
-            onclick="back()"
-            class="error hover:bg-blue-100 font-bold py-2 px-4 mt-4 border border-blue-700 rounded"
-          >
-            Go to Homepage
-          </button>
-        </div>
-      </div>
+<div class="flex justify-center items-center m-2 max-w-xs">
+  <div class="bg-white rounded-lg shadow-xl py-10 px-2">
+    <div class="mb-4">
+      <h1 class="text-center text-6xl font-bold">
+        4 <i class="text-blue-600 fas fa-frown"></i> 4
+      </h1>
+      <h2 class="text-center text-black text-2xl font-bold">PAGE NOT FOUND</h2>
+      <p class="text-black text-center px-2 text-xl mt-2 break-words">
+        The page/stock you are looking for was moved or doesn't exist
+      </p>
     </div>
-  </body>
-</html>
+    <div>
+      <p class="text-black text-center text-xl">Let's get back</p>
+    </div>
+    <div style="display: flex; justify-content: center">
+      <button
+        onclick="back()"
+        class="text-blue-600 hover:bg-blue-100 font-bold py-2 px-4 mt-4 border border-blue-700 rounded"
+      >
+        Go to Homepage
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript -->
+
 <script>
   function back() {
     window.location.href = "/";
