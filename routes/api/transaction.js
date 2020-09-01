@@ -24,23 +24,49 @@ router.put("/confirm", ensureAuth, async (req, res) => {
     req.body.user = req.user.id;
     const { email, displayName } = req.user;
 
-    // console.log(stockCount)
+    // Creating Body
+    let body = {
+      companySymbol: req.body.companySymbol,
+      stockPrice: Number(req.body.stockPrice),
+      noOfStock: Number(req.body.noOfStock),
+      totalAmount: Number(req.body.totalAmount),
+    };
 
-    // const updatedUser = await User.updateOne(
-    //   { _id: req.user.id, stock: { $elemMatch: {companySymbol: req.body.companySymbol } } },
-    //   { balance: balance,
-    //     $inc: {"stock.$.noOfStock": stockCount},
-    //     $inc: {"stock.$.totalAmount": totalPrice},
-    //   }
-    // );
-    // console.log(`${updatedUser} : U P D A T E D U S E R`);
+    // Finding if the stock already Exist
+    let stockArr = req.user.stock.find(
+      (obj) => obj.companySymbol === companySymbol
+    );
 
+    // If stock exits and update body
+    if (stockArr != null) {
+      body = {
+        companySymbol: req.body.companySymbol,
+        stockPrice: Number(req.body.stockPrice),
+        noOfStock: stockArr.noOfStock + stockCount,
+        totalAmount: stockArr.totalAmount + totalPrice,
+      };
+    }
+
+    // Pull the stock if already exist
+    await User.findOneAndUpdate(
+      {
+        _id: req.user.id,
+      },
+      {
+        $pull: {
+          stock: { companySymbol: companySymbol },
+        },
+      },
+      { safe: true }
+    );
+
+    // Push Stock with the body or update body in case of pull
     await User.findOneAndUpdate(
       { _id: req.user.id },
       {
         balance: balance,
         $push: {
-          stock: req.body,
+          stock: body,
         },
       },
       {
@@ -49,6 +75,7 @@ router.put("/confirm", ensureAuth, async (req, res) => {
       }
     );
 
+    // Email Message
     let msg = "";
 
     if (stockCount == 1) {
@@ -57,18 +84,19 @@ router.put("/confirm", ensureAuth, async (req, res) => {
       msg = "stocks";
     }
 
+    // Email Object
     const options = {
       to: email, // list of receivers
       subject: "Hello from TradeByte ✔", // Subject line
       html: `
-      <b>Hello ${displayName},</b>
-      <p>You bought ${stockCount} ${msg} of ${companySymbol} from TradeByte of amount ${totalPrice.toFixed(
+        <b>Hello ${displayName},</b>
+        <p>You bought ${stockCount} ${msg} of ${companySymbol} from TradeByte of amount ${totalPrice.toFixed(
         2
       )}, your remaining TradeByte balance is ${balance.toFixed(2)}</p>
-      <p>This is a Demo Project made by TradeByte team for educational purpose only.</p>
-      <p>You can check the <a href="https://github.com/iampavangandhi/TradeByte">Github Repo</a> for details.</p>
-      <p>Have a great Day!</p>
-    `, // html body
+        <p>This is a Demo Project made by TradeByte team for educational purpose only.</p>
+        <p>You can check the <a href="https://github.com/iampavangandhi/TradeByte">Github Repo</a> for details.</p>
+        <p>Have a great Day!</p>
+      `, // html body
     };
     emailHelper.sendEmail(options);
 
@@ -79,6 +107,7 @@ router.put("/confirm", ensureAuth, async (req, res) => {
     const transactionUser = req.user.id;
     const transactionAmount = Number(req.body.totalAmount);
 
+    // Create Transaction
     await Transaction.create({
       details: transactionDetails,
       amount: transactionAmount,
@@ -86,6 +115,7 @@ router.put("/confirm", ensureAuth, async (req, res) => {
       user: transactionUser,
     });
 
+    // Done
     res.redirect("/done");
   } catch (err) {
     console.error(err);

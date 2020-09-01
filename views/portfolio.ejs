@@ -66,10 +66,9 @@
             />
           </div>
           <div class="font-bold text-xl xl:text-2xl ml-3 justify-center">
-            <p
-              id="profitLossValue"
-              class="text-gray-900 whitespace-no-wrap"
-            ></p>
+            <p id="profitLossValue" class="text-gray-900 whitespace-no-wrap">
+              0
+            </p>
             <span class="block text-gray-500 text-sm">Profit / Loss</span>
           </div>
         </div>
@@ -116,7 +115,7 @@
           </tr>
         </thead>
         <tbody>
-          <% user.stock.forEach( (stock) => { %>
+          <% user.stock.slice().reverse().forEach( (stock) => { %>
           <tr class="bg-white border-b text-center">
             <td class="px-4 py-2 text-center">
               <a href="/view/<%= stock.companySymbol %> "
