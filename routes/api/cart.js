@@ -28,8 +28,8 @@ router.get("/:symbol", ensureAuth, async (req, res) => {
   });
 });
 
-// @desc    To buy
-// @route   POST /cart/buy
+// @desc     To buy
+// @route    POST /cart/buy
 // @access   Private
 router.post("/buy", ensureAuth, async (req, res) => {
   const user = req.user;
@@ -51,11 +51,12 @@ router.post("/buy", ensureAuth, async (req, res) => {
   try {
     if (totalAmount > req.user.balance) {
       let ExtraBalance = totalAmount - req.user.balance;
+      ExtraBalance = ExtraBalance.toFixed(2);
       res.render("transaction/transaction", {
         layout: "layouts/app",
         href: "/buy",
         ExtraBalance,
-        message: "Insufficent Balance",
+        message: "Insufficient Balance",
       });
     } else {
       res.render("transaction/transaction", {

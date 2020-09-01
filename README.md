@@ -10,7 +10,7 @@
 
 ## Website : https://tradebyte.herokuapp.com/
 
-[![Project Board](https://img.shields.io/badge/-Project%20Board-0e76a8?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/iampavangandhi/TradeByte/projects/1) [![Project Wiki](https://img.shields.io/badge/-Project%20Wiki-283c86?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/iampavangandhi/TradeByte/wiki) [![Project Report](https://img.shields.io/badge/-Project%20Report-3b5998?style=for-the-badge&logo=Github&logoColor=white)](https://docs.google.com/spreadsheets/d/1_vg-F2dk6jWy9jcYlGuKqAnXUX6NwbbnLg9Bmn_Ulrk/edit?usp=sharing) [![TheNodeCourse](https://img.shields.io/badge/-TheNodeCourse-11998e?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/iampavangandhi/TheNodeCourse)
+[![Project Board](https://img.shields.io/badge/-Project%20Board-0e76a8?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/iampavangandhi/TradeByte/projects/1) [![Project Wiki](https://img.shields.io/badge/-Project%20Wiki-283c86?style=for-the-badge&logo=wikipedia&logoColor=white)](https://github.com/iampavangandhi/TradeByte/wiki) [![Project Report](https://img.shields.io/badge/-Project%20Report-3b5998?style=for-the-badge&logo=google-sheets&logoColor=white)](https://docs.google.com/spreadsheets/d/1_vg-F2dk6jWy9jcYlGuKqAnXUX6NwbbnLg9Bmn_Ulrk/edit?usp=sharing) [![TheNodeCourse](https://img.shields.io/badge/-TheNodeCourse-11998e?style=for-the-badge&logo=node.js&logoColor=white)](https://github.com/iampavangandhi/TheNodeCourse)
 
 </div>
 
@@ -54,7 +54,7 @@
 - [GMAIL API Credentials](https://www.woolha.com/tutorials/node-js-send-email-using-gmail-with-nodemailer-oauth-2)
 - [Stripe Payment Gateway Keys](https://stripe.com/)
 
-### config.env format
+### Check config.env format
 
 ```bash
 PORT = XXXX
@@ -93,8 +93,8 @@ npm run dev
 
     .
     ├── 📁 .github                 # Github files (don't change)
-    ├── 📁 config                  # Config files
-    ├── 📁 helpers                 # Helper on controller files
+    ├── 📁 config                  # Configuration files
+    ├── 📁 helpers                 # Helper or Controller files
     ├── 📁 middleware              # Expresss middlewares
     ├── 📁 models                  # Mongoose models
     ├── 📁 project-plan            # Project planning files

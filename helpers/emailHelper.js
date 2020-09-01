@@ -1,3 +1,5 @@
+// Email Helper Function
+
 require("dotenv").config();
 const nodemailer = require("nodemailer");
 

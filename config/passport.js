@@ -1,4 +1,4 @@
-// Passport Google OAuth 2.0 Strategy
+// Passport Google OAuth2 Strategy
 
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const mongoose = require("mongoose");

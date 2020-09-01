@@ -7,8 +7,12 @@ const router = express.Router();
 
 const { ensureAuth } = require("../../middleware/auth");
 
+// Importing JSON Data
 const totalData = require("../../config/data-total.json");
 
+// @desc     Search Bar
+// @route    GET /search
+// @access   Private
 router.get("/", ensureAuth, (req, res) => {
   let avatar = req.user.image;
 

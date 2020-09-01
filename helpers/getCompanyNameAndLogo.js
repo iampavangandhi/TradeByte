@@ -1,4 +1,5 @@
 // Get Stock Company symbol Function
+
 const axios = require("axios");
 
 module.exports = async function getCompanyNameAndLogo(symbol) {
