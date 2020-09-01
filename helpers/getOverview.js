@@ -1,4 +1,5 @@
 // Stock Overview Helper Function
+
 const axios = require("axios");
 
 module.exports = async function getOverview(symbol) {
