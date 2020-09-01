@@ -89,7 +89,7 @@ router.put("/confirm", ensureAuth, async (req, res) => {
     res.redirect("/done");
   } catch (err) {
     console.error(err);
-    res.render("error/500", { layout: "layouts/layout" });
+    res.render("error/500", { layout: "layouts/simple-page" });
   }
 });
 
@@ -129,7 +129,7 @@ router.get("/", ensureAuth, async (req, res) => {
     }
   } catch (err) {
     console.error(err);
-    res.render("error/500", { layout: "layouts/layout" });
+    res.render("error/500", { layout: "layouts/simple-page" });
   }
 });
 
@@ -181,7 +181,7 @@ router.post("/sell/:id", ensureAuth, async (req, res) => {
     res.redirect("/done", { layout: "layouts/simple-page" });
   } catch (err) {
     console.error(err);
-    res.render("error/500", { layout: "layouts/layout" });
+    res.render("error/500", { layout: "layouts/simple-page" });
   }
 });
 
