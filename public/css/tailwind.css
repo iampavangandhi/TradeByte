@@ -127,7 +127,7 @@ animated {
 .share.showAddThisButtons > .container {
   opacity: 1;
   visibility: visible;
-  transform: translateY(45%);
+  transform: translateY(40%);
   margin-top: 0.5rem;
 }
 
