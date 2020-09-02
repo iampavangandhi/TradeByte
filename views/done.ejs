@@ -1,109 +1,134 @@
-<!---Card component-->
-<div class="m-2">
-  <div
-    class="flex justify-center items-center done-container max-w-sm mx-auto flex p-5 bg-white rounded-lg shadow-2xl"
-  >
-    <div class="py-4">
-      <h1 class="heading font-bold mb-2 text-6xl text-center text-green-700">
-        Done
-      </h1>
-      <div class="flex justify-center items-center text-green-400 my-6">
-        <i id="check" class="far fa-check-circle fa-7x"></i>
-      </div>
-      <div>
-        <p class="text-black-700 text-center text-2xl font-semibold mt-4">
-          Thank you for using TradeByte
-        </p>
-      </div>
-      <div class="flex justify-center items-center mt-4">
-        <button
-          onClick="back()"
-          class="bg-gray-700 hover:bg-red-400 text-white font-bold py-2 px-3 md:px-5 mx-2 mt-4 mb-3 rounded-full"
-        >
-          <i class="far fa-times-circle"></i> Back
-        </button>
+<!--Thankyou PAGE -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tradebyte</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
+      integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o="
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-        <button
-          class="relative share bg-gray-700 hover:bg-blue-400 text-white font-bold py-2 px-3 md:px-5 mx-2 mt-4 mb-3 rounded-full cursor-pointer"
-          onclick="share(this)"
-        >
-          <i class="fas fa-share-alt"></i> Share
-          <div
-            class="container absolute top-0 left-0 w-48 bg-white shadow-lg rounded mt-10 mb-12 -ml-12 sm:ml-0"
+  <body class="flex justify-center items-center min-h-screen">
+    <!---Card component-->
+    <div class="m-2">
+      <div
+        class="flex justify-center items-center done-container max-w-sm mx-auto flex p-5 bg-white rounded-lg shadow-2xl"
+      >
+        <div class="py-4">
+          <h1
+            class="heading font-bold mb-2 text-6xl text-center text-green-700"
           >
-            <div
-              class="addthis_inline_share_toolbox text-center"
-              data-url="<%= host %>/share/<%= userId %>"
-            ></div>
-            <div class="addthis_sharing_toolbox text-center"></div>
+            Done
+          </h1>
+          <div class="flex justify-center items-center text-green-400 my-6">
+            <i id="check" class="far fa-check-circle fa-7x"></i>
           </div>
-        </button>
+          <div>
+            <p class="text-black-700 text-center text-2xl font-semibold mt-4">
+              Thank you for using TradeByte
+            </p>
+          </div>
+          <div class="flex justify-center items-center mt-4">
+            <button
+              onClick="back()"
+              class="bg-gray-700 hover:bg-red-400 text-white font-bold py-2 px-3 md:px-5 mx-2 mt-4 mb-3 rounded-full"
+            >
+              <i class="far fa-times-circle"></i> Back
+            </button>
+
+            <button
+              class="relative share bg-gray-700 hover:bg-blue-400 text-white font-bold py-2 px-3 md:px-5 mx-2 mt-4 mb-3 rounded-full cursor-pointer"
+              onclick="share(this)"
+            >
+              <i class="fas fa-share-alt"></i> Share
+              <div
+                class="container absolute top-0 left-0 w-48 bg-white shadow-lg rounded mt-10 mb-12 -ml-12 sm:ml-0"
+              >
+                <div
+                  class="addthis_inline_share_toolbox text-center"
+                  data-url="<%= host %>/share/<%= userId %>"
+                ></div>
+                <div class="addthis_sharing_toolbox text-center"></div>
+              </div>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-<!---------------------JavaScript-------------------------->
-<script>
-  let AddThisJSLoaded = false; // Addthis not loaded yet
-  let clickedOnShare = false; // share button is not clicked
+    <!---------------------JavaScript-------------------------->
+    <script>
+      let AddThisJSLoaded = false; // Addthis not loaded yet
+      let clickedOnShare = false; // share button is not clicked
 
-  function back() {
-    window.location.href = "/";
-  }
+      function back() {
+        window.location.href = "/";
+      }
 
-  //this is a publicer id
-  let AddthisPubID = "ra-5f3af90d32b2c7af";
-  let AddThisJS =
-    "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f3af90d32b2c7af";
+      //this is a publicer id
+      let AddthisPubID = "ra-5f3af90d32b2c7af";
+      let AddThisJS =
+        "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f3af90d32b2c7af";
 
-  function share(button) {
-    if (!AddThisJSLoaded && !clickedOnShare) {
-      //when AddThis not loaded
-      clickedOnShare = true; // share button is clicked
-      showLoading(button);
-      shareByAddThis(button);
-    } else {
-      toogleAddThisButtons(button);
-    }
-  }
+      function share(button) {
+        if (!AddThisJSLoaded && !clickedOnShare) {
+          //when AddThis not loaded
+          clickedOnShare = true; // share button is clicked
+          showLoading(button);
+          shareByAddThis(button);
+        } else {
+          toogleAddThisButtons(button);
+        }
+      }
 
-  function shareByAddThis(button) {
-    let script = document.createElement("script");
-    script.async = true;
-    script.src = AddThisJS;
+      function shareByAddThis(button) {
+        let script = document.createElement("script");
+        script.async = true;
+        script.src = AddThisJS;
 
-    script.onload = function () {
-      clickedOnShare = false; // AddThis js is loaded
-      addthis.user.ready(function (data) {
-        AddThisJSLoaded = true; //loaded and ready to use
-        hideLoading(button);
-        showAddThisButtons(button);
-      });
-    };
+        script.onload = function () {
+          clickedOnShare = false; // AddThis js is loaded
+          addthis.user.ready(function (data) {
+            AddThisJSLoaded = true; //loaded and ready to use
+            hideLoading(button);
+            showAddThisButtons(button);
+          });
+        };
 
-    script.onerror = function () {
-      clickedOnShare = false; // Addthis JS  failed to laod
-      hideLoading(button);
-    };
+        script.onerror = function () {
+          clickedOnShare = false; // Addthis JS  failed to laod
+          hideLoading(button);
+        };
 
-    document.body.appendChild(script);
-  }
+        document.body.appendChild(script);
+      }
 
-  function showLoading(button) {
-    button.classList.add("loading");
-  }
+      function showLoading(button) {
+        button.classList.add("loading");
+      }
 
-  function hideLoading(button) {
-    //hide the loading
-    button.classList.remove("loading");
-  }
+      function hideLoading(button) {
+        //hide the loading
+        button.classList.remove("loading");
+      }
 
-  function showAddThisButtons(button) {
-    button.classList.add("showAddThisButtons");
-  }
+      function showAddThisButtons(button) {
+        button.classList.add("showAddThisButtons");
+      }
 
-  function toogleAddThisButtons(button) {
-    button.classList.toogle("showAddThisButtons");
-  }
-</script>
+      function toogleAddThisButtons(button) {
+        button.classList.toogle("showAddThisButtons");
+      }
+    </script>
+  </body>
+</html>
