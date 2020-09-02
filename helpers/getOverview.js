@@ -36,7 +36,7 @@ module.exports = async function getOverview(symbol) {
     }))
     .catch((err) => {
       console.log(err);
-      res.status(500).render("error/500", { layout: "layouts/simple-page" });
+      res.status(500).render("error/500");
     });
 
   return data;
