@@ -118,15 +118,13 @@
 <script src="https://js.stripe.com/v3/"></script>
 <script>
   function check(value) {
-    if (value < 50) {
-      window.location.href = "/addBalance";
+    if (parseInt(value) < 50) {
       alert("Minimum $50 is valid only");
       document.getElementById("amount").value = 50;
     }
-    if (value > 50000) {
-      window.location.href = "/addBalance";
+    if (parseInt(value) > 50000) {
       alert("You can add $50,000 at a time.");
-      document.getElementById("amount").value = 50;
+      document.getElementById("amount").value = 50000;
     }
   }
 </script>

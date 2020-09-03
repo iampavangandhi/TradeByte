@@ -46,22 +46,24 @@ router.post("/buy", ensureAuth, async (req, res) => {
     totalAmount: totalAmount,
   };
 
-  console.log(data);
+  let method = "confirm";
 
   try {
     if (totalAmount > req.user.balance) {
       let ExtraBalance = totalAmount - req.user.balance;
       ExtraBalance = ExtraBalance.toFixed(2);
-      res.render("transaction/transaction", {
+      res.render("transaction", {
         layout: "layouts/app",
         href: "/buy",
+        method,
         ExtraBalance,
         message: "Insufficient Balance",
       });
     } else {
-      res.render("transaction/transaction", {
+      res.render("transaction", {
         data,
         user,
+        method,
         totalAmount,
         stockPrice,
         message: "Transaction Review",

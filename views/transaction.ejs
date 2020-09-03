@@ -7,9 +7,6 @@
         class="text-gray-700 lg:text-6xl text-4xl font-semibold leading-none tracking-wider"
         >Transaction</span
       >
-      <!-- <span class="lg:text-3xl text-2xl view-link font-semibold"
-          >Your Balance : $<%= user.balance%></span
-        > -->
     </header>
 
     <hr class="border-2 border-gray-700" />
@@ -37,7 +34,7 @@
       <p class="flex text-center justify-center my-4 text-2xl">
         <%= message %>
       </p>
-      <form action="/transaction/confirm" method="POST">
+      <form action="/transaction/<%= method %> " method="POST">
         <input type="hidden" name="_method" value="PUT" />
         <table class="table-auto min-w-full rounded-lg select-none">
           <tbody>
@@ -59,6 +56,7 @@
               <td class="border py-2 px-2 text-sm sm:text-xl">Stock Price:</td>
               <td class="border py-2">
                 <input
+                  id="price"
                   class="text-right sm:px-2 bg-gray-100 transaction-input text-sm sm:text-xl without-arrow"
                   readonly
                   type="Number"
@@ -72,19 +70,19 @@
                 Number of Stock:
               </td>
               <td class="border py-2">
-                <input
-                  class="text-right sm:px-2 transaction-input text-sm sm:text-xl without-arrow"
-                  readonly
-                  type="number"
-                  name="noOfStock"
-                  value="<%= data.noOfStock%>"
-                />
+                <input min="1" max="<%= data.noOfStock%>" type="number"
+                onchange="check(value)" id="noOfStocks" class="text-right
+                sm:px-2 transaction-input text-sm sm:text-xl <% if(method ==
+                "confirm") { %> <%= "without-arrow" %> <% } %>" <% if(method ==
+                "confirm") { %> <%= "readonly" %> <% } %> type="number"
+                name="noOfStock" value="<%= data.noOfStock%>" />
               </td>
             </tr>
             <tr class="bg-gray-100">
               <td class="border py-2 px-2 text-sm sm:text-xl">Total Amount:</td>
               <td class="border py-2">
                 <input
+                  id="total"
                   class="text-right sm:px-2 bg-gray-100 transaction-input text-sm sm:text-xl without-arrow"
                   readonly
                   type="number"
@@ -101,12 +99,13 @@
           >
             <a href="/">Cancel</a>
           </button>
-          <button>
-            <input
-              class="bg-green-600 hover:bg-green-500 text-white font-bold py-2 mx-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
-              type="submit"
-              value="BUY"
-            />
+          <button
+            id="submit"
+            type="submit"
+            class="bg-green-600 hover:bg-green-500 text-white font-bold py-2 mx-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
+          >
+            <% if(method == "confirm") { %> <%= "BUY" %> <% } else { %> <%=
+            "SELL" %> <% } %>
           </button>
         </div>
       </form>
@@ -115,5 +114,31 @@
   </div>
 
   <!-- Footer -->
-  <%- include('../partials/_footer.ejs') %>
+  <%- include('./partials/_footer.ejs') %>
 </div>
+<script>
+  const stockPrice = parseFloat(document.getElementById("price").value);
+  const noOfStocks = parseInt(document.getElementById("noOfStocks").value);
+  const defaultVal = parseInt(
+    document.getElementById("noOfStocks").defaultValue
+  );
+  const totalPrice = parseFloat(document.getElementById("total").value);
+
+  function check(value) {
+    if (parseInt(value) < 1) {
+      alert("You have to sell minimum 1 stock");
+      document.getElementById("noOfStocks").value = 1;
+      document.getElementById("total").value = stockPrice * 1;
+    } else if (parseInt(value) > defaultVal) {
+      alert(`You can't sell more than ${noOfStocks} stocks`);
+      document.getElementById("noOfStocks").value = noOfStocks;
+      document.getElementById("total").value = (
+        stockPrice * noOfStocks
+      ).toFixed(2);
+    } else {
+      document.getElementById("total").value = (
+        stockPrice * parseInt(value)
+      ).toFixed(2);
+    }
+  }
+</script>

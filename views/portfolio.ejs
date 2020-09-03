@@ -146,7 +146,13 @@
 
             <td class="px-4 py-2 text-center"><%= stock.noOfStock %></td>
             <td class="px-4 py-2 text-center">
-              <form action="/transaction/sell/<%= stock._id%>" method="POST">
+              <form action="/transaction/sell" method="POST">
+                <input
+                  hidden
+                  type="text"
+                  name="companySymbol"
+                  value="<%- stock.companySymbol %>"
+                />
                 <button type="submit">
                   <svg
                     class="w-6 h-6"
