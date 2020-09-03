@@ -142,14 +142,14 @@
       pattern.classList.add("text-red-700");
     }
 
-    if(password2.value.length > 0 && e.target.value !== password2.value) {
-      passwordMatch.classList.remove("text-green-700")
-      passwordMatch.classList.add("text-red-700")
+    if (password2.value.length > 0 && e.target.value !== password2.value) {
+      passwordMatch.classList.remove("text-green-700");
+      passwordMatch.classList.add("text-red-700");
       passwordMatch.textContent = "Password do not match";
     } else {
       passwordMatch.textContent = "Password match";
-      passwordMatch.classList.remove("text-red-700")
-      passwordMatch.classList.add("text-green-700")
+      passwordMatch.classList.remove("text-red-700");
+      passwordMatch.classList.add("text-green-700");
     }
   });
 
