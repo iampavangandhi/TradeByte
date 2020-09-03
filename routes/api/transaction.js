@@ -255,7 +255,7 @@ router.put("/confirmSell", ensureAuth, async (req, res) => {
           <b>Hello ${displayName},</b>
           <p>You sold ${noOfStock} ${msg} of ${companySymbol} from TradeByte of amount ${totalAmount.toFixed(
         2
-      )}, your remaining TradeByte balance is ${req.user.balance.toFixed(2)}</p>
+      )}, your updated TradeByte balance is ${req.user.balance.toFixed(2)}</p>
           <p>This is a Demo Project made by TradeByte team for educational purpose only.</p>
           <p>You can check the <a href="https://github.com/iampavangandhi/TradeByte">Github Repo</a> for details.</p>
           <p>Have a great Day!</p>
