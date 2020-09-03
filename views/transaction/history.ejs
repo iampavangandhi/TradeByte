@@ -1,6 +1,4 @@
-<section
-  class="text-gray-700 body-font md:ml-56 lg:ml-64 w-full"
->
+<section class="text-gray-700 body-font md:ml-56 lg:ml-64 w-full">
   <div class="px-5 py-10 mx-auto w-full max-w-6xl">
     <div class="my-4 absolute-center md:flex">
       <header class="my-4 absolute-center">
@@ -19,18 +17,40 @@
             class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg"
           >
             <% if(message === '') { %>
-            <table class="min-w-full table-auto divide-y divide-gray-200 overflow-x-auto select-none">
+            <table
+              class="min-w-full table-auto divide-y divide-gray-200 overflow-x-auto select-none"
+            >
               <thead>
                 <tr class="bg-gray-200 px-12">
-                  <th class="p-1 sm:p-4 text-sm sm:text-xl border-r-2 border-gray-300 break-all">Date</th>
-                  <th class="p-1 sm:p-4 text-sm sm:text-xl border-r-2 border-gray-300 ">Operation</th>
-                  <th class="sm:p-4 text-sm sm:text-xl border-r-2 border-gray-300">Amount</th>
-                  <th class="p-1 sm:p-4 text-sm sm:text-xl border-r-2 border-gray-300">Details</th>
+                  <th
+                    class="p-1 sm:p-4 text-sm sm:text-xl border-r-2 border-gray-300 break-all"
+                  >
+                    Date
+                  </th>
+                  <th
+                    class="p-1 sm:p-4 text-sm sm:text-xl border-r-2 border-gray-300"
+                  >
+                    Operation
+                  </th>
+                  <th
+                    class="sm:p-4 text-sm sm:text-xl border-r-2 border-gray-300"
+                  >
+                    Amount
+                  </th>
+                  <th
+                    class="p-1 sm:p-4 text-sm sm:text-xl border-r-2 border-gray-300"
+                  >
+                    Details
+                  </th>
                 </tr>
               </thead>
               <% transactions.forEach( (stock) => { %>
               <tr class="bg-white">
-                <td class="border px-1 md:px-4 py-2 text-xs sm:text-xl break-words"><%= stock.createdAt %></td>
+                <td
+                  class="border px-1 md:px-4 py-2 text-xs sm:text-xl break-words"
+                >
+                  <%= stock.createdAt %>
+                </td>
                 <td class="border px-1 md:px-4 py-2 text-xs sm:text-xl">
                   <% if(stock.operation == "Debited") {%>
                   <p
@@ -46,10 +66,14 @@
                   </p>
                   <%}%>
                 </td>
-                <td class="border px-1 md:px-4 py-2 text-center text-xs sm:text-xl">
+                <td
+                  class="border px-1 md:px-4 py-2 text-center text-xs sm:text-xl"
+                >
                   <%= stock.amount %>
                 </td>
-                <td class="border px-1 md:px-4 py-2 text-xs sm:text-xl"><%= stock.details %></td>
+                <td class="border px-1 md:px-4 py-2 text-xs sm:text-xl">
+                  <%= stock.details %>
+                </td>
               </tr>
               <% }) %>
             </table>
