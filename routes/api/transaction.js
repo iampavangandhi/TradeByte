@@ -12,6 +12,96 @@ const getPrice = require("../../helpers/getPrice");
 // Import emailHelper helper function
 const emailHelper = require("../../helpers/emailHelper");
 
+// @desc     To View Transaction History
+// @route    POST /transaction
+// @access   Private
+router.get("/", ensureAuth, async (req, res) => {
+  const user = req.user;
+  try {
+    const transactions = await Transaction.find({
+      user: req.user.id,
+    })
+      .populate("user")
+      .sort({
+        createdAt: -1,
+      })
+      .lean();
+
+    if (Object.keys(transactions).length == 0) {
+      var message = "No Transaction";
+      res.render("history", {
+        message,
+        transactions,
+        user,
+        layout: "layouts/app",
+        href: "/transaction",
+      });
+    } else {
+      var message = "";
+      res.render("history", {
+        message,
+        transactions,
+        user,
+        layout: "layouts/app",
+        href: "/transaction",
+      });
+    }
+  } catch (err) {
+    console.error(err);
+    res.render("error/500");
+  }
+});
+
+// @desc     To buy
+// @route    POST /transaction/buy
+// @access   Private
+router.post("/buy", ensureAuth, async (req, res) => {
+  const user = req.user;
+  console.log(req.body);
+  const symbol = req.body.companySymbol;
+  // const { latestPrice } = await getPrice(symbol);
+  const noOfStock = req.body.noOfStock;
+  const stockPrice = req.body.stockPrice;
+  const totalAmount = await parseFloat(stockPrice * noOfStock).toFixed(2);
+
+  const data = {
+    companySymbol: symbol,
+    stockPrice: stockPrice,
+    noOfStock: noOfStock,
+    totalAmount: totalAmount,
+  };
+
+  let method = "confirm";
+
+  try {
+    if (totalAmount > req.user.balance) {
+      let ExtraBalance = totalAmount - req.user.balance;
+      ExtraBalance = ExtraBalance.toFixed(2);
+      res.render("transaction", {
+        layout: "layouts/app",
+        href: "/buy",
+        method,
+        ExtraBalance,
+        message: "Insufficient Balance",
+      });
+    } else {
+      res.render("transaction", {
+        data,
+        user,
+        method,
+        totalAmount,
+        stockPrice,
+        message: "Transaction Review",
+        layout: "layouts/app",
+        href: "/buy",
+      });
+    }
+  } catch (err) {
+    console.error(err);
+    res.render("error/500");
+  }
+});
+
 // @desc     To Buy Transaction Page
 // @route    POST transaction/confirm
 // @access   Private
@@ -116,46 +206,6 @@ router.put("/confirm", ensureAuth, async (req, res) => {
 
     // Done
     res.redirect("/done");
-  } catch (err) {
-    console.error(err);
-    res.render("error/500");
-  }
-});
-
-// @desc     To View Transaction History
-// @route    POST /transaction
-// @access   Private
-router.get("/", ensureAuth, async (req, res) => {
-  const user = req.user;
-  try {
-    const transactions = await Transaction.find({
-      user: req.user.id,
-    })
-      .populate("user")
-      .sort({
-        createdAt: -1,
-      })
-      .lean();
-
-    if (Object.keys(transactions).length == 0) {
-      var message = "No Transaction";
-      res.render("history", {
-        message,
-        transactions,
-        user,
-        layout: "layouts/app",
-        href: "/transaction",
-      });
-    } else {
-      var message = "";
-      res.render("history", {
-        message,
-        transactions,
-        user,
-        layout: "layouts/app",
-        href: "/transaction",
-      });
-    }
   } catch (err) {
     console.error(err);
     res.render("error/500");

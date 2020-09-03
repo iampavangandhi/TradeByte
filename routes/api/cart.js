@@ -10,7 +10,7 @@ const User = require("../../models/User");
 const getPrice = require("../../helpers/getPrice");
 const getCompanyNameAndLogo = require("../../helpers/getCompanyNameAndLogo");
 
-// @desc     To buy
+// @desc     Cart Page
 // @route    GET /cart/:symbol
 // @access   Private
 router.get("/:symbol", ensureAuth, async (req, res) => {
@@ -26,55 +26,6 @@ router.get("/:symbol", ensureAuth, async (req, res) => {
     href: "/market",
     avatar: req.user.image,
   });
-});
-
-// @desc     To buy
-// @route    POST /cart/buy
-// @access   Private
-router.post("/buy", ensureAuth, async (req, res) => {
-  const user = req.user;
-  const symbol = req.body.companySymbol;
-  const { latestPrice } = await getPrice(symbol);
-  const noOfStock = req.body.noOfStock;
-  const stockPrice = req.body.stockPrice;
-  const totalAmount = parseFloat(latestPrice * noOfStock).toFixed(4);
-
-  const data = {
-    companySymbol: symbol,
-    stockPrice: latestPrice,
-    noOfStock: noOfStock,
-    totalAmount: totalAmount,
-  };
-
-  let method = "confirm";
-
-  try {
-    if (totalAmount > req.user.balance) {
-      let ExtraBalance = totalAmount - req.user.balance;
-      ExtraBalance = ExtraBalance.toFixed(2);
-      res.render("transaction", {
-        layout: "layouts/app",
-        href: "/buy",
-        method,
-        ExtraBalance,
-        message: "Insufficient Balance",
-      });
-    } else {
-      res.render("transaction", {
-        data,
-        user,
-        method,
-        totalAmount,
-        stockPrice,
-        message: "Transaction Review",
-        layout: "layouts/app",
-        href: "/buy",
-      });
-    }
-  } catch (err) {
-    console.error(err);
-    res.render("error/500");
-  }
 });
 
 module.exports = router;
