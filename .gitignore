@@ -1,9 +1,9 @@
 # Mac File
-*/.DS_Store
 .DS_Store
-
-# For Mac User
+*/.DS_Store
+._.DS_Store
 **/.DS_Store
+**/._.DS_Store
 
 # Logs
 logs
