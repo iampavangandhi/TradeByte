@@ -95,7 +95,7 @@ npm run dev
     ├── 📁 .github                 # Github files (don't change)
     ├── 📁 config                  # Configuration files
     ├── 📁 helpers                 # Helper or Controller files
-    ├── 📁 middleware              # Expresss middlewares
+    ├── 📁 middleware              # Express middleware
     ├── 📁 models                  # Mongoose models
     ├── 📁 project-plan            # Project planning files
     │   └── 📁 ui-designs
