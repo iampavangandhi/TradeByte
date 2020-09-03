@@ -12,8 +12,8 @@ const getPrice = require("../../helpers/getPrice");
 // Import emailHelper helper function
 const emailHelper = require("../../helpers/emailHelper");
 
-// @desc     To View Transaction History
-// @route    POST /transaction
+// @desc     View Transaction History
+// @route    GET /transaction
 // @access   Private
 router.get("/", ensureAuth, async (req, res) => {
   const user = req.user;
@@ -52,16 +52,16 @@ router.get("/", ensureAuth, async (req, res) => {
   }
 });
 
-// @desc     To buy
+// @desc     To Buy Stocks
 // @route    POST /transaction/buy
 // @access   Private
 router.post("/buy", ensureAuth, async (req, res) => {
   const user = req.user;
   console.log(req.body);
   const symbol = req.body.companySymbol;
-  // const { latestPrice } = await getPrice(symbol);
   const noOfStock = req.body.noOfStock;
   const stockPrice = req.body.stockPrice;
+  // const { latestPrice } = await getPrice(symbol);
   const totalAmount = await parseFloat(stockPrice * noOfStock).toFixed(2);
 
   const data = {
@@ -102,8 +102,8 @@ router.post("/buy", ensureAuth, async (req, res) => {
   }
 });
 
-// @desc     To Buy Transaction Page
-// @route    POST transaction/confirm
+// @desc     Confirm Transaction (BUY)
+// @route    PUT transaction/confirm
 // @access   Private
 router.put("/confirm", ensureAuth, async (req, res) => {
   try {
@@ -212,7 +212,7 @@ router.put("/confirm", ensureAuth, async (req, res) => {
   }
 });
 
-// @desc     To Sell Stock
+// @desc     Sell Stocks
 // @route    POST /transaction/sell
 // @access   Private
 router.post("/sell", ensureAuth, async (req, res) => {
@@ -234,8 +234,8 @@ router.post("/sell", ensureAuth, async (req, res) => {
   }
 });
 
-// @desc     To Buy Transaction Page
-// @route    POST transaction/confirm
+// @desc     Confirm Transaction (SELL)
+// @route    PUT transaction/confirmSell
 // @access   Private
 router.put("/confirmSell", ensureAuth, async (req, res) => {
   try {
