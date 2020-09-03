@@ -46,7 +46,7 @@
 
 ## Config Setup
 
-#### Add following keys into the config.env file. These all are free to use keys.
+#### Add following keys into the `config.env` file. These all are free to use keys.
 
 - [MongoDB URI](https://www.mongodb.com/cloud/atlas)
 - [Alpha Vantage Keys](https://www.alphavantage.co/)
@@ -54,7 +54,7 @@
 - [GMAIL API Credentials](https://www.woolha.com/tutorials/node-js-send-email-using-gmail-with-nodemailer-oauth-2)
 - [Stripe Payment Gateway Keys](https://stripe.com/)
 
-### Check config.env format
+#### Make sure to use the same `config.env` format given below.
 
 ```bash
 PORT = XXXX
