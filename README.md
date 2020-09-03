@@ -108,8 +108,7 @@ npm run dev
     └── 📁 views                   # EJS views
          ├── 📁 error
          ├── 📁 layouts
-         ├── 📁 partials
-         └── 📁 transaction
+         └── 📁 partials
 
 ## Project Plan
 
