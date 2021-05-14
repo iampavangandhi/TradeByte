@@ -6,7 +6,7 @@
 
 ![Stars](https://img.shields.io/github/stars/iampavangandhi/TradeByte?color=2948ff&label=Stars&style=flat-square) ![Forks](https://img.shields.io/github/forks/iampavangandhi/TradeByte?color=2948ff&label=Forks&style=flat-square) ![Contributors](https://img.shields.io/github/contributors/iampavangandhi/TradeByte?color=2948ff&label=Contributors&style=flat-square) ![Issues](https://img.shields.io/github/issues/iampavangandhi/TradeByte?color=2948ff&label=Issues&style=flat-square) ![Pull Requests](https://img.shields.io/github/issues-pr/iampavangandhi/TradeByte?color=2948ff&label=Pull%20Requests&style=flat-square)
 
-![License](https://img.shields.io/github/license/iampavangandhi/TradeByte?color=2948ff&label=License&style=flat-square) ![Language](https://img.shields.io/github/languages/top/iampavangandhi/TradeByte?color=2948ff&label=Language&style=flat-square) ![Lines of Code](https://img.shields.io/tokei/lines/github/iampavangandhi/TradeByte?label=Lines%20of%20Code&style=flat-square) ![Version](https://img.shields.io/github/package-json/v/iampavangandhi/TradeByte?color=2948ff&label=Version&style=flat-square) ![Deployment](https://img.shields.io/github/deployments/iampavangandhi/TradeByte/tradebyte?color=2948ff&label=Deployment&style=flat-square) ![Repo Size](https://img.shields.io/github/repo-size/iampavangandhi/TradeByte?color=2948ff&label=Repo%20Size&style=flat-square)
+![License](https://img.shields.io/github/license/iampavangandhi/TradeByte?color=2948ff&label=License&style=flat-square) ![Language](https://img.shields.io/github/languages/top/iampavangandhi/TradeByte?color=2948ff&label=Language&style=flat-square) ![Lines of Code](https://img.shields.io/tokei/lines/github/iampavangandhi/TradeByte?color=2948ff&label=Lines%20of%20Code&style=flat-square) ![Version](https://img.shields.io/github/package-json/v/iampavangandhi/TradeByte?color=2948ff&label=Version&style=flat-square) ![Deployment](https://img.shields.io/github/deployments/iampavangandhi/TradeByte/tradebyte?color=2948ff&label=Deployment&style=flat-square) ![Repo Size](https://img.shields.io/github/repo-size/iampavangandhi/TradeByte?color=2948ff&label=Repo%20Size&style=flat-square)
 
 ## Website : https://tradebyte.herokuapp.com/
 
@@ -34,7 +34,7 @@
 <code><img height="38" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png" alt="javascript"></code>
 <code><img height="38" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/nodejs/nodejs.png" alt="nodejs"></code>
 <code><img height="37" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/npm/npm.png" alt="npm"></code>
-<code><img height="40" src="https://devicons.github.io/devicon/devicon.git/icons/express/express-original.svg" alt="express"></code>
+<code><img height="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg" alt="express"></code>
 <code><img height="39" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSTTzPAw-55ssm1Im594xYZ9eRQu2JylrkYLg&usqp=CAU" alt="mongodb"></code>
 <code><img height="40" src="https://cdn.icon-icons.com/icons2/2148/PNG/512/ejs_icon_132422.png" alt="ejs"></code>
 <code><img height="40" src="https://ph-files.imgix.net/108b5bdd-db00-4050-8a20-675ddfc5d99a?auto=format" alt="tailwind-css"></code>
