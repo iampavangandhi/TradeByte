@@ -8,7 +8,7 @@
 
 ![License](https://img.shields.io/github/license/iampavangandhi/TradeByte?color=2948ff&label=License&style=flat-square) ![Language](https://img.shields.io/github/languages/top/iampavangandhi/TradeByte?color=2948ff&label=Language&style=flat-square) ![Lines of Code](https://img.shields.io/tokei/lines/github/iampavangandhi/TradeByte?color=2948ff&label=Lines%20of%20Code&style=flat-square) ![Version](https://img.shields.io/github/package-json/v/iampavangandhi/TradeByte?color=2948ff&label=Version&style=flat-square) ![Deployment](https://img.shields.io/github/deployments/iampavangandhi/TradeByte/tradebyte?color=2948ff&label=Deployment&style=flat-square) ![Repo Size](https://img.shields.io/github/repo-size/iampavangandhi/TradeByte?color=2948ff&label=Repo%20Size&style=flat-square)
 
-## Website : https://tradebyte.herokuapp.com/
+## Website : https://tradebyte.up.railway.app
 
 [![Project Board](https://img.shields.io/badge/-Project%20Board-0e76a8?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/iampavangandhi/TradeByte/projects/1) [![Project Wiki](https://img.shields.io/badge/-Project%20Wiki-283c86?style=for-the-badge&logo=wikipedia&logoColor=white)](https://github.com/iampavangandhi/TradeByte/wiki) [![Project Report](https://img.shields.io/badge/-Project%20Report-3b5998?style=for-the-badge&logo=google-sheets&logoColor=white)](https://docs.google.com/spreadsheets/d/1_vg-F2dk6jWy9jcYlGuKqAnXUX6NwbbnLg9Bmn_Ulrk/edit?usp=sharing) [![TheNodeCourse](https://img.shields.io/badge/-TheNodeCourse-11998e?style=for-the-badge&logo=node.js&logoColor=white)](https://github.com/iampavangandhi/TheNodeCourse)
 
