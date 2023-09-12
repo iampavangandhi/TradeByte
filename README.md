@@ -1,5 +1,9 @@
 <div align="center">
 
+# ⚠️ NOT ACTIVELY MAINTAINED
+
+---
+
 # <img src="public/images/TradeByte-Favicon.png" alt="logo" width="30"/> **TradeByte**
 
 ## Stocks Trading Simulation WebApp
